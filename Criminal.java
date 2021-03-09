@@ -21,6 +21,7 @@ public class Criminal extends Person{
     private String handness;
     private String crimeType;
     private Officer arrestingOfficer;
+    private boolean inJail;
 
     public Criminal() {
 
