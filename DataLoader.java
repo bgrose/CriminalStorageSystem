@@ -5,7 +5,7 @@ import org.json.simple.JSONArray;
  * @description
  * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
  */
-public class DataLoader {
+public class DataLoader extends DataConstants{
     
     public ArrayList<Crime> getCrimes() {
         return new ArrayList<Crime>();
@@ -14,4 +14,5 @@ public class DataLoader {
     public ArrayList<User> getUsers() {
         return new ArrayList<User>();
     }
+    
 }
