@@ -1,0 +1,16 @@
+[
+    {
+        "Crime Date": "11/22/1993",
+        "Crime Description": "Desciption of Crime",
+        "Evidence List": [
+            "5482c59e-81ce-11eb-8dcd-0242ac130003"
+        ],
+        "Crime Name": "Murder #35280973",
+        "Officers": [
+            "cef0cbf3-6458-4f13-a418-ee4d7e7505dd"
+        ],
+        "Related People": "OJ Simpson",
+        "Solved": true,
+        "UUID": "8c3d9e96-81ce-11eb-8dcd-0242ac130003"
+    }
+]
