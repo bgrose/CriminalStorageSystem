@@ -3,7 +3,9 @@ import java.util.ArrayList;
  * @description 
  * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
  */
-public class UserDatabase extends User{
+import java.util.ArrayList;
+
+public class UserDatabase{
     
     private ArrayList<User> database;
 
@@ -23,6 +25,15 @@ public class UserDatabase extends User{
     }
 
     public void modifyUser(User edit)
+    {
+
+    }
+
+    public String getDatabase()
+    {
+        return null;
+    }
+    public void setDatabase(User Data)
     {
 
     }
