@@ -9,6 +9,10 @@ public class CrimeDatabase {
 
     ArrayList<Crime> crimeDatabase;
 
+    /**
+     * Constructor method that
+     * @param crimeList
+     */
     public void CrimeDatabase(ArrayList<Crime> crimeList) {
 
     }
