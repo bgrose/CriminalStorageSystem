@@ -24,7 +24,7 @@ public class Crime {
 
     }
 
-    public void addEvidence(Evidence new) 
+    public void addEvidence(Evidence newEv) 
     {
 
     }
@@ -34,7 +34,7 @@ public class Crime {
 
     }
 
-    public void addPerson(Person new) 
+    public void addPerson(Person newPerson) 
     {
 
     }
@@ -46,7 +46,7 @@ public class Crime {
 
     public String toString() 
     {
-
+        return "";
     }
 }
 

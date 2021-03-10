@@ -32,7 +32,7 @@ public class User {
 
     public User getUser()
     {
-
+        return null;
     }
 
     public void changeUser(User change) 

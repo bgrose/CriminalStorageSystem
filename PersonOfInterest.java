@@ -2,6 +2,9 @@
  * @description 
  * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
  */
+
+ import java.util.ArrayList;
+ 
 public class PersonOfInterest extends Person {
 
     private String alias;
@@ -20,8 +23,8 @@ public class PersonOfInterest extends Person {
     private String handness;
     private String statement;
 
-    public PersonOfInterest() {
-
+    public PersonOfInterest(String name, ArrayList<Crime> crimeList, boolean livingStatus) {
+        super(name, crimeList, livingStatus);
     }
 
     public String toString() {

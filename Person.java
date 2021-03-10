@@ -10,8 +10,8 @@ public class Person {
     private ArrayList<Crime> crimeList;
     private boolean livingStatus;
 
-    public Person(String name, ArraList<Crime> crimeList, boolean livingStatus) {
-
+    public Person(String name, ArrayList<Crime> crimeList, boolean livingStatus) {
+        
     }
 
     public String getName() {

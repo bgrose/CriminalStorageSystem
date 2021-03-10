@@ -2,6 +2,9 @@
  * @description 
  * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
  */
+
+ import java.util.ArrayList;
+
 public class Criminal extends Person{
 
     private String alias;
@@ -20,11 +23,11 @@ public class Criminal extends Person{
     private String disability;
     private String handness;
     private String crimeType;
-    private Officer arrestingOfficer;
+    private User arrestingOfficer;
     private boolean inJail;
 
-    public Criminal() {
-
+    public Criminal(String name, ArrayList<Crime> crimeList, boolean livingStatus) {
+        super(name, crimeList, livingStatus);
     }
 
     public String toString() {
@@ -84,7 +87,7 @@ public class Criminal extends Person{
     }
 
     public String setNationality(String nationality) {
-
+        return "";
     }
 
     public double getWeight() {
@@ -159,11 +162,11 @@ public class Criminal extends Person{
 
     }
 
-    public Officer getArrestingOfficer() {
-        return Officer;
+    public User getArrestingOfficer() {
+        return null;
     }
 
-    public void setArrestingOfficer(Officer officer) {
+    public void setArrestingOfficer(User officer) {
 
     }
 
