@@ -19,16 +19,96 @@ public class Crime {
      * Constructor method that sets up the Crime
      * @param str
      */
-    public void Crime(String str) {
+    public void Crime() {
+
+    }
+
+    /**
+     * Method that sets the evidence list of the Crime
+     * @param evidenceList ArrayList<evidence>  of the evidence of the Crime
+     */
+    public void setEvidenceList(ArrayList<Evidence> evidenceList) {
+
+    }
+
+    /**
+     * Method that sets the anyone person list of the Crime
+     * @param anyonePersonList ArrayList<Person> of the people of the Crime
+     */
+    public void setAnyonePersonList(ArrayList<Person> anyonePersonList) {
 
     }
 
     /**
      * Method that sets the description of the Crime
-     * @param description
+     * @param description String description of the Crime
      */
     public void setDescription(String description) {
 
+    }
+
+    /**
+     * Method that sets the name of the Crime
+     * @param name String name of the Crime
+     */
+    public void setName(String name) {
+
+    }
+
+    /**
+     * Method that sets the solved Boolean of the Crime
+     * @param solved Boolean that shows if the Crime is solved or not
+     */
+    public void setSolved(Boolean solved){
+
+    }
+
+    /**
+     * Method that sets the date of the Crime
+     * @param date Int date of the Crime
+     */
+    public void setDate(int date){
+
+    }
+
+    public ArrayList<Evidence> getEvidenceList(){
+        return evidenceList;
+    }
+
+    public ArrayList<Person> getAnyonePersonList(){
+        return anyonePersonList;
+    }
+
+    /**
+     * Method that gets the description of the Crime
+     * @return String description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * Method that gets the name of the crime
+     * @return String name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Method that gets whether the Crime is solved or not
+     * @return Boolean solved
+     */
+    public Boolean getSolved() {
+        return solved;
+    }
+
+    /**
+     * Method that gets the date the Crime was comitted
+     * @return int date
+     */
+    public int getDate() {
+        return date;
     }
 
     /**
