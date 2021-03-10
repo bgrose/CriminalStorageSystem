@@ -44,7 +44,6 @@ public class DataConstants {
     protected static final String POI_AGE = "Age";
     protected static final String POI_ALIAS = "Alias";
     protected static final String POI_CRIME_LIST = "Crime List";
-    protected static final String POI_CRIME_TYPE = "Crimes Type";
     protected static final String POI_DISABILITY = "Disability";
     protected static final String POI_EYE = "Eye Color";
     protected static final String POI_GLASSES = "Glasses";
@@ -54,7 +53,6 @@ public class DataConstants {
     protected static final String POI_LIVING = "Living";
     protected static final String POI_NAME = "Name";
     protected static final String POI_NATIONALITY = "Nationality";
-    protected static final String POI_PUNISHMENT = "Punishment";
     protected static final String POI_SKIN = "Skin Color";
     protected static final String POI_TATTOO = "Tattoo";
     protected static final String POI_UUID = "UUID";
