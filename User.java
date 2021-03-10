@@ -1,49 +1,132 @@
 /**
- * @description 
- * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
+ * @description
+ * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
 public class User {
-        
+
     private String username;
     private String password;
     private String name;
     private String position;
     private String admin;
 
-    public boolean isValid()
-    {
+    /**
+     * Constructor method that sets up User
+     */
+    public User() {
+
+    }
+
+    /**
+     * Method that sets the username
+     * @param username String username of User
+     */
+    public void setUsername(String username) {
+
+    }
+
+    /**
+     * Method that sets the password
+     * @param password String password of User
+     */
+    public void setPassword(String password) {
+
+    }
+
+    /**
+     * Method that sets the name
+     * @param name String name of User
+     */
+    public void setName(String name) {
+
+    }
+
+    /**
+     * Method that sets the position
+     * @param position String position of User
+     */
+    public void setPosition(String position) {
+
+    }
+
+    /**
+     * Method that sets the admin status
+     * @param admin String admin status of User
+     */
+    public void setAdmin(String admin) {
+
+    }
+
+    /**
+     * Method that returns the username
+     * @return String username
+     */
+    public String getUsername() {
+        return username;
+    }
+
+    /**
+     * Method that returns the password
+     * @return String password
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * Method that returns the name
+     * @return String name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Method that returns the position
+     * @return String position
+     */
+    public String getPosition() {
+        return position;
+    }
+
+    /**
+     * Method that returns the admin status
+     * @return String admin status
+     */
+    public String getAdmin() {
+        return admin;
+    }
+
+    /**
+     * Method that checks if it is a new username and new password to create a User
+     * @return Boolean of if the User is valid
+     */
+    public Boolean isValid() {
         return true;
     }
 
-    public boolean isAdmin()
-    {
+    /**
+     * Method that returns if the User is an admin
+     * @return Boolean of admin status
+     */
+    public Boolean isAdmin() {
         return true;
     }
 
-    public String getName()
-    {
-        return "";
-    }
-
-    public User(String un, String pw, String nam, String posit, String ad)
-    {
-
-    }
-
-    public User getUser()
-    {
+    /**
+     * Method that returns the User
+     * @return User
+     */
+    public User getUser() {
         return null;
     }
 
-    public void changeUser(User change) 
-    {
+    /**
+     * Method that modify's the User
+     * @param user User to be modified
+     */
+    public void modifyUser(User user) {
 
     }
-
-    public User()
-    {
-
-    }
-
 
 }

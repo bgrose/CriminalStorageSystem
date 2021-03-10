@@ -1,7 +1,7 @@
 
 /**
  * @description Class that creates a database to store Crimes
- * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
+ * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
 import java.util.*;
 
