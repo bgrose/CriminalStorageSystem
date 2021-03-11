@@ -63,53 +63,23 @@ public class User {
      * @return String username
      */
     public String getUsername() {
-        return username;
-    }
-
-<<<<<<< HEAD
-    public String getUUID()
-    {
-        return this.UUID;
-    }
-
-    public String getUsername()
-    {
         return this.username;
     }
 
-    public String getPassword()
-    {
-        return this.password;
-    }
-
-    public boolean getAdmin()
-    {
-        return this.admin;
-    }
-
-    public String getPosition()
-    {
-        return this.position;
-    }
-
-    public void changeUser(User change) 
-    {
-=======
     /**
      * Method that returns the password
      * @return String password
      */
     public String getPassword() {
-        return password;
+        return this.password;
     }
->>>>>>> c168054c46c63cbf3a8965b062e29a7c8aca76f0
 
     /**
      * Method that returns the name
      * @return String name
      */
     public String getName() {
-        return name;
+        return this.name;
     }
 
     /**
@@ -117,15 +87,19 @@ public class User {
      * @return String position
      */
     public String getPosition() {
-        return position;
+        return this.position;
     }
 
     /**
      * Method that returns the admin status
      * @return String admin status
      */
-    public String getAdmin() {
-        return admin;
+    public boolean getAdmin() {
+        return this.admin;
+    }
+
+    public String getUUID() {
+        return this.UUID;
     }
 
     /**
