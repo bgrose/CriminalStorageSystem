@@ -8,7 +8,8 @@ public class User {
     private String password;
     private String name;
     private String position;
-    private String admin;
+    private boolean admin;
+    private String UUID;
 
     public boolean isValid()
     {
@@ -33,6 +34,31 @@ public class User {
     public User getUser()
     {
         return null;
+    }
+
+    public String getUUID()
+    {
+        return this.UUID;
+    }
+
+    public String getUsername()
+    {
+        return this.username;
+    }
+
+    public String getPassword()
+    {
+        return this.password;
+    }
+
+    public boolean getAdmin()
+    {
+        return this.admin;
+    }
+
+    public String getPosition()
+    {
+        return this.position;
     }
 
     public void changeUser(User change) 
