@@ -10,7 +10,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class DataWriter extends DataConstants{
-    public void DataUpdate(ArrayList<User> Users){
+    public static void DataUpdate(ArrayList<User> Users){
         saveUsers(Users);
         saveCrimes();
         saveCriminal();
@@ -18,7 +18,7 @@ public class DataWriter extends DataConstants{
         savePOI();
         saveWitness();
     }
-    public void saveUsers(ArrayList<User> Users) {
+    public static void saveUsers(ArrayList<User> Users) {
         JSONArray jsonUsers = new JSONArray();
         for(int i=0; i < Users.size(); i++)
         {
@@ -30,7 +30,7 @@ public class DataWriter extends DataConstants{
             jsonObject.put(USER_NAME, user.getName());
             jsonObject.put(USER_POSITION, user.getPosition());
             jsonObject.put(USER_ADMIN, user.getAdmin());
-
+/*
             try {
                 FileWriter file = new FileWriter("JSON\\User.JSON");
                 file.write(jsonObject.toJSONString());
@@ -40,22 +40,23 @@ public class DataWriter extends DataConstants{
             {
                 e.printStackTrace();
             }
+            */
         }
     }
 
-    public void saveCrimes() {
+    public static void saveCrimes() {
 
     }
-    public void saveCriminal() {
+    public static void saveCriminal() {
 
     }
-    public void saveEvidence() {
+    public static void saveEvidence() {
 
     }
-    public void savePOI(){
+    public static void savePOI(){
 
     }
-    public void saveWitness(){
+    public static void saveWitness(){
 
     }
 
