@@ -14,15 +14,16 @@ public class Witness extends Person {
     }
 
     public String toString() {
-        return "";
+        return "Name: " + this.getName() +
+        "\nStatement: " + this.statement;
     }
 
     public String getStatement() {
-        return "";
+        return this.statement;
     }
 
     public void setStatement(String statement) {
-        
+        this.statement = statement;
     }
     
 }
