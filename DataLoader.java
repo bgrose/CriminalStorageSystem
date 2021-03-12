@@ -11,7 +11,7 @@ public class DataLoader extends DataConstants{
         return new ArrayList<Crime>();
     }
 
-    public ArrayList<User> getUsers() {
+    public static ArrayList<User> getUsers() {
         return new ArrayList<User>();
     }
     

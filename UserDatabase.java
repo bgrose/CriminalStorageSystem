@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class UserDatabase{
     
+    private static UserDatabase userDatabase;
     private ArrayList<User> database;
 
     public User getUser()
@@ -29,17 +30,24 @@ public class UserDatabase{
 
     }
 
-    public String getDatabase()
+    public ArrayList<User> getDatabase()
     {
         return null;
     }
+    
     public void setDatabase(User Data)
     {
 
     }
 
-    public UserDatabase()
+    private UserDatabase()
     {
+        database = DataLoader.getUsers();
+    }
 
+    public static UserDatabase getInstance()
+    {
+        if(userDatabase == null) userDatabase = new UserDatabase();
+        return userDatabase;
     }
 }

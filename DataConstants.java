@@ -65,6 +65,7 @@ public class DataConstants {
     protected static final String USER_POSITION = "Position";
     protected static final String USER_USERNAME = "Username";
     protected static final String USER_UUID = "UUID";
+    protected static final String USER_FILE_NAME = "JSON/User.JSON";
 
     //Witness
     protected static final String WITNESS_CRIME_LIST = "Crime List";
