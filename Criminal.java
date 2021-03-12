@@ -31,151 +31,168 @@ public class Criminal extends Person{
     }
 
     public String toString() {
-        return "";
+        return "Alias: " + this.alias + 
+        "\nAccomplice: " + this.accomplice + 
+        "\nHair Color: " + this.hairColor +
+        "\nEye Color: " + this.eyeColor + 
+        "\nTatoo: " + this.tatoo + 
+        "\nSkin Color: " + accomplice + 
+        "\nNationality: " + this.nationality + 
+        "\nWeight: " + this.weight + 
+        "\nHeight: " + this.height + 
+        "\nAcquaintance: " + this.acquiantance + 
+        "\nAge: " + this.age + 
+        "\nGlasses: " + this.glasses + 
+        "\nPunishment: " + this.punishment + 
+        "\nDisability: " + this.disability + 
+        "\nHandness: " + this.handness + 
+        "\nCrime Type: " + this.crimeType + 
+        "\nArresting Officer: " + this.arrestingOfficer + 
+        "\nIn Jail: " + this.inJail;
     }
 
     public String getAlias() {
-        return "";
+        return this.alias;
     }
 
     public void setAlias(String alias) {
-
+        this.alias = alias;
     }
 
     public String getAccomplice() {
-        return "";
+        return this.accomplice;
     }
 
     public void setAccomplice(String accomplice) {
-
+        this.accomplice = accomplice;
     }
 
     public String getHairColor() {
-        return "";
+        return this.hairColor;
     }
 
     public void setHairColor(String hairColor) {
-
+        this.hairColor = hairColor;
     }
 
     public String getEyeColor() {
-        return "";
+        return this.eyeColor;
     }
 
     public void setEyeColor(String eyeColor) {
-
+        this.eyeColor = eyeColor;
     }
 
     public String getTattoo() {
-        return "";
+        return this.tatoo;
     }
 
     public void setTatoo(String tatoo) {
-
+        this.tatoo = tatoo;
     }
 
     public String getSkinColor() {
-        return "";
+        return this.skinColor;
     }
 
     public void setSkinColor(String skinColor) {
-
+        this.skinColor = skinColor;
     }
 
     public String getNationality() {
-        return "";
+        return this.nationality;
     }
 
-    public String setNationality(String nationality) {
-        return "";
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
     }
 
     public double getWeight() {
-        return 0.0;
+        return this.weight;
     }
 
     public void setWeight(double weight) {
-
+        this.weight = weight;
     }
 
     public int getHeight() {
-        return 0;
+        return this.height;
     }
 
     public void setHeight(int height) {
-
+        this.height = height;
     }
 
     public String getAccquaintance() {
-        return "";
+        return this.acquiantance;
     }
 
     public void setAccquaintance(String accquaintance) {
-        
+        this.acquiantance = accquaintance;
     }
 
     public int getAge() {
-        return 0;
+        return this.age;
     }
 
     public void setAge(int age) {
-
+        this.age = age;
     }
 
     public boolean getGlasses() {
-        return true;
+        return this.glasses;
     }
 
     public void setGlasses(boolean glasses) {
-
+        this.glasses = glasses;
     }
 
     public String getPunishment() {
-        return "";
+        return this.punishment;
     }
 
     public void setPunishment(String punishment) {
-
+        this.punishment = punishment;
     }
 
     public String getDisability() {
-        return "";
+        return this.disability;
     }
 
     public void setDisability(String disability) {
-
+        this.disability = disability;
     }
 
     public String getHandness() {
-        return "";
+        return this.handness;
     }
 
     public void setHandness(String handness) {
-
+        this.handness = handness;
     }
 
     public String getCrimeType() {
-        return "";
+        return this.crimeType;
     }
 
     public void setCrimeType(String crimeType) {
-
+        this.crimeType = crimeType;
     }
 
     public User getArrestingOfficer() {
-        return null;
+        return arrestingOfficer;
     }
 
     public void setArrestingOfficer(User officer) {
-
+        this.arrestingOfficer = officer;
     }
 
     public boolean getInJail() {
-        return true;
+        return this.inJail;
     }
 
     public void setInJail(boolean inJail) {
-
+        this.inJail = inJail;
     }
 
 }
