@@ -15,10 +15,6 @@ public class DataWriter extends DataConstants {
     public static void DataUpdate() {
         saveUsers();
         saveCrimes();
-        saveCriminal();
-        saveEvidence();
-        savePOI();
-        saveWitness();
     }
 
     public static void saveUsers() {
@@ -49,23 +45,27 @@ public class DataWriter extends DataConstants {
         return jsonObject;
     }
 
-    /*
-     * public static void saveUsers(ArrayList<User> Users) { JSONArray jsonUsers =
-     * new JSONArray(); for(int i=0; i < Users.size(); i++) { User user =
-     * Users.get(i); JSONObject jsonObject = new JSONObject();
-     * jsonObject.put(USER_UUID, user.getUUID()); jsonObject.put(USER_USERNAME,
-     * user.getUsername()); jsonObject.put(USER_PASSWORD, user.getPassword());
-     * jsonObject.put(USER_NAME, user.getName()); jsonObject.put(USER_POSITION,
-     * user.getPosition()); jsonObject.put(USER_ADMIN, user.getAdmin());
-     * 
-     * try { FileWriter file = new FileWriter("JSON\\User.JSON");
-     * file.write(jsonObject.toJSONString()); file.close(); } catch(IOException e) {
-     * e.printStackTrace(); }
-     * 
-     * } }
-     */
     public static void saveCrimes() {
+        CrimeDatabase crimes = CrimeDatabase.getInstance();
+        ArrayList<Crime> crimeList = crimes.getDatabase();
+        JSONArray jsonCrimes = new JSONArray();
+        for (int i = 0; i < crimeList.size(); i++) {
+            jsonCrimes.add(getCrimeJSON(crimeList.get(i)));
+        }
 
+        try (FileWriter file = new FileWriter(CRIME_FILE_NAME)) {
+            file.write(jsonCrimes.toJSONString());
+            file.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static JSONObject getCrimeJSON(Crime crime) {
+        JSONObject jsonObject = new JSONObject();
+        //TODO Create Objects and call Criminals
+
+        return jsonObject;
     }
 
     public static void saveCriminal() {
