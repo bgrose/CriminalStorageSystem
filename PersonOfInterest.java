@@ -16,19 +16,37 @@ public class PersonOfInterest extends Person {
     private String nationality;
     private double weight;
     private int height;
-    private String acquiantance;
+    private String acquaintance;
     private int age;
     private boolean glasses;
     private String disability;
     private String handness;
     private String statement;
 
-    public PersonOfInterest(String name, ArrayList<Crime> crimeList, boolean livingStatus) {
+    public PersonOfInterest(String name, ArrayList<Crime> crimeList, boolean livingStatus, String alias, String accomplice, String
+    hairColor, String eyeColor, String tatoo, String skinColor, String nationality, double weight, int height, String acquaintance,
+    int age, boolean glasses, String disability, String handness, String statement) {
         super(name, crimeList, livingStatus);
+        this.alias = alias;
+        this.accomplice = accomplice;
+        this.hairColor = hairColor;
+        this.eyeColor = eyeColor;
+        this.tatoo = tatoo;
+        this.skinColor = skinColor;
+        this.nationality = nationality;
+        this.weight = weight;
+        this.height = height;
+        this. acquaintance = acquaintance;
+        this.age = age;
+        this.glasses = glasses;
+        this.disability = disability;
+        this.handness = handness;
+        this.statement = statement;
     }
 
     public String toString() {
-        return "Alias: " + this.alias + 
+        return super.toString() +
+        "\nAlias: " + this.alias + 
         "\nAccomplice: " + this.accomplice + 
         "\nHair Color: " + this.hairColor +
         "\nEye Color: " + this.eyeColor + 
@@ -37,7 +55,7 @@ public class PersonOfInterest extends Person {
         "\nNationality: " + this.nationality + 
         "\nWeight: " + this.weight + 
         "\nHeight: " + this.height + 
-        "\nAcquaintance: " + this.acquiantance + 
+        "\nAcquaintance: " + this.acquaintance + 
         "\nAge: " + this.age + 
         "\nGlasses: " + this.glasses + 
         "\nDisability: " + this.disability + 
@@ -118,11 +136,11 @@ public class PersonOfInterest extends Person {
     }
 
     public String getAccquaintance() {
-        return this.acquiantance;
+        return this.acquaintance;
     }
 
     public void setAccquaintance(String acquaintance) {
-        this.acquiantance = acquaintance;
+        this.acquaintance = acquaintance;
     }
 
     public int getAge() {

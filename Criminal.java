@@ -16,7 +16,7 @@ public class Criminal extends Person{
     private String nationality;
     private double weight;
     private int height;
-    private String acquiantance;
+    private String acquaintance;
     private int age;
     private boolean glasses;
     private String punishment;
@@ -26,21 +26,42 @@ public class Criminal extends Person{
     private User arrestingOfficer;
     private boolean inJail;
 
-    public Criminal(String name, ArrayList<Crime> crimeList, boolean livingStatus) {
+    public Criminal(String name, ArrayList<Crime> crimeList, boolean livingStatus, String alias, String accomplice, String
+    hairColor, String eyeColor, String tatoo, String skinColor, String nationality, double weight, int height, String acquaintance,
+    int age, boolean glasses, String punishment, String disability, String handness, String crimeType, User arrestingOfficer, boolean inJail) {
         super(name, crimeList, livingStatus);
+        this.alias = alias;
+        this.accomplice = accomplice;
+        this.hairColor = hairColor;
+        this.eyeColor = eyeColor;
+        this.tatoo = tatoo;
+        this.skinColor = skinColor;
+        this.nationality = nationality;
+        this.weight = weight;
+        this.height = height;
+        this. acquaintance = acquaintance;
+        this.age = age;
+        this.glasses = glasses;
+        this.punishment = punishment;
+        this.disability = disability;
+        this.handness = handness;
+        this.crimeType = crimeType;
+        this.arrestingOfficer = arrestingOfficer;
+        this.inJail = inJail;
     }
 
     public String toString() {
-        return "Alias: " + this.alias + 
+        return super.toString() +
+        "\nAlias: " + this.alias + 
         "\nAccomplice: " + this.accomplice + 
         "\nHair Color: " + this.hairColor +
         "\nEye Color: " + this.eyeColor + 
         "\nTatoo: " + this.tatoo + 
-        "\nSkin Color: " + accomplice + 
+        "\nSkin Color: " + skinColor + 
         "\nNationality: " + this.nationality + 
         "\nWeight: " + this.weight + 
         "\nHeight: " + this.height + 
-        "\nAcquaintance: " + this.acquiantance + 
+        "\nAcquaintance: " + this.acquaintance + 
         "\nAge: " + this.age + 
         "\nGlasses: " + this.glasses + 
         "\nPunishment: " + this.punishment + 
@@ -124,11 +145,11 @@ public class Criminal extends Person{
     }
 
     public String getAccquaintance() {
-        return this.acquiantance;
+        return this.acquaintance;
     }
 
     public void setAccquaintance(String accquaintance) {
-        this.acquiantance = accquaintance;
+        this.acquaintance = accquaintance;
     }
 
     public int getAge() {

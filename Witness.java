@@ -9,12 +9,13 @@ public class Witness extends Person {
 
     private String statement;
 
-    public Witness(String name, ArrayList<Crime> crimeList, boolean livingStatus) {
+    public Witness(String name, ArrayList<Crime> crimeList, boolean livingStatus, String statement) {
         super(name, crimeList, livingStatus );
+        this.statement = statement;
     }
 
     public String toString() {
-        return "Name: " + this.getName() +
+        return super.toString() +
         "\nStatement: " + this.statement;
     }
 
