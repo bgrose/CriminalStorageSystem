@@ -45,7 +45,7 @@ public class Criminal extends Person{
         this.nationality = nationality;
         this.weight = weight;
         this.height = height;
-        this. acquaintance = acquaintance;
+        this.acquaintance = acquaintance;
         this.age = age;
         this.glasses = glasses;
         this.punishment = punishment;
