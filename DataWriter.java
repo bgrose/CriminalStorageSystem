@@ -60,12 +60,47 @@ public class DataWriter extends DataConstants {
         CrimeDatabase crimes = CrimeDatabase.getInstance();
         ArrayList<Crime> crimeList = crimes.getDatabase();
         JSONArray jsonCrimes = new JSONArray();
+
+        // Create Sub JSON
+        JSONArray jsonPOI = new JSONArray();
+        JSONArray jsonWitness = new JSONArray();
+        JSONArray jsonCriminal = new JSONArray();
+        JSONArray jsonEvidence = new JSONArray();
+
         for (int i = 0; i < crimeList.size(); i++) {
-            jsonCrimes.add(getCrimeJSON(crimeList.get(i)));
+            jsonCrimes.add(getCrimeJSON(crimeList.get(i), jsonPOI, jsonCriminal, jsonEvidence, jsonWitness));
         }
 
         try (FileWriter file = new FileWriter(CRIME_FILE_NAME, false)) {
             file.write(jsonCrimes.toJSONString());
+            file.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try (FileWriter file = new FileWriter(WITNESS_FILE_NAME, false)) {
+            file.write(jsonWitness.toJSONString());
+            file.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try (FileWriter file = new FileWriter(POI_FILE_NAME, false)) {
+            file.write(jsonPOI.toJSONString());
+            file.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try (FileWriter file = new FileWriter(CRIMINAL_FILE_NAME, false)) {
+            file.write(jsonCriminal.toJSONString());
+            file.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try (FileWriter file = new FileWriter(EVIDENCE_FILE_NAME, false)) {
+            file.write(jsonEvidence.toJSONString());
             file.flush();
         } catch (IOException e) {
             e.printStackTrace();
@@ -77,22 +112,15 @@ public class DataWriter extends DataConstants {
      * @param crime
      * @return
      */
-    public static JSONObject getCrimeJSON(Crime crime) {
+    public static JSONObject getCrimeJSON(Crime crime, JSONArray POI, JSONArray Criminal, JSONArray Evidence,
+            JSONArray Witness) {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put(CRIME_DATE, crime.getDate());
         jsonObject.put(CRIME_DESCRIPTION, crime.getDescription());
-        jsonObject.put(CRIME_EVIDENCE_LIST, saveEvidence(crime));
+        jsonObject.put(CRIME_EVIDENCE_LIST, saveEvidence(crime, Evidence));
         jsonObject.put(CRIME_NAME, crime.getName());
         jsonObject.put(CRIME_OFFICERLIST, saveOfficers(crime));
-
-        // Person List
-        JSONArray jsonUUIDPerson = new JSONArray();
-        ArrayList<Person> persons = crime.getAnyonePersonList();
-        for (int i = 0; i < persons.size(); i++) {
-            Person person = persons.get(i);
-            jsonUUIDPerson.add(person.getUUID());
-        }
-        jsonObject.put(CRIME_PERSONLIST, jsonUUIDPerson);
+        jsonObject.put(CRIME_PERSONLIST, savePersons(crime, POI, Criminal, Witness));
         jsonObject.put(CRIME_SOLVED, crime.getSolved());
         jsonObject.put(CRIME_UUID, crime.getUUID());
 
@@ -104,44 +132,65 @@ public class DataWriter extends DataConstants {
      * @param crime
      * @return
      */
-    public static JSONArray saveEvidence(Crime crime) {
+    public static JSONArray saveEvidence(Crime crime, JSONArray Evidence) {
         JSONArray jsonUUIDEvidence = new JSONArray();
         ArrayList<Evidence> evidenceList = crime.getEvidenceList();
         for (int i = 0; i < evidenceList.size(); i++) {
             Evidence evidence = evidenceList.get(i);
             jsonUUIDEvidence.add(evidence.getUUID());
-        }
 
-        // TODO Create Evidence JSON
+            //Make Evidence JSON
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put(EVIDENCE_NAME, evidence.getName());
+            jsonObject.put(EVIDENCE_UUID, evidence.getUUID());
+            jsonObject.put(EVIDENCE_DESCRIPTION, evidence.getDescription());
+            Evidence.add(jsonObject);
+        }
 
         return jsonUUIDEvidence;
     }
 
-    /**
-     * 
-     * @param crime
-     * @return
-     */
-    public static JSONArray savePOI(Crime crime) {
-        return null;
+    public static JSONArray savePersons(Crime crime, JSONArray POI, JSONArray Criminal, JSONArray Witness) {
+        JSONArray jsonUUIDPerson = new JSONArray();
+        ArrayList<Person> persons = crime.getAnyonePersonList();
+        for (int i = 0; i < persons.size(); i++) {
+            Person person = persons.get(i);
+            jsonUUIDPerson.add(person.getUUID());
+            if (person.isCriminal())
+                saveCriminal(crime, Criminal);
+            else if (person.isPOI())
+                savePOI(crime, POI);
+            else if (person.isWitness())
+                saveWitness(crime, Witness);
+        }
+        return jsonUUIDPerson;
     }
 
     /**
      * 
      * @param crime
-     * @return
+     * @param POIArray
      */
-    public static JSONArray saveWitness(Crime crime) {
-        return null;
+    public static void savePOI(Crime crime, JSONArray POIArray) {
+
     }
 
     /**
      * 
      * @param crime
-     * @return
+     * @param WitnessArray
      */
-    public static JSONArray saveCriminal(Crime crime) {
-        return null;
+    public static void saveWitness(Crime crime, JSONArray WitnessArray) {
+
+    }
+
+    /**
+     * 
+     * @param crime
+     * @param CriminalArray
+     */
+    public static void saveCriminal(Crime crime, JSONArray CriminalArray) {
+
     }
 
     /**

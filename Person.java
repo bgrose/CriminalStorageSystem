@@ -9,11 +9,13 @@ public class Person {
     private String name;
     private ArrayList<Crime> crimeList;
     private boolean livingStatus;
+    private String UUID;
 
-    public Person(String name, ArrayList<Crime> crimeList, boolean livingStatus) {
+    public Person(String name, ArrayList<Crime> crimeList, boolean livingStatus, String _UUID) {
         this.name = name;
         this.crimeList = crimeList;
         this.livingStatus = livingStatus;
+        this.UUID = _UUID;
     }
 
     public String getName() {
@@ -41,6 +43,19 @@ public class Person {
     }
 
     public String getUUID(){
-        return "";
+        return this.UUID;
     }
+
+    public boolean isWitness() {
+        return true;
+    }
+
+    public boolean isPOI() {
+        return true;
+    }
+
+    public boolean isCriminal() {
+        return true;
+    }
+
 }

@@ -9,8 +9,8 @@ public class Witness extends Person {
 
     private String statement;
 
-    public Witness(String name, ArrayList<Crime> crimeList, boolean livingStatus, String statement) {
-        super(name, crimeList, livingStatus );
+    public Witness(String name, ArrayList<Crime> crimeList, boolean livingStatus, String statement, String UUID) {
+        super(name, crimeList, livingStatus, UUID);
         this.statement = statement;
     }
 

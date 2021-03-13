@@ -25,8 +25,8 @@ public class PersonOfInterest extends Person {
 
     public PersonOfInterest(String name, ArrayList<Crime> crimeList, boolean livingStatus, String alias, String accomplice, String
     hairColor, String eyeColor, String tatoo, String skinColor, String nationality, double weight, int height, String acquaintance,
-    int age, boolean glasses, String disability, String handness, String statement) {
-        super(name, crimeList, livingStatus);
+    int age, boolean glasses, String disability, String handness, String statement, String UUID) {
+        super(name, crimeList, livingStatus, UUID);
         this.alias = alias;
         this.accomplice = accomplice;
         this.hairColor = hairColor;
@@ -182,4 +182,5 @@ public class PersonOfInterest extends Person {
     public void setStatement(String statement) {
         this.statement = statement;
     }
+    
 }

@@ -8,6 +8,8 @@ public class DataConstants {
     protected static final String CRIME_PERSONLIST = "Related People";
     protected static final String CRIME_SOLVED = "Solved";
     protected static final String CRIME_UUID = "UUID";
+    protected static final String CRIME_FILE_NAME = "JSON/Crime.JSON";
+
 
     //Criminal
     protected static final String CRIMINAL_ACCOMPLACE = "Accomplaces";
@@ -32,12 +34,13 @@ public class DataConstants {
     protected static final String CRIMINAL_TATTOO = "Tattoo";
     protected static final String CRIMINAL_UUID = "UUID";
     protected static final String CRIMINAL_WEIGHT = "Weight";
-    protected static final String CRIME_FILE_NAME = "JSON/User.JSON";
+    protected static final String CRIMINAL_FILE_NAME = "JSON/Criminal.JSON";
 
     //Evidence
     protected static final String EVIDENCE_DESCRIPTION = "Description";
     protected static final String EVIDENCE_NAME = "Name";
     protected static final String EVIDENCE_UUID = "UUID";    
+    protected static final String EVIDENCE_FILE_NAME = "JSON/Evidence.JSON";
 
     //Person Of Interest
     protected static final String POI_ACCOMPLACE = "Accomplices";
@@ -58,6 +61,7 @@ public class DataConstants {
     protected static final String POI_TATTOO = "Tattoo";
     protected static final String POI_UUID = "UUID";
     protected static final String POI_WEIGHT = "Weight";
+    protected static final String POI_FILE_NAME = "JSON/PersonOfInterest.JSON";
 
     //User
     protected static final String USER_ADMIN = "Admin";
@@ -74,5 +78,5 @@ public class DataConstants {
     protected static final String WITNESS_NAME = "Name";
     protected static final String WITNESS_STATEMENT = "Statement";
     protected static final String WITNESS_UUID = "UUID";
-
+    protected static final String WITNESS_FILE_NAME = "JSON/Witness.JSON";
 }
