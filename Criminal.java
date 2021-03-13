@@ -83,7 +83,7 @@ public class Criminal extends Person{
 
     /**
      * Method that gets the criminal's alias
-     * @return String skinColor
+     * @return String alias
      */
     public String getAlias() {
         return this.alias;
