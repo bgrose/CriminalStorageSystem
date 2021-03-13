@@ -6,7 +6,6 @@
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import org.json.simple.JSONArray;
@@ -18,6 +17,9 @@ public class DataWriter extends DataConstants {
         saveCrimes();
     }
 
+    /**
+     * 
+     */
     public static void saveUsers() {
         UserDatabase users = UserDatabase.getInstance();
         ArrayList<User> userList = users.getDatabase();
@@ -34,6 +36,11 @@ public class DataWriter extends DataConstants {
         }
     }
 
+    /**
+     * 
+     * @param user
+     * @return
+     */
     public static JSONObject getUserJSON(User user) {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put(USER_UUID, user.getUUID());
@@ -46,6 +53,9 @@ public class DataWriter extends DataConstants {
         return jsonObject;
     }
 
+    /**
+     * 
+     */
     public static void saveCrimes() {
         CrimeDatabase crimes = CrimeDatabase.getInstance();
         ArrayList<Crime> crimeList = crimes.getDatabase();
@@ -62,62 +72,91 @@ public class DataWriter extends DataConstants {
         }
     }
 
+    /**
+     * 
+     * @param crime
+     * @return
+     */
     public static JSONObject getCrimeJSON(Crime crime) {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put(CRIME_DATE, crime.getDate());
         jsonObject.put(CRIME_DESCRIPTION, crime.getDescription());
-        
-        //Evidence List
-        JSONArray jsonUUIDEvidence = new JSONArray();
-        ArrayList<Evidence> evidenceList = crime.getEvidenceList();
-        for(int i=0; i<evidenceList.size(); i++)
-        {
-            Evidence evidence = evidenceList.get(i);
-            jsonUUIDEvidence.add(evidence.getUUID());
-        }
-        jsonObject.put(CRIME_EVIDENCE_LIST, jsonUUIDEvidence);
-
+        jsonObject.put(CRIME_EVIDENCE_LIST, saveEvidence(crime));
         jsonObject.put(CRIME_NAME, crime.getName());
+        jsonObject.put(CRIME_OFFICERLIST, saveOfficers(crime));
 
-        //Officer List
-        JSONArray jsonUUIDOfficer = new JSONArray();
-        ArrayList<User> officers = crime.getOfficers();
-        for(int i=0; i<officers.size(); i++)
-        {
-            User officer = officers.get(i);
-            jsonUUIDEvidence.add(officer.getUUID());
+        // Person List
+        JSONArray jsonUUIDPerson = new JSONArray();
+        ArrayList<Person> persons = crime.getAnyonePersonList();
+        for (int i = 0; i < persons.size(); i++) {
+            Person person = persons.get(i);
+            jsonUUIDPerson.add(person.getUUID());
         }
-        jsonObject.put(CRIME_OFFICERLIST, jsonUUIDOfficer);
+        jsonObject.put(CRIME_PERSONLIST, jsonUUIDPerson);
+        jsonObject.put(CRIME_SOLVED, crime.getSolved());
+        jsonObject.put(CRIME_UUID, crime.getUUID());
 
-          //Person List
-          JSONArray jsonUUIDPerson = new JSONArray();
-          ArrayList<Person> persons = crime.getAnyonePersonList();
-          for(int i=0; i<persons.size(); i++)
-          {
-              Person person  = persons.get(i);
-              jsonUUIDEvidence.add(person.getUUID());
-          }
-          jsonObject.put(CRIME_PERSONLIST, jsonUUIDPerson);
-          jsonObject.put(CRIME_SOLVED, crime.getSolved());
-          jsonObject.put(CRIME_UUID, crime.getUUID());
-        
         return jsonObject;
     }
 
-    public static void saveCriminal() {
-        
+    /**
+     * 
+     * @param crime
+     * @return
+     */
+    public static JSONArray saveEvidence(Crime crime) {
+        JSONArray jsonUUIDEvidence = new JSONArray();
+        ArrayList<Evidence> evidenceList = crime.getEvidenceList();
+        for (int i = 0; i < evidenceList.size(); i++) {
+            Evidence evidence = evidenceList.get(i);
+            jsonUUIDEvidence.add(evidence.getUUID());
+        }
+
+        // TODO Create Evidence JSON
+
+        return jsonUUIDEvidence;
     }
 
-    public static void saveEvidence() {
-
+    /**
+     * 
+     * @param crime
+     * @return
+     */
+    public static JSONArray savePOI(Crime crime) {
+        return null;
     }
 
-    public static void savePOI() {
-
+    /**
+     * 
+     * @param crime
+     * @return
+     */
+    public static JSONArray saveWitness(Crime crime) {
+        return null;
     }
 
-    public static void saveWitness() {
+    /**
+     * 
+     * @param crime
+     * @return
+     */
+    public static JSONArray saveCriminal(Crime crime) {
+        return null;
+    }
 
+    /**
+     * 
+     * @param crime
+     * @return
+     */
+    public static JSONArray saveOfficers(Crime crime) {
+        JSONArray jsonUUIDOfficer = new JSONArray();
+        ArrayList<User> officers = crime.getOfficers();
+        for (int i = 0; i < officers.size(); i++) {
+            User officer = officers.get(i);
+            jsonUUIDOfficer.add(officer.getUUID());
+        }
+        return jsonUUIDOfficer;
     }
 
 }
