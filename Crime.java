@@ -10,10 +10,12 @@ public class Crime {
 
     private ArrayList<Evidence> evidenceList;
     private ArrayList<Person> anyonePersonList;
+    private ArrayList <User> officers;
     private String description;
     private String name;
     private Boolean solved;
-    private int date;
+    private String date;
+    private String UUID;
 
     /**
      * Constructor method that sets up the Crime
@@ -65,9 +67,9 @@ public class Crime {
 
     /**
      * Method that sets the date of the Crime
-     * @param date Int date of the Crime
+     * @param date String date of the Crime
      */
-    public void setDate(int date){
+    public void setDate(String date){
 
     }
 
@@ -107,8 +109,8 @@ public class Crime {
      * Method that gets the date the Crime was comitted
      * @return int date
      */
-    public int getDate() {
-        return date;
+    public String getDate() {
+        return this.date;
     }
 
     /**
@@ -156,5 +158,13 @@ public class Crime {
      */
     public String toString() {
         return "";
+    }
+
+    public ArrayList<User> getOfficers() {
+        return this.officers;
+    }
+
+    public String getUUID() {
+        return this.UUID;
     }
 }

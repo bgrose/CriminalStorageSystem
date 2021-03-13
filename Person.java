@@ -39,4 +39,8 @@ public class Person {
     public void setLivingStatus(boolean livingStatus) {
         this.livingStatus = livingStatus;
     }
+
+    public String getUUID(){
+        return "";
+    }
 }
