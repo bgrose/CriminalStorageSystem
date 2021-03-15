@@ -71,7 +71,7 @@ public class Person {
      * @return person's UUID
      */
     public String getUUID(){
-        return "";
+        return this.UUID;
     }
 
     /**
