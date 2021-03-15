@@ -66,7 +66,7 @@ public class User {
      * @return String username
      */
     public String getUsername() {
-        return username;
+        return this.username;
     }
 
     /**
@@ -74,7 +74,7 @@ public class User {
      * @return String password
      */
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
     /**
@@ -82,7 +82,7 @@ public class User {
      * @return String name
      */
     public String getName() {
-        return name;
+        return this.name;
     }
 
     /**
@@ -90,7 +90,7 @@ public class User {
      * @return String position
      */
     public String getPosition() {
-        return position;
+        return this.position;
     }
 
     /**

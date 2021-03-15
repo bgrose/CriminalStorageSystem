@@ -7,15 +7,9 @@ import java.util.*;
 
 public class CrimeDatabase {
 
-    ArrayList<Crime> crimeDatabase;
+    private static CrimeDatabase crimeDatabase;
+    ArrayList<Crime> crimeList;
 
-    /**
-     * Constructor method that sets up the CrimeDatabase
-     * @param crimeList
-     */
-    public void CrimeDatabase(ArrayList<Crime> crimeList) {
-
-    }
 
     /**
      * Method that returns a Crime from crimeDatabase
@@ -53,5 +47,22 @@ public class CrimeDatabase {
     public void printDatabase() {
 
     }
+
+    public static CrimeDatabase getInstance()
+    {
+        if(crimeDatabase == null) crimeDatabase = new CrimeDatabase();
+        return crimeDatabase;
+    }
+
+    private CrimeDatabase()
+    {
+        crimeList = DataLoader.getCrimes();
+    }
+
+    public ArrayList<Crime> getDatabase()
+    {
+        return crimeList;
+    }
+    
 
 }

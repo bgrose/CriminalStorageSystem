@@ -6,6 +6,7 @@ public class Evidence {
 
     private String name;
     private String description;
+    private String UUID;
 
     /**
      * Constructor method that creates the Evidence
@@ -52,6 +53,10 @@ public class Evidence {
      */
     public String toString() {
         return "";
+    }
+
+    public String getUUID() {
+        return this.UUID;
     }
 
 }

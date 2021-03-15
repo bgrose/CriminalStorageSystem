@@ -7,11 +7,11 @@ import org.json.simple.JSONArray;
  */
 public class DataLoader extends DataConstants{
     
-    public ArrayList<Crime> getCrimes() {
+    public static ArrayList<Crime> getCrimes() {
         return new ArrayList<Crime>();
     }
 
-    public ArrayList<User> getUsers() {
+    public static ArrayList<User> getUsers() {
         return new ArrayList<User>();
     }
     
