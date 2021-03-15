@@ -2,7 +2,8 @@
  * @description
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
-public class Evidence {
+public class Evidence 
+{
 
     private String name;
     private String description;
@@ -11,31 +12,37 @@ public class Evidence {
     /**
      * Constructor method that creates the Evidence
      */
-    public void Evidence() {
-
+    public Evidence(String name, String description, String UUID) 
+    {
+        this.name = name;
+        this.description = description;
+        this.UUID = UUID;
     }
 
     /**
      * Method that sets the name
      * @param name String name of the Evidence
      */
-    public void setName(String name) {
-
+    public void setName(String name) 
+    {
+        this.name = name;
     }
 
     /**
      * Method that sets the description
      * @param description String description of the Evidence
      */
-    public void setDescription(String description) {
-
+    public void setDescription(String description) 
+    {
+        this.description = description;
     }
 
     /**
      * Method that gets the name
      * @return String name of the Evidence
      */
-    public String getName() {
+    public String getName() 
+    {
         return name;
     }
 
@@ -43,7 +50,8 @@ public class Evidence {
      * Method that gets the description
      * @return String description of the Evidence
      */
-    public String getDescription() {
+    public String getDescription() 
+    {
         return description;
     }
 
@@ -51,11 +59,13 @@ public class Evidence {
      * Method that returns the details of the Evidence
      * @return String with the details of the Evidence
      */
-    public String toString() {
+    public String toString() 
+    {
         return "";
     }
 
-    public String getUUID() {
+    public String getUUID() 
+    {
         return this.UUID;
     }
 
