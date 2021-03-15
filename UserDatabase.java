@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class UserDatabase
 {
     
-    private ArrayList<User> database;
+    private static ArrayList<User> database;
 
     /**
      * Method that gets the User
@@ -77,9 +77,9 @@ public class UserDatabase
      * Method that gets the User
      * @return userDatabase to the user Database
      */ 
-    public static UserDatabase getInstance()
+    public static ArrayList<User> getInstance()
     {
-        if(userDatabase == null) userDatabase = new UserDatabase();
-        return userDatabase;
+        if(database == null) database = new ArrayList<User>();
+        return database;
     }
 }
