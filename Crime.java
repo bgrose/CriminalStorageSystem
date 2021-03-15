@@ -14,23 +14,32 @@ public class Crime {
     private String description;
     private String name;
     private Boolean solved;
-    private String date;
+    private int date;
+    private String evidenceListReturn; // Used in toString
+    private String anyonePersonListReturn; // Used in toString
     private String UUID;
 
     /**
      * Constructor method that sets up the Crime
-     * @param str
+     * @param ArrayList<Evidence> evidenceList, ArrayList<Person> anyonePersonList, String description,
+            String name, Boolean solved, int date
      */
-    public void Crime() {
-
+    public void Crime(ArrayList<Evidence> evidenceList, ArrayList<Person> anyonePersonList, String description,
+            String name, Boolean solved, int date) {
+        this.evidenceList = evidenceList;
+        this.anyonePersonList = anyonePersonList;
+        this.description = description;
+        this.name = name;
+        this.solved = solved;
+        this.date = date;
     }
 
     /**
      * Method that sets the evidence list of the Crime
-     * @param evidenceList ArrayList<evidence>  of the evidence of the Crime
+     * @param evidenceList ArrayList<evidence> of the evidence of the Crime
      */
     public void setEvidenceList(ArrayList<Evidence> evidenceList) {
-
+        this.evidenceList = evidenceList;
     }
 
     /**
@@ -38,7 +47,7 @@ public class Crime {
      * @param anyonePersonList ArrayList<Person> of the people of the Crime
      */
     public void setAnyonePersonList(ArrayList<Person> anyonePersonList) {
-
+        this.anyonePersonList = anyonePersonList;
     }
 
     /**
@@ -46,7 +55,7 @@ public class Crime {
      * @param description String description of the Crime
      */
     public void setDescription(String description) {
-
+        this.description = description;
     }
 
     /**
@@ -54,30 +63,38 @@ public class Crime {
      * @param name String name of the Crime
      */
     public void setName(String name) {
-
+        this.name = name;
     }
 
     /**
      * Method that sets the solved Boolean of the Crime
      * @param solved Boolean that shows if the Crime is solved or not
      */
-    public void setSolved(Boolean solved){
-
+    public void setSolved(Boolean solved) {
+        this.solved = solved;
     }
 
     /**
      * Method that sets the date of the Crime
      * @param date String date of the Crime
      */
-    public void setDate(String date){
-
+    public void setDate(int date) {
+        this.date = date;
     }
 
-    public ArrayList<Evidence> getEvidenceList(){
+    /**
+     * Method that gets the evidence list
+     * @return ArrayList of the crime evidence
+     */
+    public ArrayList<Evidence> getEvidenceList() {
         return evidenceList;
     }
 
-    public ArrayList<Person> getAnyonePersonList(){
+    /**
+     * Method that gets the people involved list
+     * @return ArrayList of people involved in the crime
+     */
+    public ArrayList<Person> getAnyonePersonList() {
         return anyonePersonList;
     }
 
@@ -109,16 +126,8 @@ public class Crime {
      * Method that gets the date the Crime was comitted
      * @return int date
      */
-    public String getDate() {
+    public int getDate() {
         return this.date;
-    }
-
-    /**
-     * Method that mofidy's if the Crime has been solved
-     * @param solved Boolean that states if the Crime has been solved
-     */
-    public void motifySolved(boolean solved) {
-
     }
 
     /**
@@ -126,7 +135,7 @@ public class Crime {
      * @param evidence Evidence to be added from the crime
      */
     public void addEvidence(Evidence evidence) {
-
+        evidenceList.add(evidence);
     }
 
     /**
@@ -134,7 +143,7 @@ public class Crime {
      * @param evidence Evidence to be removed from the crime
      */
     public void removeEvidence(Evidence evidence) {
-
+        evidenceList.remove(evidence);
     }
 
     /**
@@ -142,7 +151,7 @@ public class Crime {
      * @param person Person that is added to the Crime
      */
     public void addPerson(Person person) {
-
+        anyonePersonList.add(person);
     }
 
     /**
@@ -150,14 +159,21 @@ public class Crime {
      * @param person Person that is removed from the Crime
      */
     public void removePerson(Person person) {
-
+        anyonePersonList.remove(person);
     }
 
     /**
      * Method that prints out the details of the Crime class
      */
     public String toString() {
-        return "";
+        for (Evidence evidence : evidenceList) {
+            evidenceListReturn += evidence;
+        }
+        for (Person person : anyonePersonList) {
+            anyonePersonListReturn += person;
+        }
+        return "Name: " + name + "Description: " + description + "Solved: " + solved + "Date: " + date
+                + "Evidence List: " + evidenceListReturn + "People Involved List" + anyonePersonListReturn;
     }
 
     public ArrayList<User> getOfficers() {
@@ -168,3 +184,4 @@ public class Crime {
         return this.UUID;
     }
 }
+
