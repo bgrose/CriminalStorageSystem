@@ -21,8 +21,7 @@ public class DataWriter extends DataConstants {
      * 
      */
     public static void saveUsers() {
-        UserDatabase users = UserDatabase.getInstance();
-        ArrayList<User> userList = users.getDatabase();
+        ArrayList<User> userList = UserDatabase.getInstance();
         JSONArray jsonUsers = new JSONArray();
         for (int i = 0; i < userList.size(); i++) {
             jsonUsers.add(getUserJSON(userList.get(i)));
