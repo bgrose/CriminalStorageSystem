@@ -8,14 +8,17 @@ public class User {
     private String password;
     private String name;
     private String position;
-    private boolean admin;
-    private String UUID;
+    private Boolean admin;
 
     /**
      * Constructor method that sets up User
      */
-    public User() {
-
+    public User(String username, String password, String name, String position, Boolean admin) {
+        this.username = username;
+        this.password = password;
+        this.name = name;
+        this.position = position;
+        this.admin = admin;
     }
 
     /**
@@ -23,7 +26,7 @@ public class User {
      * @param username String username of User
      */
     public void setUsername(String username) {
-
+        this.username = username;
     }
 
     /**
@@ -31,7 +34,7 @@ public class User {
      * @param password String password of User
      */
     public void setPassword(String password) {
-
+        this.password = password;
     }
 
     /**
@@ -39,7 +42,7 @@ public class User {
      * @param name String name of User
      */
     public void setName(String name) {
-
+        this.name = name;
     }
 
     /**
@@ -47,15 +50,15 @@ public class User {
      * @param position String position of User
      */
     public void setPosition(String position) {
-
+        this.position = position;
     }
 
     /**
      * Method that sets the admin status
      * @param admin String admin status of User
      */
-    public void setAdmin(String admin) {
-
+    public void setAdmin(Boolean admin) {
+        this.admin = admin;
     }
 
     /**
@@ -94,12 +97,8 @@ public class User {
      * Method that returns the admin status
      * @return String admin status
      */
-    public boolean getAdmin() {
-        return this.admin;
-    }
-
-    public String getUUID() {
-        return this.UUID;
+    public Boolean getAdmin() {
+        return admin;
     }
 
     /**
@@ -115,7 +114,7 @@ public class User {
      * @return Boolean of admin status
      */
     public Boolean isAdmin() {
-        return true;
+        return admin;
     }
 
     /**
