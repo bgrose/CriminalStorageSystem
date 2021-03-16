@@ -16,8 +16,7 @@ public class CrimeDatabase {
      * @return Crime from CrimeDatabase
      */
     public Crime getCrime() {
-        Crime crime = new Crime();
-        return crime;
+        return null;
     }
 
     /**

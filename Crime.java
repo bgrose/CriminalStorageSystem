@@ -21,17 +21,20 @@ public class Crime {
 
     /**
      * Constructor method that sets up the Crime
-     * @param ArrayList<Evidence> evidenceList, ArrayList<Person> anyonePersonList, String description,
+     * @param ArrayList<Evidence> 
+     *  @param ArrayList<Person> 
+     *  @param String description,
             String name, Boolean solved, int date
      */
-    public void Crime(ArrayList<Evidence> evidenceList, ArrayList<Person> anyonePersonList, String description,
-            String name, Boolean solved, int date) {
+    public Crime(ArrayList<Evidence> evidenceList, ArrayList<Person> anyonePersonList, String description,
+            String name, Boolean solved, int date, String _UUID) {
         this.evidenceList = evidenceList;
         this.anyonePersonList = anyonePersonList;
         this.description = description;
         this.name = name;
         this.solved = solved;
         this.date = date;
+        this.UUID = _UUID;
     }
 
     /**

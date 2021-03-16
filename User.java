@@ -9,16 +9,18 @@ public class User {
     private String name;
     private String position;
     private Boolean admin;
+    private String UUID;
 
     /**
      * Constructor method that sets up User
      */
-    public User(String username, String password, String name, String position, Boolean admin) {
+    public User(String username, String password, String name, String position, Boolean admin, String UUID) {
         this.username = username;
         this.password = password;
         this.name = name;
         this.position = position;
         this.admin = admin;
+        this.UUID = UUID;
     }
 
     /**
@@ -131,6 +133,15 @@ public class User {
      */
     public void modifyUser(User user) {
 
+    }
+
+    public void setUUID(String UUID) {
+
+    }
+
+    public String getUUID()
+    {
+        return this.UUID;
     }
 
 }
