@@ -79,7 +79,7 @@ public class Person {
      * @return true if there is a witness
      */
     public boolean isWitness() {
-        return true;
+        return this instanceof Witness;
     }
 
         /**
@@ -87,7 +87,7 @@ public class Person {
      * @return true if there is a POI
      */
     public boolean isPOI() {
-        return true;
+        return this instanceof PersonOfInterest;
     }
 
     /**
@@ -95,6 +95,6 @@ public class Person {
      * @return true if there is a criminal
      */
     public boolean isCriminal() {
-        return true;
+        return this instanceof Criminal;
     }
 }
