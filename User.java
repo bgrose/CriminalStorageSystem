@@ -1,5 +1,5 @@
 /**
- * @description
+ * @description creates the User class
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
 public class User {
