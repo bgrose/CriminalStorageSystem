@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class CrimeUI {
 
     private static final String WELCOME_MSG = "Welcome to the Criminal Storage System!: Please login";
-    private String[] mainMenuOptions = {"Add Crime", "Search Crime", "Modify Crime", "Print Crimes", "Search Criminal", "Modify Criminal", "Print Criminals", "Logout"} ;
+    private String[] menuOptions = {"Add Crime", "Search Crime", "Modify Crime", "Print Crimes", "Search Criminal", "Modify Criminal", "Print Criminals", "Logout"} ;
     private Scanner scanner;
     private Facade crimeFacade;
 
@@ -28,14 +28,15 @@ public class CrimeUI {
         while(true) {
             displayMenu();
 
-            int command = getCommand(mainMenuOptions.length);
+            int command = getCommand(menuOptions.length);
 
             if(command == -1) {
 				System.out.println("Not a valid option");
 				continue;
             }
             
-            if(command == mainMenuOptions.length -1) {
+            if(command == menuOptions.length -1) {
+                crimeFacade.logout();
 				break;
             }
 
@@ -89,8 +90,8 @@ public class CrimeUI {
     private void displayMenu() 
     {
         System.out.println("\n************ Main Menu *************");
-		for(int i=0; i< mainMenuOptions.length; i++) {
-			System.out.println((i+1) + ". " + mainMenuOptions[i]);
+		for(int i=0; i< menuOptions.length; i++) {
+			System.out.println((i+1) + ". " + menuOptions[i]);
 		}
 		System.out.println("\n");
     }
