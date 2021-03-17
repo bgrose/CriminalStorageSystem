@@ -6,11 +6,14 @@ import java.util.Scanner;
  */
 public class CrimeUI {
 
+    private static final String WELCOME_MSG = "Welcome to the Criminal Storage System!: Please login";
+    private String[] mainMenuOptions = {"Add Crime", "Search Crime", "Modify Crime", "Print Crimes", "Search Criminal", "Modify Criminal", "Print Criminals", "Logout"} ;
     private Scanner scanner;
-    private Crime crime;
+    private Facade crimeFacade;
 
     CrimeUI(){
         scanner = new Scanner(System.in);
+        crimeFacade = new Facade();
     }
     
     /* 
@@ -18,21 +21,84 @@ public class CrimeUI {
     */
     public void run() 
     {
+        System.out.println(WELCOME_MSG);
+
+        login();
+
+        while(true) {
+            displayMenu();
+
+            int command = getCommand(mainMenuOptions.length);
+
+            if(command == -1) {
+				System.out.println("Not a valid option");
+				continue;
+            }
+            
+            if(command == mainMenuOptions.length -1) {
+				break;
+            }
+
+            switch(command) {
+                case(0):
+                    addCrime();
+                    break;
+                case(1):
+                    searchCrime();
+                    break;
+                case(2):
+                    modifyCrime();
+                    break;
+                case(3):
+                    printCrimes();
+                    break;
+                case(4):
+                    searchCriminal();
+                    break;
+                case(5):
+                    modifyCriminal();
+                    break;
+                case(6):
+                    printCriminals();
+                    break;
+            }
+            
+        }
+        System.out.println("Logging Out......Complete. Have a good day");
+    }
+
+    private int getCommand(int numCommands) {
+		System.out.print("What would you like to do?: ");
+		
+		String input = scanner.nextLine();
+		int command = Integer.parseInt(input) - 1;
+		
+		if(command >= 0 && command <= numCommands -1) return command;
+		
+		return -1;
+	}
+
+    private void login()
+    {
 
     }
 
     /* 
     * Method that will open the Main menu
     */
-    public void displayMenu() 
+    private void displayMenu() 
     {
-
+        System.out.println("\n************ Main Menu *************");
+		for(int i=0; i< mainMenuOptions.length; i++) {
+			System.out.println((i+1) + ". " + mainMenuOptions[i]);
+		}
+		System.out.println("\n");
     }
 
     /* 
     * Method that will open the Admin menu
     */
-    public void displayAdmin() 
+    private void displayAdmin() 
     {
 
     }
