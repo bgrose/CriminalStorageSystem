@@ -11,7 +11,6 @@ public class CrimeUI {
 
     CrimeUI(){
         scanner = new Scanner(System.in);
-        crime = new Crime();
     }
     
     /* 

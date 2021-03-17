@@ -123,7 +123,7 @@ public class User {
      * Method that returns the User
      * @return User
      */
-    public User getUser() {
+    public User getUser(String UUID) {
         return null;
     }
 
