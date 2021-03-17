@@ -105,47 +105,47 @@ public class CrimeUI {
 
     private void addCrime() 
     {
-
+        System.out.println("\n------------- adding crime -------------");
     }
 
     private void searchCrime() 
     {
-
+        System.out.println("\n------------- searching crime -------------");
     }
 
     private void modifyCrime() 
     {
-
+        System.out.println("\n------------- editing crime -------------");
     }
 
     private void printCrimes() 
     {
-
+        System.out.println("\n------------- printing crimes -------------");
     }
 
     private void searchCriminal() 
     {
-
+        System.out.println("\n------------- searching criminal -------------");
     }
 
-    private void privateCriminal() 
+    private void printCriminal() 
     {
-
+        System.out.println("\n------------- searching criminal -------------");
     }
 
     private void removeCrimes() 
     {
-
+        System.out.println("\n------------- removing crime -------------");
     }
 
     private void addUser() 
     {
-
+        System.out.println("\n------------- adding user -------------");
     }
 
     private void removeUser() 
     {
-
+        System.out.println("\n------------- removing user -------------");
     }
     public static void main(String[] args) 
     {
