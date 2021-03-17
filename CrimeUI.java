@@ -111,7 +111,19 @@ public class CrimeUI {
     private void searchCrime() 
     {
         System.out.println("\n------------- searching crime -------------");
+        String crime = getUserCrime();
+
+        if(crime == null)return;
+
+        if(!crimeFacade.searchCrime(crime)) 
+        {
+            System.out.println("Sorry the type of crime is not found \n");
+            return;
+        }
+
+        System.out.println("The crime you're looking for is in library\n");		
     }
+    
 
     private void modifyCrime() 
     {
@@ -126,11 +138,22 @@ public class CrimeUI {
     private void searchCriminal() 
     {
         System.out.println("\n------------- searching criminal -------------");
+        String criminal = getUserCriminal();
+
+        if(criminal == null)return;
+
+        if(!crimeFacade.searchCriminal(criminal)) 
+        {
+            System.out.println("Sorry the criminal your searching is not found \n");
+            return;
+        }
+
+        System.out.println("The criminal you're looking for is in library\n");	
     }
 
     private void printCriminal() 
     {
-        System.out.println("\n------------- printing criminal -------------");
+        System.out.println("\n------------- searching criminal -------------");
     }
 
     private void removeCrimes() 
@@ -146,6 +169,40 @@ public class CrimeUI {
     private void removeUser() 
     {
         System.out.println("\n------------- removing user -------------");
+    }
+
+    private String getUserCrime() 
+    {
+        System.out.print("Enter User Crimes: ");
+
+        while(true) 
+        {
+            String crimeName = scanner.nextLine().trim().toLowerCase();
+
+            if(!crimeName.contentEquals("")) return crimeName;
+
+            System.out.println("You need to enter the actual content");
+            System.out.print("Would you like to enter crime again (y) or return to main menu (n): ");
+            String command = scanner.nextLine().trim().toLowerCase();
+            if(command == "n") return null;
+        }
+    }
+
+    private String getUserCriminal() 
+    {
+        System.out.print("Enter User Criminals: ");
+
+        while(true) 
+        {
+            String criminalName = scanner.nextLine().trim().toLowerCase();
+
+            if(!criminalName.contentEquals("")) return criminalName;
+
+            System.out.println("You need to enter the actual content");
+            System.out.print("Would you like to enter criminal again (y) or return to main menu (n): ");
+            String command = scanner.nextLine().trim().toLowerCase();
+            if(command == "n") return null;
+        }
     }
     public static void main(String[] args) 
     {
