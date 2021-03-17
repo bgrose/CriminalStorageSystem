@@ -130,7 +130,7 @@ public class CrimeUI {
 
     private void printCriminal() 
     {
-        System.out.println("\n------------- searching criminal -------------");
+        System.out.println("\n------------- printing criminal -------------");
     }
 
     private void removeCrimes() 
