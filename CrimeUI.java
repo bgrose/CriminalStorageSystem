@@ -6,8 +6,9 @@ import java.util.Scanner;
  */
 public class CrimeUI {
 
-    private static final String WELCOME_MSG = "Welcome to the Criminal Storage System!: Please login";
+    private static final String WELCOME_MSG = "Welcome to the Criminal Storage System!: Please login or create an account.";
     private String[] menuOptions = {"Add Crime", "Search Crime", "Modify Crime", "Print Crimes", "Search Criminal", "Modify Criminal", "Print Criminals", "Logout"} ;
+    private String[] AdminMenuOptions = {"Add Crime", "Search Crime", "Modify Crime", "Print Crimes", "Search Criminal", "Modify Criminal", "Print Criminals", "Remove Crime", "Add User", "Remove User", "Logout"} ;
     private Scanner scanner;
     private Facade crimeFacade;
 
@@ -39,7 +40,7 @@ public class CrimeUI {
                 crimeFacade.logout();
 				break;
             }
-
+            //how to differentiate between admin and normal user?
             switch(command) {
                 case(0):
                     addCrime();
@@ -68,23 +69,7 @@ public class CrimeUI {
         System.out.println("Logging Out......Complete. Have a good day");
     }
 
-    private int getCommand(int numCommands) {
-		System.out.print("What would you like to do?: ");
-		
-		String input = scanner.nextLine();
-		int command = Integer.parseInt(input) - 1;
-		
-		if(command >= 0 && command <= numCommands -1) return command;
-		
-		return -1;
-	}
-
-    private void login()
-    {
-
-    }
-
-    /* 
+      /* 
     * Method that will open the Main menu
     */
     private void displayMenu() 
@@ -96,22 +81,71 @@ public class CrimeUI {
 		System.out.println("\n");
     }
 
-    /* 
+     /* 
     * Method that will open the Admin menu
     */
-    private void displayAdmin() 
+    private void displayAdminMenu() 
     {
+        System.out.println("\n************ Main Menu *************");
+		for(int i=0; i< AdminMenuOptions.length; i++) {
+			System.out.println((i+1) + ". " + AdminMenuOptions[i]);
+		}
+		System.out.println("\n");
+    }
 
+    private int getCommand(int numCommands) {
+		System.out.print("What would you like to do?: ");
+		
+		String input = scanner.nextLine();
+		int command = Integer.parseInt(input) - 1;
+		
+		if(command >= 0 && command <= numCommands -1) return command;
+		
+		return -1;
+	}
+
+    private void createAccount() {
+        String userName = getField("Username");
+        String password = getField("Prompt");
+        String name = getField("Name")
+        String position = getField("Position");
+        // add whether we're an admin
+        //how to keep track of UUID?
+        if crimeFacade.createAccount(userName, password, name, position, isAdmin) {
+            System.out.println("You have successfully created an account");
+        } else {
+            System.out.println("Sorry, an account with that username already exits");
+        }
+    }
+
+    private void login() {
+        String username = getField("Username");
+        String password = getField("Password");
+
+        if(crimeFacade.login(username, password)) {
+            User currentUser = crimeFacade.getCurrentUser();
+            System.out.println("Welcome " + currentUser.getName() + "!");
+        } else {
+            System.out.println("Sorry, invalid username or password");
+        }
+
+    }
+
+    private String getField(String prompt) {
+        System.out.print(prompt + ": ");
+        return scanner.nextLine();
     }
 
     private void addCrime() 
     {
-        System.out.println("\n------------- adding crime -------------");
+        System.out.println("\n------------- Adding a Crime -------------");
+        String Crime = getUserCrime();
+        crimeFacade.addCrime();
     }
 
     private void searchCrime() 
     {
-        System.out.println("\n------------- searching crime -------------");
+        System.out.println("\n------------- Searching for a Crime -------------");
         String crime = getUserCrime();
 
         if(crime == null)return;
@@ -129,8 +163,9 @@ public class CrimeUI {
     private void modifyCrime() 
     {
         System.out.println("\n------------- editing crime -------------");
+        crimeFacade.modifyCrime();
+        
     }
-
     private void printCrimes() 
     {
         System.out.println("\n------------- printing crimes -------------");
@@ -150,6 +185,10 @@ public class CrimeUI {
         }
 
         System.out.println("The criminal you're looking for is in library\n");	
+    }
+
+    private void modifyCriminal() {
+
     }
 
     private void printCriminal() 
@@ -172,23 +211,6 @@ public class CrimeUI {
         System.out.println("\n------------- removing user -------------");
     }
 
-    private String getUserCrime() 
-    {
-        System.out.print("Enter User Crimes: ");
-
-        while(true) 
-        {
-            String crimeName = scanner.nextLine().trim().toLowerCase();
-
-            if(!crimeName.contentEquals("")) return crimeName;
-
-            System.out.println("You need to enter the actual content");
-            System.out.print("Would you like to enter crime again (y) or return to main menu (n): ");
-            String command = scanner.nextLine().trim().toLowerCase();
-            if(command == "n") return null;
-        }
-    }
-
     private String getUserCriminal() 
     {
         System.out.print("Enter User Criminals: ");
@@ -201,6 +223,23 @@ public class CrimeUI {
 
             System.out.println("You need to enter the actual content");
             System.out.print("Would you like to enter criminal again (y) or return to main menu (n): ");
+            String command = scanner.nextLine().trim().toLowerCase();
+            if(command == "n") return null;
+        }
+    }
+
+    private String getUserCrime() 
+    {
+        System.out.print("Enter User Crimes: ");
+
+        while(true) 
+        {
+            String crimeName = scanner.nextLine().trim().toLowerCase();
+
+            if(!crimeName.contentEquals("")) return crimeName;
+
+            System.out.println("You need to enter the actual content");
+            System.out.print("Would you like to enter crime again (y) or return to main menu (n): ");
             String command = scanner.nextLine().trim().toLowerCase();
             if(command == "n") return null;
         }
