@@ -15,13 +15,17 @@ import org.json.simple.JSONObject;
 @SuppressWarnings("unchecked")
 
 public class DataWriter extends DataConstants {
+
+    /**
+     * Updates all JSON Data Stores.
+     */
     public static void DataUpdate() {
         saveUsers();
         saveCrimes();
     }
 
     /**
-     * 
+     * Goes through all the users and saves them to a JSON FIle
      */
     public static void saveUsers() {
         ArrayList<User> userList = UserDatabase.getInstance();
@@ -39,9 +43,9 @@ public class DataWriter extends DataConstants {
     }
 
     /**
-     * 
-     * @param user
-     * @return
+     * Creates the JSON Object for a User
+     * @param user User being converted
+     * @return JSON Object of User
      */
     public static JSONObject getUserJSON(User user) {
         JSONObject jsonObject = new JSONObject();
@@ -56,7 +60,7 @@ public class DataWriter extends DataConstants {
     }
 
     /**
-     * 
+     * Writes to the file for the crimes and calls the different sub class to make objects
      */
     public static void saveCrimes() {
         CrimeDatabase crimes = CrimeDatabase.getInstance();
@@ -110,9 +114,9 @@ public class DataWriter extends DataConstants {
     }
 
     /**
-     * 
-     * @param crime
-     * @return
+     * Creates a JSON File for the Crimes
+     * @param crime Crime that is being turned into a JSON FIle
+     * @return The JSON Object for the crime
      */
     public static JSONObject getCrimeJSON(Crime crime, JSONArray POI, JSONArray Criminal, JSONArray Evidence,
             JSONArray Witness) {
@@ -130,9 +134,9 @@ public class DataWriter extends DataConstants {
     }
 
     /**
-     * 
-     * @param crime
-     * @return
+     *  Saves all evidence items for the crime as well as write to JSON file for evidence
+     * @param crime Crime evidence is being pulled from
+     * @return a JSONArray with the evidence in it for the crime with UUID
      */
     public static JSONArray saveEvidence(Crime crime, JSONArray Evidence) {
         JSONArray jsonUUIDEvidence = new JSONArray();
@@ -152,6 +156,9 @@ public class DataWriter extends DataConstants {
         return jsonUUIDEvidence;
     }
 
+    /**
+     * Saves all of the People and Sorts them
+     */
     public static JSONArray savePersons(Crime crime, JSONArray POI, JSONArray Criminal, JSONArray Witness) {
         JSONArray jsonUUIDPerson = new JSONArray();
         ArrayList<Person> persons = crime.getAnyonePersonList();
@@ -169,35 +176,35 @@ public class DataWriter extends DataConstants {
     }
 
     /**
-     * 
-     * @param crime
-     * @param POIArray
+     * Saves POI for the Crime Array
+     * @param crime Crime that is being searched
+     * @param CriminalArray ArrayUsed to Fill in POI
      */
     public static void savePOI(Crime crime, JSONArray POIArray) {
     }
 
     /**
-     * 
-     * @param crime
-     * @param WitnessArray
+     * Saves Witnesses for the Crime Array
+     * @param crime Crime that is being searched
+     * @param CriminalArray ArrayUsed to Fill in Witnesses Data
      */
     public static void saveWitness(Crime crime, JSONArray WitnessArray) {
 
     }
 
     /**
-     * 
-     * @param crime
-     * @param CriminalArray
+     * Saves Criminals for the Crime Array
+     * @param crime Crime that is being searched
+     * @param CriminalArray ArrayUsed to Fill in Criminals
      */
     public static void saveCriminal(Crime crime, JSONArray CriminalArray) {
 
     }
 
     /**
-     * 
-     * @param crime
-     * @return
+     * Saves the Users to a JSON File for Crime by looping ang getting UUID
+     * @param crime Takes in crime to loop through
+     * @return JSONArray with officer UUID
      */
     public static JSONArray saveOfficers(Crime crime) {
         JSONArray jsonUUIDOfficer = new JSONArray();
