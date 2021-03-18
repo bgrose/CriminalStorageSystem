@@ -11,7 +11,7 @@ public class CrimeFacade {
         personDatabase = personDatabase.getInstance();
     }
 
-    public boolean createAccount(userName, password, name, position, isAdmin) {
+    public boolean createAccount(String userName, String password, String name, String position, boolean isAdmin) {
         return userDatabase.addUser(userName, password, name, position, isAdmin);
     }
 
