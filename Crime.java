@@ -9,7 +9,8 @@ import java.util.*;
 public class Crime {
 
     private ArrayList<Evidence> evidenceList;
-    private ArrayList<Person> anyonePersonList;
+    private ArrayList<Suspects> personList;
+    private ArrayList<Witness> witnessees;
     private ArrayList <User> officers;
     private String description;
     private String name;
@@ -26,10 +27,11 @@ public class Crime {
      *  @param String description,
             String name, Boolean solved, int date
      */
-    public Crime(ArrayList<Evidence> evidenceList, ArrayList<Person> anyonePersonList, String description,
+    public Crime(ArrayList<Evidence> evidenceList, ArrayList<Suspects> _personLists, ArrayList<Witness> witness, String description,
             String name, Boolean solved, int date, String _UUID) {
         this.evidenceList = evidenceList;
-        this.anyonePersonList = anyonePersonList;
+        this.personList = _personLists;
+        this.witnessees = witness;
         this.description = description;
         this.name = name;
         this.solved = solved;
@@ -47,10 +49,18 @@ public class Crime {
 
     /**
      * Method that sets the anyone person list of the Crime
-     * @param anyonePersonList ArrayList<Person> of the people of the Crime
+     * @param anyonePersonList ArrayList<Suspects> of the people of the Crime
      */
-    public void setAnyonePersonList(ArrayList<Person> anyonePersonList) {
-        this.anyonePersonList = anyonePersonList;
+    public void setPersonList(ArrayList<Suspects> anyonePersonList) {
+        this.personList = anyonePersonList;
+    }
+
+        /**
+     * Method that sets the anyone person list of the Crime
+     * @param WitnessList ArrayList<Suspects> of the people of the Crime
+     */
+    public void setWitnessList(ArrayList<Witness> WitnessList) {
+        this.witnessees = WitnessList;
     }
 
     /**
@@ -97,8 +107,16 @@ public class Crime {
      * Method that gets the people involved list
      * @return ArrayList of people involved in the crime
      */
-    public ArrayList<Person> getAnyonePersonList() {
-        return anyonePersonList;
+    public ArrayList<Suspects> getPersonList() {
+        return personList;
+    }
+
+    /**
+     * Method that gets the people involved list
+     * @return ArrayList of people involved in the crime
+     */
+    public ArrayList<Witness> getUserList() {
+        return witnessees;
     }
 
     /**
@@ -133,6 +151,11 @@ public class Crime {
         return this.date;
     }
 
+    public ArrayList<Witness> getWitnessList()
+    {
+        return this.witnessees;
+    }
+
     /**
      * Method that adds Evidence to the Crime
      * @param evidence Evidence to be added from the crime
@@ -153,16 +176,16 @@ public class Crime {
      * Method that adds a Person to the Crime
      * @param person Person that is added to the Crime
      */
-    public void addPerson(Person person) {
-        anyonePersonList.add(person);
+    public void addPerson(Suspects person) {
+        personList.add(person);
     }
 
     /**
      * Method that removes a Person from the Crime
      * @param person Person that is removed from the Crime
      */
-    public void removePerson(Person person) {
-        anyonePersonList.remove(person);
+    public void removePerson(Suspects person) {
+       personList.remove(person);
     }
 
     /**
@@ -172,7 +195,7 @@ public class Crime {
         for (Evidence evidence : evidenceList) {
             evidenceListReturn += evidence;
         }
-        for (Person person : anyonePersonList) {
+        for (Suspects person : personList) {
             anyonePersonListReturn += person;
         }
         return "Name: " + name + "Description: " + description + "Solved: " + solved + "Date: " + date

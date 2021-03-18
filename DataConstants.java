@@ -6,6 +6,7 @@ public class DataConstants {
     protected static final String CRIME_NAME = "Crime Name";
     protected static final String CRIME_OFFICERLIST = "Officers";
     protected static final String CRIME_PERSONLIST = "Related People";
+    protected static final String CRIME_WITNESSLIST = "Witnesses";
     protected static final String CRIME_SOLVED = "Solved";
     protected static final String CRIME_UUID = "UUID";
     protected static final String CRIME_FILE_NAME = "JSON/Crime.JSON";
@@ -41,27 +42,6 @@ public class DataConstants {
     protected static final String EVIDENCE_NAME = "Name";
     protected static final String EVIDENCE_UUID = "UUID";    
     protected static final String EVIDENCE_FILE_NAME = "JSON/Evidence.JSON";
-
-    //Person Of Interest
-    protected static final String POI_ACCOMPLACE = "Accomplices";
-    protected static final String POI_ACQUANTANCES = "Acquaintances";
-    protected static final String POI_AGE = "Age";
-    protected static final String POI_ALIAS = "Alias";
-    protected static final String POI_CRIME_LIST = "Crime List";
-    protected static final String POI_DISABILITY = "Disability";
-    protected static final String POI_EYE = "Eye Color";
-    protected static final String POI_GLASSES = "Glasses";
-    protected static final String POI_HAIR = "Hair Color";
-    protected static final String POI_HANDNESS = "Handness";
-    protected static final String POI_HEIGHT = "Height";
-    protected static final String POI_LIVING = "Living";
-    protected static final String POI_NAME = "Name";
-    protected static final String POI_NATIONALITY = "Nationality";
-    protected static final String POI_SKIN = "Skin Color";
-    protected static final String POI_TATTOO = "Tattoo";
-    protected static final String POI_UUID = "UUID";
-    protected static final String POI_WEIGHT = "Weight";
-    protected static final String POI_FILE_NAME = "JSON/PersonOfInterest.JSON";
 
     //User
     protected static final String USER_ADMIN = "Admin";
