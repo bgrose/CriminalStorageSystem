@@ -21,8 +21,8 @@ public class DataWriter extends DataConstants {
      */
     public static void DataUpdate() {
         saveUsers();
-        saveCrimes();
         savePersons();
+        saveCrimes();
     }
 
     /**

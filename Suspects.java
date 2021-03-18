@@ -4,8 +4,6 @@
  * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
  */
 
-import java.util.ArrayList;
-
 public class Suspects extends Person{
 
     private String alias;

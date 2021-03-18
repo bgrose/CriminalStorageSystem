@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 /**
  * @description Class that creates Person
@@ -7,7 +6,6 @@ import java.util.ArrayList;
 public class Person {
     
     private String name;
-    private ArrayList<Crime> crimeList;
     private boolean livingStatus;
     private String UUID;
 

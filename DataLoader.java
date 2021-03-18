@@ -12,7 +12,34 @@ import org.json.simple.parser.JSONParser;
 public class DataLoader extends DataConstants {
 
     public static ArrayList<Crime> getCrimes() {
-        return new ArrayList<Crime>();
+        ArrayList<Crime> crimes = new ArrayList<Crime>();
+
+        try {
+            FileReader reader = new FileReader(USER_FILE_NAME);
+            JSONParser parser = new JSONParser();
+            JSONArray crimesJSON = (JSONArray) parser.parse(reader);
+
+            for (int i = 0; i < crimesJSON.size(); i++) {
+                JSONObject crimeJSON = (JSONObject) crimesJSON.get(i);
+
+                //TODO
+                ArrayList<Evidence> evidenceList = null;
+                ArrayList<Suspects> personLists = null;
+                ArrayList<Witness> witness = null;
+
+                String description = (String) crimeJSON.get(CRIME_DESCRIPTION);
+                String name = (String) crimeJSON.get(CRIME_NAME);
+                Boolean solved = (Boolean) crimeJSON.get(CRIME_SOLVED);
+                int date = (int) crimeJSON.get(CRIME_DATE);
+                String UUID = (String) crimeJSON.get(CRIME_UUID);
+
+                Crime newCrime = new Crime(evidenceList, personLists, witness, description, name, solved, date, UUID);
+                crimes.add(newCrime);
+            }
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return crimes;
     }
 
     public static ArrayList<User> getUsers() {
