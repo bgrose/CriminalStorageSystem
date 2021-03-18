@@ -188,24 +188,63 @@ public class DataWriter extends DataConstants {
             jsonObject.put(WITNESS_NAME, witness.getName());
             jsonObject.put(WITNESS_LIVING, witness.getLivingStatus());
             jsonObject.put(WITNESS_STATEMENT, witness.getStatement());
-            jsonObject.put(WITNESS_CRIME_LIST, saveCrimeList(witness.getCrimeList()));
             Witness.add(jsonObject);
         }
         return jsonUUIDWitness;
     }
 
-    public static JSONArray saveCrimeList(ArrayList<Crime> crimes) {
-        JSONArray jsonCrimeList = new JSONArray();
-        for (int i = 0; i < crimes.size(); i++) {
-            String UUID = crimes.get(i).getUUID();
-            jsonCrimeList.add(UUID);
-        }
-        return jsonCrimeList;
-    }
 
+
+    /**
+     * Saves all of the Suspects to JSON
+     */
     public static void savePersons()
     {
+        PersonDatabase suspects = PersonDatabase.getInstance();
+        ArrayList<Suspects> suspectList = suspects.getDatabase();
+        JSONArray jsonSuspects = new JSONArray();
+        for (int i = 0; i < suspectList.size(); i++) {
+            jsonSuspects.add(getSuspectJSON(suspectList.get(i)));
+        }
 
+        try (FileWriter file = new FileWriter(CRIMINAL_FILE_NAME, false)) {
+            file.write(jsonSuspects.toJSONString());
+            file.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Creates a JSON Object for a suspect
+     * @param suspects the suspect to make object
+     * @return the object of the suspect
+     */
+    public static JSONObject getSuspectJSON(Suspects suspects) {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put(CRIMINAL_ACCOMPLACE, suspects.getAccomplice());
+        jsonObject.put(CRIMINAL_ACQUANTANCES, suspects.getAccquaintance());
+        jsonObject.put(CRIMINAL_AGE, suspects.getAge());
+        jsonObject.put(CRIMINAL_ALIAS, suspects.getAlias());
+        jsonObject.put(CRIMINAL_ARRESTING_OFFICER, suspects.getArrestingOfficer());
+        jsonObject.put(CRIMINAL_CRIME_TYPE, suspects.getCrimeType());
+        jsonObject.put(CRIMINAL_DISABILITY, suspects.getDisability());
+        jsonObject.put(CRIMINAL_EYE, suspects.getEyeColor());
+        jsonObject.put(CRIMINAL_GLASSES, suspects.getGlasses());
+        jsonObject.put(CRIMINAL_HAIR, suspects.getHairColor());
+        jsonObject.put(CRIMINAL_HANDNESS, suspects.getHandness());
+        jsonObject.put(CRIMINAL_HEIGHT, suspects.getHeight());
+        jsonObject.put(CRIMINAL_JAIL_STATUS, suspects.getInJail());
+        jsonObject.put(CRIMINAL_LIVING, suspects.getLivingStatus());
+        jsonObject.put(CRIMINAL_NAME, suspects.getName());
+        jsonObject.put(CRIMINAL_NATIONALITY, suspects.getNationality());
+        jsonObject.put(CRIMINAL_PUNISHMENT, suspects.getPunishment());
+        jsonObject.put(CRIMINAL_SKIN, suspects.getSkinColor());
+        jsonObject.put(CRIMINAL_TATTOO, suspects.getTattoo());
+        jsonObject.put(CRIMINAL_UUID, suspects.getUUID());
+        jsonObject.put(CRIMINAL_WEIGHT, suspects.getWeight());
+
+        return jsonObject;
     }
 
 }

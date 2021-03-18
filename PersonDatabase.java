@@ -7,7 +7,7 @@ import java.util.*;
 public class PersonDatabase {
 
     private static PersonDatabase personDatabase;
-    ArrayList<Person> personList;
+    ArrayList<Suspects> personList;
 
 
     /**
@@ -21,21 +21,21 @@ public class PersonDatabase {
     /**
      * Method that adds a Person to personDatabase
      */
-    public void addPerson(Person person) {
+    public void addPerson(Suspects person) {
 
     }
 
     /**
      * Method that removes a Person from personDatabase
      */
-    public void removePerson(Person person) {
+    public void removePerson(Suspects person) {
 
     }
 
     /**
      * Method that modifies a Person in personDatabase
      */
-    public void modifyPerson(Person person) {
+    public void modifyPerson(Suspects person) {
 
     }
 
@@ -57,7 +57,7 @@ public class PersonDatabase {
         personList = DataLoader.getPerson();
     }
 
-    public ArrayList<Person> getDatabase()
+    public ArrayList<Suspects> getDatabase()
     {
         return personList;
     }

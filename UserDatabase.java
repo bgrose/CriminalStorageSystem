@@ -28,6 +28,11 @@ public class UserDatabase
 
     }
 
+    public User findUser(String UUID)
+    {
+        return null;
+    }
+
     /**
      * Method that removes a user
      * @param delete a new user

@@ -15,9 +15,8 @@ public class Person {
      * Constructor method that sets up the Person
      * @param
      */
-    public Person(String name, ArrayList<Crime> crimeList, boolean livingStatus, String _UUID) {
+    public Person(String name, boolean livingStatus, String _UUID) {
         this.name = name;
-        this.crimeList = crimeList;
         this.livingStatus = livingStatus;
         this.UUID = _UUID;
     }
@@ -36,18 +35,6 @@ public class Person {
      */
     public void setName(String name) {
         this.name = name;
-    }
-
-    public ArrayList<Crime> getCrimeList() {
-        return this.crimeList;
-    }
-
-    /**
-     * Method that sets the list of the Crime
-     * @param evidenceList ArrayList<Crime>  of the Crime
-     */
-    public void setCrimeList(ArrayList<Crime> crimeList) {
-        this.crimeList = crimeList;
     }
 
     /**

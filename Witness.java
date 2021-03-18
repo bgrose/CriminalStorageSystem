@@ -14,7 +14,7 @@ public class Witness extends Person {
      * Constructor method that sets up the Witness
      */
     public Witness(String name, ArrayList<Crime> crimeList, boolean livingStatus, String statement, String UUID) {
-        super(name, crimeList, livingStatus, UUID);
+        super(name, livingStatus, UUID);
         this.statement = statement;
     }
 
