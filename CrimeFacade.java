@@ -16,7 +16,7 @@ public class CrimeFacade {
     }
 
     public boolean login(String userName) {
-        if(userDatabase.getUser(username)== null) return false;
+        if(userDatabase.getUser(userName)== null) return false;
 
         currentUser = userDatabase.getUser(username);
         return true;
@@ -66,4 +66,7 @@ public class CrimeFacade {
         return true;
     }
     
+    public void logout() {
+        userDatabase.saveUsers();
+    }
 }

@@ -107,7 +107,7 @@ public class CrimeUI {
     private void createAccount() {
         String userName = getField("Username");
         String password = getField("Prompt");
-        String name = getField("Name")
+        String name = getField("Name");
         String position = getField("Position");
         // add whether we're an admin
         //how to keep track of UUID?

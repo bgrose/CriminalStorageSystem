@@ -44,5 +44,10 @@ public class DataLoader extends DataConstants{
 		
 		return null;
     }
+
+    public static ArrayList<Person> getPerson() {
+        return null;
+    }
+
     
 }
