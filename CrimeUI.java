@@ -10,11 +10,11 @@ public class CrimeUI {
     private String[] menuOptions = {"Add Crime", "Search Crime", "Modify Crime", "Print Crimes", "Search Criminal", "Modify Criminal", "Print Criminals", "Logout"} ;
     private String[] AdminMenuOptions = {"Add Crime", "Search Crime", "Modify Crime", "Print Crimes", "Search Criminal", "Modify Criminal", "Print Criminals", "Remove Crime", "Add User", "Remove User", "Logout"} ;
     private Scanner scanner;
-    private Facade crimeFacade;
+    private CrimeFacade crimeFacade;
 
     CrimeUI(){
         scanner = new Scanner(System.in);
-        crimeFacade = new Facade();
+        crimeFacade = new CrimeFacade();
     }
     
     /* 
@@ -140,7 +140,7 @@ public class CrimeUI {
     {
         System.out.println("\n------------- Adding a Crime -------------");
         String Crime = getUserCrime();
-        crimeFacade.addCrime();
+        crimeFacade.addCrime(Crime);
     }
 
     private void searchCrime() 
