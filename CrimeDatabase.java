@@ -16,7 +16,7 @@ public class CrimeDatabase {
      * @return Crime from CrimeDatabase
      */
     public Crime getCrime() {
-        return NULL;
+        return null;
     }
 
     /**

@@ -82,19 +82,11 @@ public class Person {
         return this instanceof Witness;
     }
 
-        /**
-     * Method that gets who's the POI
-     * @return true if there is a POI
-     */
-    public boolean isPOI() {
-        return this instanceof PersonOfInterest;
-    }
-
     /**
      * Method that gets who's the criminal
      * @return true if there is a criminal
      */
     public boolean isCriminal() {
-        return this instanceof Criminal;
+        return this instanceof Suspects;
     }
 }

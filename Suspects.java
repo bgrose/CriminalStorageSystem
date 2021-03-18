@@ -6,7 +6,7 @@
 
 import java.util.ArrayList;
 
-public class Criminal extends Person{
+public class Suspects extends Person{
 
     private String alias;
     private String accomplice;
@@ -31,7 +31,7 @@ public class Criminal extends Person{
      * Constructor method that sets up the Criminal
      * @param Str
      */
-    public Criminal(String name, ArrayList<Crime> crimeList, boolean livingStatus, String alias, String accomplice, String
+    public Suspects(String name, ArrayList<Crime> crimeList, boolean livingStatus, String alias, String accomplice, String
     hairColor, String eyeColor, String tatoo, String skinColor, String nationality, double weight, int height, String acquaintance,
     int age, boolean glasses, String punishment, String disability, String handness, String crimeType, User arrestingOfficer, 
     boolean inJail, String UUID) {
