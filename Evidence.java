@@ -61,7 +61,7 @@ public class Evidence
      */
     public String toString() 
     {
-        return "";
+        return "Name: " + name + "Description: " + description;
     }
 
     public String getUUID() 
