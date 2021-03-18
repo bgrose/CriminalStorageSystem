@@ -16,21 +16,21 @@ public class CrimeDatabase {
      * @return Crime from CrimeDatabase
      */
     public Crime getCrime() {
-        return null;
+        return NULL;
     }
 
     /**
      * Method that adds a Crime to crimeDatabase
      */
     public void addCrime(Crime crime) {
-
+        crimeList.add(crime);
     }
 
     /**
      * Method that removes a Crime from crimeDatabase
      */
     public void removeCrime(Crime crime) {
-
+        crimeList.remove(crime);
     }
 
     /**
@@ -44,7 +44,9 @@ public class CrimeDatabase {
      * Method that prints out the crimeDatabase
      */
     public void printDatabase() {
-
+        for(Crime crime : crimeList) {
+            // System.out.println(crime.getName());
+        }
     }
 
     public static CrimeDatabase getInstance()
