@@ -13,9 +13,9 @@ public class CrimeFacade {
      * 
      */
     public CrimeFacade() {
-        crimeDatabase = crimeDatabase.getInstance();
-        userDatabase = userDatabase.getInstance();
-        personDatabase = personDatabase.getInstance();
+        crimeDatabase = CrimeDatabase.getInstance();
+        userDatabase = UserDatabase.getInstance();
+        personDatabase = PersonDatabase.getInstance();
     }
 
     /**

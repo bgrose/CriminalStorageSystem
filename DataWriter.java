@@ -28,7 +28,7 @@ public class DataWriter extends DataConstants {
      * Goes through all the users and saves them to a JSON FIle
      */
     public static void saveUsers() {
-        ArrayList<User> userList = UserDatabase.getInstance();
+        ArrayList<User> userList = UserDatabase.getInstance().getDatabase();
         JSONArray jsonUsers = new JSONArray();
         for (int i = 0; i < userList.size(); i++) {
             jsonUsers.add(getUserJSON(userList.get(i)));

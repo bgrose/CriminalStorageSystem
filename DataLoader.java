@@ -147,7 +147,7 @@ public class DataLoader extends DataConstants {
 
                 // Find Officers
                 UUID UUIDofOfficers = (UUID) personJSON.get(USER_UUID);
-                ArrayList<User> Users = UserDatabase.getInstance();
+                ArrayList<User> Users = UserDatabase.getInstance().getDatabase();
                 User arrestingOfficer = null;
                 for (int j = 0; i < Users.size(); j++) {
                     User user = Users.get(j);

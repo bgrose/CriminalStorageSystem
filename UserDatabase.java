@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public class UserDatabase {
 
+    private static UserDatabase userDatabase;
     private static ArrayList<User> database;
 
     /**
@@ -52,9 +53,16 @@ public class UserDatabase {
      * Method that gets the User
      * @return userDatabase to the user Database
      */
-    public static ArrayList<User> getInstance() {
+    public static UserDatabase getInstance() {
         if (database == null)
-            database = DataLoader.getUsers();
-        return database;
+            return userDatabase = new UserDatabase();
+        else
+            return userDatabase;
     }
+
+    public UserDatabase()
+    {
+        database = DataLoader.getUsers();
+    }
+
 }
