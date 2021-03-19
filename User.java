@@ -1,7 +1,10 @@
 /**
- * @description
+ * @description creates the User class
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
+
+ import java.util.UUID;
+
 public class User {
 
     private String username;
@@ -9,16 +12,50 @@ public class User {
     private String name;
     private String position;
     private Boolean admin;
+<<<<<<< HEAD
+=======
+    private UUID uuid;
+>>>>>>> 59904edf858c08223b73aa7ad881623e38617287
 
     /**
-     * Constructor method that sets up User
+     * Creates a User object with a UUID
+     * @param username username of the User
+     * @param password String of password
+     * @param name String of User name
+     * @param position String of their position
+     * @param admin Boolean if they are an admin or not
+     * @param UUID unique identifier
      */
+<<<<<<< HEAD
+=======
+    public User(String username, String password, String name, String position, Boolean admin, UUID UUID) {
+        this.username = username;
+        this.password = password;
+        this.name = name;
+        this.position = position;
+        this.admin = admin;
+        this.uuid = UUID;
+    }
+
+       /**
+     * Creates a User object without a UUID
+     * @param username username of the User
+     * @param password String of password
+     * @param name String of User name
+     * @param position String of their position
+     * @param admin Boolean if they are an admin or not
+     */
+>>>>>>> 59904edf858c08223b73aa7ad881623e38617287
     public User(String username, String password, String name, String position, Boolean admin) {
         this.username = username;
         this.password = password;
         this.name = name;
         this.position = position;
         this.admin = admin;
+<<<<<<< HEAD
+=======
+        this.uuid = UUID.randomUUID();
+>>>>>>> 59904edf858c08223b73aa7ad881623e38617287
     }
 
     /**
@@ -121,7 +158,7 @@ public class User {
      * Method that returns the User
      * @return User
      */
-    public User getUser() {
+    public User getUser(String UUID) {
         return null;
     }
 
@@ -131,6 +168,23 @@ public class User {
      */
     public void modifyUser(User user) {
 
+    }
+
+    /**
+     * Sets the UUID Value for User
+     * @param UUID unique UUID
+     */
+    public void setUUID(UUID UUID) {
+        this.uuid = UUID;
+    }
+
+    /**
+     * Returns the Unique ID
+     * @return the UUID Value
+     */
+    public UUID getUUID()
+    {
+        return this.uuid;
     }
 
 }

@@ -1,12 +1,10 @@
-
 /**
- * @description Class that creates Criminal
+ * Class that creates Criminal
  * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
  */
+import java.util.UUID;
 
-import java.util.ArrayList;
-
-public class Criminal extends Person{
+public class Suspects extends Person{
 
     private String alias;
     private String accomplice;
@@ -28,14 +26,82 @@ public class Criminal extends Person{
     private boolean inJail;
 
     /**
-     * Constructor method that sets up the Criminal
-     * @param Str
+     * Creates a suspect object
+     * @param name name of suspect
+     * @param livingStatus boolean if living
+     * @param alias string of aliases
+     * @param accomplice string of accomplaces
+     * @param hairColor string of hair color
+     * @param eyeColor string of eye color
+     * @param tatoo string of tattoos
+     * @param skinColor string of skin color
+     * @param nationality string of nationality
+     * @param weight double of weight
+     * @param height int of height in inches
+     * @param acquaintance string of acquantances
+     * @param age int of age
+     * @param glasses boolean of if they have glasses
+     * @param punishment string of punishment
+     * @param disability string of any disabolity
+     * @param handness string of handness
+     * @param crimeType string of type of crime committed
+     * @param arrestingOfficer User of the arresting officer
+     * @param inJail boolean of if they are in jail.
+     * @param UUID Unique ID for Suspect
      */
-    public Criminal(String name, ArrayList<Crime> crimeList, boolean livingStatus, String alias, String accomplice, String
+    public Suspects(String name, boolean livingStatus, String alias, String accomplice, String
     hairColor, String eyeColor, String tatoo, String skinColor, String nationality, double weight, int height, String acquaintance,
     int age, boolean glasses, String punishment, String disability, String handness, String crimeType, User arrestingOfficer, 
-    boolean inJail, String UUID) {
-        super(name, crimeList, livingStatus, UUID);
+    boolean inJail, UUID UUID) {
+        super(name, livingStatus, UUID);
+        this.alias = alias;
+        this.accomplice = accomplice;
+        this.hairColor = hairColor;
+        this.eyeColor = eyeColor;
+        this.tatoo = tatoo;
+        this.skinColor = skinColor;
+        this.nationality = nationality;
+        this.weight = weight;
+        this.height = height;
+        this.acquaintance = acquaintance;
+        this.age = age;
+        this.glasses = glasses;
+        this.punishment = punishment;
+        this.disability = disability;
+        this.handness = handness;
+        this.crimeType = crimeType;
+        this.arrestingOfficer = arrestingOfficer;
+        this.inJail = inJail;
+    }
+
+        /**
+     * Creates a suspect object without UUID
+     * @param name name of suspect
+     * @param livingStatus boolean if living
+     * @param alias string of aliases
+     * @param accomplice string of accomplaces
+     * @param hairColor string of hair color
+     * @param eyeColor string of eye color
+     * @param tatoo string of tattoos
+     * @param skinColor string of skin color
+     * @param nationality string of nationality
+     * @param weight double of weight
+     * @param height int of height in inches
+     * @param acquaintance string of acquantances
+     * @param age int of age
+     * @param glasses boolean of if they have glasses
+     * @param punishment string of punishment
+     * @param disability string of any disabolity
+     * @param handness string of handness
+     * @param crimeType string of type of crime committed
+     * @param arrestingOfficer User of the arresting officer
+     * @param inJail boolean of if they are in jail.
+     */
+    public Suspects(String name, boolean livingStatus, String alias, String accomplice, String
+    hairColor, String eyeColor, String tatoo, String skinColor, String nationality, double weight, int height, String acquaintance,
+    int age, boolean glasses, String punishment, String disability, String handness, String crimeType, User arrestingOfficer, 
+    boolean inJail) {
+        super(name, livingStatus);
         this.alias = alias;
         this.accomplice = accomplice;
         this.hairColor = hairColor;
@@ -57,7 +123,8 @@ public class Criminal extends Person{
     }
 
     /**
-     * Method that prints out the details of the Criminal class
+     * Makes a string to return for Suspect
+     * @return string value to be printed
      */
     public String toString() {
         return super.toString() +

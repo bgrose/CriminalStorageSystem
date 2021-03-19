@@ -4,26 +4,35 @@
  * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
  */
 
-import java.util.ArrayList;
- 
+ import java.util.UUID;
+
 public class Witness extends Person {
 
     private String statement;
 
     /**
-     * Constructor method that sets up the Witness
+     * 
+     * @param name
+     * @param livingStatus
+     * @param statement
+     * @param UUID
      */
-    public Witness(String name, ArrayList<Crime> crimeList, boolean livingStatus, String statement, String UUID) {
-        super(name, crimeList, livingStatus, UUID);
+    public Witness(String name, boolean livingStatus, String statement, UUID UUID) {
+        super(name, livingStatus, UUID);
+        this.statement = statement;
+    }
+
+    public Witness(String name, boolean livingStatus, String statement) {
+        super(name, livingStatus);
         this.statement = statement;
     }
 
     /**
-     * Method that prints out the details of the Witness class
+     * 
+     * @return
      */
     public String toString() {
-        return super.toString() +
-        "\nStatement: " + this.statement;
+        return super.toString() + "\nStatement: " + this.statement;
     }
 
     /**
@@ -41,5 +50,5 @@ public class Witness extends Person {
     public void setStatement(String statement) {
         this.statement = statement;
     }
-    
+
 }

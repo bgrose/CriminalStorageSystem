@@ -1,25 +1,37 @@
-import java.util.ArrayList;
-
 /**
  * @description Class that creates Person
  * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
  */
-public class Person {
+
+import java.util.UUID;
+
+public abstract class Person {
     
     private String name;
-    private ArrayList<Crime> crimeList;
     private boolean livingStatus;
-    private String UUID;
+    private UUID uuid;
 
     /**
-     * Constructor method that sets up the Person
-     * @param
+     * Creates a Person as a called super with UUID
+     * @param name Name of the Person
+     * @param livingStatus Boolean if living 
+     * @param _UUID The unique UUID to be used
      */
-    public Person(String name, ArrayList<Crime> crimeList, boolean livingStatus, String _UUID) {
+    public Person(String name, boolean livingStatus, UUID _UUID) {
         this.name = name;
-        this.crimeList = crimeList;
         this.livingStatus = livingStatus;
-        this.UUID = _UUID;
+        this.uuid = _UUID;
+    }
+
+        /**
+     * Creates a Person as a called super without UUID
+     * @param name Name of the Person
+     * @param livingStatus Boolean if living 
+     */
+    public Person(String name, boolean livingStatus) {
+        this.name = name;
+        this.livingStatus = livingStatus;
+        this.uuid = UUID.randomUUID();
     }
 
     /**
@@ -36,18 +48,6 @@ public class Person {
      */
     public void setName(String name) {
         this.name = name;
-    }
-
-    public ArrayList<Crime> getCrimeList() {
-        return this.crimeList;
-    }
-
-    /**
-     * Method that sets the list of the Crime
-     * @param evidenceList ArrayList<Crime>  of the Crime
-     */
-    public void setCrimeList(ArrayList<Crime> crimeList) {
-        this.crimeList = crimeList;
     }
 
     /**
@@ -70,31 +70,8 @@ public class Person {
      * Method that gets the person's UUID
      * @return person's UUID
      */
-    public String getUUID(){
-        return "";
+    public UUID getUUID(){
+        return this.uuid;
     }
 
-    /**
-     * Method that gets who's the witness
-     * @return true if there is a witness
-     */
-    public boolean isWitness() {
-        return true;
-    }
-
-        /**
-     * Method that gets who's the POI
-     * @return true if there is a POI
-     */
-    public boolean isPOI() {
-        return true;
-    }
-
-    /**
-     * Method that gets who's the criminal
-     * @return true if there is a criminal
-     */
-    public boolean isCriminal() {
-        return true;
-    }
 }
