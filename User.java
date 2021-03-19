@@ -12,7 +12,10 @@ public class User {
     private String name;
     private String position;
     private Boolean admin;
+<<<<<<< HEAD
+=======
     private UUID uuid;
+>>>>>>> 59904edf858c08223b73aa7ad881623e38617287
 
     /**
      * Creates a User object with a UUID
@@ -23,6 +26,8 @@ public class User {
      * @param admin Boolean if they are an admin or not
      * @param UUID unique identifier
      */
+<<<<<<< HEAD
+=======
     public User(String username, String password, String name, String position, Boolean admin, UUID UUID) {
         this.username = username;
         this.password = password;
@@ -40,13 +45,17 @@ public class User {
      * @param position String of their position
      * @param admin Boolean if they are an admin or not
      */
+>>>>>>> 59904edf858c08223b73aa7ad881623e38617287
     public User(String username, String password, String name, String position, Boolean admin) {
         this.username = username;
         this.password = password;
         this.name = name;
         this.position = position;
         this.admin = admin;
+<<<<<<< HEAD
+=======
         this.uuid = UUID.randomUUID();
+>>>>>>> 59904edf858c08223b73aa7ad881623e38617287
     }
 
     /**
