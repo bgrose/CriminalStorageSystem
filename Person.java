@@ -2,11 +2,14 @@
  * @description Class that creates Person
  * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
  */
+
+import java.util.UUID;
+
 public class Person {
     
     private String name;
     private boolean livingStatus;
-    private String UUID;
+    private UUID UUID;
 
     /**
      * 
@@ -14,10 +17,21 @@ public class Person {
      * @param livingStatus
      * @param _UUID
      */
-    public Person(String name, boolean livingStatus, String _UUID) {
+    public Person(String name, boolean livingStatus, UUID _UUID) {
         this.name = name;
         this.livingStatus = livingStatus;
         this.UUID = _UUID;
+    }
+
+        /**
+     * 
+     * @param name
+     * @param livingStatus
+     */
+    public Person(String name, boolean livingStatus) {
+        this.name = name;
+        this.livingStatus = livingStatus;
+        this.UUID = UUID.randomUUID();
     }
 
     /**
@@ -56,7 +70,7 @@ public class Person {
      * Method that gets the person's UUID
      * @return person's UUID
      */
-    public String getUUID(){
+    public UUID getUUID(){
         return this.UUID;
     }
 

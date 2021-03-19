@@ -4,6 +4,8 @@
  * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
  */
 
+ import java.util.UUID;
+
 public class Witness extends Person {
 
     private String statement;
@@ -15,7 +17,7 @@ public class Witness extends Person {
      * @param statement
      * @param UUID
      */
-    public Witness(String name, boolean livingStatus, String statement, String UUID) {
+    public Witness(String name, boolean livingStatus, String statement, UUID UUID) {
         super(name, livingStatus, UUID);
         this.statement = statement;
     }

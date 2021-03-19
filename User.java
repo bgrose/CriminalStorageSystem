@@ -2,6 +2,9 @@
  * @description creates the User class
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
+
+ import java.util.UUID;
+
 public class User {
 
     private String username;
@@ -9,7 +12,7 @@ public class User {
     private String name;
     private String position;
     private Boolean admin;
-    private String UUID;
+    private UUID UUID;
 
     /**
      * 
@@ -20,7 +23,7 @@ public class User {
      * @param admin
      * @param UUID
      */
-    public User(String username, String password, String name, String position, Boolean admin, String UUID) {
+    public User(String username, String password, String name, String position, Boolean admin, UUID UUID) {
         this.username = username;
         this.password = password;
         this.name = name;
@@ -145,7 +148,7 @@ public class User {
      * 
      * @param UUID
      */
-    public void setUUID(String UUID) {
+    public void setUUID(UUID UUID) {
 
     }
 
@@ -153,7 +156,7 @@ public class User {
      * 
      * @return
      */
-    public String getUUID()
+    public UUID getUUID()
     {
         return this.UUID;
     }

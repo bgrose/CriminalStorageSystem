@@ -1,10 +1,10 @@
-
 /**
  * Class that creates a Crime
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Crime {
 
@@ -18,12 +18,12 @@ public class Crime {
     private int date;
     private String evidenceListReturn; // Used in toString
     private String anyonePersonListReturn; // Used in toString
-    private String UUID;
+    private UUID UUID;
 
     /**
-     * 
-     * @param evidenceList
-     * @param _personLists
+     * Creates a Crime object
+     * @param evidenceList The arraylist with evidence for a crime
+     * @param _personLists 
      * @param witness
      * @param description
      * @param name
@@ -32,7 +32,7 @@ public class Crime {
      * @param _UUID
      */
     public Crime(ArrayList<Evidence> evidenceList, ArrayList<Suspects> _personLists, ArrayList<Witness> witness,
-            String description, String name, Boolean solved, int date, String _UUID) {
+            String description, String name, Boolean solved, int date, UUID _UUID) {
         this.evidenceList = evidenceList;
         this.personList = _personLists;
         this.witnessees = witness;
@@ -41,6 +41,18 @@ public class Crime {
         this.solved = solved;
         this.date = date;
         this.UUID = _UUID;
+    }
+
+    public Crime(ArrayList<Evidence> evidenceList, ArrayList<Suspects> _personLists, ArrayList<Witness> witness,
+        String description, String name, Boolean solved, int date) {
+        this.evidenceList = evidenceList;
+        this.personList = _personLists;
+        this.witnessees = witness;
+        this.description = description;
+        this.name = name;
+        this.solved = solved;
+        this.date = date;
+        this.UUID = UUID.randomUUID();
     }
 
     /**
@@ -217,7 +229,7 @@ public class Crime {
      * 
      * @return
      */
-    public String getUUID() {
+    public UUID getUUID() {
         return this.UUID;
     }
 }

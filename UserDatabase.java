@@ -10,9 +10,15 @@ public class UserDatabase {
 
     /**
      * Method that gets the User
+     * @param UUID UUID of User
      * @return null get User
      */
-    public User getUser() {
+    public User getUser(String userName) {
+        for (int i = 0; i < database.size(); i++) {
+            User user = database.get(i);
+            if (userName.equals(user.getUsername()))
+                return user;
+        }
         return null;
     }
 
@@ -21,32 +27,17 @@ public class UserDatabase {
      * @param adds a new user
      */
     public void addUser(User nw) {
-
+        database.add(nw);
+        DataWriter.DataUpdate();
     }
 
     /**
-     * 
-     * @param UUID
-     * @return
-     */
-    public User findUser(String UUID) {
-        return null;
-    }
-
-    /**
-     * 
-     * @param delete
+     * Removes a user from the database
+     * @param delete user to delete
      */
     public void removeUser(User delete) {
-
-    }
-
-    /**
-     * Method that edits a user
-     * @param edit modify users
-     */
-    public void modifyUser(User edit) {
-
+        database.remove(delete);
+        DataWriter.DataUpdate();
     }
 
     /**
@@ -54,23 +45,7 @@ public class UserDatabase {
      * @return null set Database
      */
     public ArrayList<User> getDatabase() {
-        return null;
-    }
-
-    /**
-     * Method that sets up the database
-     * @param Data set Database
-     */
-    public void setDatabase(User Data) {
-
-    }
-
-    /**
-     * Constructor method that sets up the User Database
-     * @param return the get users
-     */
-    public UserDatabase() {
-        database = DataLoader.getUsers();
+        return database;
     }
 
     /**
@@ -79,7 +54,7 @@ public class UserDatabase {
      */
     public static ArrayList<User> getInstance() {
         if (database == null)
-            database = new ArrayList<User>();
+            database = DataLoader.getUsers();
         return database;
     }
 }

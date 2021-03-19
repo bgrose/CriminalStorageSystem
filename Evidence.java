@@ -2,12 +2,14 @@
  * @description creates the Evidence class
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
+import java.util.UUID;
+
 public class Evidence 
 {
 
     private String name;
     private String description;
-    private String UUID;
+    private UUID UUID;
 
     /**
      * 
@@ -15,7 +17,7 @@ public class Evidence
      * @param description
      * @param UUID
      */
-    public Evidence(String name, String description, String UUID) 
+    public Evidence(String name, String description, UUID UUID) 
     {
         this.name = name;
         this.description = description;
@@ -71,7 +73,7 @@ public class Evidence
      * 
      * @return
      */
-    public String getUUID() 
+    public UUID getUUID() 
     {
         return this.UUID;
     }

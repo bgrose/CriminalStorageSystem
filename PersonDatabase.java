@@ -24,6 +24,7 @@ public class PersonDatabase {
      */
     public void addPerson(Suspects person) {
         personList.add(person);
+        DataWriter.DataUpdate();
     }
 
     /**
@@ -31,16 +32,10 @@ public class PersonDatabase {
      * @param person
      */
     public void removePerson(Suspects person) {
-
+        personList.remove(person);
+        DataWriter.DataUpdate();
     }
 
-    /**
-     * 
-     * @param person
-     */
-    public void modifyPerson(Suspects person) {
-
-    }
 
     /**
      * 

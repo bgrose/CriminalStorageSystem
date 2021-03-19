@@ -5,6 +5,7 @@
 import java.io.FileReader;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -35,7 +36,7 @@ public class DataLoader extends DataConstants {
                 for (int j = 0; j < evidenceArray.size(); i++) {
                     String evidenceUUID = (String) evidenceArray.get(j);
                     for (int k = 0; k < grabEvidence.size(); k++) {
-                        String UUIDEvi = grabEvidence.get(k).getUUID();
+                        UUID UUIDEvi = grabEvidence.get(k).getUUID();
                         if (evidenceUUID.equals(UUIDEvi))
                             evidenceList.add(grabEvidence.get(k));
                     }
@@ -44,9 +45,9 @@ public class DataLoader extends DataConstants {
                 ArrayList<Witness> witness = new ArrayList<Witness>();
                 JSONArray witnessArray = (JSONArray) crimeJSON.get(CRIME_WITNESSLIST);
                 for (int j = 0; j < witnessArray.size(); i++) {
-                    String witnessUUID = (String) witnessArray.get(j);
+                    UUID witnessUUID = (UUID) witnessArray.get(j);
                     for (int k = 0; k < grabWitt.size(); k++) {
-                        String UUIDWitt = grabWitt.get(k).getUUID();
+                        UUID UUIDWitt = grabWitt.get(k).getUUID();
                         if (witnessUUID.equals(UUIDWitt))
                             witness.add(grabWitt.get(k));
                     }
@@ -55,7 +56,7 @@ public class DataLoader extends DataConstants {
                 ArrayList<Suspects> personLists = new ArrayList<Suspects>();
                 JSONArray personArray = (JSONArray) crimeJSON.get(CRIME_PERSONLIST);
                 for (int j = 0; j < personArray.size(); i++) {
-                    String personUUID = (String) personArray.get(j);
+                    UUID personUUID = (UUID) personArray.get(j);
                     ArrayList<Suspects> suspects = PersonDatabase.getInstance().getDatabase();
                     for (int k = 0; k < suspects.size(); k++) {
                         if (personUUID.equals(suspects.get(k).getUUID()))
@@ -67,7 +68,7 @@ public class DataLoader extends DataConstants {
                 String name = (String) crimeJSON.get(CRIME_NAME);
                 Boolean solved = (Boolean) crimeJSON.get(CRIME_SOLVED);
                 int date = (int) crimeJSON.get(CRIME_DATE);
-                String UUID = (String) crimeJSON.get(CRIME_UUID);
+                UUID UUID = (UUID) crimeJSON.get(CRIME_UUID);
 
                 Crime newCrime = new Crime(evidenceList, personLists, witness, description, name, solved, date, UUID);
                 crimes.add(newCrime);
@@ -92,7 +93,7 @@ public class DataLoader extends DataConstants {
 
             for (int i = 0; i < peopleJSON.size(); i++) {
                 JSONObject personJSON = (JSONObject) peopleJSON.get(i);
-                String UUID = (String) personJSON.get(USER_UUID);
+                UUID UUID = (UUID) personJSON.get(USER_UUID);
                 String username = (String) personJSON.get(USER_USERNAME);
                 String password = (String) personJSON.get(USER_PASSWORD);
                 String name = (String) personJSON.get(USER_NAME);
@@ -145,16 +146,16 @@ public class DataLoader extends DataConstants {
                 String crimeType = (String) personJSON.get(CRIMINAL_CRIME_TYPE);
 
                 // Find Officers
-                String UUIDofOfficers = (String) personJSON.get(USER_UUID);
+                UUID UUIDofOfficers = (UUID) personJSON.get(USER_UUID);
                 ArrayList<User> Users = UserDatabase.getInstance();
                 User arrestingOfficer = null;
                 for (int j = 0; i < Users.size(); j++) {
                     User user = Users.get(j);
-                    if (user.getUUID() == UUIDofOfficers)
+                    if (user.getUUID().equals(UUIDofOfficers))
                         arrestingOfficer = user;
                 }
                 boolean inJail = (Boolean) personJSON.get(CRIMINAL_JAIL_STATUS);
-                String UUID = (String) personJSON.get(CRIMINAL_UUID);
+                UUID UUID = (UUID) personJSON.get(CRIMINAL_UUID);
 
                 Suspects suspect = new Suspects(name, livingStatus, alias, accomplice, hairColor, eyeColor, tatoo,
                         skinColor, nationality, weight, height, acquaintance, age, glasses, punishment, disability,
@@ -184,7 +185,7 @@ public class DataLoader extends DataConstants {
                 JSONObject evidenceJSONObject = (JSONObject) evidenceJSON.get(i);
                 String name = (String) evidenceJSONObject.get(EVIDENCE_NAME);
                 String description = (String) evidenceJSONObject.get(EVIDENCE_DESCRIPTION);
-                String UUID = (String) evidenceJSONObject.get(EVIDENCE_UUID);
+                UUID UUID = (UUID) evidenceJSONObject.get(EVIDENCE_UUID);
 
                 Evidence item = new Evidence(name, description, UUID);
                 evidence.add(item);
@@ -212,7 +213,7 @@ public class DataLoader extends DataConstants {
                 String name = (String) witnesssJSONObject.get(WITNESS_NAME);
                 Boolean livingStatus = (Boolean) witnesssJSONObject.get(WITNESS_LIVING);
                 String statement = (String) witnesssJSONObject.get(WITNESS_STATEMENT);
-                String UUID = (String) witnesssJSONObject.get(WITNESS_UUID);
+                UUID UUID = (UUID) witnesssJSONObject.get(WITNESS_UUID);
 
                 Witness item = new Witness(name, livingStatus, statement, UUID);
                 witnessList.add(item);
