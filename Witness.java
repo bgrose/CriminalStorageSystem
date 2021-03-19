@@ -4,7 +4,6 @@
  * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
  */
 
-import java.util.ArrayList;
  
 public class Witness extends Person {
 
@@ -13,7 +12,7 @@ public class Witness extends Person {
     /**
      * Constructor method that sets up the Witness
      */
-    public Witness(String name, ArrayList<Crime> crimeList, boolean livingStatus, String statement, String UUID) {
+    public Witness(String name, boolean livingStatus, String statement, String UUID) {
         super(name, livingStatus, UUID);
         this.statement = statement;
     }
