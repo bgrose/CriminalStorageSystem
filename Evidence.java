@@ -10,7 +10,10 @@ public class Evidence
     private String UUID;
 
     /**
-     * Constructor method that creates the Evidence
+     * 
+     * @param name
+     * @param description
+     * @param UUID
      */
     public Evidence(String name, String description, String UUID) 
     {
@@ -64,6 +67,10 @@ public class Evidence
         return "Name: " + name + "Description: " + description;
     }
 
+    /**
+     * 
+     * @return
+     */
     public String getUUID() 
     {
         return this.UUID;

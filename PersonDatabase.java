@@ -1,14 +1,14 @@
+
 /**
  * @description Class that creates a database to store Person objects (Criminals, POIs, and Witnesses)
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
-import java.util.*;
+import java.util.ArrayList;
 
 public class PersonDatabase {
 
     private static PersonDatabase personDatabase;
     ArrayList<Suspects> personList;
-
 
     /**
      * Method that returns a Person from person Database
@@ -19,48 +19,59 @@ public class PersonDatabase {
     }
 
     /**
-     * Method that adds a Person to personDatabase
+     * 
+     * @param person
      */
     public void addPerson(Suspects person) {
-
+        personList.add(person);
     }
 
     /**
-     * Method that removes a Person from personDatabase
+     * 
+     * @param person
      */
     public void removePerson(Suspects person) {
 
     }
 
     /**
-     * Method that modifies a Person in personDatabase
+     * 
+     * @param person
      */
     public void modifyPerson(Suspects person) {
 
     }
 
     /**
-     * Method that prints out the personDatabase
+     * 
      */
     public void printDatabase() {
 
     }
 
-    public static PersonDatabase getInstance()
-    {
-        if(personDatabase == null) personDatabase = new PersonDatabase();
+    /**
+     * 
+     * @return
+     */
+    public static PersonDatabase getInstance() {
+        if (personDatabase == null)
+            personDatabase = new PersonDatabase();
         return personDatabase;
     }
 
-    private PersonDatabase()
-    {
+    /**
+     * 
+     */
+    private PersonDatabase() {
         personList = DataLoader.getPerson();
     }
 
-    public ArrayList<Suspects> getDatabase()
-    {
+    /**
+     * 
+     * @return
+     */
+    public ArrayList<Suspects> getDatabase() {
         return personList;
     }
-    
 
 }

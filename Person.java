@@ -1,4 +1,3 @@
-
 /**
  * @description Class that creates Person
  * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
@@ -10,8 +9,10 @@ public class Person {
     private String UUID;
 
     /**
-     * Constructor method that sets up the Person
-     * @param
+     * 
+     * @param name
+     * @param livingStatus
+     * @param _UUID
      */
     public Person(String name, boolean livingStatus, String _UUID) {
         this.name = name;

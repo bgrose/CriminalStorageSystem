@@ -1,6 +1,5 @@
-
 /**
- * @description Class that creates Criminal
+ * Class that creates Criminal
  * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
  */
 
@@ -26,8 +25,28 @@ public class Suspects extends Person{
     private boolean inJail;
 
     /**
-     * Constructor method that sets up the Criminal
-     * @param Str
+     * 
+     * @param name
+     * @param livingStatus
+     * @param alias
+     * @param accomplice
+     * @param hairColor
+     * @param eyeColor
+     * @param tatoo
+     * @param skinColor
+     * @param nationality
+     * @param weight
+     * @param height
+     * @param acquaintance
+     * @param age
+     * @param glasses
+     * @param punishment
+     * @param disability
+     * @param handness
+     * @param crimeType
+     * @param arrestingOfficer
+     * @param inJail
+     * @param UUID
      */
     public Suspects(String name, boolean livingStatus, String alias, String accomplice, String
     hairColor, String eyeColor, String tatoo, String skinColor, String nationality, double weight, int height, String acquaintance,
@@ -55,7 +74,8 @@ public class Suspects extends Person{
     }
 
     /**
-     * Method that prints out the details of the Criminal class
+     * 
+     * @return
      */
     public String toString() {
         return super.toString() +

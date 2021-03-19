@@ -1,15 +1,14 @@
 
 /**
- * @description Class that creates a database to store Crimes
+ * Class that creates a database to store Crimes
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
-import java.util.*;
+import java.util.ArrayList;
 
 public class CrimeDatabase {
 
     private static CrimeDatabase crimeDatabase;
     ArrayList<Crime> crimeList;
-
 
     /**
      * Method that returns a Crime from crimeDatabase
@@ -20,21 +19,24 @@ public class CrimeDatabase {
     }
 
     /**
-     * Method that adds a Crime to crimeDatabase
+     * 
+     * @param crime
      */
     public void addCrime(Crime crime) {
         crimeList.add(crime);
     }
 
-    /**
-     * Method that removes a Crime from crimeDatabase
-     */
+   /**
+    * 
+    * @param crime
+    */
     public void removeCrime(Crime crime) {
         crimeList.remove(crime);
     }
 
     /**
-     * Method that modifies a Crime in crimeDatabase
+     * 
+     * @param crime
      */
     public void modifyCrime(Crime crime) {
 
@@ -44,26 +46,34 @@ public class CrimeDatabase {
      * Method that prints out the crimeDatabase
      */
     public void printDatabase() {
-        for(Crime crime : crimeList) {
+        for (Crime crime : crimeList) {
             // System.out.println(crime.getName());
         }
     }
 
-    public static CrimeDatabase getInstance()
-    {
-        if(crimeDatabase == null) crimeDatabase = new CrimeDatabase();
+    /**
+     * 
+     * @return
+     */
+    public static CrimeDatabase getInstance() {
+        if (crimeDatabase == null)
+            crimeDatabase = new CrimeDatabase();
         return crimeDatabase;
     }
 
-    private CrimeDatabase()
-    {
+    /**
+     * 
+     */
+    private CrimeDatabase() {
         crimeList = DataLoader.getCrimes();
     }
 
-    public ArrayList<Crime> getDatabase()
-    {
+    /**
+     * 
+     * @return
+     */
+    public ArrayList<Crime> getDatabase() {
         return crimeList;
     }
-    
 
 }

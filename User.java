@@ -12,7 +12,13 @@ public class User {
     private String UUID;
 
     /**
-     * Constructor method that sets up User
+     * 
+     * @param username
+     * @param password
+     * @param name
+     * @param position
+     * @param admin
+     * @param UUID
      */
     public User(String username, String password, String name, String position, Boolean admin, String UUID) {
         this.username = username;
@@ -135,10 +141,18 @@ public class User {
 
     }
 
+    /**
+     * 
+     * @param UUID
+     */
     public void setUUID(String UUID) {
 
     }
 
+    /**
+     * 
+     * @return
+     */
     public String getUUID()
     {
         return this.UUID;

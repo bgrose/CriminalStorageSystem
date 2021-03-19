@@ -4,13 +4,16 @@
  * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
  */
 
- 
 public class Witness extends Person {
 
     private String statement;
 
     /**
-     * Constructor method that sets up the Witness
+     * 
+     * @param name
+     * @param livingStatus
+     * @param statement
+     * @param UUID
      */
     public Witness(String name, boolean livingStatus, String statement, String UUID) {
         super(name, livingStatus, UUID);
@@ -18,11 +21,11 @@ public class Witness extends Person {
     }
 
     /**
-     * Method that prints out the details of the Witness class
+     * 
+     * @return
      */
     public String toString() {
-        return super.toString() +
-        "\nStatement: " + this.statement;
+        return super.toString() + "\nStatement: " + this.statement;
     }
 
     /**
@@ -40,5 +43,5 @@ public class Witness extends Person {
     public void setStatement(String statement) {
         this.statement = statement;
     }
-    
+
 }
