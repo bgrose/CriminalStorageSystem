@@ -15,20 +15,6 @@ public class Crime {
     private String description;
     private String caseID;
     private Boolean solved;
-<<<<<<< HEAD
-    private int date;
-    private String evidenceListReturn; // Used in toString
-    private String anyonePersonListReturn; // Used in toString
-    private String UUID;
-    /**
-     * Constructor method that sets up the Crime
-     * @param str
-     */
-    public void Crime(ArrayList<Evidence> evidenceList, ArrayList<Person> anyonePersonList, String description,
-            String name, Boolean solved, int date) {
-        this.evidenceList = evidenceList;
-        this.anyonePersonList = anyonePersonList;
-=======
     private String date;
     private String evidenceListReturn; // Used in toString
     private String anyonePersonListReturn; // Used in toString
@@ -50,13 +36,10 @@ public class Crime {
         this.evidenceList = evidenceList;
         this.personList = _personLists;
         this.witnessees = witness;
->>>>>>> 59904edf858c08223b73aa7ad881623e38617287
         this.description = description;
         this.caseID = caseID;
         this.solved = solved;
         this.date = date;
-<<<<<<< HEAD
-=======
         this.uuid = _UUID;
     }
 
@@ -80,7 +63,6 @@ public class Crime {
         this.solved = solved;
         this.date = date;
         this.uuid = UUID.randomUUID();
->>>>>>> 59904edf858c08223b73aa7ad881623e38617287
     }
 
     /**
@@ -95,10 +77,6 @@ public class Crime {
      * Method that sets the anyone person list of the Crime
      * @param anyonePersonList ArrayList<Suspects> of the people of the Crime
      */
-<<<<<<< HEAD
-    public void setAnyonePersonList(ArrayList<Person> anyonePersonList) {
-        this.anyonePersonList = anyonePersonList;
-=======
     public void setPersonList(ArrayList<Suspects> anyonePersonList) {
         this.personList = anyonePersonList;
     }
@@ -109,7 +87,6 @@ public class Crime {
      */
     public void setWitnessList(ArrayList<Witness> WitnessList) {
         this.witnessees = WitnessList;
->>>>>>> 59904edf858c08223b73aa7ad881623e38617287
     }
 
     /**
@@ -140,11 +117,7 @@ public class Crime {
      * Method that sets the date of the Crime
      * @param date String date of the Crime
      */
-<<<<<<< HEAD
-    public void setDate(int date) {
-=======
     public void setDate(String date) {
->>>>>>> 59904edf858c08223b73aa7ad881623e38617287
         this.date = date;
     }
 
@@ -160,10 +133,6 @@ public class Crime {
      * Method that gets the people involved list
      * @return ArrayList of people involved in the crime
      */
-<<<<<<< HEAD
-    public ArrayList<Person> getAnyonePersonList() {
-        return anyonePersonList;
-=======
     public ArrayList<Suspects> getPersonList() {
         return personList;
     }
@@ -174,7 +143,6 @@ public class Crime {
      */
     public ArrayList<Witness> getUserList() {
         return witnessees;
->>>>>>> 59904edf858c08223b73aa7ad881623e38617287
     }
 
     /**
@@ -205,17 +173,14 @@ public class Crime {
      * Method that gets the date the Crime was comitted
      * @return int date
      */
-    public int getDate() {
+    public String getDate() {
         return this.date;
     }
 
-<<<<<<< HEAD
-=======
     public ArrayList<Witness> getWitnessList() {
         return this.witnessees;
     }
 
->>>>>>> 59904edf858c08223b73aa7ad881623e38617287
     /**
      * Method that adds Evidence to the Crime
      * @param evidence Evidence to be added from the crime
@@ -236,26 +201,16 @@ public class Crime {
      * Method that adds a Person to the Crime
      * @param person Person that is added to the Crime
      */
-<<<<<<< HEAD
-    public void addPerson(Person person) {
-        anyonePersonList.add(person);
-=======
     public void addPerson(Suspects person) {
         personList.add(person);
->>>>>>> 59904edf858c08223b73aa7ad881623e38617287
     }
 
     /**
      * Method that removes a Person from the Crime
      * @param person Person that is removed from the Crime
      */
-<<<<<<< HEAD
-    public void removePerson(Person person) {
-        anyonePersonList.remove(person);
-=======
     public void removePerson(Suspects person) {
         personList.remove(person);
->>>>>>> 59904edf858c08223b73aa7ad881623e38617287
     }
 
     /**
@@ -265,11 +220,7 @@ public class Crime {
         for (Evidence evidence : evidenceList) {
             evidenceListReturn += evidence;
         }
-<<<<<<< HEAD
-        for (Person person : anyonePersonList) {
-=======
         for (Suspects person : personList) {
->>>>>>> 59904edf858c08223b73aa7ad881623e38617287
             anyonePersonListReturn += person;
         }
         return "Case ID: " + caseID + "Description: " + description + "Solved: " + solved + "Date: " + date
