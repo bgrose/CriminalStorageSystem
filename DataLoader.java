@@ -34,7 +34,7 @@ public class DataLoader extends DataConstants {
                 ArrayList<Evidence> evidenceList = new ArrayList<Evidence>();
                 JSONArray evidenceArray = (JSONArray) crimeJSON.get(CRIME_EVIDENCE_LIST);
                 for (int j = 0; j < evidenceArray.size(); i++) {
-                    String evidenceUUID = (String) evidenceArray.get(j);
+                    UUID evidenceUUID = (UUID) evidenceArray.get(j);
                     for (int k = 0; k < grabEvidence.size(); k++) {
                         UUID UUIDEvi = grabEvidence.get(k).getUUID();
                         if (evidenceUUID.equals(UUIDEvi))

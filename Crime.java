@@ -18,7 +18,7 @@ public class Crime {
     private int date;
     private String evidenceListReturn; // Used in toString
     private String anyonePersonListReturn; // Used in toString
-    private UUID UUID;
+    private UUID uuid;
 
     /**
      * Creates a Crime object
@@ -40,7 +40,7 @@ public class Crime {
         this.name = name;
         this.solved = solved;
         this.date = date;
-        this.UUID = _UUID;
+        this.uuid = _UUID;
     }
 
     public Crime(ArrayList<Evidence> evidenceList, ArrayList<Suspects> _personLists, ArrayList<Witness> witness,
@@ -52,7 +52,7 @@ public class Crime {
         this.name = name;
         this.solved = solved;
         this.date = date;
-        this.UUID = UUID.randomUUID();
+        this.uuid = UUID.randomUUID();
     }
 
     /**
@@ -230,6 +230,6 @@ public class Crime {
      * @return
      */
     public UUID getUUID() {
-        return this.UUID;
+        return this.uuid;
     }
 }

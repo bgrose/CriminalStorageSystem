@@ -9,7 +9,7 @@ public class Person {
     
     private String name;
     private boolean livingStatus;
-    private UUID UUID;
+    private UUID uuid;
 
     /**
      * 
@@ -20,7 +20,7 @@ public class Person {
     public Person(String name, boolean livingStatus, UUID _UUID) {
         this.name = name;
         this.livingStatus = livingStatus;
-        this.UUID = _UUID;
+        this.uuid = _UUID;
     }
 
         /**
@@ -31,7 +31,7 @@ public class Person {
     public Person(String name, boolean livingStatus) {
         this.name = name;
         this.livingStatus = livingStatus;
-        this.UUID = UUID.randomUUID();
+        this.uuid = UUID.randomUUID();
     }
 
     /**
@@ -71,7 +71,7 @@ public class Person {
      * @return person's UUID
      */
     public UUID getUUID(){
-        return this.UUID;
+        return this.uuid;
     }
 
     /**
