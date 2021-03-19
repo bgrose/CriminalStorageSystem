@@ -1,4 +1,3 @@
-
 /**
  * Class that creates a database to store Crimes
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
@@ -19,23 +18,23 @@ public class CrimeDatabase {
     }
 
     /**
-     * 
-     * @param crime
+     * Adds a crime to the databaase
+     * @param crime crime to be added
      */
     public void addCrime(Crime crime) {
         crimeList.add(crime);
     }
 
    /**
-    * 
-    * @param crime
+    * Removes a crime from the database
+    * @param crime crime to be removed
     */
     public void removeCrime(Crime crime) {
         crimeList.remove(crime);
     }
 
     /**
-     * 
+     * Modifief a crime in the database
      * @param crime
      */
     public void modifyCrime(Crime crime) {
@@ -47,7 +46,7 @@ public class CrimeDatabase {
      */
     public void printDatabase() {
         for (Crime crime : crimeList) {
-            // System.out.println(crime.getName());
+            crime.toString();
         }
     }
 

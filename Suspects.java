@@ -26,28 +26,28 @@ public class Suspects extends Person{
     private boolean inJail;
 
     /**
-     * 
-     * @param name
-     * @param livingStatus
-     * @param alias
-     * @param accomplice
-     * @param hairColor
-     * @param eyeColor
-     * @param tatoo
-     * @param skinColor
-     * @param nationality
-     * @param weight
-     * @param height
-     * @param acquaintance
-     * @param age
-     * @param glasses
-     * @param punishment
-     * @param disability
-     * @param handness
-     * @param crimeType
-     * @param arrestingOfficer
-     * @param inJail
-     * @param UUID
+     * Creates a suspect object
+     * @param name name of suspect
+     * @param livingStatus boolean if living
+     * @param alias string of aliases
+     * @param accomplice string of accomplaces
+     * @param hairColor string of hair color
+     * @param eyeColor string of eye color
+     * @param tatoo string of tattoos
+     * @param skinColor string of skin color
+     * @param nationality string of nationality
+     * @param weight double of weight
+     * @param height int of height in inches
+     * @param acquaintance string of acquantances
+     * @param age int of age
+     * @param glasses boolean of if they have glasses
+     * @param punishment string of punishment
+     * @param disability string of any disabolity
+     * @param handness string of handness
+     * @param crimeType string of type of crime committed
+     * @param arrestingOfficer User of the arresting officer
+     * @param inJail boolean of if they are in jail.
+     * @param UUID Unique ID for Suspect
      */
     public Suspects(String name, boolean livingStatus, String alias, String accomplice, String
     hairColor, String eyeColor, String tatoo, String skinColor, String nationality, double weight, int height, String acquaintance,
@@ -74,9 +74,57 @@ public class Suspects extends Person{
         this.inJail = inJail;
     }
 
+        /**
+     * Creates a suspect object without UUID
+     * @param name name of suspect
+     * @param livingStatus boolean if living
+     * @param alias string of aliases
+     * @param accomplice string of accomplaces
+     * @param hairColor string of hair color
+     * @param eyeColor string of eye color
+     * @param tatoo string of tattoos
+     * @param skinColor string of skin color
+     * @param nationality string of nationality
+     * @param weight double of weight
+     * @param height int of height in inches
+     * @param acquaintance string of acquantances
+     * @param age int of age
+     * @param glasses boolean of if they have glasses
+     * @param punishment string of punishment
+     * @param disability string of any disabolity
+     * @param handness string of handness
+     * @param crimeType string of type of crime committed
+     * @param arrestingOfficer User of the arresting officer
+     * @param inJail boolean of if they are in jail.
+     */
+    public Suspects(String name, boolean livingStatus, String alias, String accomplice, String
+    hairColor, String eyeColor, String tatoo, String skinColor, String nationality, double weight, int height, String acquaintance,
+    int age, boolean glasses, String punishment, String disability, String handness, String crimeType, User arrestingOfficer, 
+    boolean inJail) {
+        super(name, livingStatus);
+        this.alias = alias;
+        this.accomplice = accomplice;
+        this.hairColor = hairColor;
+        this.eyeColor = eyeColor;
+        this.tatoo = tatoo;
+        this.skinColor = skinColor;
+        this.nationality = nationality;
+        this.weight = weight;
+        this.height = height;
+        this.acquaintance = acquaintance;
+        this.age = age;
+        this.glasses = glasses;
+        this.punishment = punishment;
+        this.disability = disability;
+        this.handness = handness;
+        this.crimeType = crimeType;
+        this.arrestingOfficer = arrestingOfficer;
+        this.inJail = inJail;
+    }
+
     /**
-     * 
-     * @return
+     * Makes a string to return for Suspect
+     * @return string value to be printed
      */
     public String toString() {
         return super.toString() +

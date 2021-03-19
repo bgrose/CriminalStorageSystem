@@ -22,6 +22,11 @@ public class Witness extends Person {
         this.statement = statement;
     }
 
+    public Witness(String name, boolean livingStatus, String statement) {
+        super(name, livingStatus);
+        this.statement = statement;
+    }
+
     /**
      * 
      * @return

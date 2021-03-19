@@ -12,16 +12,16 @@ public class User {
     private String name;
     private String position;
     private Boolean admin;
-    private UUID UUID;
+    private UUID uuid;
 
     /**
-     * 
-     * @param username
-     * @param password
-     * @param name
-     * @param position
-     * @param admin
-     * @param UUID
+     * Creates a User object with a UUID
+     * @param username username of the User
+     * @param password String of password
+     * @param name String of User name
+     * @param position String of their position
+     * @param admin Boolean if they are an admin or not
+     * @param UUID unique identifier
      */
     public User(String username, String password, String name, String position, Boolean admin, UUID UUID) {
         this.username = username;
@@ -29,7 +29,24 @@ public class User {
         this.name = name;
         this.position = position;
         this.admin = admin;
-        this.UUID = UUID;
+        this.uuid = UUID;
+    }
+
+       /**
+     * Creates a User object without a UUID
+     * @param username username of the User
+     * @param password String of password
+     * @param name String of User name
+     * @param position String of their position
+     * @param admin Boolean if they are an admin or not
+     */
+    public User(String username, String password, String name, String position, Boolean admin) {
+        this.username = username;
+        this.password = password;
+        this.name = name;
+        this.position = position;
+        this.admin = admin;
+        this.uuid = UUID.randomUUID();
     }
 
     /**
@@ -145,20 +162,20 @@ public class User {
     }
 
     /**
-     * 
-     * @param UUID
+     * Sets the UUID Value for User
+     * @param UUID unique UUID
      */
     public void setUUID(UUID UUID) {
-
+        this.uuid = UUID;
     }
 
     /**
-     * 
-     * @return
+     * Returns the Unique ID
+     * @return the UUID Value
      */
     public UUID getUUID()
     {
-        return this.UUID;
+        return this.uuid;
     }
 
 }

@@ -138,6 +138,6 @@ public class CrimeFacade {
      * 
      */
     public void logout() {
-        userDatabase.saveUsers();
+        DataWriter.DataUpdate();
     }
 }

@@ -5,17 +5,17 @@
 
 import java.util.UUID;
 
-public class Person {
+public abstract class Person {
     
     private String name;
     private boolean livingStatus;
     private UUID uuid;
 
     /**
-     * 
-     * @param name
-     * @param livingStatus
-     * @param _UUID
+     * Creates a Person as a called super with UUID
+     * @param name Name of the Person
+     * @param livingStatus Boolean if living 
+     * @param _UUID The unique UUID to be used
      */
     public Person(String name, boolean livingStatus, UUID _UUID) {
         this.name = name;
@@ -24,9 +24,9 @@ public class Person {
     }
 
         /**
-     * 
-     * @param name
-     * @param livingStatus
+     * Creates a Person as a called super without UUID
+     * @param name Name of the Person
+     * @param livingStatus Boolean if living 
      */
     public Person(String name, boolean livingStatus) {
         this.name = name;
@@ -74,19 +74,4 @@ public class Person {
         return this.uuid;
     }
 
-    /**
-     * Method that gets who's the witness
-     * @return true if there is a witness
-     */
-    public boolean isWitness() {
-        return this instanceof Witness;
-    }
-
-    /**
-     * Method that gets who's the criminal
-     * @return true if there is a criminal
-     */
-    public boolean isCriminal() {
-        return this instanceof Suspects;
-    }
 }

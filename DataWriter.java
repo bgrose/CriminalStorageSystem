@@ -1,5 +1,5 @@
 /**
- * @description
+ * @description Writes to JSON FIle for Object Storage
  * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
  */
 

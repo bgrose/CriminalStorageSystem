@@ -15,24 +15,24 @@ public class Crime {
     private String description;
     private String name;
     private Boolean solved;
-    private int date;
+    private String date;
     private String evidenceListReturn; // Used in toString
     private String anyonePersonListReturn; // Used in toString
     private UUID uuid;
 
     /**
-     * Creates a Crime object
+     * Creates a Crime object with a UUID
      * @param evidenceList The arraylist with evidence for a crime
-     * @param _personLists 
-     * @param witness
-     * @param description
-     * @param name
-     * @param solved
-     * @param date
-     * @param _UUID
+     * @param _personLists  Arraylist with Suspects and Criminals
+     * @param witness Arraylist with witnesses of the crime
+     * @param description String with Description of the crime
+     * @param name String with the name of the Crime
+     * @param solved Boolean if its solved or not
+     * @param date String with date of crime
+     * @param _UUID Unique ID 
      */
     public Crime(ArrayList<Evidence> evidenceList, ArrayList<Suspects> _personLists, ArrayList<Witness> witness,
-            String description, String name, Boolean solved, int date, UUID _UUID) {
+            String description, String name, Boolean solved, String date, UUID _UUID) {
         this.evidenceList = evidenceList;
         this.personList = _personLists;
         this.witnessees = witness;
@@ -43,8 +43,18 @@ public class Crime {
         this.uuid = _UUID;
     }
 
+   /**
+     * Creates a Crime object without a UUID
+     * @param evidenceList The arraylist with evidence for a crime
+     * @param _personLists  Arraylist with Suspects and Criminals
+     * @param witness Arraylist with witnesses of the crime
+     * @param description String with Description of the crime
+     * @param name String with the name of the Crime
+     * @param solved Boolean if its solved or not
+     * @param date String with date of crime
+     */
     public Crime(ArrayList<Evidence> evidenceList, ArrayList<Suspects> _personLists, ArrayList<Witness> witness,
-        String description, String name, Boolean solved, int date) {
+        String description, String name, Boolean solved, String date) {
         this.evidenceList = evidenceList;
         this.personList = _personLists;
         this.witnessees = witness;
@@ -107,7 +117,7 @@ public class Crime {
      * Method that sets the date of the Crime
      * @param date String date of the Crime
      */
-    public void setDate(int date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -163,7 +173,7 @@ public class Crime {
      * Method that gets the date the Crime was comitted
      * @return int date
      */
-    public int getDate() {
+    public String getDate() {
         return this.date;
     }
 

@@ -9,19 +9,31 @@ public class Evidence
 
     private String name;
     private String description;
-    private UUID UUID;
+    private UUID uuid;
 
     /**
-     * 
-     * @param name
-     * @param description
-     * @param UUID
+     * Creates an Evidence Object with a UUID
+     * @param name Name of the evidence
+     * @param description Description of the evidence.
+     * @param UUID The unique identfier
      */
     public Evidence(String name, String description, UUID UUID) 
     {
         this.name = name;
         this.description = description;
-        this.UUID = UUID;
+        this.uuid = UUID;
+    }
+
+    /**
+     * Creates an Evidence Object without a UUID
+     * @param name Name of the evidence
+     * @param description Description of the evidence.
+     */
+    public Evidence(String name, String description) 
+    {
+        this.name = name;
+        this.description = description;
+        this.uuid = UUID.randomUUID();
     }
 
     /**
@@ -70,12 +82,12 @@ public class Evidence
     }
 
     /**
-     * 
-     * @return
+     * Returns the UUID of evidence
+     * @return the Unique UUID
      */
     public UUID getUUID() 
     {
-        return this.UUID;
+        return this.uuid;
     }
 
 }

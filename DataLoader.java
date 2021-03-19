@@ -67,7 +67,7 @@ public class DataLoader extends DataConstants {
                 String description = (String) crimeJSON.get(CRIME_DESCRIPTION);
                 String name = (String) crimeJSON.get(CRIME_NAME);
                 Boolean solved = (Boolean) crimeJSON.get(CRIME_SOLVED);
-                int date = (int) crimeJSON.get(CRIME_DATE);
+                String date = (String) crimeJSON.get(CRIME_DATE);
                 UUID UUID = (UUID) crimeJSON.get(CRIME_UUID);
 
                 Crime newCrime = new Crime(evidenceList, personLists, witness, description, name, solved, date, UUID);
