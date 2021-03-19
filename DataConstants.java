@@ -3,7 +3,7 @@ public class DataConstants {
     protected static final String CRIME_DATE = "Crime Date";
     protected static final String CRIME_DESCRIPTION = "Crime Description";
     protected static final String CRIME_EVIDENCE_LIST = "Evidence List";
-    protected static final String CRIME_NAME = "Crime Name";
+    protected static final String CRIME_NAME = "Crime Case ID";
     protected static final String CRIME_OFFICERLIST = "Officers";
     protected static final String CRIME_PERSONLIST = "Related People";
     protected static final String CRIME_WITNESSLIST = "Witnesses";

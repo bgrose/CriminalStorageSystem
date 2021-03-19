@@ -108,7 +108,7 @@ public class DataWriter extends DataConstants {
         jsonObject.put(CRIME_DATE, crime.getDate());
         jsonObject.put(CRIME_DESCRIPTION, crime.getDescription());
         jsonObject.put(CRIME_EVIDENCE_LIST, saveEvidence(crime, Evidence));
-        jsonObject.put(CRIME_NAME, crime.getName());
+        jsonObject.put(CRIME_NAME, crime.getcaseID());
         jsonObject.put(CRIME_OFFICERLIST, saveOfficers(crime));
         jsonObject.put(CRIME_PERSONLIST, saveSuspect(crime));
         jsonObject.put(CRIME_WITNESSLIST, saveWitness(crime, Witness));

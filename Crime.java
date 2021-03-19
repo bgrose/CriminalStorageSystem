@@ -13,7 +13,7 @@ public class Crime {
     private ArrayList<Witness> witnessees;
     private ArrayList<User> officers;
     private String description;
-    private String name;
+    private String caseID;
     private Boolean solved;
     private String date;
     private String evidenceListReturn; // Used in toString
@@ -26,18 +26,18 @@ public class Crime {
      * @param _personLists  Arraylist with Suspects and Criminals
      * @param witness Arraylist with witnesses of the crime
      * @param description String with Description of the crime
-     * @param name String with the name of the Crime
+     * @param caseID String with the name of the Crime
      * @param solved Boolean if its solved or not
      * @param date String with date of crime
      * @param _UUID Unique ID 
      */
     public Crime(ArrayList<Evidence> evidenceList, ArrayList<Suspects> _personLists, ArrayList<Witness> witness,
-            String description, String name, Boolean solved, String date, UUID _UUID) {
+            String description, String caseID, Boolean solved, String date, UUID _UUID) {
         this.evidenceList = evidenceList;
         this.personList = _personLists;
         this.witnessees = witness;
         this.description = description;
-        this.name = name;
+        this.caseID = caseID;
         this.solved = solved;
         this.date = date;
         this.uuid = _UUID;
@@ -49,17 +49,17 @@ public class Crime {
      * @param _personLists  Arraylist with Suspects and Criminals
      * @param witness Arraylist with witnesses of the crime
      * @param description String with Description of the crime
-     * @param name String with the name of the Crime
+     * @param caseID String with the name of the Crime
      * @param solved Boolean if its solved or not
      * @param date String with date of crime
      */
     public Crime(ArrayList<Evidence> evidenceList, ArrayList<Suspects> _personLists, ArrayList<Witness> witness,
-        String description, String name, Boolean solved, String date) {
+        String description, String caseID, Boolean solved, String date) {
         this.evidenceList = evidenceList;
         this.personList = _personLists;
         this.witnessees = witness;
         this.description = description;
-        this.name = name;
+        this.caseID = caseID;
         this.solved = solved;
         this.date = date;
         this.uuid = UUID.randomUUID();
@@ -101,8 +101,8 @@ public class Crime {
      * Method that sets the name of the Crime
      * @param name String name of the Crime
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setcaseID(String caseID) {
+        this.caseID = caseID;
     }
 
     /**
@@ -157,8 +157,8 @@ public class Crime {
      * Method that gets the name of the crime
      * @return String name
      */
-    public String getName() {
-        return name;
+    public String getcaseID() {
+        return caseID;
     }
 
     /**
@@ -223,7 +223,7 @@ public class Crime {
         for (Suspects person : personList) {
             anyonePersonListReturn += person;
         }
-        return "Name: " + name + "Description: " + description + "Solved: " + solved + "Date: " + date
+        return "Case ID: " + caseID + "Description: " + description + "Solved: " + solved + "Date: " + date
                 + "Evidence List: " + evidenceListReturn + "People Involved List" + anyonePersonListReturn;
     }
 

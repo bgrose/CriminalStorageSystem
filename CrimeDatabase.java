@@ -13,7 +13,11 @@ public class CrimeDatabase {
      * Method that returns a Crime from crimeDatabase
      * @return Crime from CrimeDatabase
      */
-    public Crime getCrime() {
+    public Crime getCrime(String caseNumber) {
+        for(int i=0; i<crimeList.size(); i++)
+        {
+            //TODO
+        }
         return null;
     }
 
