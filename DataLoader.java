@@ -1,4 +1,9 @@
+/**
+ *  Loads in Data from JSON Files and Populates Obejcts
+ * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
+ */
 import java.io.FileReader;
+
 import java.util.ArrayList;
 
 import org.json.simple.JSONArray;
@@ -7,12 +12,12 @@ import org.json.simple.parser.JSONParser;
 
 @SuppressWarnings("unchecked")
 
-/**
- * @description
- * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
- */
 public class DataLoader extends DataConstants {
 
+    /**
+     * Creates an ArrayList of the Crimes to Set as Crime Database
+     * @return Thje Full Array List
+     */
     public static ArrayList<Crime> getCrimes() {
         ArrayList<Crime> crimes = new ArrayList<Crime>();
         ArrayList<Witness> grabWitt = getWitness();
@@ -25,7 +30,6 @@ public class DataLoader extends DataConstants {
 
             for (int i = 0; i < crimesJSON.size(); i++) {
                 JSONObject crimeJSON = (JSONObject) crimesJSON.get(i);
-
                 ArrayList<Evidence> evidenceList = new ArrayList<Evidence>();
                 JSONArray evidenceArray = (JSONArray) crimeJSON.get(CRIME_EVIDENCE_LIST);
                 for (int j = 0; j < evidenceArray.size(); i++) {
@@ -74,6 +78,10 @@ public class DataLoader extends DataConstants {
         return crimes;
     }
 
+    /**
+     * Creates an Arraylist of the Users
+     * @return Arraylist populated with users
+     */
     public static ArrayList<User> getUsers() {
         ArrayList<User> users = new ArrayList<User>();
 
@@ -103,6 +111,10 @@ public class DataLoader extends DataConstants {
         return null;
     }
 
+    /**
+     * Creates an Arraylist of all people for people database
+     * @return an arraylist for people database populated
+     */
     public static ArrayList<Suspects> getPerson() {
         ArrayList<Suspects> Persons = new ArrayList<Suspects>();
 
@@ -157,6 +169,10 @@ public class DataLoader extends DataConstants {
         return Persons;
     }
 
+    /**
+     * Creates an arraylist of Evidence to be used to populate crimes
+     * @return The arraylist of populated evidence
+     */
     public static ArrayList<Evidence> getEvidence() {
         ArrayList<Evidence> evidence = new ArrayList<Evidence>();
         try {
@@ -180,6 +196,10 @@ public class DataLoader extends DataConstants {
         return evidence;
     }
 
+    /**
+     * Creates an arraylist of of Witnesses to be used to populate Crimes
+     * @return arraylist populated with witnesses
+     */
     public static ArrayList<Witness> getWitness() {
         ArrayList<Witness> witnessList = new ArrayList<Witness>();
         try {

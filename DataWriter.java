@@ -1,12 +1,11 @@
-
 /**
  * @description
  * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
  */
 
-
 import java.io.FileWriter;
 import java.io.IOException;
+
 import java.util.ArrayList;
 
 import org.json.simple.JSONArray;
@@ -61,7 +60,8 @@ public class DataWriter extends DataConstants {
     }
 
     /**
-     * Writes to the file for the crimes and calls the different sub class to make objects
+     * Writes to the file for the crimes and calls the different sub class to make
+     * objects
      */
     public static void saveCrimes() {
         CrimeDatabase crimes = CrimeDatabase.getInstance();
@@ -102,8 +102,9 @@ public class DataWriter extends DataConstants {
      * @param crime Crime that is being turned into a JSON FIle
      * @return The JSON Object for the crime
      */
-    public static JSONObject getCrimeJSON(Crime crime,  JSONArray Evidence, JSONArray Witness) {
+    public static JSONObject getCrimeJSON(Crime crime, JSONArray Evidence, JSONArray Witness) {
         JSONObject jsonObject = new JSONObject();
+
         jsonObject.put(CRIME_DATE, crime.getDate());
         jsonObject.put(CRIME_DESCRIPTION, crime.getDescription());
         jsonObject.put(CRIME_EVIDENCE_LIST, saveEvidence(crime, Evidence));
@@ -118,7 +119,8 @@ public class DataWriter extends DataConstants {
     }
 
     /**
-     *  Saves all evidence items for the crime as well as write to JSON file for evidence
+     * Saves all evidence items for the crime as well as write to JSON file for
+     * evidence
      * @param crime Crime evidence is being pulled from
      * @return a JSONArray with the evidence in it for the crime with UUID
      */
@@ -129,7 +131,7 @@ public class DataWriter extends DataConstants {
             Evidence evidence = evidenceList.get(i);
             jsonUUIDEvidence.add(evidence.getUUID());
 
-            //Make Evidence JSON
+            // Make Evidence JSON
             JSONObject jsonObject = new JSONObject();
             jsonObject.put(EVIDENCE_NAME, evidence.getName());
             jsonObject.put(EVIDENCE_UUID, evidence.getUUID());
@@ -170,7 +172,7 @@ public class DataWriter extends DataConstants {
         return jsonUUIDSuspect;
     }
 
-        /**
+    /**
      * Saves the Suspect to a JSON File for Crime by looping ang getting UUID
      * @param crime Takes in crime to loop through
      * @return JSONArray with Suspect UUID
@@ -181,8 +183,6 @@ public class DataWriter extends DataConstants {
         for (int i = 0; i < witnesses.size(); i++) {
             Witness witness = witnesses.get(i);
             jsonUUIDWitness.add(witness.getUUID());
-
-            //Make Evidence JSON
             JSONObject jsonObject = new JSONObject();
             jsonObject.put(WITNESS_UUID, witness.getUUID());
             jsonObject.put(WITNESS_NAME, witness.getName());
@@ -193,13 +193,10 @@ public class DataWriter extends DataConstants {
         return jsonUUIDWitness;
     }
 
-
-
     /**
      * Saves all of the Suspects to JSON
      */
-    public static void savePersons()
-    {
+    public static void savePersons() {
         PersonDatabase suspects = PersonDatabase.getInstance();
         ArrayList<Suspects> suspectList = suspects.getDatabase();
         JSONArray jsonSuspects = new JSONArray();
