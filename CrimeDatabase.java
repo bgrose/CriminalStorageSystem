@@ -2,6 +2,7 @@
  * Class that creates a database to store Crimes
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
+import java.awt.List;
 import java.util.ArrayList;
 
 public class CrimeDatabase {
@@ -16,7 +17,7 @@ public class CrimeDatabase {
     public Crime getCrime(String caseNumber) {
         for(int i=0; i<crimeList.size(); i++)
         {
-            //TODO
+            if(crimeList.get(i).getcaseID().equals(caseNumber)) return crimeList.get(i);
         }
         return null;
     }
