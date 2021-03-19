@@ -2,7 +2,6 @@
  * Class that creates a database to store Crimes
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
-import java.awt.List;
 import java.util.ArrayList;
 
 public class CrimeDatabase {
