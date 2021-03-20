@@ -20,25 +20,25 @@ public class CrimeFacade {
 
     /**
      * 
-     * @param userName
+     * @param username
      * @param password
      * @param name
      * @param position
      * @param isAdmin
      */
-    public void createAccount(String userName, String password, String name, String position, boolean isAdmin) {
-        userDatabase.addUser(new User(userName, password, name, position, isAdmin));
+    public void createAccount(String username, String password, String name, String position, boolean isAdmin) {
+        userDatabase.addUser(new User(username, password, name, position, isAdmin));
     }
 
     /**
      * 
-     * @param userName
+     * @param username
      * @return
      */
-    public boolean login(String userName) {
-        if (userDatabase.getUser(userName) == null)
+    public boolean login(String username, String password) {
+        if (userDatabase.getUser(username) == null || password  == null) {
             return false;
-
+        }
         currentUser = userDatabase.getUser(username);
         return true;
     }
@@ -56,8 +56,8 @@ public class CrimeFacade {
      * @param crime
      * @return
      */
-    public boolean addCrime(Crime crime) {
-        return crimeDatabase.addCrime(crime);
+    public void addCrime(Crime crime) {
+        crimeDatabase.addCrime(crime);
     }
 
     /**
@@ -65,8 +65,9 @@ public class CrimeFacade {
      * @param crime
      * @return
      */
-    public boolean searchCrime(Crime crime) {
-        return crimeDatabase.getCrime(crime);
+    public Crime searchCrime(String crimeID) {
+        return crimeDatabase.getCrime(crimeID);
+
     }
 
     /**
@@ -106,32 +107,32 @@ public class CrimeFacade {
      * 
      * @return
      */
-    public boolean printCriminal() {
-        return true;
+    public void printCriminal() {
+        // criminal.printCriminal();
     }
 
     /**
      * 
      * @return
      */
-    public boolean removeCrimes() {
-        return true;
+    public void removeCrime(Crime crime) {
+        crimeDatabase.removeCrime(crime);
     }
 
     /**
      * 
      * @return
      */
-    public boolean addUser() {
-        return true;
+    public void addUser(User user) {
+        userDatabase.addUser(user);
     }
 
     /**
      * 
      * @return
      */
-    public boolean removeUser() {
-        return true;
+    public void removeUser(User user) {
+        userDatabase.removeUser(user);
     }
 
     /**

@@ -66,7 +66,7 @@ public class CrimeUI {
                 modifyCriminal();
                 break;
             case (6):
-                printCriminals();
+                printCriminal();
                 break;
             }
 
@@ -209,12 +209,10 @@ public class CrimeUI {
 
         if (criminal == null)
             return;
-
-        if (!crimeFacade.searchCriminal(criminal)) {
+        if (crimeFacade.searchCriminal(criminal) == null) {
             System.out.println("Sorry the criminal your searching is not found \n");
             return;
         }
-
         System.out.println("The criminal you're looking for is in library\n");
     }
 
