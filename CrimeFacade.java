@@ -83,8 +83,8 @@ public class CrimeFacade {
      * 
      * @return
      */
-    public boolean printCrimes() {
-        return true;
+    public void printCrimes() {
+        crimeDatabase.printDatabase();
     }
 
     /**
