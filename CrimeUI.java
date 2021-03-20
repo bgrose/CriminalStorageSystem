@@ -114,7 +114,7 @@ public class CrimeUI {
     }
 
     /**
-     * 
+     * Method that creates an account
      */
     private void createAccount() {
         String userName = getField("Username");
@@ -131,7 +131,7 @@ public class CrimeUI {
     }
 
     /**
-     * 
+     * Method that will provide a login
      */
     private void login() {
         String username = getField("Username");
@@ -157,7 +157,7 @@ public class CrimeUI {
     }
 
     /**
-     * 
+     * Methods to add a Crime
      */
     private void addCrime() {
         System.out.println("\n------------- Adding a Crime -------------");
@@ -166,7 +166,7 @@ public class CrimeUI {
     }
 
     /**
-     * 
+     * Methods to search for Crime
      */
     private void searchCrime() {
         System.out.println("\n------------- Searching for a Crime -------------");
@@ -184,7 +184,7 @@ public class CrimeUI {
     }
 
     /**
-     * 
+     * Methods to edit Crimes
      *  
      */
     private void modifyCrime() {
@@ -194,14 +194,14 @@ public class CrimeUI {
     }
 
     /**
-     * 
+     * Methods to print Crimes
      */
     private void printCrimes() {
         System.out.println("\n------------- printing crimes -------------");
     }
 
     /**
-     * 
+     * Methods to search criminals
      */
     private void searchCriminal() {
         System.out.println("\n------------- searching criminal -------------");
@@ -217,38 +217,43 @@ public class CrimeUI {
     }
 
     /**
-     * 
+     * Methods to edit criminals
      */
     private void modifyCriminal() {
-
+        System.out.println("\n------------- editing criminal -------------");
+        crimeFacade.modifyCriminal();
     }
 
     /**
-     * 
+     * Methods to print the criminal
      */
     private void printCriminal() {
-        System.out.println("\n------------- searching criminal -------------");
+        System.out.println("\n------------- printing criminal -------------");
+        crimeFacade.printCriminal();
     }
 
     /**
-     * 
+     * Methods to remove crimes
      */
     private void removeCrimes() {
         System.out.println("\n------------- removing crime -------------");
+        crimeFacade.removeCrimes();
     }
 
     /**
-     * 
+     * Methods to add Users
      */
     private void addUser() {
         System.out.println("\n------------- adding user -------------");
+        crimeFacade.addUser();
     }
 
     /**
-     * 
+     * Methods to remove Users
      */
     private void removeUser() {
         System.out.println("\n------------- removing user -------------");
+        crimeFacade.removeUser();
     }
 
     /**
@@ -294,7 +299,7 @@ public class CrimeUI {
     }
 
 /**
- * 
+ * The main method
  */
     public static void main(String[] args) {
         CrimeUI crimeInterface = new CrimeUI();
