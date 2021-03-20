@@ -137,6 +137,8 @@ public class CrimeUI
         String position = getField("Position");
         // add whether we're an admin
         // how to keep track of UUID?
+        boolean isAdmin = false;
+        
         if (crimeFacade.createAccount(userName, password, name, position, isAdmin)) 
         {
             System.out.println("You have successfully created an account");
