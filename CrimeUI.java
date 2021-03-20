@@ -138,7 +138,6 @@ public class CrimeUI
         // add whether we're an admin
         // how to keep track of UUID?
         boolean isAdmin = false;
-        
         if (crimeFacade.createAccount(userName, password, name, position, isAdmin)) 
         {
             System.out.println("You have successfully created an account");
@@ -274,7 +273,7 @@ public class CrimeUI
         System.out.println("\n------------- removing crime -------------");
         crimeFacade.removeCrimes();
         System.out.print("Please enter the name of crime to be removed: ");
-        int choice = crimeFacade.nextInt();
+        int choice = scanner.nextLine();
         for (int i = 0; i < crimeFacade.size(); i++)
         { 
             Crime crime = crimeFacade.get(i);
@@ -302,7 +301,7 @@ public class CrimeUI
         System.out.println("\n------------- removing user -------------");
         crimeFacade.removeUser();
         System.out.print("Please enter the ID of the user to be removed: ");
-        int choice = crimeFacade.nextInt();
+        int choice = scanner.nextInt();
         for (int i = 0; i < crimeFacade.size(); i++)
         { 
             User user = crimeFacade.get(i);
