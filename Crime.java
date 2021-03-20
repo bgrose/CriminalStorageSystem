@@ -171,7 +171,7 @@ public class Crime {
 
     /**
      * Method that gets the date the Crime was comitted
-     * @return int date
+     * @return String date
      */
     public String getDate() {
         return this.date;
