@@ -1,10 +1,1 @@
-[
-    {
-        "UUID": "cef0cbf3-6458-4f13-a418-ee4d7e7505dd",
-        "username:": "TestUser",
-        "password": "TestPassword",
-        "Name": "Test User",
-        "Position": "Officer",
-        "admin": true
-    }
-]
+[{"Username":"Test","Position":"Officer","UUID":"cef0cbf3-6458-4f13-a418-ee4d7e7505dd","Admin":true,"Password":"Password","Name":"Test User"}]

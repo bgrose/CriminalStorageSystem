@@ -14,10 +14,10 @@ public class UserDatabase {
      * @param UUID UUID of User
      * @return null get User
      */
-    public User getUser(String userName) {
+    public User getUser(String userName, String Password) {
         for (int i = 0; i < database.size(); i++) {
             User user = database.get(i);
-            if (userName.equals(user.getUsername()))
+            if (userName.equals(user.getUsername()) && Password.equals(user.getPassword()))
                 return user;
         }
         return null;

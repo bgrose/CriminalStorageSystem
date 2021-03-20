@@ -49,7 +49,7 @@ public class DataWriter extends DataConstants {
      */
     public static JSONObject getUserJSON(User user) {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put(USER_UUID, user.getUUID());
+        jsonObject.put(USER_UUID, user.getUUID().toString());
         jsonObject.put(USER_USERNAME, user.getUsername());
         jsonObject.put(USER_PASSWORD, user.getPassword());
         jsonObject.put(USER_NAME, user.getName());
@@ -113,7 +113,7 @@ public class DataWriter extends DataConstants {
         jsonObject.put(CRIME_PERSONLIST, saveSuspect(crime));
         jsonObject.put(CRIME_WITNESSLIST, saveWitness(crime, Witness));
         jsonObject.put(CRIME_SOLVED, crime.getSolved());
-        jsonObject.put(CRIME_UUID, crime.getUUID());
+        jsonObject.put(CRIME_UUID, crime.getUUID().toString());
 
         return jsonObject;
     }
@@ -129,12 +129,12 @@ public class DataWriter extends DataConstants {
         ArrayList<Evidence> evidenceList = crime.getEvidenceList();
         for (int i = 0; i < evidenceList.size(); i++) {
             Evidence evidence = evidenceList.get(i);
-            jsonUUIDEvidence.add(evidence.getUUID());
+            jsonUUIDEvidence.add(evidence.getUUID().toString());
 
             // Make Evidence JSON
             JSONObject jsonObject = new JSONObject();
             jsonObject.put(EVIDENCE_NAME, evidence.getName());
-            jsonObject.put(EVIDENCE_UUID, evidence.getUUID());
+            jsonObject.put(EVIDENCE_UUID, evidence.getUUID().toString());
             jsonObject.put(EVIDENCE_DESCRIPTION, evidence.getDescription());
             Evidence.add(jsonObject);
         }
@@ -152,7 +152,7 @@ public class DataWriter extends DataConstants {
         ArrayList<User> officers = crime.getOfficers();
         for (int i = 0; i < officers.size(); i++) {
             User officer = officers.get(i);
-            jsonUUIDOfficer.add(officer.getUUID());
+            jsonUUIDOfficer.add(officer.getUUID().toString());
         }
         return jsonUUIDOfficer;
     }
@@ -167,7 +167,7 @@ public class DataWriter extends DataConstants {
         ArrayList<Suspects> suspects = crime.getPersonList();
         for (int i = 0; i < suspects.size(); i++) {
             Suspects suspect = suspects.get(i);
-            jsonUUIDSuspect.add(suspect.getUUID());
+            jsonUUIDSuspect.add(suspect.getUUID().toString());
         }
         return jsonUUIDSuspect;
     }
@@ -182,9 +182,9 @@ public class DataWriter extends DataConstants {
         ArrayList<Witness> witnesses = crime.getWitnessList();
         for (int i = 0; i < witnesses.size(); i++) {
             Witness witness = witnesses.get(i);
-            jsonUUIDWitness.add(witness.getUUID());
+            jsonUUIDWitness.add(witness.getUUID().toString());
             JSONObject jsonObject = new JSONObject();
-            jsonObject.put(WITNESS_UUID, witness.getUUID());
+            jsonObject.put(WITNESS_UUID, witness.getUUID().toString());
             jsonObject.put(WITNESS_NAME, witness.getName());
             jsonObject.put(WITNESS_LIVING, witness.getLivingStatus());
             jsonObject.put(WITNESS_STATEMENT, witness.getStatement());
@@ -238,7 +238,7 @@ public class DataWriter extends DataConstants {
         jsonObject.put(CRIMINAL_PUNISHMENT, suspects.getPunishment());
         jsonObject.put(CRIMINAL_SKIN, suspects.getSkinColor());
         jsonObject.put(CRIMINAL_TATTOO, suspects.getTattoo());
-        jsonObject.put(CRIMINAL_UUID, suspects.getUUID());
+        jsonObject.put(CRIMINAL_UUID, suspects.getUUID().toString());
         jsonObject.put(CRIMINAL_WEIGHT, suspects.getWeight());
 
         return jsonObject;
