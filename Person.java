@@ -74,4 +74,8 @@ public abstract class Person {
         return this.uuid;
     }
 
+    public String toString(){
+        return "Name: " + name + "Living Status: " + livingStatus + "UUID: " + uuid;
+    }
+
 }
