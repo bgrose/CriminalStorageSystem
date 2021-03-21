@@ -8,8 +8,7 @@ import java.util.ArrayList;
 public class CrimeUI {
 
     private static final String WELCOME_MSG = "Welcome to the Criminal Storage System!: Please login or create an account.";
-    private String[] menuOptions = { "Add Crime", "Search Crime", "Modify Crime", "Print Crimes", "Search Criminal",
-            "Modify Criminal", "Print Criminals", "Logout" };
+    private String[] menuOptions = { "Add Crime", "Search Crime", "Print Crimes", "Search Criminal", "Print Criminals", "Logout" };
     private String[] AdminMenuOptions = { "Add Crime", "Search Crime", "Print Crimes",
             "Search Criminal", "Print Criminals", "Remove Crime", "Add User", "Remove User",
             "Logout" };

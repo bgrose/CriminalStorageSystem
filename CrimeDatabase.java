@@ -43,15 +43,6 @@ public class CrimeDatabase {
     }
 
     /**
-     * Modifief a crime in the database
-     * @param crime
-     */
-    public void modifyCrime(Crime crime) {
-
-        DataWriter.DataUpdate();
-    }
-
-    /**
      * Method that prints out the crimeDatabase
      */
     public void printDatabase() {
