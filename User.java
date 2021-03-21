@@ -1,9 +1,10 @@
+
 /**
- * @description creates the User class
+ * @description Class that creates the User class
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
 
- import java.util.UUID;
+import java.util.UUID;
 
 public class User {
 
@@ -15,13 +16,13 @@ public class User {
     private UUID uuid;
 
     /**
-     * Creates a User object with a UUID
+     * Method that creates a User object with a UUID
      * @param username username of the User
      * @param password String of password
-     * @param name String of User name
+     * @param name     String of User name
      * @param position String of their position
-     * @param admin Boolean if they are an admin or not
-     * @param UUID unique identifier
+     * @param admin    Boolean if they are an admin or not
+     * @param UUID     unique identifier
      */
     public User(String username, String password, String name, String position, Boolean admin, UUID UUID) {
         this.username = username;
@@ -32,13 +33,13 @@ public class User {
         this.uuid = UUID;
     }
 
-       /**
-     * Creates a User object without a UUID
+    /**
+     * Method that creates a User object without a UUID
      * @param username username of the User
      * @param password String of password
-     * @param name String of User name
+     * @param name     String of User name
      * @param position String of their position
-     * @param admin Boolean if they are an admin or not
+     * @param admin    Boolean if they are an admin or not
      */
     public User(String username, String password, String name, String position, Boolean admin) {
         this.username = username;
@@ -173,8 +174,7 @@ public class User {
      * Returns the Unique ID
      * @return the UUID Value
      */
-    public UUID getUUID()
-    {
+    public UUID getUUID() {
         return this.uuid;
     }
 

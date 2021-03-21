@@ -1,10 +1,11 @@
+
 /**
- * Class that creates Criminal
- * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
+ * @description Class that creates Criminal
+ * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
 import java.util.UUID;
 
-public class Suspects extends Person{
+public class Suspects extends Person {
 
     private String alias;
     private String accomplice;
@@ -26,33 +27,33 @@ public class Suspects extends Person{
     private boolean inJail;
 
     /**
-     * Creates a suspect object
-     * @param name name of suspect
-     * @param livingStatus boolean if living
-     * @param alias string of aliases
-     * @param accomplice string of accomplaces
-     * @param hairColor string of hair color
-     * @param eyeColor string of eye color
-     * @param tatoo string of tattoos
-     * @param skinColor string of skin color
-     * @param nationality string of nationality
-     * @param weight double of weight
-     * @param height int of height in inches
-     * @param acquaintance string of acquantances
-     * @param age int of age
-     * @param glasses boolean of if they have glasses
-     * @param punishment string of punishment
-     * @param disability string of any disabolity
-     * @param handness string of handness
-     * @param crimeType string of type of crime committed
-     * @param arrestingOfficer User of the arresting officer
-     * @param inJail boolean of if they are in jail.
-     * @param UUID Unique ID for Suspect
+     * Method that creates a suspect object
+     * @param name             name of suspect
+     * @param livingStatus     boolean if living
+     * @param alias            string of aliases
+     * @param accomplice       string of accomplaces
+     * @param hairColor        string of hair color
+     * @param eyeColor         string of eye color
+     * @param tatoo            string of tattoos
+     * @param skinColor        string of skin color
+     * @param nationality      string of nationality
+     * @param weight           double of weight
+     * @param height           int of height in inches
+     * @param acquaintance     string of acquantances
+     * @param age              int of age
+     * @param glasses          boolean of if they have glasses
+     * @param punishment       string of punishment
+     * @param disability       string of any disabolity
+     * @param handness         string of handness
+     * @param crimeType        string of type of crime committed
+     * @param arrestingOfficer user of the arresting officer
+     * @param inJail           boolean of if they are in jail.
+     * @param UUID             unique ID for Suspect
      */
-    public Suspects(String name, boolean livingStatus, String alias, String accomplice, String
-    hairColor, String eyeColor, String tatoo, String skinColor, String nationality, double weight, int height, String acquaintance,
-    int age, boolean glasses, String punishment, String disability, String handness, String crimeType, User arrestingOfficer, 
-    boolean inJail, UUID UUID) {
+    public Suspects(String name, boolean livingStatus, String alias, String accomplice, String hairColor,
+            String eyeColor, String tatoo, String skinColor, String nationality, double weight, int height,
+            String acquaintance, int age, boolean glasses, String punishment, String disability, String handness,
+            String crimeType, User arrestingOfficer, boolean inJail, UUID UUID) {
         super(name, livingStatus, UUID);
         this.alias = alias;
         this.accomplice = accomplice;
@@ -74,33 +75,33 @@ public class Suspects extends Person{
         this.inJail = inJail;
     }
 
-        /**
-     * Creates a suspect object without UUID
-     * @param name name of suspect
-     * @param livingStatus boolean if living
-     * @param alias string of aliases
-     * @param accomplice string of accomplaces
-     * @param hairColor string of hair color
-     * @param eyeColor string of eye color
-     * @param tatoo string of tattoos
-     * @param skinColor string of skin color
-     * @param nationality string of nationality
-     * @param weight double of weight
-     * @param height int of height in inches
-     * @param acquaintance string of acquantances
-     * @param age int of age
-     * @param glasses boolean of if they have glasses
-     * @param punishment string of punishment
-     * @param disability string of any disabolity
-     * @param handness string of handness
-     * @param crimeType string of type of crime committed
-     * @param arrestingOfficer User of the arresting officer
-     * @param inJail boolean of if they are in jail.
+    /**
+     * Method that creates a suspect object without UUID
+     * @param name             name of suspect
+     * @param livingStatus     boolean if living
+     * @param alias            string of aliases
+     * @param accomplice       string of accomplaces
+     * @param hairColor        string of hair color
+     * @param eyeColor         string of eye color
+     * @param tatoo            string of tattoos
+     * @param skinColor        string of skin color
+     * @param nationality      string of nationality
+     * @param weight           double of weight
+     * @param height           int of height in inches
+     * @param acquaintance     string of acquantances
+     * @param age              int of age
+     * @param glasses          boolean of if they have glasses
+     * @param punishment       string of punishment
+     * @param disability       string of any disabolity
+     * @param handness         string of handness
+     * @param crimeType        string of type of crime committed
+     * @param arrestingOfficer user of the arresting officer
+     * @param inJail           boolean of if they are in jail.
      */
-    public Suspects(String name, boolean livingStatus, String alias, String accomplice, String
-    hairColor, String eyeColor, String tatoo, String skinColor, String nationality, double weight, int height, String acquaintance,
-    int age, boolean glasses, String punishment, String disability, String handness, String crimeType, User arrestingOfficer, 
-    boolean inJail) {
+    public Suspects(String name, boolean livingStatus, String alias, String accomplice, String hairColor,
+            String eyeColor, String tatoo, String skinColor, String nationality, double weight, int height,
+            String acquaintance, int age, boolean glasses, String punishment, String disability, String handness,
+            String crimeType, User arrestingOfficer, boolean inJail) {
         super(name, livingStatus);
         this.alias = alias;
         this.accomplice = accomplice;
@@ -123,29 +124,17 @@ public class Suspects extends Person{
     }
 
     /**
-     * Makes a string to return for Suspect
-     * @return string value to be printed
+     * Method that makes a string to return for Suspect
+     * @return String value to be printed
      */
     public String toString() {
-        return super.toString() +
-        "\nAlias: " + this.alias + 
-        "\nAccomplice: " + this.accomplice + 
-        "\nHair Color: " + this.hairColor +
-        "\nEye Color: " + this.eyeColor + 
-        "\nTatoo: " + this.tatoo + 
-        "\nSkin Color: " + skinColor + 
-        "\nNationality: " + this.nationality + 
-        "\nWeight: " + this.weight + 
-        "\nHeight: " + this.height + 
-        "\nAcquaintance: " + this.acquaintance + 
-        "\nAge: " + this.age + 
-        "\nGlasses: " + this.glasses + 
-        "\nPunishment: " + this.punishment + 
-        "\nDisability: " + this.disability + 
-        "\nHandness: " + this.handness + 
-        "\nCrime Type: " + this.crimeType + 
-        "\nArresting Officer: " + this.arrestingOfficer + 
-        "\nIn Jail: " + this.inJail;
+        return super.toString() + "\nAlias: " + this.alias + "\nAccomplice: " + this.accomplice + "\nHair Color: "
+                + this.hairColor + "\nEye Color: " + this.eyeColor + "\nTatoo: " + this.tatoo + "\nSkin Color: "
+                + skinColor + "\nNationality: " + this.nationality + "\nWeight: " + this.weight + "\nHeight: "
+                + this.height + "\nAcquaintance: " + this.acquaintance + "\nAge: " + this.age + "\nGlasses: "
+                + this.glasses + "\nPunishment: " + this.punishment + "\nDisability: " + this.disability
+                + "\nHandness: " + this.handness + "\nCrime Type: " + this.crimeType + "\nArresting Officer: "
+                + this.arrestingOfficer + "\nIn Jail: " + this.inJail;
     }
 
     /**
@@ -171,7 +160,7 @@ public class Suspects extends Person{
     public String getAccomplice() {
         return this.accomplice;
     }
-    
+
     /**
      * Method that sets out accomplice
      * @param accomplice String accomplice
@@ -243,7 +232,7 @@ public class Suspects extends Person{
     public void setSkinColor(String skinColor) {
         this.skinColor = skinColor;
     }
-   
+
     /**
      * Method that gets what country the criminal is from
      * @return String nationlity
@@ -267,7 +256,7 @@ public class Suspects extends Person{
     public double getWeight() {
         return this.weight;
     }
- 
+
     /**
      * Method that sets out weight
      * @param weight double weight
@@ -307,7 +296,7 @@ public class Suspects extends Person{
     public void setAccquaintance(String accquaintance) {
         this.acquaintance = accquaintance;
     }
-    
+
     /**
      * Method that gets the age of criminal
      * @return int age
@@ -339,7 +328,7 @@ public class Suspects extends Person{
     public void setGlasses(boolean glasses) {
         this.glasses = glasses;
     }
-    
+
     /**
      * Method that gets what type of punishment for criminal
      * @return String punishment
@@ -387,7 +376,7 @@ public class Suspects extends Person{
     public void setHandness(String handness) {
         this.handness = handness;
     }
-    
+
     /**
      * Method that gets what type of crime
      * @return String crimeType
@@ -427,7 +416,7 @@ public class Suspects extends Person{
     public boolean getInJail() {
         return this.inJail;
     }
- 
+
     /**
      * Method that sets if in jail or not
      * @param inJail boolean who is in or not in jail

@@ -1,6 +1,6 @@
 /**
  * @description Class to set up User Database
- * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
+ * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
 import java.util.ArrayList;
 
@@ -33,7 +33,7 @@ public class UserDatabase {
     }
 
     /**
-     * Removes a user from the database
+     * Method that removes a user from the database
      * @param delete user to delete
      */
     public void removeUser(User delete) {
@@ -60,6 +60,9 @@ public class UserDatabase {
             return userDatabase;
     }
 
+    /**
+     * Constructor method
+     */
     public UserDatabase()
     {
         database = DataLoader.getUsers();
