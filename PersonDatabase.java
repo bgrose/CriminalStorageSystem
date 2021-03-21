@@ -40,7 +40,9 @@ public class PersonDatabase {
      * 
      */
     public void printDatabase() {
-
+        for(Person person : personList){
+            System.out.println(person);
+        }
     }
 
     /**

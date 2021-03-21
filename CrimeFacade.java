@@ -113,7 +113,7 @@ public class CrimeFacade {
      * @return
      */
     public void printCriminal() {
-        // criminal.printCriminal();
+        personDatabase.printDatabase();
     }
 
     /**
