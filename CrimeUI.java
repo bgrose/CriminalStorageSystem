@@ -135,16 +135,24 @@ public class CrimeUI
         String password = getField("Prompt");
         String name = getField("Name");
         String position = getField("Position");
+        UserDatabase uDatabase = UserDatabase.getInstance();
         // add whether we're an admin
-        // how to keep track of UUID?
         boolean isAdmin = false;
-        if (crimeFacade.createAccount(userName, password, name, position, isAdmin)) 
+
+        boolean userNameUsed = false;
+
+        for(int i=0; i<uDatabase.getDatabase().size(); i++)
         {
-            System.out.println("You have successfully created an account");
+            if(uDatabase.getDatabase().get(i).getUsername().equals(userName)) userNameUsed = true;
+        }
+        if(userNameUsed)
+        {
+            System.out.println("Sorry, an account with that username already exits");
         } 
         else 
         {
-            System.out.println("Sorry, an account with that username already exits");
+            crimeFacade.createAccount(userName, password, name, position, isAdmin);
+            System.out.println("You have successfully created an account");
         }
     }
 
@@ -185,8 +193,8 @@ public class CrimeUI
     private void addCrime() 
     {
         System.out.println("\n------------- Adding a Crime -------------");
-        String Crime = getUserCrime();
-        crimeFacade.addCrime(Crime);
+        //Crime Crime = getUserCrime();
+        //crimeFacade.addCrime(Crime);
     }
 
     /**
@@ -195,18 +203,19 @@ public class CrimeUI
     private void searchCrime() 
     {
         System.out.println("\n------------- Searching for a Crime -------------");
-        String crime = getUserCrime();
-
+        //Crime crime = getUserCrime();
+        /*
         if (crime == null)
             return;
 
-        if (!crimeFacade.searchCrime(crime)) 
+        if (crimeFacade.searchCrime(crime.getcaseID()) == null) 
         {
             System.out.println("Sorry the type of crime is not found \n");
             return;
         }
 
-        System.out.println("The crime you're looking for is in library\n");
+        System.out.println(crime.toString());
+        */
     }
 
     /**
@@ -216,7 +225,7 @@ public class CrimeUI
     private void modifyCrime() 
     {
         System.out.println("\n------------- editing crime -------------");
-        crimeFacade.modifyCrime();
+        //crimeFacade.modifyCrime();
     }
 
     /**
@@ -234,12 +243,12 @@ public class CrimeUI
     private void searchCriminal() 
     {
         System.out.println("\n------------- searching criminal -------------");
-        String criminal = getUserCriminal();
+        String criminalName = getUserCriminal();
 
-        if (criminal == null)
+        if (criminalName == null)
             return;
 
-        if (crimeFacade.searchCriminal(criminal) == null) 
+        if (crimeFacade.searchCriminal(criminalName)) 
         {
             System.out.println("Sorry the criminal your searching is not found \n");
             return;
@@ -271,17 +280,11 @@ public class CrimeUI
     private void removeCrimes() 
     {
         System.out.println("\n------------- removing crime -------------");
-        crimeFacade.removeCrimes();
-        System.out.print("Please enter the name of crime to be removed: ");
-        int choice = scanner.nextLine();
-        for (int i = 0; i < crimeFacade.size(); i++)
-        { 
-            Crime crime = crimeFacade.get(i);
-            if (crime.contains(choice)) 
-            { 
-                crimeFacade.remove(i);
-            }
-        }
+        System.out.print("Please enter the Case ID to be removed: ");
+        String choice = scanner.nextLine();
+        boolean removed = crimeFacade.removeCrime(choice);
+        if(removed) System.out.println("Crime Removed Successfully");
+        else System.out.println("No Crime Found.");
     }
 
     /**
@@ -290,7 +293,7 @@ public class CrimeUI
     private void addUser() 
     {
         System.out.println("\n------------- adding user -------------");
-        crimeFacade.addUser();
+        createAccount();
     }
 
     /**
@@ -299,17 +302,11 @@ public class CrimeUI
     private void removeUser() 
     {
         System.out.println("\n------------- removing user -------------");
-        crimeFacade.removeUser();
-        System.out.print("Please enter the ID of the user to be removed: ");
-        int choice = scanner.nextInt();
-        for (int i = 0; i < crimeFacade.size(); i++)
-        { 
-            User user = crimeFacade.get(i);
-            if (user.contains(choice)) 
-            { 
-                crimeFacade.remove(i);
-            }
-        }
+        System.out.print("Please enter the Username of the user to be removed: ");
+        String userName = scanner.nextLine();
+        boolean removed = crimeFacade.removeUser(userName);
+        if(removed) System.out.println("User Removed Successfully");
+        else System.out.println("No User Found.");
     }
 
     /**

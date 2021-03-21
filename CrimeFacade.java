@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 /**
  * 
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
@@ -91,8 +92,12 @@ public class CrimeFacade {
      * 
      * @return
      */
-    public boolean searchCriminal() {
-        return true;
+    public boolean searchCriminal(String Name) {
+        for(int i=0; i<personDatabase.getDatabase().size(); i++)
+        {
+            if(personDatabase.getDatabase().get(i).getName().equals(Name)) return true;
+        }
+        return false;
     }
 
     /**
@@ -115,8 +120,17 @@ public class CrimeFacade {
      * 
      * @return
      */
-    public void removeCrime(Crime crime) {
-        crimeDatabase.removeCrime(crime);
+    public boolean removeCrime(String caseID) {
+        ArrayList<Crime> crimes = crimeDatabase.getDatabase();
+        for (int i = 0; i < crimes.size(); i++)
+        { 
+            if(crimes.get(i).getcaseID().equals(caseID))
+            {
+                crimeDatabase.removeCrime(crimes.get(i));
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -131,8 +145,17 @@ public class CrimeFacade {
      * 
      * @return
      */
-    public void removeUser(User user) {
-        userDatabase.removeUser(user);
+    public boolean removeUser(String userName) {
+        ArrayList<User> users = userDatabase.getDatabase();
+        for (int i = 0; i < users.size(); i++)
+        { 
+            if(users.get(i).getUsername().equals(userName))
+            {
+                userDatabase.removeUser(users.get(i));
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
