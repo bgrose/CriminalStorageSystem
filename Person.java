@@ -75,7 +75,7 @@ public abstract class Person {
     }
 
     public String toString(){
-        return "Name: " + name + "Living Status: " + livingStatus + "UUID: " + uuid;
+        return "/nName: " + name + "/nLiving Status: " + livingStatus;
     }
 
 }
