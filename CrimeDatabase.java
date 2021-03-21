@@ -1,3 +1,4 @@
+
 /**
  * Class that creates a database to store Crimes
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
@@ -14,29 +15,29 @@ public class CrimeDatabase {
      * @return Crime from CrimeDatabase
      */
     public Crime getCrime(String caseNumber) {
-        for(int i=0; i<crimeList.size(); i++)
-        {
-            if(crimeList.get(i).getcaseID().equals(caseNumber)) return crimeList.get(i);
+        for (int i = 0; i < crimeList.size(); i++) {
+            if (crimeList.get(i).getcaseID().equals(caseNumber))
+                return crimeList.get(i);
         }
         return null;
     }
 
     /**
-     * Adds a crime to the databaase
+     * Method that adds a crime to the databaase
      * @param crime crime to be added
      */
     public void addCrime(Crime crime) {
         crimeList.add(crime);
-        for(int i=0; i<crime.getPersonList().size(); i++)
+        for (int i = 0; i < crime.getPersonList().size(); i++)
             PersonDatabase.getInstance().addPerson(crime.getPersonList().get(i));
         DataWriter.DataUpdate();
-        
+
     }
 
-   /**
-    * Removes a crime from the database
-    * @param crime crime to be removed
-    */
+    /**
+     * Method that removes a crime from the database
+     * @param crime crime to be removed
+     */
     public void removeCrime(Crime crime) {
         crimeList.remove(crime);
         DataWriter.DataUpdate();
@@ -52,8 +53,8 @@ public class CrimeDatabase {
     }
 
     /**
-     * 
-     * @return
+     * Method that gets the crimeDatabase
+     * @return CrimeDatabase
      */
     public static CrimeDatabase getInstance() {
         if (crimeDatabase == null)
@@ -62,15 +63,15 @@ public class CrimeDatabase {
     }
 
     /**
-     * 
+     * Constructor method that sets up the CrimeDatabase
      */
     private CrimeDatabase() {
         this.crimeList = DataLoader.getCrimes();
     }
 
     /**
-     * 
-     * @return
+     * Method that returns the CrimeDatabase
+     * @returnArrayList<Crime> that contains all the crimes
      */
     public ArrayList<Crime> getDatabase() {
         return crimeList;

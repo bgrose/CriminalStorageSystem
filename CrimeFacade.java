@@ -11,7 +11,7 @@ public class CrimeFacade {
     private User currentUser;
 
     /**
-     * 
+     * Constructor method that sets up the CrimeFacade
      */
     public CrimeFacade() {
         crimeDatabase = CrimeDatabase.getInstance();
@@ -20,7 +20,7 @@ public class CrimeFacade {
     }
 
     /**
-     * 
+     * Method that creates a new account
      * @param username
      * @param password
      * @param name
@@ -32,9 +32,9 @@ public class CrimeFacade {
     }
 
     /**
-     * 
+     * Method that checks if the user can login
      * @param username
-     * @return
+     * @return boolean for if the user can login
      */
     public boolean login(String username, String password) {
         if (userDatabase.getUser(username, password) == null) {
@@ -45,26 +45,25 @@ public class CrimeFacade {
     }
 
     /**
-     * 
-     * @return
+     * Method that returns the current user
+     * @return User the current user
      */
     public User getCurrentUser() {
         return currentUser;
     }
 
     /**
-     * 
-     * @param crime
-     * @return
+     * Method that adds a crime to the crimeDatabase
+     * @param crime to be added to the crimeDatabase
      */
     public void addCrime(Crime crime) {
         crimeDatabase.addCrime(crime);
     }
 
     /**
-     * 
-     * @param crime
-     * @return
+     * Method that returns if the crime is in the crimeDatabase
+     * @param crime to be searched for
+     * @return boolean that represents if the crime is in the database
      */
     public boolean searchCrime(String caseID) {
         for (int i = 0; i < crimeDatabase.getDatabase().size(); i++) {
@@ -77,16 +76,16 @@ public class CrimeFacade {
     }
 
     /**
-     * 
-     * @return
+     * Method that prints the crimes in the crimeDatabase
      */
     public void printCrimes() {
         crimeDatabase.printDatabase();
     }
 
     /**
-     * 
-     * @return
+     * Method that returns if the criminal is in the crimeDatbase
+     * @param name to be searched for
+     * @return boolean that represents if the crime is in the database
      */
     public boolean searchCriminal(String name) {
         for (int i = 0; i < personDatabase.getDatabase().size(); i++) {
@@ -98,15 +97,16 @@ public class CrimeFacade {
     }
 
     /**
-     * 
+     * Method that prints the criminals in the personDatabase
      */
     public void printCriminal() {
         personDatabase.printDatabase();
     }
 
     /**
-     * 
-     * @return
+     * Method that removes a crime from the database
+     * @param caseID String that is used to represent the crime
+     * @return Boolean of if the crime was removed sucessfully
      */
     public boolean removeCrime(String caseID) {
         ArrayList<Crime> crimes = crimeDatabase.getDatabase();
@@ -120,21 +120,22 @@ public class CrimeFacade {
     }
 
     /**
-     * 
-     * @return
+     * Method that adds a user to the userDatabase
+     * @param user User to be added to the database
      */
     public void addUser(User user) {
         userDatabase.addUser(user);
     }
 
     /**
-     * 
-     * @return
+     * Method that removes a user from the userDatabase
+     * @param username of the user being removed
+     * @return Boolean of if the user was removed sucessfully
      */
-    public boolean removeUser(String userName) {
+    public boolean removeUser(String username) {
         ArrayList<User> users = userDatabase.getDatabase();
         for (int i = 0; i < users.size(); i++) {
-            if (users.get(i).getUsername().equals(userName)) {
+            if (users.get(i).getUsername().equals(username)) {
                 userDatabase.removeUser(users.get(i));
                 return true;
             }
@@ -143,12 +144,17 @@ public class CrimeFacade {
     }
 
     /**
-     * 
+     * Method that logs out the current user
      */
     public void logout() {
         DataWriter.DataUpdate();
     }
 
+    /**
+     * Method that finds an officer in the userDatabase
+     * @param name of the user being searched for
+     * @return User that was being searched for
+     */
     public User findOfficer(String name) {
         for (int i = 0; i < userDatabase.getDatabase().size(); i++) {
             if (userDatabase.getDatabase().get(i).getName().equals(name))

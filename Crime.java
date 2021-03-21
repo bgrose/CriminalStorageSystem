@@ -1,3 +1,4 @@
+
 /**
  * Class that creates a Crime
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
@@ -22,14 +23,14 @@ public class Crime {
 
     /**
      * Creates a Crime object with a UUID
-     * @param evidenceList The arraylist with evidence for a crime
-     * @param _personLists  Arraylist with Suspects and Criminals
-     * @param witness Arraylist with witnesses of the crime
-     * @param description String with Description of the crime
-     * @param caseID String with the name of the Crime
-     * @param solved Boolean if its solved or not
-     * @param date String with date of crime
-     * @param _UUID Unique ID 
+     * @param evidenceList Arraylist with evidence for a crime
+     * @param _personLists Arraylist with Suspects and Criminals
+     * @param witness      Arraylist with witnesses of the crime
+     * @param description  String with Description of the crime
+     * @param caseID       String with the name of the Crime
+     * @param solved       Boolean if its solved or not
+     * @param date         String with date of crime
+     * @param _UUID        Unique ID
      */
     public Crime(ArrayList<Evidence> evidenceList, ArrayList<Suspects> _personLists, ArrayList<Witness> witness,
             String description, String caseID, Boolean solved, String date, UUID _UUID) {
@@ -43,18 +44,18 @@ public class Crime {
         this.uuid = _UUID;
     }
 
-   /**
+    /**
      * Creates a Crime object without a UUID
-     * @param evidenceList The arraylist with evidence for a crime
-     * @param _personLists  Arraylist with Suspects and Criminals
-     * @param witness Arraylist with witnesses of the crime
-     * @param description String with Description of the crime
-     * @param caseID String with the name of the Crime
-     * @param solved Boolean if its solved or not
-     * @param date String with date of crime
+     * @param evidenceList Arraylist with evidence for a crime
+     * @param _personLists Arraylist with Suspects and Criminals
+     * @param witness      Arraylist with witnesses of the crime
+     * @param description  String with Description of the crime
+     * @param caseID       String with the name of the Crime
+     * @param solved       Boolean if its solved or not
+     * @param date         String with date of crime
      */
     public Crime(ArrayList<Evidence> evidenceList, ArrayList<Suspects> _personLists, ArrayList<Witness> witness,
-        String description, String caseID, Boolean solved, String date) {
+            String description, String caseID, Boolean solved, String date) {
         this.evidenceList = evidenceList;
         this.personList = _personLists;
         this.witnessees = witness;
@@ -222,16 +223,16 @@ public class Crime {
     }
 
     /**
-     * 
-     * @return
+     * Method that returns the list of officers
+     * @return ArrayList of officers
      */
     public ArrayList<User> getOfficers() {
         return this.officers;
     }
 
     /**
-     * 
-     * @return
+     * Method that returns the UUID
+     * @return UUID of this class
      */
     public UUID getUUID() {
         return this.uuid;

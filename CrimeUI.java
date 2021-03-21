@@ -137,7 +137,7 @@ public class CrimeUI {
     }
 
     /**
-     * 
+     * Method that asks and scans what the user would like to do
      * @param numCommands
      * @return
      */
@@ -205,9 +205,9 @@ public class CrimeUI {
     }
 
     /**
-     * 
-     * @param prompt
-     * @return
+     * Method that scans the string the user enters
+     * @param prompt String that is printed
+     * @return String that the user enters
      */
     private String getField(String prompt) {
         System.out.print(prompt + ": ");
@@ -237,6 +237,11 @@ public class CrimeUI {
         crimeFacade.addCrime(crime);
     }
 
+    /**
+     * Method that creates a list of witnesses
+     * @param num the amount of witnesses being added
+     * @return ArrayList<Witness> of the witnesses
+     */
     private ArrayList<Witness> createWitnessList(int num) {
         ArrayList<Witness> witnessList = new ArrayList<Witness>();
         for (int i = 0; i < num; i++) {
@@ -253,6 +258,11 @@ public class CrimeUI {
         return witnessList;
     }
 
+    /**
+     * Method that creates a suspect list
+     * @param num the amount of suspects being added
+     * @return ArrayList<Suspects> of the suspects
+     */
     private ArrayList<Suspects> createSuspectList(int num) {
         ArrayList<Suspects> suspectList = new ArrayList<Suspects>();
         for (int i = 0; i < num; i++) {
@@ -307,6 +317,11 @@ public class CrimeUI {
         return suspectList;
     }
 
+    /**
+     * Method that creates an evidence list
+     * @param num the amount of evidence being added
+     * @return ArrayList<Evidence> of the evidence
+     */
     private ArrayList<Evidence> createEvidenceList(int num) {
         ArrayList<Evidence> evidenceList = new ArrayList<Evidence>();
         for (int i = 0; i < num; i++) {
@@ -319,7 +334,7 @@ public class CrimeUI {
     }
 
     /**
-     * Methods to search for Crime
+     * Method that searches for a Crime
      */
     private void searchCrime() {
         System.out.println("\n------------- Searching for a Crime -------------");
@@ -337,7 +352,7 @@ public class CrimeUI {
     }
 
     /**
-     * Methods to print Crimes
+     * Method that prints Crimes
      */
     private void printCrimes() {
         System.out.println("\n------------- printing crimes -------------");
@@ -345,7 +360,7 @@ public class CrimeUI {
     }
 
     /**
-     * Methods to search criminals
+     * Method that searches for a criminal
      */
     private void searchCriminal() {
         System.out.println("\n------------- searching criminal -------------");
@@ -363,7 +378,7 @@ public class CrimeUI {
     }
 
     /**
-     * Methods to print the criminal
+     * Method that prints the criminals
      */
     private void printCriminal() {
         System.out.println("\n------------- printing criminal -------------");
@@ -371,7 +386,7 @@ public class CrimeUI {
     }
 
     /**
-     * Methods to remove crimes
+     * Method that removed a crime
      */
     private void removeCrimes() {
         System.out.println("\n------------- removing crime -------------");
@@ -386,7 +401,7 @@ public class CrimeUI {
     }
 
     /**
-     * Methods to add Users
+     * Methods that adds a user
      */
     private void addUser() {
         System.out.println("\n------------- adding user -------------");
@@ -394,7 +409,7 @@ public class CrimeUI {
     }
 
     /**
-     * Methods to remove Users
+     * Methods that removes a user
      */
     private void removeUser() {
         System.out.println("\n------------- removing user -------------");
@@ -409,8 +424,8 @@ public class CrimeUI {
     }
 
     /**
-     * 
-     * @return
+     * Method that returns the criminal name as a string
+     * @return String criminalName
      */
     private String getUserCriminal() {
         System.out.print("Enter User Criminals: ");
@@ -432,8 +447,8 @@ public class CrimeUI {
     }
 
     /**
-     * 
-     * @return
+     * Method that scans in a crime and returns the name of the crime
+     * @return crimeName of the crime added
      */
     private String getUserCrime() {
         System.out.print("Enter User Crimes: ");
@@ -455,7 +470,7 @@ public class CrimeUI {
     }
 
     /**
-     * The main method
+     * Main method
      */
     public static void main(String[] args) {
         CrimeUI crimeInterface = new CrimeUI();
