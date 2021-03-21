@@ -1,3 +1,4 @@
+
 /**
  * @description Writes to JSON FIle for Object Storage
  * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
@@ -50,6 +51,7 @@ public class DataWriter extends DataConstants {
 
     /**
      * Creates the JSON Object for a User
+     * 
      * @param user User being converted
      * @return JSON Object of User
      */
@@ -117,6 +119,7 @@ public class DataWriter extends DataConstants {
 
     /**
      * Creates a JSON File for the Crimes
+     * 
      * @param crime Crime that is being turned into a JSON FIle
      * @return The JSON Object for the crime
      */
@@ -139,22 +142,25 @@ public class DataWriter extends DataConstants {
     /**
      * Saves all evidence items for the crime as well as write to JSON file for
      * evidence
+     * 
      * @param crime Crime evidence is being pulled from
      * @return a JSONArray with the evidence in it for the crime with UUID
      */
     public static JSONArray saveEvidence(Crime crime, JSONArray Evidence) {
         JSONArray jsonUUIDEvidence = new JSONArray();
         ArrayList<Evidence> evidenceList = crime.getEvidenceList();
-        for (int i = 0; i < evidenceList.size(); i++) {
-            Evidence evidence = evidenceList.get(i);
-            jsonUUIDEvidence.add(evidence.getUUID().toString());
+        if (evidenceList != null) {
+            for (int i = 0; i < evidenceList.size(); i++) {
+                Evidence evidence = evidenceList.get(i);
+                jsonUUIDEvidence.add(evidence.getUUID().toString());
 
-            // Make Evidence JSON
-            JSONObject jsonObject = new JSONObject();
-            jsonObject.put(EVIDENCE_NAME, evidence.getName());
-            jsonObject.put(EVIDENCE_UUID, evidence.getUUID().toString());
-            jsonObject.put(EVIDENCE_DESCRIPTION, evidence.getDescription());
-            Evidence.add(jsonObject);
+                // Make Evidence JSON
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.put(EVIDENCE_NAME, evidence.getName());
+                jsonObject.put(EVIDENCE_UUID, evidence.getUUID().toString());
+                jsonObject.put(EVIDENCE_DESCRIPTION, evidence.getDescription());
+                Evidence.add(jsonObject);
+            }
         }
 
         return jsonUUIDEvidence;
@@ -162,51 +168,60 @@ public class DataWriter extends DataConstants {
 
     /**
      * Saves the Users to a JSON File for Crime by looping ang getting UUID
+     * 
      * @param crime Takes in crime to loop through
      * @return JSONArray with officer UUID
      */
     public static JSONArray saveOfficers(Crime crime) {
         JSONArray jsonUUIDOfficer = new JSONArray();
         ArrayList<User> officers = crime.getOfficers();
-        for (int i = 0; i < officers.size(); i++) {
-            User officer = officers.get(i);
-            jsonUUIDOfficer.add(officer.getUUID().toString());
+        if (officers != null) {
+            for (int i = 0; i < officers.size(); i++) {
+                User officer = officers.get(i);
+                jsonUUIDOfficer.add(officer.getUUID().toString());
+            }
         }
         return jsonUUIDOfficer;
     }
 
     /**
      * Saves the Suspect to a JSON File for Crime by looping ang getting UUID
+     * 
      * @param crime Takes in crime to loop through
      * @return JSONArray with Suspect UUID
      */
     public static JSONArray saveSuspect(Crime crime) {
         JSONArray jsonUUIDSuspect = new JSONArray();
         ArrayList<Suspects> suspects = crime.getPersonList();
-        for (int i = 0; i < suspects.size(); i++) {
-            Suspects suspect = suspects.get(i);
-            jsonUUIDSuspect.add(suspect.getUUID().toString());
+        if (suspects != null) {
+            for (int i = 0; i < suspects.size(); i++) {
+                Suspects suspect = suspects.get(i);
+                jsonUUIDSuspect.add(suspect.getUUID().toString());
+            }
         }
         return jsonUUIDSuspect;
     }
 
     /**
      * Saves the Suspect to a JSON File for Crime by looping ang getting UUID
+     * 
      * @param crime Takes in crime to loop through
      * @return JSONArray with Suspect UUID
      */
     public static JSONArray saveWitness(Crime crime, JSONArray Witness) {
         JSONArray jsonUUIDWitness = new JSONArray();
         ArrayList<Witness> witnesses = crime.getWitnessList();
-        for (int i = 0; i < witnesses.size(); i++) {
-            Witness witness = witnesses.get(i);
-            jsonUUIDWitness.add(witness.getUUID().toString());
-            JSONObject jsonObject = new JSONObject();
-            jsonObject.put(WITNESS_UUID, witness.getUUID().toString());
-            jsonObject.put(WITNESS_NAME, witness.getName());
-            jsonObject.put(WITNESS_LIVING, witness.getLivingStatus());
-            jsonObject.put(WITNESS_STATEMENT, witness.getStatement());
-            Witness.add(jsonObject);
+        if (witnesses != null) {
+            for (int i = 0; i < witnesses.size(); i++) {
+                Witness witness = witnesses.get(i);
+                jsonUUIDWitness.add(witness.getUUID().toString());
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.put(WITNESS_UUID, witness.getUUID().toString());
+                jsonObject.put(WITNESS_NAME, witness.getName());
+                jsonObject.put(WITNESS_LIVING, witness.getLivingStatus());
+                jsonObject.put(WITNESS_STATEMENT, witness.getStatement());
+                Witness.add(jsonObject);
+            }
         }
         return jsonUUIDWitness;
     }
@@ -218,20 +233,27 @@ public class DataWriter extends DataConstants {
         PersonDatabase suspects = PersonDatabase.getInstance();
         ArrayList<Suspects> suspectList = suspects.getDatabase();
         JSONArray jsonSuspects = new JSONArray();
-        for (int i = 0; i < suspectList.size(); i++) {
-            jsonSuspects.add(getSuspectJSON(suspectList.get(i)));
-        }
+        if (suspectList != null) {
+            for (int i = 0; i < suspectList.size(); i++) {
+                jsonSuspects.add(getSuspectJSON(suspectList.get(i)));
+            }
 
-        try (FileWriter file = new FileWriter(CRIMINAL_FILE_NAME, false)) {
-            file.write(jsonSuspects.toJSONString());
-            file.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
+            try (FileWriter file = new FileWriter(CRIMINAL_FILE_NAME, false)) {
+                Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                JsonParser jp = new JsonParser();
+                JsonElement je = jp.parse(jsonSuspects.toJSONString());
+                String prettyJsonString = gson.toJson(je);
+                file.write(prettyJsonString);
+                file.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
     /**
      * Creates a JSON Object for a suspect
+     * 
      * @param suspects the suspect to make object
      * @return the object of the suspect
      */

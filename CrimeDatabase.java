@@ -27,6 +27,8 @@ public class CrimeDatabase {
      */
     public void addCrime(Crime crime) {
         crimeList.add(crime);
+        for(int i=0; i<crime.getPersonList().size(); i++)
+            PersonDatabase.getInstance().addPerson(crime.getPersonList().get(i));
         DataWriter.DataUpdate();
         
     }
