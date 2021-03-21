@@ -66,8 +66,12 @@ public class CrimeFacade {
      * @param crime
      * @return
      */
-    public Crime searchCrime(String crimeID) {
-        return crimeDatabase.getCrime(crimeID);
+    public boolean searchCrime(String caseID) {
+        for(int i = 0; i < crimeDatabase.getDatabase().size(); i++) {
+            if(crimeDatabase.getDatabase().get(i).getcaseID().equals(caseID))
+                return true;
+        }
+        return false;
 
     }
 
@@ -84,8 +88,7 @@ public class CrimeFacade {
      * @return
      */
     public boolean searchCriminal(String name) {
-        for(int i=0; i<personDatabase.getDatabase().size(); i++)
-        {
+        for(int i = 0; i < personDatabase.getDatabase().size(); i++) {
             if(personDatabase.getDatabase().get(i).getName().equals(name))
                 return true;
         }

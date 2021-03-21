@@ -56,7 +56,7 @@ public class CrimeDatabase {
      */
     public void printDatabase() {
         for (Crime crime : crimeList) {
-            crime.toString();
+            System.out.println(crime.toString());
         }
     }
 

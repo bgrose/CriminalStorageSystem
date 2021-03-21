@@ -350,12 +350,12 @@ public class CrimeUI {
 
         if (criminalName == null)
             return;
-
         if (crimeFacade.searchCriminal(criminalName)) {
-            System.out.println("Sorry the criminal your searching is not found \n");
+            System.out.println("The criminal you're looking for is in library\n");
             return;
+        } else {
+            System.out.println("Sorry, the criminal you are looking for is not in the library\n");
         }
-        System.out.println("The criminal you're looking for is in library\n");
     }
 
     /**
