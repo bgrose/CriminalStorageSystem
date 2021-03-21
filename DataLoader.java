@@ -148,9 +148,9 @@ public class DataLoader extends DataConstants {
                 String skinColor = (String) personJSON.get(CRIMINAL_SKIN);
                 String nationality = (String) personJSON.get(CRIMINAL_NATIONALITY);
                 double weight = (double) personJSON.get(CRIMINAL_WEIGHT);
-                int height = (int) personJSON.get(CRIMINAL_HEIGHT);
+                int height = (Integer) personJSON.get(CRIMINAL_HEIGHT);
                 String acquaintance = (String) personJSON.get(CRIMINAL_ACQUANTANCES);
-                int age = (int) personJSON.get(CRIMINAL_AGE);
+                int age = (Integer) personJSON.get(CRIMINAL_AGE);
                 boolean glasses = (Boolean) personJSON.get(CRIMINAL_GLASSES);
                 String punishment = (String) personJSON.get(CRIMINAL_PUNISHMENT);
                 String disability = (String) personJSON.get(CRIMINAL_DISABILITY);
