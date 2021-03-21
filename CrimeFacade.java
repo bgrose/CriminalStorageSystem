@@ -1,6 +1,6 @@
 import java.util.ArrayList;
+
 /**
- * 
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
 public class CrimeFacade {
@@ -67,9 +67,10 @@ public class CrimeFacade {
      * @return
      */
     public boolean searchCrime(String caseID) {
-        for(int i = 0; i < crimeDatabase.getDatabase().size(); i++) {
-            if(crimeDatabase.getDatabase().get(i).getcaseID().equals(caseID))
+        for (int i = 0; i < crimeDatabase.getDatabase().size(); i++) {
+            if (crimeDatabase.getDatabase().get(i).getcaseID().equals(caseID)) {
                 return true;
+            }
         }
         return false;
 
@@ -88,9 +89,10 @@ public class CrimeFacade {
      * @return
      */
     public boolean searchCriminal(String name) {
-        for(int i = 0; i < personDatabase.getDatabase().size(); i++) {
-            if(personDatabase.getDatabase().get(i).getName().equals(name))
+        for (int i = 0; i < personDatabase.getDatabase().size(); i++) {
+            if (personDatabase.getDatabase().get(i).getName().equals(name)) {
                 return true;
+            }
         }
         return false;
     }
@@ -108,10 +110,8 @@ public class CrimeFacade {
      */
     public boolean removeCrime(String caseID) {
         ArrayList<Crime> crimes = crimeDatabase.getDatabase();
-        for (int i = 0; i < crimes.size(); i++)
-        { 
-            if(crimes.get(i).getcaseID().equals(caseID))
-            {
+        for (int i = 0; i < crimes.size(); i++) {
+            if (crimes.get(i).getcaseID().equals(caseID)) {
                 crimeDatabase.removeCrime(crimes.get(i));
                 return true;
             }
@@ -133,10 +133,8 @@ public class CrimeFacade {
      */
     public boolean removeUser(String userName) {
         ArrayList<User> users = userDatabase.getDatabase();
-        for (int i = 0; i < users.size(); i++)
-        { 
-            if(users.get(i).getUsername().equals(userName))
-            {
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).getUsername().equals(userName)) {
                 userDatabase.removeUser(users.get(i));
                 return true;
             }
@@ -151,11 +149,10 @@ public class CrimeFacade {
         DataWriter.DataUpdate();
     }
 
-    public User findOfficer(String name)
-    {
-        for(int i=0; i<userDatabase.getDatabase().size(); i++)
-        {
-            if(userDatabase.getDatabase().get(i).getName().equals(name)) return userDatabase.getDatabase().get(i);
+    public User findOfficer(String name) {
+        for (int i = 0; i < userDatabase.getDatabase().size(); i++) {
+            if (userDatabase.getDatabase().get(i).getName().equals(name))
+                return userDatabase.getDatabase().get(i);
         }
         return null;
     }

@@ -8,10 +8,10 @@ import java.util.ArrayList;
 public class CrimeUI {
 
     private static final String WELCOME_MSG = "Welcome to the Criminal Storage System!: Please login or create an account.";
-    private String[] menuOptions = { "Add Crime", "Search Crime", "Print Crimes", "Search Criminal", "Print Criminals", "Logout" };
-    private String[] AdminMenuOptions = { "Add Crime", "Search Crime", "Print Crimes",
-            "Search Criminal", "Print Criminals", "Remove Crime", "Add User", "Remove User",
+    private String[] menuOptions = { "Add Crime", "Search Crime", "Print Crimes", "Search Criminal", "Print Criminals",
             "Logout" };
+    private String[] AdminMenuOptions = { "Add Crime", "Search Crime", "Print Crimes", "Search Criminal",
+            "Print Criminals", "Remove Crime", "Add User", "Remove User", "Logout" };
     private Scanner scanner;
     private CrimeFacade crimeFacade;
 
@@ -147,8 +147,9 @@ public class CrimeUI {
         String input = scanner.nextLine();
         int command = Integer.parseInt(input) - 1;
 
-        if (command >= 0 && command <= numCommands - 1)
+        if (command >= 0 && command <= numCommands - 1) {
             return command;
+        }
 
         return -1;
     }
@@ -168,8 +169,9 @@ public class CrimeUI {
         boolean userNameUsed = false;
 
         for (int i = 0; i < uDatabase.getDatabase().size(); i++) {
-            if (uDatabase.getDatabase().get(i).getUsername().equals(userName))
+            if (uDatabase.getDatabase().get(i).getUsername().equals(userName)) {
                 userNameUsed = true;
+            }
         }
         if (userNameUsed) {
             System.out.println("Sorry, an account with that username already exits");
@@ -222,8 +224,9 @@ public class CrimeUI {
         String description = getField("Please Enter a Description");
         String solvedString = getField("Has This Case been Solved(y/n)");
         boolean solved = false;
-        if (solvedString.equals("y"))
+        if (solvedString.equals("y")) {
             solved = true;
+        }
         int num = Integer.valueOf(getField("How many Witnesses are there"));
         ArrayList<Witness> witness = createWitnessList(num);
         num = Integer.valueOf(getField("How many Evidence items are there"));
@@ -240,8 +243,9 @@ public class CrimeUI {
             String name = getField("Please Enter the " + (i + 1) + " Witness Name");
             String answer = getField("Is the " + (i + 1) + " Witness Living(y/n");
             boolean livingStatus = true;
-            if (answer.equals("n"))
+            if (answer.equals("n")) {
                 livingStatus = false;
+            }
             String statement = getField("Please Enter the " + (i + 1) + " Witness Statement");
             Witness witness = new Witness(name, livingStatus, statement);
             witnessList.add(witness);
@@ -249,59 +253,57 @@ public class CrimeUI {
         return witnessList;
     }
 
-    private ArrayList<Suspects> createSuspectList(int num)
-    {
+    private ArrayList<Suspects> createSuspectList(int num) {
         ArrayList<Suspects> suspectList = new ArrayList<Suspects>();
-            for(int i=0; i<num; i++)
-            {
-                String name = getField("Please Enter the " + (i + 1) + " Suspect Name");
-                String answer = getField("Is the " + (i + 1) + " Suspect Living(y/n");
-                boolean livingStatus = true;
-                if (answer.equals("n"))
-                    livingStatus = false;
-                String alias = getField("Please Enter any of the " + (i + 1) + " Suspect Aliases");
-                String accomplice = getField("Please Enter any of the " + (i + 1) + " Suspect Accomplices");
-                String acquaintance = getField("Please Enter any of the " + (i + 1) + " Suspect Acquaintance");
-                String hairColor = getField("Please Enter the " + (i + 1) + " Suspect Hair Color");
-                String eyeColor = getField("Please Enter the " + (i + 1) + " Suspect Eye Color");
-                String tatoo = getField("Please Enter the " + (i + 1) + " Suspects Tattoo");
-                String skinColor = getField("Please Enter the " + (i + 1) + " Suspects Skin Color");
-                String nationality = getField("Please Enter the " + (i + 1) + " Suspects Nationality");
-                int weight = Integer.valueOf(getField("Please Enter the " + (i + 1) + " Suspect weight or an estimate in pounds"));
-                int height = Integer.valueOf(getField("Please Enter the " + (i + 1) + " Suspect height or an estimate in inches"));
-                int age = Integer.valueOf(getField("Please Enter the " + (i + 1) + " Suspect age or an estimate"));
-                answer = getField("Does the " + (i + 1) + " Suspect wear glasses (y/n)");
-                boolean glasses = true;
-                if (answer.equals("n"))
-                    glasses = false;
-                String disability = getField("Please Enter the " + (i + 1) + " Suspects Disability if any");
-                String handness = getField("Please Enter the " + (i + 1) + " Suspects Handness");
-                answer = getField("Has Suspect "+ (i + 1) +"Been arrested/charged(y/n)");
-                String punishment, crimeType;
-                User arrestingOfficer;
-                Boolean inJail;
-                if(answer.equals("y"))
-                {
-                    punishment = getField("Please Enter the " + (i + 1) + " Criminal Punishment");
-                    crimeType = getField("Please Enter the " + (i + 1) + " Criminal Crime Charge");
-                    inJail = true;
-                    answer = getField("Please Enter the " + (i + 1) + " Arresting Officer Name");
-                    arrestingOfficer = crimeFacade.findOfficer(answer);
-                }
-                else
-                {
-                    punishment = "None.";
-                    crimeType = "None.";
-                    inJail = false;
-                    arrestingOfficer = null;
-                }
-
-                
-                Suspects suspect = new Suspects(name, livingStatus, alias, accomplice, hairColor, 
-                eyeColor, tatoo, skinColor, nationality, weight, height, acquaintance, age, glasses, 
-                punishment, disability, handness, crimeType, arrestingOfficer, inJail);
-                suspectList.add(suspect);
+        for (int i = 0; i < num; i++) {
+            String name = getField("Please Enter the " + (i + 1) + " Suspect Name");
+            String answer = getField("Is the " + (i + 1) + " Suspect Living(y/n");
+            boolean livingStatus = true;
+            if (answer.equals("n")) {
+                livingStatus = false;
             }
+            String alias = getField("Please Enter any of the " + (i + 1) + " Suspect Aliases");
+            String accomplice = getField("Please Enter any of the " + (i + 1) + " Suspect Accomplices");
+            String acquaintance = getField("Please Enter any of the " + (i + 1) + " Suspect Acquaintance");
+            String hairColor = getField("Please Enter the " + (i + 1) + " Suspect Hair Color");
+            String eyeColor = getField("Please Enter the " + (i + 1) + " Suspect Eye Color");
+            String tatoo = getField("Please Enter the " + (i + 1) + " Suspects Tattoo");
+            String skinColor = getField("Please Enter the " + (i + 1) + " Suspects Skin Color");
+            String nationality = getField("Please Enter the " + (i + 1) + " Suspects Nationality");
+            int weight = Integer
+                    .valueOf(getField("Please Enter the " + (i + 1) + " Suspect weight or an estimate in pounds"));
+            int height = Integer
+                    .valueOf(getField("Please Enter the " + (i + 1) + " Suspect height or an estimate in inches"));
+            int age = Integer.valueOf(getField("Please Enter the " + (i + 1) + " Suspect age or an estimate"));
+            answer = getField("Does the " + (i + 1) + " Suspect wear glasses (y/n)");
+            boolean glasses = true;
+            if (answer.equals("n")) {
+                glasses = false;
+            }
+            String disability = getField("Please Enter the " + (i + 1) + " Suspects Disability if any");
+            String handness = getField("Please Enter the " + (i + 1) + " Suspects Handness");
+            answer = getField("Has Suspect " + (i + 1) + "Been arrested/charged(y/n)");
+            String punishment, crimeType;
+            User arrestingOfficer;
+            Boolean inJail;
+            if (answer.equals("y")) {
+                punishment = getField("Please Enter the " + (i + 1) + " Criminal Punishment");
+                crimeType = getField("Please Enter the " + (i + 1) + " Criminal Crime Charge");
+                inJail = true;
+                answer = getField("Please Enter the " + (i + 1) + " Arresting Officer Name");
+                arrestingOfficer = crimeFacade.findOfficer(answer);
+            } else {
+                punishment = "None.";
+                crimeType = "None.";
+                inJail = false;
+                arrestingOfficer = null;
+            }
+
+            Suspects suspect = new Suspects(name, livingStatus, alias, accomplice, hairColor, eyeColor, tatoo,
+                    skinColor, nationality, weight, height, acquaintance, age, glasses, punishment, disability,
+                    handness, crimeType, arrestingOfficer, inJail);
+            suspectList.add(suspect);
+        }
         return suspectList;
     }
 
@@ -321,15 +323,17 @@ public class CrimeUI {
      */
     private void searchCrime() {
         System.out.println("\n------------- Searching for a Crime -------------");
-        // Crime crime = getUserCrime();
-        /*
-         * if (crime == null) return;
-         * 
-         * if (crimeFacade.searchCrime(crime.getcaseID()) == null) {
-         * System.out.println("Sorry the type of crime is not found \n"); return; }
-         * 
-         * System.out.println(crime.toString());
-         */
+        String crimeName = getUserCrime();
+
+        if (crimeName == null) {
+            return;
+        }
+        if (crimeFacade.searchCriminal(crimeName)) {
+            System.out.println("The crime you're looking for is in library\n");
+            return;
+        } else {
+            System.out.println("Sorry, the crime you are looking for is not in the library\n");
+        }
     }
 
     /**
@@ -347,8 +351,9 @@ public class CrimeUI {
         System.out.println("\n------------- searching criminal -------------");
         String criminalName = getUserCriminal();
 
-        if (criminalName == null)
+        if (criminalName == null) {
             return;
+        }
         if (crimeFacade.searchCriminal(criminalName)) {
             System.out.println("The criminal you're looking for is in library\n");
             return;
@@ -373,10 +378,11 @@ public class CrimeUI {
         System.out.print("Please enter the Case ID to be removed: ");
         String choice = scanner.nextLine();
         boolean removed = crimeFacade.removeCrime(choice);
-        if (removed)
+        if (removed) {
             System.out.println("Crime Removed Successfully");
-        else
+        } else {
             System.out.println("No Crime Found.");
+        }
     }
 
     /**
@@ -395,10 +401,11 @@ public class CrimeUI {
         System.out.print("Please enter the Username of the user to be removed: ");
         String userName = scanner.nextLine();
         boolean removed = crimeFacade.removeUser(userName);
-        if (removed)
+        if (removed) {
             System.out.println("User Removed Successfully");
-        else
+        } else {
             System.out.println("No User Found.");
+        }
     }
 
     /**
@@ -411,14 +418,16 @@ public class CrimeUI {
         while (true) {
             String criminalName = scanner.nextLine().trim().toLowerCase();
 
-            if (!criminalName.contentEquals(""))
+            if (!criminalName.contentEquals("")) {
                 return criminalName;
+            }
 
             System.out.println("You need to enter the actual content");
             System.out.print("Would you like to enter criminal again (y) or return to main menu (n): ");
             String command = scanner.nextLine().trim().toLowerCase();
-            if (command == "n")
+            if (command == "n") {
                 return null;
+            }
         }
     }
 
@@ -432,14 +441,16 @@ public class CrimeUI {
         while (true) {
             String crimeName = scanner.nextLine().trim().toLowerCase();
 
-            if (!crimeName.contentEquals(""))
+            if (!crimeName.contentEquals("")) {
                 return crimeName;
+            }
 
             System.out.println("You need to enter the actual content");
             System.out.print("Would you like to enter crime again (y) or return to main menu (n): ");
             String command = scanner.nextLine().trim().toLowerCase();
-            if (command == "n")
+            if (command == "n") {
                 return null;
+            }
         }
     }
 
