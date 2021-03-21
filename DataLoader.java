@@ -27,7 +27,7 @@ public class DataLoader extends DataConstants {
         ArrayList<Evidence> grabEvidence = getEvidence();
 
         try {
-            FileReader reader = new FileReader(USER_FILE_NAME);
+            FileReader reader = new FileReader(CRIME_FILE_NAME);
             JSONParser parser = new JSONParser();
             JSONArray crimesJSON = (JSONArray) parser.parse(reader);
 
@@ -65,7 +65,7 @@ public class DataLoader extends DataConstants {
                     JSONArray personArray = (JSONArray) crimeJSON.get(CRIME_PERSONLIST);
                     if (personArray != null) {
                     for (int j = 0; j < personArray.size(); j++) {
-                        UUID personUUID = UUID.fromString((String) personArray.get(j));
+                        UUID personUUID = UUID.fromString( (String) (personArray.get(j)));
                         ArrayList<Suspects> suspects = PersonDatabase.getInstance().getDatabase();
                         for (int k = 0; k < suspects.size(); k++) {
                             if (personUUID.equals(suspects.get(k).getUUID()))
