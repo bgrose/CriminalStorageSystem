@@ -73,15 +73,6 @@ public class CrimeFacade {
 
     /**
      * 
-     * @param crime
-     * @return
-     */
-    public boolean modifyCrime(Crime crime) {
-        return true;
-    }
-
-    /**
-     * 
      * @return
      */
     public void printCrimes() {
@@ -97,21 +88,6 @@ public class CrimeFacade {
         {
             if(personDatabase.getDatabase().get(i).getName().equals(name))
                 return true;
-        }
-        return false;
-    }
-
-    /**
-     * 
-     * @return
-     */
-    public boolean modifyCriminal(Suspects person, String caseID) {
-        for(int i=0; i<personDatabase.getDatabase().size(); i++)
-        {
-            if(personDatabase.getDatabase().get(i).getName().equals(caseID)) {
-                personDatabase.removePerson(person);
-                return true;
-            }    
         }
         return false;
     }

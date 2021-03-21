@@ -343,15 +343,6 @@ public class CrimeUI {
     }
 
     /**
-     * Methods to edit Crimes
-     * 
-     */
-    private void modifyCrime() {
-        System.out.println("\n------------- editing crime -------------");
-        
-    }
-
-    /**
      * Methods to print Crimes
      */
     private void printCrimes() {
@@ -374,14 +365,6 @@ public class CrimeUI {
             return;
         }
         System.out.println("The criminal you're looking for is in library\n");
-    }
-
-    /**
-     * Methods to edit criminals
-     */
-    private void modifyCriminal() {
-        System.out.println("\n------------- editing criminal -------------");
-        // crimeFacade.modifyCriminal(crime, caseID);
     }
 
     /**
