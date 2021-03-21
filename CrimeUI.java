@@ -10,8 +10,8 @@ public class CrimeUI {
     private static final String WELCOME_MSG = "Welcome to the Criminal Storage System!: Please login or create an account.";
     private String[] menuOptions = { "Add Crime", "Search Crime", "Modify Crime", "Print Crimes", "Search Criminal",
             "Modify Criminal", "Print Criminals", "Logout" };
-    private String[] AdminMenuOptions = { "Add Crime", "Search Crime", "Modify Crime", "Print Crimes",
-            "Search Criminal", "Modify Criminal", "Print Criminals", "Remove Crime", "Add User", "Remove User",
+    private String[] AdminMenuOptions = { "Add Crime", "Search Crime", "Print Crimes",
+            "Search Criminal", "Print Criminals", "Remove Crime", "Add User", "Remove User",
             "Logout" };
     private Scanner scanner;
     private CrimeFacade crimeFacade;
@@ -56,27 +56,21 @@ public class CrimeUI {
                     searchCrime();
                     break;
                 case (2):
-                    // modifyCrime();
-                    break;
-                case (3):
                     printCrimes();
                     break;
-                case (4):
+                case (3):
                     searchCriminal();
                     break;
-                case (5):
-                    // modifyCriminal();
-                    break;
-                case (6):
+                case (4):
                     printCriminal();
                     break;
-                case (7):
+                case (5):
                     removeCrimes();
                     break;
-                case (8):
+                case (6):
                     addUser();
                     break;
-                case (9):
+                case (7):
                     removeUser();
                     break;
                 }
@@ -106,24 +100,18 @@ public class CrimeUI {
                     searchCrime();
                     break;
                 case (2):
-                    // modifyCrime();
-                    break;
-                case (3):
                     printCrimes();
                     break;
-                case (4):
+                case (3):
                     searchCriminal();
                     break;
-                case (5):
-                    // modifyCriminal();
-                    break;
-                case (6):
+                case (4):
                     printCriminal();
                     break;
                 }
             }
         }
-        System.out.println("Logging Out......Complete. Have a good day");
+        System.out.println("Logging Out......Complete. Have a good day!");
     }
 
     /*
@@ -362,12 +350,12 @@ public class CrimeUI {
 
         if (criminalName == null)
             return;
-
         if (crimeFacade.searchCriminal(criminalName)) {
-            System.out.println("Sorry the criminal your searching is not found \n");
+            System.out.println("The criminal you're looking for is in library\n");
             return;
+        } else {
+            System.out.println("Sorry, the criminal you are looking for is not in the library\n");
         }
-        System.out.println("The criminal you're looking for is in library\n");
     }
 
     /**

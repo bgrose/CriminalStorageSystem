@@ -217,12 +217,6 @@ public class Crime {
      * Method that prints out the details of the Crime class
      */
     public String toString() {
-        for (Evidence evidence : evidenceList) {
-            evidenceListReturn += evidence;
-        }
-        for (Suspects person : personList) {
-            anyonePersonListReturn += person;
-        }
         return "Case ID: " + caseID + "Description: " + description + "Solved: " + solved + "Date: " + date
                 + "Evidence List: " + evidenceListReturn + "People Involved List" + anyonePersonListReturn;
     }
