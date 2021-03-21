@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "Eye Color": "brown",
+    "Punishment": "None.",
+    "Jail Status": false,
+    "Living": true,
+    "Crimes Type": "None.",
+    "Tattoo": "none",
+    "Nationality": "American",
+    "Weight": 200.0,
+    "Name": "Alex Newcomb",
+    "Disability": "no",
+    "Skin Color": "white",
+    "Hair Color": "black",
+    "Alias": "Slexy",
+    "Glasses": false,
+    "Acquantances": "unknown",
+    "Height": 72,
+    "Accomplaces": "unknown",
+    "Handness": "righht",
+    "UUID": "aca70417-808f-44b7-848e-3d79c25a6941",
+    "Age": 20
+  }
+]
