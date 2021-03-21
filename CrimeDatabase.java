@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class CrimeDatabase {
 
     private static CrimeDatabase crimeDatabase;
-    private static ArrayList<Crime> crimeList;
+    ArrayList<Crime> crimeList;
 
     /**
      * Method that returns a Crime from crimeDatabase
@@ -74,7 +74,7 @@ public class CrimeDatabase {
      * 
      */
     private CrimeDatabase() {
-        crimeList = DataLoader.getCrimes();
+        this.crimeList = DataLoader.getCrimes();
     }
 
     /**
