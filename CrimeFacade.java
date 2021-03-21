@@ -164,4 +164,13 @@ public class CrimeFacade {
     public void logout() {
         DataWriter.DataUpdate();
     }
+
+    public User findOfficer(String name)
+    {
+        for(int i=0; i<userDatabase.getDatabase().size(); i++)
+        {
+            if(userDatabase.getDatabase().get(i).getName().equals(name)) return userDatabase.getDatabase().get(i);
+        }
+        return null;
+    }
 }

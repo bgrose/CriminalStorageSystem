@@ -27,6 +27,8 @@ public class CrimeDatabase {
      */
     public void addCrime(Crime crime) {
         crimeList.add(crime);
+        DataWriter.DataUpdate();
+        
     }
 
    /**
@@ -35,6 +37,7 @@ public class CrimeDatabase {
     */
     public void removeCrime(Crime crime) {
         crimeList.remove(crime);
+        DataWriter.DataUpdate();
     }
 
     /**
@@ -43,6 +46,7 @@ public class CrimeDatabase {
      */
     public void modifyCrime(Crime crime) {
 
+        DataWriter.DataUpdate();
     }
 
     /**

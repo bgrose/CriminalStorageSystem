@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 /**
  * @description creates the main driver of CrimeUI
@@ -78,48 +79,47 @@ public class CrimeUI {
                 }
             }
 
+        } else {
+            while (true) {
+                displayMenu();
+
+                int command = getCommand(menuOptions.length);
+
+                if (command == -1) {
+                    System.out.println("Not a valid option");
+                    continue;
+                }
+
+                if (command == menuOptions.length - 1) {
+                    crimeFacade.logout();
+                    break;
+                }
+
+                switch (command) {
+                case (0):
+                    addCrime();
+                    break;
+                case (1):
+                    searchCrime();
+                    break;
+                case (2):
+                    modifyCrime();
+                    break;
+                case (3):
+                    printCrimes();
+                    break;
+                case (4):
+                    searchCriminal();
+                    break;
+                case (5):
+                    modifyCriminal();
+                    break;
+                case (6):
+                    printCriminal();
+                    break;
+                }
+            }
         }
-        else {
-        while (true) {
-            displayMenu();
-
-            int command = getCommand(menuOptions.length);
-
-            if (command == -1) {
-                System.out.println("Not a valid option");
-                continue;
-            }
-
-            if (command == menuOptions.length - 1) {
-                crimeFacade.logout();
-                break;
-            }
-
-            switch (command) {
-            case (0):
-                addCrime();
-                break;
-            case (1):
-                searchCrime();
-                break;
-            case (2):
-                modifyCrime();
-                break;
-            case (3):
-                printCrimes();
-                break;
-            case (4):
-                searchCriminal();
-                break;
-            case (5):
-                modifyCriminal();
-                break;
-            case (6):
-                printCriminal();
-                break;
-            }
-        }
-    }
         System.out.println("Logging Out......Complete. Have a good day");
     }
 
@@ -227,8 +227,103 @@ public class CrimeUI {
      */
     private void addCrime() {
         System.out.println("\n------------- Adding a Crime -------------");
-        // Crime Crime = getUserCrime();
-        // crimeFacade.addCrime(Crime);
+        String caseID = getField("Please Enter the Case ID");
+        String date = getField("Please Enter the Date of the Crime");
+        String description = getField("Please Enter a Description");
+        String solvedString = getField("Has This Case been Solved(y/n)");
+        boolean solved = false;
+        if (solvedString.equals("y"))
+            solved = true;
+        int num = Integer.valueOf(getField("How many Witnesses are there"));
+        ArrayList<Witness> witness = createWitnessList(num);
+        num = Integer.valueOf(getField("How many Evidence items are there"));
+        ArrayList<Evidence> evidenceList = createEvidenceList(num);
+        num = Integer.valueOf(getField("How many Suspects are there"));
+        ArrayList<Suspects> suspect = createSuspectList(num);
+        Crime Crime = new Crime(evidenceList, suspect, witness, description, caseID, solved, date);
+        crimeFacade.addCrime(Crime);
+    }
+
+    private ArrayList<Witness> createWitnessList(int num) {
+        ArrayList<Witness> witnessList = new ArrayList<Witness>();
+        for (int i = 0; i < num; i++) {
+            String name = getField("Please Enter the " + (i + 1) + " Witness Name");
+            String answer = getField("Is the " + (i + 1) + " Witness Living(y/n");
+            boolean livingStatus = true;
+            if (answer.equals("n"))
+                livingStatus = false;
+            String statement = getField("Please Enter the " + (i + 1) + " Witness Statement");
+            Witness witness = new Witness(name, livingStatus, statement);
+            witnessList.add(witness);
+        }
+        return witnessList;
+    }
+
+    private ArrayList<Suspects> createSuspectList(int num)
+    {
+        ArrayList<Suspects> suspectList = new ArrayList<Suspects>();
+            for(int i=0; i<num; i++)
+            {
+                String name = getField("Please Enter the " + (i + 1) + " Suspect Name");
+                String answer = getField("Is the " + (i + 1) + " Suspect Living(y/n");
+                boolean livingStatus = true;
+                if (answer.equals("n"))
+                    livingStatus = false;
+                String alias = getField("Please Enter any of the " + (i + 1) + " Suspect Aliases");
+                String accomplice = getField("Please Enter any of the " + (i + 1) + " Suspect Accomplices");
+                String acquaintance = getField("Please Enter any of the " + (i + 1) + " Suspect Acquaintance");
+                String hairColor = getField("Please Enter the " + (i + 1) + " Suspect Hair Color");
+                String eyeColor = getField("Please Enter the " + (i + 1) + " Suspect Eye Color");
+                String tatoo = getField("Please Enter the " + (i + 1) + " Suspects Tattoo");
+                String skinColor = getField("Please Enter the " + (i + 1) + " Suspects Skin Color");
+                String nationality = getField("Please Enter the " + (i + 1) + " Suspects Nationality");
+                int weight = Integer.valueOf(getField("Please Enter the " + (i + 1) + " Suspect weight or an estimate in pounds"));
+                int height = Integer.valueOf(getField("Please Enter the " + (i + 1) + " Suspect height or an estimate in inches"));
+                int age = Integer.valueOf(getField("Please Enter the " + (i + 1) + " Suspect age or an estimate"));
+                answer = getField("Does the " + (i + 1) + " Suspect wear glasses (y/n)");
+                boolean glasses = true;
+                if (answer.equals("n"))
+                    glasses = false;
+                String disability = getField("Please Enter the " + (i + 1) + " Suspects Disability if any");
+                String handness = getField("Please Enter the " + (i + 1) + " Suspects Handness");
+                answer = getField("Has Suspect "+ (i + 1) +"Been arrested/charged(y/n)");
+                String punishment, crimeType;
+                User arrestingOfficer;
+                Boolean inJail;
+                if(answer.equals("y"))
+                {
+                    punishment = getField("Please Enter the " + (i + 1) + " Criminal Punishment");
+                    crimeType = getField("Please Enter the " + (i + 1) + " Criminal Crime Charge");
+                    inJail = true;
+                    answer = getField("Please Enter the " + (i + 1) + " Arresting Officer Name");
+                    arrestingOfficer = crimeFacade.findOfficer(answer);
+                }
+                else
+                {
+                    punishment = "None.";
+                    crimeType = "None.";
+                    inJail = false;
+                    arrestingOfficer = null;
+                }
+
+                
+                Suspects suspect = new Suspects(name, livingStatus, alias, accomplice, hairColor, 
+                eyeColor, tatoo, skinColor, nationality, weight, height, acquaintance, age, glasses, 
+                punishment, disability, handness, crimeType, arrestingOfficer, inJail);
+                suspectList.add(suspect);
+            }
+        return suspectList;
+    }
+
+    private ArrayList<Evidence> createEvidenceList(int num) {
+        ArrayList<Evidence> evidenceList = new ArrayList<Evidence>();
+        for (int i = 0; i < num; i++) {
+            String name = getField("Please Enter the " + (i + 1) + " Evidence Item Name");
+            String description = getField("Please Enter the " + (i + 1) + " Evidence Item Description");
+            Evidence evidence = new Evidence(name, description);
+            evidenceList.add(evidence);
+        }
+        return evidenceList;
     }
 
     /**

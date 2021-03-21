@@ -22,5 +22,13 @@
     "Admin": false,
     "Password": "sfsf",
     "Name": "aaafs"
+  },
+  {
+    "Username": "Bgrose",
+    "Position": "Dev",
+    "UUID": "d122a0e1-e23d-4ded-b7c1-d4c28375b8a4",
+    "Admin": false,
+    "Password": "bgrose",
+    "Name": "Bradley Grose"
   }
 ]
