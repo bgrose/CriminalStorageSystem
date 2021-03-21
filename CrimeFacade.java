@@ -92,10 +92,11 @@ public class CrimeFacade {
      * 
      * @return
      */
-    public boolean searchCriminal(String Name) {
+    public boolean searchCriminal(String name) {
         for(int i=0; i<personDatabase.getDatabase().size(); i++)
         {
-            if(personDatabase.getDatabase().get(i).getName().equals(Name)) return true;
+            if(personDatabase.getDatabase().get(i).getName().equals(name))
+                return true;
         }
         return false;
     }
@@ -104,13 +105,19 @@ public class CrimeFacade {
      * 
      * @return
      */
-    public boolean modifyCriminal() {
-        return true;
+    public boolean modifyCriminal(Suspects person, String caseID) {
+        for(int i=0; i<personDatabase.getDatabase().size(); i++)
+        {
+            if(personDatabase.getDatabase().get(i).getName().equals(caseID)) {
+                personDatabase.removePerson(person);
+                return true;
+            }    
+        }
+        return false;
     }
 
     /**
      * 
-     * @return
      */
     public void printCriminal() {
         personDatabase.printDatabase();

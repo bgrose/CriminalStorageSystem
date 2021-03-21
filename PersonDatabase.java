@@ -1,5 +1,5 @@
 /**
- * @description Class that creates a database to store Person objects (Criminals, POIs, and Witnesses)
+ * @description Class that creates a database to store Person objects (Criminals, POIs)
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
 import java.util.ArrayList;

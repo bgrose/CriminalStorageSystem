@@ -240,8 +240,8 @@ public class CrimeUI {
         ArrayList<Evidence> evidenceList = createEvidenceList(num);
         num = Integer.valueOf(getField("How many Suspects are there"));
         ArrayList<Suspects> suspect = createSuspectList(num);
-        Crime Crime = new Crime(evidenceList, suspect, witness, description, caseID, solved, date);
-        crimeFacade.addCrime(Crime);
+        Crime crime = new Crime(evidenceList, suspect, witness, description, caseID, solved, date);
+        crimeFacade.addCrime(crime);
     }
 
     private ArrayList<Witness> createWitnessList(int num) {
@@ -348,7 +348,7 @@ public class CrimeUI {
      */
     private void modifyCrime() {
         System.out.println("\n------------- editing crime -------------");
-        // crimeFacade.modifyCrime();
+        
     }
 
     /**
@@ -381,7 +381,7 @@ public class CrimeUI {
      */
     private void modifyCriminal() {
         System.out.println("\n------------- editing criminal -------------");
-        crimeFacade.modifyCriminal();
+        // crimeFacade.modifyCriminal(crime, caseID);
     }
 
     /**
