@@ -17,8 +17,6 @@ public class Crime {
     private String caseID;
     private Boolean solved;
     private String date;
-    private String evidenceListReturn; // Used in toString
-    private String anyonePersonListReturn; // Used in toString
     private UUID uuid;
 
     /**
@@ -218,8 +216,48 @@ public class Crime {
      * Method that prints out the details of the Crime class
      */
     public String toString() {
-        return "\nCase ID: " + caseID + "\nDescription: " + description + "\nSolved: " + solved + "\nDate: " + date
-                + "\nEvidence List: " + evidenceListReturn + "/nPeople Involved List: " + anyonePersonListReturn;
+        String ret =  "\nCase ID: " + caseID + "\nDescription: " + description + "\nSolved: " + solved + "\nDate: " + date;
+        String suspects = "\nSuspects/Criminals:" + getSuspectString();
+        String evidence = "\nEvidence:" + getEvidenceString();
+        String witness = "\nWitnesses:" + getWitnessString();
+        ret = ret.concat(suspects).concat(evidence).concat(witness);
+        return ret;
+    }
+
+    public String getWitnessString()
+    {
+        String ret = "";
+        for(int i=0; i<witnessees.size(); i++)
+        {
+            Witness witness = witnessees.get(i);
+            ret.concat(witness.toString());
+        }
+
+        return ret;
+    }
+
+    public String getSuspectString()
+    {
+        String ret = "";
+        for(int i=0; i<personList.size(); i++)
+        {
+            Suspects suspect = personList.get(i);
+            ret.concat(suspect.toString());
+        }
+
+        return ret;
+    }
+
+    public String getEvidenceString()
+    {
+        String ret = "";
+        for(int i=0; i<evidenceList.size(); i++)
+        {
+            Evidence evidence = evidenceList.get(i);
+            ret.concat(evidence.toString());
+        }
+
+        return ret;
     }
 
     /**

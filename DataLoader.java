@@ -65,7 +65,8 @@ public class DataLoader extends DataConstants {
                 JSONArray personArray = (JSONArray) crimeJSON.get(CRIME_PERSONLIST);
                 if (personArray != null) {
                     for (int j = 0; j < personArray.size(); j++) {
-                        UUID personUUID = UUID.fromString((String) (personArray.get(j)));
+                        String person = ((String) (personArray.get(j)));
+                        UUID personUUID = UUID.fromString(person);
                         ArrayList<Suspects> suspects = PersonDatabase.getInstance().getDatabase();
                         for (int k = 0; k < suspects.size(); k++) {
                             if (personUUID.equals(suspects.get(k).getUUID())) {
@@ -175,6 +176,7 @@ public class DataLoader extends DataConstants {
                 Persons.add(new Suspects(name, livingStatus, alias, accomplice, hairColor, eyeColor, tatoo, skinColor,
                         nationality, weight, height, acquaintance, age, glasses, punishment, disability, handness,
                         crimeType, arrestingOfficer, inJail, uuid));
+                System.out.println("Here");
             }
             return Persons;
 

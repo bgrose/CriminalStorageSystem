@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class CrimeDatabase {
 
     private static CrimeDatabase crimeDatabase;
-    ArrayList<Crime> crimeList;
+    private static ArrayList<Crime> crimeList;
 
     /**
      * Method that returns a Crime from crimeDatabase
@@ -28,8 +28,6 @@ public class CrimeDatabase {
      */
     public void addCrime(Crime crime) {
         crimeList.add(crime);
-        for (int i = 0; i < crime.getPersonList().size(); i++)
-            PersonDatabase.getInstance().addPerson(crime.getPersonList().get(i));
         DataWriter.DataUpdate();
 
     }
@@ -66,7 +64,7 @@ public class CrimeDatabase {
      * Constructor method that sets up the CrimeDatabase
      */
     private CrimeDatabase() {
-        this.crimeList = DataLoader.getCrimes();
+        crimeList = DataLoader.getCrimes();
     }
 
     /**
