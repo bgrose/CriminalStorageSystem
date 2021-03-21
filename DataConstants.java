@@ -1,5 +1,9 @@
+/**
+ * @description Class that creates the data constants
+ * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
+ */
 public class DataConstants {
-    //Crime
+    // Crime
     protected static final String CRIME_DATE = "Crime Date";
     protected static final String CRIME_DESCRIPTION = "Crime Description";
     protected static final String CRIME_EVIDENCE_LIST = "Evidence List";
@@ -11,8 +15,7 @@ public class DataConstants {
     protected static final String CRIME_UUID = "UUID";
     protected static final String CRIME_FILE_NAME = "JSON/Crime.JSON";
 
-
-    //Criminal
+    // Criminal
     protected static final String CRIMINAL_ACCOMPLACE = "Accomplaces";
     protected static final String CRIMINAL_ACQUANTANCES = "Acquantances";
     protected static final String CRIMINAL_AGE = "Age";
@@ -37,13 +40,13 @@ public class DataConstants {
     protected static final String CRIMINAL_WEIGHT = "Weight";
     protected static final String CRIMINAL_FILE_NAME = "JSON/Criminal.JSON";
 
-    //Evidence
+    // Evidence
     protected static final String EVIDENCE_DESCRIPTION = "Description";
     protected static final String EVIDENCE_NAME = "Name";
     protected static final String EVIDENCE_UUID = "UUID";    
     protected static final String EVIDENCE_FILE_NAME = "JSON/Evidence.JSON";
 
-    //User
+    // User
     protected static final String USER_ADMIN = "Admin";
     protected static final String USER_NAME = "Name";
     protected static final String USER_PASSWORD = "Password";
@@ -52,7 +55,7 @@ public class DataConstants {
     protected static final String USER_UUID = "UUID";
     protected static final String USER_FILE_NAME = "JSON/User.JSON";
 
-    //Witness
+    // Witness
     protected static final String WITNESS_CRIME_LIST = "Crime List";
     protected static final String WITNESS_LIVING = "Living";
     protected static final String WITNESS_NAME = "Name";

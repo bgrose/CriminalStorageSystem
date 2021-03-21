@@ -1,6 +1,6 @@
 /**
- * @description Class that creates Person
- * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
+ * @description Class that creates a Person
+ * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
 
 import java.util.UUID;
@@ -12,7 +12,7 @@ public abstract class Person {
     private UUID uuid;
 
     /**
-     * Creates a Person as a called super with UUID
+     * Method that creates a Person as a called super with UUID
      * @param name Name of the Person
      * @param livingStatus Boolean if living 
      * @param _UUID The unique UUID to be used
@@ -23,8 +23,8 @@ public abstract class Person {
         this.uuid = _UUID;
     }
 
-        /**
-     * Creates a Person as a called super without UUID
+    /**
+     * Method that creates a Person as a called super without UUID
      * @param name Name of the Person
      * @param livingStatus Boolean if living 
      */
@@ -52,7 +52,7 @@ public abstract class Person {
 
     /**
      * Method that gets the living status
-     * @return livingStatus boolean livingStatus
+     * @return livingStatus boolean
      */
     public boolean getLivingStatus() {
         return this.livingStatus;
@@ -74,6 +74,10 @@ public abstract class Person {
         return this.uuid;
     }
 
+    /**
+     * Method that returns the variables of the class as a string
+     * @return String of the variables of the class
+     */
     public String toString(){
         return "\nName: " + name + "\nLiving Status: " + livingStatus;
     }

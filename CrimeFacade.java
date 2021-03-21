@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 /**
+ * @description Class that creates the crimeFacade for the criminal UI to call
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
 public class CrimeFacade {

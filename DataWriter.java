@@ -1,7 +1,7 @@
 
 /**
- * @description Writes to JSON FIle for Object Storage
- * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
+ * @description Class that writes to JSON FIle for Object Storage
+ * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
 
 import java.io.FileWriter;
@@ -19,7 +19,7 @@ import com.google.gson.*;
 public class DataWriter extends DataConstants {
 
     /**
-     * Updates all JSON Data Stores.
+     * Method that updates all JSON Data Stores
      */
     public static void DataUpdate() {
         saveUsers();
@@ -28,7 +28,7 @@ public class DataWriter extends DataConstants {
     }
 
     /**
-     * Goes through all the users and saves them to a JSON FIle
+     * Method that goes through all the users and saves them to a JSON FIle
      */
     public static void saveUsers() {
         ArrayList<User> userList = UserDatabase.getInstance().getDatabase();
@@ -50,8 +50,7 @@ public class DataWriter extends DataConstants {
     }
 
     /**
-     * Creates the JSON Object for a User
-     * 
+     * Method that creates the JSON Object for a User
      * @param user User being converted
      * @return JSON Object of User
      */
@@ -68,7 +67,7 @@ public class DataWriter extends DataConstants {
     }
 
     /**
-     * Writes to the file for the crimes and calls the different sub class to make
+     * Method that writes to the file for the crimes and calls the different sub class to make
      * objects
      */
     public static void saveCrimes() {
@@ -118,10 +117,9 @@ public class DataWriter extends DataConstants {
     }
 
     /**
-     * Creates a JSON File for the Crimes
-     * 
+     * Method that creates a JSON File for the Crimes
      * @param crime Crime that is being turned into a JSON FIle
-     * @return The JSON Object for the crime
+     * @return JSON Object for the crime
      */
     public static JSONObject getCrimeJSON(Crime crime, JSONArray Evidence, JSONArray Witness) {
         JSONObject jsonObject = new JSONObject();
@@ -140,11 +138,10 @@ public class DataWriter extends DataConstants {
     }
 
     /**
-     * Saves all evidence items for the crime as well as write to JSON file for
+     * Method that saves all evidence items for the crime as well as write to JSON file for
      * evidence
-     * 
      * @param crime Crime evidence is being pulled from
-     * @return a JSONArray with the evidence in it for the crime with UUID
+     * @return JSONArray with the evidence in it for the crime with UUID
      */
     public static JSONArray saveEvidence(Crime crime, JSONArray Evidence) {
         JSONArray jsonUUIDEvidence = new JSONArray();
@@ -167,8 +164,7 @@ public class DataWriter extends DataConstants {
     }
 
     /**
-     * Saves the Users to a JSON File for Crime by looping ang getting UUID
-     * 
+     * Method that saves the Users to a JSON File for Crime by looping ang getting UUID
      * @param crime Takes in crime to loop through
      * @return JSONArray with officer UUID
      */
@@ -185,8 +181,7 @@ public class DataWriter extends DataConstants {
     }
 
     /**
-     * Saves the Suspect to a JSON File for Crime by looping ang getting UUID
-     * 
+     * Method that saves the Suspect to a JSON File for Crime by looping ang getting UUID
      * @param crime Takes in crime to loop through
      * @return JSONArray with Suspect UUID
      */
@@ -203,8 +198,7 @@ public class DataWriter extends DataConstants {
     }
 
     /**
-     * Saves the Suspect to a JSON File for Crime by looping ang getting UUID
-     * 
+     * Method that saves the Suspect to a JSON File for Crime by looping ang getting UUID
      * @param crime Takes in crime to loop through
      * @return JSONArray with Suspect UUID
      */
@@ -227,7 +221,7 @@ public class DataWriter extends DataConstants {
     }
 
     /**
-     * Saves all of the Suspects to JSON
+     * Method that saves all of the Suspects to JSON
      */
     public static void savePersons() {
         PersonDatabase suspects = PersonDatabase.getInstance();
@@ -252,10 +246,10 @@ public class DataWriter extends DataConstants {
     }
 
     /**
-     * Creates a JSON Object for a suspect
+     * Method that creates a JSON Object for a suspect
      * 
-     * @param suspects the suspect to make object
-     * @return the object of the suspect
+     * @param suspects To make object
+     * @return Object of the suspect
      */
     public static JSONObject getSuspectJSON(Suspects suspects) {
         JSONObject jsonObject = new JSONObject();

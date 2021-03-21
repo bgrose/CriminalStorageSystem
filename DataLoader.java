@@ -1,7 +1,7 @@
 
 /**
- *  Loads in Data from JSON Files and Populates Obejcts
- * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
+ * @description Class that loads in Data from JSON Files and Populates Obejcts
+ * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
 import java.io.FileReader;
 
@@ -17,9 +17,8 @@ import org.json.simple.parser.JSONParser;
 public class DataLoader extends DataConstants {
 
     /**
-     * Creates an ArrayList of the Crimes to Set as Crime Database
-     * 
-     * @return Thje Full Array List
+     * Method that creates an ArrayList of the Crimes to Set as Crime Database
+     * @return The Full Array List
      */
     public static ArrayList<Crime> getCrimes() {
         ArrayList<Crime> crimes = new ArrayList<Crime>();
@@ -34,42 +33,44 @@ public class DataLoader extends DataConstants {
             for (int i = 0; i < crimesJSON.size(); i++) {
                 JSONObject crimeJSON = (JSONObject) crimesJSON.get(i);
                 ArrayList<Evidence> evidenceList = new ArrayList<Evidence>();
-                    JSONArray evidenceArray = (JSONArray) crimeJSON.get(CRIME_EVIDENCE_LIST);
-                    if (evidenceArray != null) {
+                JSONArray evidenceArray = (JSONArray) crimeJSON.get(CRIME_EVIDENCE_LIST);
+                if (evidenceArray != null) {
                     for (int j = 0; j < evidenceArray.size(); j++) {
                         UUID evidenceUUID = UUID.fromString((String) evidenceArray.get(j));
                         for (int k = 0; k < grabEvidence.size(); k++) {
                             UUID UUIDEvi = grabEvidence.get(k).getUUID();
-                            if (evidenceUUID.equals(UUIDEvi))
+                            if (evidenceUUID.equals(UUIDEvi)) {
                                 evidenceList.add(grabEvidence.get(k));
+                            }
                         }
                     }
                 }
-                
 
                 ArrayList<Witness> witness = new ArrayList<Witness>();
-                
-                    JSONArray witnessArray = (JSONArray) crimeJSON.get(CRIME_WITNESSLIST);
-                    if (witnessArray != null) {
+
+                JSONArray witnessArray = (JSONArray) crimeJSON.get(CRIME_WITNESSLIST);
+                if (witnessArray != null) {
                     for (int j = 0; j < witnessArray.size(); j++) {
                         UUID witnessUUID = UUID.fromString((String) witnessArray.get(j));
                         for (int k = 0; k < grabWitt.size(); k++) {
                             UUID UUIDWitt = grabWitt.get(k).getUUID();
-                            if (witnessUUID.equals(UUIDWitt))
+                            if (witnessUUID.equals(UUIDWitt)) {
                                 witness.add(grabWitt.get(k));
+                            }
                         }
                     }
                 }
 
                 ArrayList<Suspects> personLists = new ArrayList<Suspects>();
-                    JSONArray personArray = (JSONArray) crimeJSON.get(CRIME_PERSONLIST);
-                    if (personArray != null) {
+                JSONArray personArray = (JSONArray) crimeJSON.get(CRIME_PERSONLIST);
+                if (personArray != null) {
                     for (int j = 0; j < personArray.size(); j++) {
-                        UUID personUUID = UUID.fromString( (String) (personArray.get(j)));
+                        UUID personUUID = UUID.fromString((String) (personArray.get(j)));
                         ArrayList<Suspects> suspects = PersonDatabase.getInstance().getDatabase();
                         for (int k = 0; k < suspects.size(); k++) {
-                            if (personUUID.equals(suspects.get(k).getUUID()))
+                            if (personUUID.equals(suspects.get(k).getUUID())) {
                                 personArray.add(suspects.get(k));
+                            }
                         }
                     }
                 }
@@ -89,12 +90,11 @@ public class DataLoader extends DataConstants {
         }
 
         return null;
-       
+
     }
 
     /**
-     * Creates an Arraylist of the Users
-     * 
+     * Method that creates an Arraylist of the Users
      * @return Arraylist populated with users
      */
     public static ArrayList<User> getUsers() {
@@ -127,9 +127,9 @@ public class DataLoader extends DataConstants {
     }
 
     /**
-     * Creates an Arraylist of all people for people database
+     * Method that creates an Arraylist of all people for people database
      * 
-     * @return an arraylist for people database populated
+     * @return ArrayList for people database populated
      */
     public static ArrayList<Suspects> getPerson() {
         ArrayList<Suspects> Persons = new ArrayList<Suspects>();
@@ -172,9 +172,9 @@ public class DataLoader extends DataConstants {
                 boolean inJail = (Boolean) personJSON.get(CRIMINAL_JAIL_STATUS);
                 UUID uuid = UUID.fromString((String) personJSON.get(CRIMINAL_UUID));
 
-                Persons.add(new Suspects(name, livingStatus, alias, accomplice, hairColor, eyeColor, tatoo,
-                skinColor, nationality, weight, height, acquaintance, age, glasses, punishment, disability,
-                handness, crimeType, arrestingOfficer, inJail, uuid));
+                Persons.add(new Suspects(name, livingStatus, alias, accomplice, hairColor, eyeColor, tatoo, skinColor,
+                        nationality, weight, height, acquaintance, age, glasses, punishment, disability, handness,
+                        crimeType, arrestingOfficer, inJail, uuid));
             }
             return Persons;
 
@@ -186,9 +186,8 @@ public class DataLoader extends DataConstants {
     }
 
     /**
-     * Creates an arraylist of Evidence to be used to populate crimes
-     * 
-     * @return The arraylist of populated evidence
+     * Method that creates an arraylist of Evidence to be used to populate crimes
+     * @return ArrayList of populated evidence
      */
     public static ArrayList<Evidence> getEvidence() {
         ArrayList<Evidence> evidence = new ArrayList<Evidence>();
@@ -202,7 +201,7 @@ public class DataLoader extends DataConstants {
                 String name = (String) evidenceJSONObject.get(EVIDENCE_NAME);
                 String description = (String) evidenceJSONObject.get(EVIDENCE_DESCRIPTION);
                 UUID uuid = UUID.fromString((String) evidenceJSONObject.get(EVIDENCE_UUID));
-                
+
                 evidence.add(new Evidence(name, description, uuid));
             }
 
@@ -215,8 +214,7 @@ public class DataLoader extends DataConstants {
     }
 
     /**
-     * Creates an arraylist of of Witnesses to be used to populate Crimes
-     * 
+     * Method that creates an arraylist of of Witnesses to be used to populate Crimes
      * @return arraylist populated with witnesses
      */
     public static ArrayList<Witness> getWitness() {

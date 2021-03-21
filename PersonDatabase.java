@@ -1,3 +1,4 @@
+
 /**
  * @description Class that creates a database to store Person objects (Criminals, POIs)
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
@@ -18,8 +19,8 @@ public class PersonDatabase {
     }
 
     /**
-     * Adds a person to database and calls for JSON update
-     * @param person person to add
+     * Method that adds a person to database and calls for JSON update
+     * @param person Person to add
      */
     public void addPerson(Suspects person) {
         personList.add(person);
@@ -27,7 +28,8 @@ public class PersonDatabase {
     }
 
     /**
-     * Removes user from database and updates JSON
+     * Method that removes user from database and updates JSON
+     * 
      * @param person Suspect to be removed
      */
     public void removePerson(Suspects person) {
@@ -35,19 +37,18 @@ public class PersonDatabase {
         DataWriter.DataUpdate();
     }
 
-
     /**
-     * 
+     * Method that prints the personDatabase
      */
     public void printDatabase() {
-        for(Person person : personList){
+        for (Person person : personList) {
             System.out.println(person.toString());
         }
     }
 
     /**
-     * Checks for an instance of PersonDatabase
-     * @return a new or current database
+     * Method that checks for an instance of PersonDatabase
+     * @return New or current database
      */
     public static PersonDatabase getInstance() {
         if (personDatabase == null)
@@ -56,14 +57,14 @@ public class PersonDatabase {
     }
 
     /**
-     * Loads in the values of the JSON File
+     * Method that loads in the values of the JSON File
      */
     private PersonDatabase() {
         personList = DataLoader.getPerson();
     }
 
     /**
-     * Returns the database Array
+     * Method that returns the database Array
      * @return Array with Suspects
      */
     public ArrayList<Suspects> getDatabase() {
