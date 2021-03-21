@@ -56,7 +56,7 @@ public class CrimeUI {
                     searchCrime();
                     break;
                 case (2):
-                    modifyCrime();
+                    // modifyCrime();
                     break;
                 case (3):
                     printCrimes();
@@ -65,7 +65,7 @@ public class CrimeUI {
                     searchCriminal();
                     break;
                 case (5):
-                    modifyCriminal();
+                    // modifyCriminal();
                     break;
                 case (6):
                     removeCrimes();
@@ -103,7 +103,7 @@ public class CrimeUI {
                     searchCrime();
                     break;
                 case (2):
-                    modifyCrime();
+                    // modifyCrime();
                     break;
                 case (3):
                     printCrimes();
@@ -112,7 +112,7 @@ public class CrimeUI {
                     searchCriminal();
                     break;
                 case (5):
-                    modifyCriminal();
+                    // modifyCriminal();
                     break;
                 case (6):
                     printCriminal();
