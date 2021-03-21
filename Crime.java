@@ -217,8 +217,8 @@ public class Crime {
      * Method that prints out the details of the Crime class
      */
     public String toString() {
-        return "Case ID: " + caseID + "Description: " + description + "Solved: " + solved + "Date: " + date
-                + "Evidence List: " + evidenceListReturn + "People Involved List" + anyonePersonListReturn;
+        return "\nCase ID: " + caseID + "\nDescription: " + description + "\nSolved: " + solved + "\nDate: " + date
+                + "\nEvidence List: " + evidenceListReturn + "/nPeople Involved List: " + anyonePersonListReturn;
     }
 
     /**
