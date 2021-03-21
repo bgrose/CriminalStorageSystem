@@ -56,7 +56,7 @@ public class CrimeUI {
                     searchCrime();
                     break;
                 case (2):
-                    modifyCrime();
+                    // modifyCrime();
                     break;
                 case (3):
                     printCrimes();
@@ -65,7 +65,7 @@ public class CrimeUI {
                     searchCriminal();
                     break;
                 case (5):
-                    modifyCriminal();
+                    // modifyCriminal();
                     break;
                 case (6):
                     printCriminal();
@@ -106,7 +106,7 @@ public class CrimeUI {
                     searchCrime();
                     break;
                 case (2):
-                    modifyCrime();
+                    // modifyCrime();
                     break;
                 case (3):
                     printCrimes();
@@ -115,7 +115,7 @@ public class CrimeUI {
                     searchCriminal();
                     break;
                 case (5):
-                    modifyCriminal();
+                    // modifyCriminal();
                     break;
                 case (6):
                     printCriminal();
@@ -346,15 +346,6 @@ public class CrimeUI {
     }
 
     /**
-     * Methods to edit Crimes
-     * 
-     */
-    private void modifyCrime() {
-        System.out.println("\n------------- editing crime -------------");
-        
-    }
-
-    /**
      * Methods to print Crimes
      */
     private void printCrimes() {
@@ -377,14 +368,6 @@ public class CrimeUI {
             return;
         }
         System.out.println("The criminal you're looking for is in library\n");
-    }
-
-    /**
-     * Methods to edit criminals
-     */
-    private void modifyCriminal() {
-        System.out.println("\n------------- editing criminal -------------");
-        // crimeFacade.modifyCriminal(crime, caseID);
     }
 
     /**
