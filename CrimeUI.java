@@ -4,8 +4,7 @@ import java.util.Scanner;
  * @description creates the main driver of CrimeUI
  * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
  */
-public class CrimeUI 
-{
+public class CrimeUI {
 
     private static final String WELCOME_MSG = "Welcome to the Criminal Storage System!: Please login or create an account.";
     private String[] menuOptions = { "Add Crime", "Search Crime", "Modify Crime", "Print Crimes", "Search Criminal",
@@ -19,8 +18,7 @@ public class CrimeUI
     /**
      * Constructor method that sets up the CrimeUI
      */
-    CrimeUI() 
-    {
+    CrimeUI() {
         scanner = new Scanner(System.in);
         crimeFacade = new CrimeFacade();
     }
@@ -28,32 +26,76 @@ public class CrimeUI
     /*
      * Method that will run the program
      */
-    public void run() 
-    {
+    public void run() {
         System.out.println(WELCOME_MSG);
 
-        login();
+        User user = login();
 
-        while (true) 
-        {
+        if (user.isAdmin()) {
+            while (true) {
+                displayAdminMenu();
+
+                int command = getCommand(AdminMenuOptions.length);
+
+                if (command == -1) {
+                    System.out.println("Not a valid option");
+                    continue;
+                }
+
+                if (command == AdminMenuOptions.length - 1) {
+                    crimeFacade.logout();
+                    break;
+                }
+
+                switch (command) {
+                case (0):
+                    addCrime();
+                    break;
+                case (1):
+                    searchCrime();
+                    break;
+                case (2):
+                    modifyCrime();
+                    break;
+                case (3):
+                    printCrimes();
+                    break;
+                case (4):
+                    searchCriminal();
+                    break;
+                case (5):
+                    modifyCriminal();
+                    break;
+                case (6):
+                    removeCrimes();
+                    break;
+                case (8):
+                    addUser();
+                    break;
+                case (9):
+                    removeUser();
+                    break;
+                }
+            }
+
+        }
+        else {
+        while (true) {
             displayMenu();
 
             int command = getCommand(menuOptions.length);
 
-            if (command == -1) 
-            {
+            if (command == -1) {
                 System.out.println("Not a valid option");
                 continue;
             }
 
-            if (command == menuOptions.length - 1) 
-            {
+            if (command == menuOptions.length - 1) {
                 crimeFacade.logout();
                 break;
             }
-            // how to differentiate between admin and normal user?
-            switch (command) 
-            {
+
+            switch (command) {
             case (0):
                 addCrime();
                 break;
@@ -76,20 +118,18 @@ public class CrimeUI
                 printCriminal();
                 break;
             }
-
         }
+    }
         System.out.println("Logging Out......Complete. Have a good day");
     }
 
     /*
      * Method that will open the Main menu
      */
-    private void displayMenu() 
-    {
+    private void displayMenu() {
 
         System.out.println("\n************ Main Menu *************");
-        for (int i = 0; i < menuOptions.length; i++) 
-        {
+        for (int i = 0; i < menuOptions.length; i++) {
             System.out.println((i + 1) + ". " + menuOptions[i]);
         }
         System.out.println("\n");
@@ -98,11 +138,9 @@ public class CrimeUI
     /*
      * Method that will open the Admin menu
      */
-    private void displayAdminMenu() 
-    {
+    private void displayAdminMenu() {
         System.out.println("\n************ Main Menu *************");
-        for (int i = 0; i < AdminMenuOptions.length; i++) 
-        {
+        for (int i = 0; i < AdminMenuOptions.length; i++) {
             System.out.println((i + 1) + ". " + AdminMenuOptions[i]);
         }
         System.out.println("\n");
@@ -113,8 +151,7 @@ public class CrimeUI
      * @param numCommands
      * @return
      */
-    private int getCommand(int numCommands) 
-    {
+    private int getCommand(int numCommands) {
         System.out.print("What would you like to do?: ");
 
         String input = scanner.nextLine();
@@ -129,10 +166,9 @@ public class CrimeUI
     /**
      * Method that creates an account
      */
-    private void createAccount() 
-    {
+    private void createAccount() {
         String userName = getField("Username");
-        String password = getField("Prompt");
+        String password = getField("Passord");
         String name = getField("Name");
         String position = getField("Position");
         UserDatabase uDatabase = UserDatabase.getInstance();
@@ -141,16 +177,13 @@ public class CrimeUI
 
         boolean userNameUsed = false;
 
-        for(int i=0; i<uDatabase.getDatabase().size(); i++)
-        {
-            if(uDatabase.getDatabase().get(i).getUsername().equals(userName)) userNameUsed = true;
+        for (int i = 0; i < uDatabase.getDatabase().size(); i++) {
+            if (uDatabase.getDatabase().get(i).getUsername().equals(userName))
+                userNameUsed = true;
         }
-        if(userNameUsed)
-        {
+        if (userNameUsed) {
             System.out.println("Sorry, an account with that username already exits");
-        } 
-        else 
-        {
+        } else {
             crimeFacade.createAccount(userName, password, name, position, isAdmin);
             System.out.println("You have successfully created an account");
         }
@@ -159,21 +192,24 @@ public class CrimeUI
     /**
      * Method that will provide a login
      */
-    private void login() 
-    {
-        String username = getField("Username");
-        String password = getField("Password");
+    private User login() {
+        boolean loggedIn = false;
 
-        if (crimeFacade.login(username, password)) 
-        {
-            User currentUser = crimeFacade.getCurrentUser();
-            System.out.println("Welcome " + currentUser.getName() + "!");
-        } 
-        else 
-        {
-            System.out.println("Sorry, invalid username or password");
+        while (!loggedIn) {
+            String username = getField("Username");
+            String password = getField("Password");
+            loggedIn = crimeFacade.login(username, password);
+
+            if (loggedIn) {
+                User currentUser = crimeFacade.getCurrentUser();
+                System.out.println("Welcome " + currentUser.getName() + "!");
+                return UserDatabase.getInstance().getUser(username, password);
+            } else {
+                System.out.println("Sorry, invalid username or password");
+            }
+
         }
-
+        return null;
     }
 
     /**
@@ -181,8 +217,7 @@ public class CrimeUI
      * @param prompt
      * @return
      */
-    private String getField(String prompt) 
-    {
+    private String getField(String prompt) {
         System.out.print(prompt + ": ");
         return scanner.nextLine();
     }
@@ -190,49 +225,41 @@ public class CrimeUI
     /**
      * Methods to add a Crime
      */
-    private void addCrime() 
-    {
+    private void addCrime() {
         System.out.println("\n------------- Adding a Crime -------------");
-        //Crime Crime = getUserCrime();
-        //crimeFacade.addCrime(Crime);
+        // Crime Crime = getUserCrime();
+        // crimeFacade.addCrime(Crime);
     }
 
     /**
      * Methods to search for Crime
      */
-    private void searchCrime() 
-    {
+    private void searchCrime() {
         System.out.println("\n------------- Searching for a Crime -------------");
-        //Crime crime = getUserCrime();
+        // Crime crime = getUserCrime();
         /*
-        if (crime == null)
-            return;
-
-        if (crimeFacade.searchCrime(crime.getcaseID()) == null) 
-        {
-            System.out.println("Sorry the type of crime is not found \n");
-            return;
-        }
-
-        System.out.println(crime.toString());
-        */
+         * if (crime == null) return;
+         * 
+         * if (crimeFacade.searchCrime(crime.getcaseID()) == null) {
+         * System.out.println("Sorry the type of crime is not found \n"); return; }
+         * 
+         * System.out.println(crime.toString());
+         */
     }
 
     /**
      * Methods to edit Crimes
-     *  
+     * 
      */
-    private void modifyCrime() 
-    {
+    private void modifyCrime() {
         System.out.println("\n------------- editing crime -------------");
-        //crimeFacade.modifyCrime();
+        // crimeFacade.modifyCrime();
     }
 
     /**
      * Methods to print Crimes
      */
-    private void printCrimes() 
-    {
+    private void printCrimes() {
         System.out.println("\n------------- printing crimes -------------");
         crimeFacade.printCrimes();
     }
@@ -240,16 +267,14 @@ public class CrimeUI
     /**
      * Methods to search criminals
      */
-    private void searchCriminal() 
-    {
+    private void searchCriminal() {
         System.out.println("\n------------- searching criminal -------------");
         String criminalName = getUserCriminal();
 
         if (criminalName == null)
             return;
 
-        if (crimeFacade.searchCriminal(criminalName)) 
-        {
+        if (crimeFacade.searchCriminal(criminalName)) {
             System.out.println("Sorry the criminal your searching is not found \n");
             return;
         }
@@ -259,8 +284,7 @@ public class CrimeUI
     /**
      * Methods to edit criminals
      */
-    private void modifyCriminal() 
-    {
+    private void modifyCriminal() {
         System.out.println("\n------------- editing criminal -------------");
         crimeFacade.modifyCriminal();
     }
@@ -268,8 +292,7 @@ public class CrimeUI
     /**
      * Methods to print the criminal
      */
-    private void printCriminal() 
-    {
+    private void printCriminal() {
         System.out.println("\n------------- printing criminal -------------");
         crimeFacade.printCriminal();
     }
@@ -277,21 +300,21 @@ public class CrimeUI
     /**
      * Methods to remove crimes
      */
-    private void removeCrimes() 
-    {
+    private void removeCrimes() {
         System.out.println("\n------------- removing crime -------------");
         System.out.print("Please enter the Case ID to be removed: ");
         String choice = scanner.nextLine();
         boolean removed = crimeFacade.removeCrime(choice);
-        if(removed) System.out.println("Crime Removed Successfully");
-        else System.out.println("No Crime Found.");
+        if (removed)
+            System.out.println("Crime Removed Successfully");
+        else
+            System.out.println("No Crime Found.");
     }
 
     /**
      * Methods to add Users
      */
-    private void addUser() 
-    {
+    private void addUser() {
         System.out.println("\n------------- adding user -------------");
         createAccount();
     }
@@ -299,26 +322,25 @@ public class CrimeUI
     /**
      * Methods to remove Users
      */
-    private void removeUser() 
-    {
+    private void removeUser() {
         System.out.println("\n------------- removing user -------------");
         System.out.print("Please enter the Username of the user to be removed: ");
         String userName = scanner.nextLine();
         boolean removed = crimeFacade.removeUser(userName);
-        if(removed) System.out.println("User Removed Successfully");
-        else System.out.println("No User Found.");
+        if (removed)
+            System.out.println("User Removed Successfully");
+        else
+            System.out.println("No User Found.");
     }
 
     /**
      * 
      * @return
      */
-    private String getUserCriminal() 
-    {
+    private String getUserCriminal() {
         System.out.print("Enter User Criminals: ");
 
-        while (true) 
-        {
+        while (true) {
             String criminalName = scanner.nextLine().trim().toLowerCase();
 
             if (!criminalName.contentEquals(""))
@@ -336,12 +358,10 @@ public class CrimeUI
      * 
      * @return
      */
-    private String getUserCrime() 
-    {
+    private String getUserCrime() {
         System.out.print("Enter User Crimes: ");
 
-        while (true) 
-        {
+        while (true) {
             String crimeName = scanner.nextLine().trim().toLowerCase();
 
             if (!crimeName.contentEquals(""))
@@ -358,8 +378,7 @@ public class CrimeUI
     /**
      * The main method
      */
-    public static void main(String[] args) 
-    {
+    public static void main(String[] args) {
         CrimeUI crimeInterface = new CrimeUI();
         crimeInterface.run();
     }

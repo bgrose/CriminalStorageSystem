@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import com.google.gson.*;
+
 @SuppressWarnings("unchecked")
 
 public class DataWriter extends DataConstants {
@@ -35,7 +37,11 @@ public class DataWriter extends DataConstants {
         }
 
         try (FileWriter file = new FileWriter(USER_FILE_NAME, false)) {
-            file.write(jsonUsers.toJSONString());
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            JsonParser jp = new JsonParser();
+            JsonElement je = jp.parse(jsonUsers.toJSONString());
+            String prettyJsonString = gson.toJson(je);
+            file.write(prettyJsonString);
             file.flush();
         } catch (IOException e) {
             e.printStackTrace();
@@ -77,20 +83,32 @@ public class DataWriter extends DataConstants {
         }
 
         try (FileWriter file = new FileWriter(CRIME_FILE_NAME, false)) {
-            file.write(jsonCrimes.toJSONString());
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            JsonParser jp = new JsonParser();
+            JsonElement je = jp.parse(jsonCrimes.toJSONString());
+            String prettyJsonString = gson.toJson(je);
+            file.write(prettyJsonString);
             file.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         try (FileWriter file = new FileWriter(WITNESS_FILE_NAME, false)) {
-            file.write(jsonWitness.toJSONString());
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            JsonParser jp = new JsonParser();
+            JsonElement je = jp.parse(jsonWitness.toJSONString());
+            String prettyJsonString = gson.toJson(je);
+            file.write(prettyJsonString);
             file.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
         try (FileWriter file = new FileWriter(EVIDENCE_FILE_NAME, false)) {
-            file.write(jsonEvidence.toJSONString());
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            JsonParser jp = new JsonParser();
+            JsonElement je = jp.parse(jsonEvidence.toJSONString());
+            String prettyJsonString = gson.toJson(je);
+            file.write(prettyJsonString);
             file.flush();
         } catch (IOException e) {
             e.printStackTrace();

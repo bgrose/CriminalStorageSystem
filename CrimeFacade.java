@@ -37,7 +37,7 @@ public class CrimeFacade {
      * @return
      */
     public boolean login(String username, String password) {
-        if (userDatabase.getUser(username, password) == null || password  == null) {
+        if (userDatabase.getUser(username, password) == null) {
             return false;
         }
         currentUser = userDatabase.getUser(username, password);
