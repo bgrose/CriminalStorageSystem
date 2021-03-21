@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 /**
  * @description creates the main driver of CrimeUI
- * @author Bradley Grose, Ellie Barry, David Keen, David Morrison
+ * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
 public class CrimeUI {
 
