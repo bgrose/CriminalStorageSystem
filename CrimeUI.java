@@ -68,6 +68,9 @@ public class CrimeUI {
                     modifyCriminal();
                     break;
                 case (6):
+                    printCriminal();
+                    break;
+                case (7):
                     removeCrimes();
                     break;
                 case (8):
