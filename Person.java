@@ -10,6 +10,7 @@ public abstract class Person {
     private String name;
     private boolean livingStatus;
     private UUID uuid;
+    private String gender;
 
     /**
      * Method that creates a Person as a called super with UUID
@@ -17,10 +18,11 @@ public abstract class Person {
      * @param livingStatus Boolean if living 
      * @param _UUID The unique UUID to be used
      */
-    public Person(String name, boolean livingStatus, UUID _UUID) {
+    public Person(String name, boolean livingStatus, UUID _UUID, String Gender) {
         this.name = name;
         this.livingStatus = livingStatus;
         this.uuid = _UUID;
+        this.gender = Gender;
     }
 
     /**
@@ -28,10 +30,11 @@ public abstract class Person {
      * @param name Name of the Person
      * @param livingStatus Boolean if living 
      */
-    public Person(String name, boolean livingStatus) {
+    public Person(String name, boolean livingStatus, String Gender) {
         this.name = name;
         this.livingStatus = livingStatus;
         this.uuid = UUID.randomUUID();
+        this.gender = Gender;
     }
 
     /**
@@ -74,12 +77,22 @@ public abstract class Person {
         return this.uuid;
     }
 
+    public String getGender()
+    {
+        return this.gender;
+    }
+
+    public void setGender(String Gender)
+    {
+        this.gender = Gender;
+    }
+
     /**
      * Method that returns the variables of the class as a string
      * @return String of the variables of the class
      */
     public String toString(){
-        return "Name: " + name + "\nLiving Status: " + livingStatus;
+        return "Name: " + name + "\nLiving Status: " + livingStatus + "\nGender: "+ gender;
     }
 
 }

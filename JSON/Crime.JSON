@@ -1,18 +1,14 @@
 [
   {
-    "Crime Description": "sadsfdgf",
+    "Crime Description": "Bar Robbery",
     "Related People": [
-      "9bf7309f-c357-4385-a553-70b0481d793e"
+      "de6f9ff7-8a24-46ff-bbed-9f3e2ecabb15"
     ],
-    "Solved": false,
-    "Crime Case ID": "asdfgfhg",
-    "Evidence List": [
-      "11946006-245c-4730-966d-e22bbe3f8d2f"
-    ],
-    "UUID": "8e315f0e-fffc-4b6c-9194-536d81347cdd",
-    "Crime Date": "sadfgf",
-    "Witnesses": [
-      "f3183c57-505c-470e-9498-54811ae62cef"
-    ]
+    "Solved": true,
+    "Crime Case ID": "1524234",
+    "Evidence List": [],
+    "UUID": "5cc30d4c-db88-4441-baee-f0699836d186",
+    "Crime Date": "3/22/2021",
+    "Witnesses": []
   }
 ]

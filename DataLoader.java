@@ -160,13 +160,14 @@ public class DataLoader extends DataConstants {
                 String disability = (String) personJSON.get(CRIMINAL_DISABILITY);
                 String handness = (String) personJSON.get(CRIMINAL_HANDNESS);
                 String crimeType = (String) personJSON.get(CRIMINAL_CRIME_TYPE);
+                String gender = (String) personJSON.get(CRIMINAL_GENDER);
 
                 boolean inJail = (Boolean) personJSON.get(CRIMINAL_JAIL_STATUS);
                 UUID uuid = UUID.fromString((String) personJSON.get(CRIMINAL_UUID));
 
                 Persons.add(new Suspects(name, livingStatus, alias, accomplice, hairColor, eyeColor, tatoo, skinColor,
                         nationality, weight, height, acquaintance, age, glasses, punishment, disability, handness,
-                        crimeType, inJail, uuid));
+                        crimeType, inJail, uuid, gender));
             }
             return Persons;
 
@@ -222,8 +223,9 @@ public class DataLoader extends DataConstants {
                 boolean livingStatus =((boolean) witnesssJSONObject.get(WITNESS_LIVING));
                 String statement = (String) witnesssJSONObject.get(WITNESS_STATEMENT);
                 UUID uuid = UUID.fromString((String) witnesssJSONObject.get(WITNESS_UUID));
+                String gender = (String) witnesssJSONObject.get(WITNESS_GENDER);
 
-                witnessList.add(new Witness(name, livingStatus, statement, uuid));
+                witnessList.add(new Witness(name, livingStatus, statement, uuid, gender));
             }
             return witnessList;
         } catch (Exception e) {

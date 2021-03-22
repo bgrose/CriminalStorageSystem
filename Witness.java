@@ -17,8 +17,8 @@ public class Witness extends Person {
      * @param statement of the witness
      * @param UUID of the witness
      */
-    public Witness(String name, boolean livingStatus, String statement, UUID UUID) {
-        super(name, livingStatus, UUID);
+    public Witness(String name, boolean livingStatus, String statement, UUID UUID, String Gender) {
+        super(name, livingStatus, UUID, Gender);
         this.statement = statement;
     }
 
@@ -28,8 +28,8 @@ public class Witness extends Person {
      * @param livingStatus of the witness
      * @param statement of the witness
      */
-    public Witness(String name, boolean livingStatus, String statement) {
-        super(name, livingStatus);
+    public Witness(String name, boolean livingStatus, String statement, String Gender) {
+        super(name, livingStatus, Gender);
         this.statement = statement;
     }
 

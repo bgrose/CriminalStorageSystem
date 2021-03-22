@@ -52,8 +52,8 @@ public class Suspects extends Person {
     public Suspects(String name, boolean livingStatus, String alias, String accomplice, String hairColor,
             String eyeColor, String tatoo, String skinColor, String nationality, double weight, int height,
             String acquaintance, int age, boolean glasses, String punishment, String disability, String handness,
-            String crimeType, boolean inJail, UUID UUID) {
-        super(name, livingStatus, UUID);
+            String crimeType, boolean inJail, UUID UUID, String Gender) {
+        super(name, livingStatus, UUID, Gender);
         this.alias = alias;
         this.accomplice = accomplice;
         this.hairColor = hairColor;
@@ -99,8 +99,8 @@ public class Suspects extends Person {
     public Suspects(String name, boolean livingStatus, String alias, String accomplice, String hairColor,
             String eyeColor, String tatoo, String skinColor, String nationality, double weight, int height,
             String acquaintance, int age, boolean glasses, String punishment, String disability, String handness,
-            String crimeType, boolean inJail) {
-        super(name, livingStatus);
+            String crimeType, boolean inJail, String Gender) {
+        super(name, livingStatus, Gender);
         this.alias = alias;
         this.accomplice = accomplice;
         this.hairColor = hairColor;

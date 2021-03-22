@@ -246,13 +246,14 @@ public class CrimeUI {
         ArrayList<Witness> witnessList = new ArrayList<Witness>();
         for (int i = 0; i < num; i++) {
             String name = getField("Please Enter the " + (i + 1) + " Witness Name");
+            String gender = getField("Please Enter the " + (i + 1) + " Witness Gender");
             String answer = getField("Is the " + (i + 1) + " Witness Living(y/n");
             boolean livingStatus = true;
             if (answer.equals("n")) {
                 livingStatus = false;
             }
             String statement = getField("Please Enter the " + (i + 1) + " Witness Statement");
-            Witness witness = new Witness(name, livingStatus, statement);
+            Witness witness = new Witness(name, livingStatus, statement, gender);
             witnessList.add(witness);
         }
         return witnessList;
@@ -268,6 +269,7 @@ public class CrimeUI {
         for (int i = 0; i < num; i++) {
             String name = getField("Please Enter the " + (i + 1) + " Suspect Name");
             String answer = getField("Is the " + (i + 1) + " Suspect Living(y/n");
+            String gender = getField("Please Enter the " + (i + 1) + " Suspect Gender");
             boolean livingStatus = true;
             if (answer.equals("n")) {
                 livingStatus = false;
@@ -294,20 +296,18 @@ public class CrimeUI {
             String handness = getField("Please Enter the " + (i + 1) + " Suspects Handness");
             answer = getField("Has Suspect " + (i + 1) + "Been arrested/charged(y/n)");
             String punishment, crimeType;
-            Boolean inJail;
+            Boolean inJail = Boolean.valueOf(getField("Is " + (i + 1) + " Suspects In Jail?"));
             if (answer.equals("y")) {
                 punishment = getField("Please Enter the " + (i + 1) + " Criminal Punishment");
                 crimeType = getField("Please Enter the " + (i + 1) + " Criminal Crime Charge");
-                inJail = true;
             } else {
                 punishment = "None.";
                 crimeType = "None.";
-                inJail = false;
             }
 
             Suspects suspect = new Suspects(name, livingStatus, alias, accomplice, hairColor, eyeColor, tatoo,
                     skinColor, nationality, weight, height, acquaintance, age, glasses, punishment, disability,
-                    handness, crimeType, inJail);
+                    handness, crimeType, inJail, gender);
             suspectList.add(suspect);
             crimeFacade.addSuspect(suspect);
         }

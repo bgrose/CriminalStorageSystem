@@ -38,6 +38,7 @@ public class DataConstants {
     protected static final String CRIMINAL_TATTOO = "Tattoo";
     protected static final String CRIMINAL_UUID = "UUID";
     protected static final String CRIMINAL_WEIGHT = "Weight";
+    protected static final String CRIMINAL_GENDER = "Gender";
     protected static final String CRIMINAL_FILE_NAME = "JSON/Criminal.JSON";
 
     // Evidence
@@ -62,4 +63,5 @@ public class DataConstants {
     protected static final String WITNESS_STATEMENT = "Statement";
     protected static final String WITNESS_UUID = "UUID";
     protected static final String WITNESS_FILE_NAME = "JSON/Witness.JSON";
+    protected static final String WITNESS_GENDER = "Gender";
 }
