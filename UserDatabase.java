@@ -63,8 +63,7 @@ public class UserDatabase {
     /**
      * Constructor method
      */
-    public UserDatabase()
-    {
+    public UserDatabase() {
         database = DataLoader.getUsers();
     }
 

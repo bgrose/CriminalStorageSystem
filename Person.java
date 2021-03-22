@@ -79,27 +79,39 @@ public abstract class Person {
      * Method that gets the person's UUID
      * @return person's UUID
      */
-    public UUID getUUID(){
+    public UUID getUUID() {
         return this.uuid;
     }
 
-    public String getGender()
-    {
+    /**
+     * Returns the string of the Gender
+     * @return string of gender
+     */
+    public String getGender() {
         return this.gender;
     }
 
-    public String getPhone()
-    {
+    /**
+     * Gets the phone number of person
+     * @return String with phone number
+     */
+    public String getPhone() {
         return this.phoneNumber;
     }
 
-    public String getAddress()
-    {
+    /**
+     * Gets the address of Person
+     * @return the address of the Person
+     */
+    public String getAddress() {
         return this.address;
     }
 
-    public void setGender(String Gender)
-    {
+    /**
+     * Sets the Gener of person
+     * @param Gender String with Gender
+     */
+    public void setGender(String Gender) {
         this.gender = Gender;
     }
 
@@ -107,9 +119,9 @@ public abstract class Person {
      * Method that returns the variables of the class as a string
      * @return String of the variables of the class
      */
-    public String toString(){
+    public String toString() {
         return "Name: " + name + "\nLiving Status: " + livingStatus + "\nGender: "+ gender
-        + "\nAddress: "+address+"\nPhone Number"+phoneNumber;
+        + "\nAddress: "+address+"\nPhone Number: "+phoneNumber;
     }
 
 }

@@ -30,5 +30,13 @@
     "Admin": false,
     "Password": "password",
     "Name": "Bradley Grose"
+  },
+  {
+    "Username": "YouPick",
+    "Position": "Detective",
+    "UUID": "d4c76ce9-9dc3-41b8-9c41-64c55a7cd2f8",
+    "Admin": false,
+    "Password": "youpick",
+    "Name": "You Pick"
   }
 ]

@@ -1,4 +1,3 @@
-
 /**
  * @description Class that loads in Data from JSON Files and Populates Obejcts
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
@@ -11,7 +10,6 @@ import java.util.UUID;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-
 
 public class DataLoader extends DataConstants {
 
@@ -46,8 +44,6 @@ public class DataLoader extends DataConstants {
                     }
                 }
 
-
-               
                 ArrayList<Witness> witness = new ArrayList<Witness>();
                 JSONArray witnessArray = (JSONArray) crimeJSON.get(CRIME_WITNESSLIST);
                 if (witnessArray != null) {
@@ -68,7 +64,7 @@ public class DataLoader extends DataConstants {
                     for (int j = 0; j < personArray.size(); j++) {
                         UUID personUUID = UUID.fromString((String) personArray.get(j));
                         for (int k = 0; k < grabSuspects.size(); k++) {
-                            UUID UUIDSus= grabSuspects.get(k).getUUID();
+                            UUID UUIDSus = grabSuspects.get(k).getUUID();
                             if (personUUID.equals(UUIDSus)) {
                                 personLists.add(grabSuspects.get(k));
                             }
@@ -171,7 +167,7 @@ public class DataLoader extends DataConstants {
                         crimeType, inJail, uuid, gender, address, phone));
             }
             return Persons;
- 
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -208,7 +204,8 @@ public class DataLoader extends DataConstants {
     }
 
     /**
-     * Method that creates an arraylist of of Witnesses to be used to populate Crimes
+     * Method that creates an arraylist of of Witnesses to be used to populate
+     * Crimes
      * @return arraylist populated with witnesses
      */
     public static ArrayList<Witness> getWitness() {
@@ -221,11 +218,11 @@ public class DataLoader extends DataConstants {
             for (int i = 0; i < witnessSON.size(); i++) {
                 JSONObject witnesssJSONObject = (JSONObject) witnessSON.get(i);
                 String name = (String) witnesssJSONObject.get(WITNESS_NAME);
-                boolean livingStatus =((boolean) witnesssJSONObject.get(WITNESS_LIVING));
+                boolean livingStatus = ((boolean) witnesssJSONObject.get(WITNESS_LIVING));
                 String statement = (String) witnesssJSONObject.get(WITNESS_STATEMENT);
                 UUID uuid = UUID.fromString((String) witnesssJSONObject.get(WITNESS_UUID));
                 String gender = (String) witnesssJSONObject.get(WITNESS_GENDER);
-                boolean isVictem =((boolean) witnesssJSONObject.get(WITNESS_ISVICTEM));
+                boolean isVictem = ((boolean) witnesssJSONObject.get(WITNESS_ISVICTEM));
                 String address = (String) witnesssJSONObject.get(WITNESS_ADRESS);
                 String phone = (String) witnesssJSONObject.get(WITNESS_PHONE);
 

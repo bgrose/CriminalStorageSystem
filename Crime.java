@@ -213,8 +213,8 @@ public class Crime {
     }
 
     /**
-     * 
-     * @return
+     * Creates a String to Print out to User
+     * @return the string to print out
      */
     public String toString() {
         String ret = "\nCase ID: " + caseID + "\nDescription: " + description + "\nSolved: " + solved + "\nDate: "
@@ -228,8 +228,8 @@ public class Crime {
     }
 
     /**
-     * 
-     * @return
+     * Gets the witness object String
+     * @return the string for each witness
      */
     public String getWitnessString() {
         String witness = "";
@@ -244,8 +244,8 @@ public class Crime {
     }
 
     /**
-     * 
-     * @return
+     * Gets the suspect object String
+     * @return the string for each suspect
      */
     public String getSuspectString() {
         String suspect = "";
@@ -260,8 +260,8 @@ public class Crime {
     }
 
     /**
-     * 
-     * @return
+     * Gets the evidence object String
+     * @return the string for each evidence
      */
     public String getEvidenceString() {
         String evidence = "";

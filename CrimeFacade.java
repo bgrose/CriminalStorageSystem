@@ -22,11 +22,11 @@ public class CrimeFacade {
 
     /**
      * Method that creates a new account
-     * @param username
-     * @param password
-     * @param name
-     * @param position
-     * @param isAdmin
+     * @param username Username of User
+     * @param password Password for User
+     * @param name Name of the Officer/User
+     * @param position String of the officer position
+     * @param isAdmin Boolean if they are an admin
      */
     public void createAccount(String username, String password, String name, String position, boolean isAdmin) {
         userDatabase.addUser(new User(username, password, name, position, isAdmin));
@@ -164,8 +164,11 @@ public class CrimeFacade {
         return null;
     }
 
-    public void addSuspect(Suspects suspect)
-    {
+    /**
+     * Adds a suspect to the database
+     * @param suspect Suspect to add
+     */
+    public void addSuspect(Suspects suspect) {
         personDatabase.addPerson(suspect);
     }
 }

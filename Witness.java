@@ -61,11 +61,18 @@ public class Witness extends Person {
         this.statement = statement;
     }
 
-    public void setIsVictem(boolean isVictem)
-    {
+    /**
+     * Sets the Boolean if a Victim
+     * @param isVictem Boolean of true if victim
+     */
+    public void setIsVictem(boolean isVictem) {
         this.isVictem = isVictem;
     }
 
+    /**
+     * Gets the Boolean of if they are victim
+     * @return true if they are a victim
+     */
     public boolean getisVictem()
     {
         return this.isVictem;
