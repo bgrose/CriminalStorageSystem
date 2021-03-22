@@ -11,7 +11,7 @@ public class Crime {
 
     private ArrayList<Evidence> evidenceList;
     private ArrayList<Suspects> personList;
-    private ArrayList<Witness> witnessees;
+    private ArrayList<Witness> witnessList;
     private ArrayList<User> officers;
     private String description;
     private String caseID;
@@ -34,7 +34,7 @@ public class Crime {
             String description, String caseID, Boolean solved, String date, UUID _UUID) {
         this.evidenceList = evidenceList;
         this.personList = _personLists;
-        this.witnessees = witness;
+        this.witnessList = witness;
         this.description = description;
         this.caseID = caseID;
         this.solved = solved;
@@ -56,7 +56,7 @@ public class Crime {
             String description, String caseID, Boolean solved, String date) {
         this.evidenceList = evidenceList;
         this.personList = _personLists;
-        this.witnessees = witness;
+        this.witnessList = witness;
         this.description = description;
         this.caseID = caseID;
         this.solved = solved;
@@ -85,7 +85,7 @@ public class Crime {
      * @param WitnessList ArrayList<Suspects> of the people of the Crime
      */
     public void setWitnessList(ArrayList<Witness> WitnessList) {
-        this.witnessees = WitnessList;
+        this.witnessList = WitnessList;
     }
 
     /**
@@ -141,7 +141,7 @@ public class Crime {
      * @return ArrayList of people involved in the crime
      */
     public ArrayList<Witness> getUserList() {
-        return witnessees;
+        return witnessList;
     }
 
     /**
@@ -177,7 +177,7 @@ public class Crime {
     }
 
     public ArrayList<Witness> getWitnessList() {
-        return this.witnessees;
+        return this.witnessList;
     }
 
     /**
@@ -227,9 +227,9 @@ public class Crime {
     public String getWitnessString()
     {
         String ret = "";
-        for(int i=0; i<witnessees.size(); i++)
+        for(int i=0; i<witnessList.size(); i++)
         {
-            Witness witness = witnessees.get(i);
+            Witness witness = witnessList.get(i);
             ret.concat(witness.toString());
         }
 
