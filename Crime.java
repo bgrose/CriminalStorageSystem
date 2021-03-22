@@ -212,10 +212,12 @@ public class Crime {
     }
 
     /**
-     * Method that prints out the details of the Crime class
+     * 
+     * @return
      */
     public String toString() {
-        String ret =  "\nCase ID: " + caseID + "\nDescription: " + description + "\nSolved: " + solved + "\nDate: " + date;
+        String ret = "\nCase ID: " + caseID + "\nDescription: " + description + "\nSolved: " + solved + "\nDate: "
+                + date;
         String suspects = "\nSuspects/Criminals:" + getSuspectString();
         String evidence = "\nEvidence:" + getEvidenceString();
         String witness = "\nWitnesses:" + getWitnessString();
@@ -223,11 +225,13 @@ public class Crime {
         return ret;
     }
 
-    public String getWitnessString()
-    {
+    /**
+     * 
+     * @return
+     */
+    public String getWitnessString() {
         String ret = " ";
-        for(int i=0; i<this.witnessList.size(); i++)
-        {
+        for (int i = 0; i < this.witnessList.size(); i++) {
             Witness witness = this.witnessList.get(i);
             ret.concat(witness.toString());
         }
@@ -235,11 +239,13 @@ public class Crime {
         return ret;
     }
 
-    public String getSuspectString()
-    {
+    /**
+     * 
+     * @return
+     */
+    public String getSuspectString() {
         String ret = "";
-        for(int i=0; i<personList.size(); i++)
-        {
+        for (int i = 0; i < personList.size(); i++) {
             Suspects suspect = personList.get(i);
             ret.concat(suspect.toString());
         }
@@ -247,11 +253,13 @@ public class Crime {
         return ret;
     }
 
-    public String getEvidenceString()
-    {
+    /**
+     * 
+     * @return
+     */
+    public String getEvidenceString() {
         String ret = "";
-        for(int i=0; i<evidenceList.size(); i++)
-        {
+        for (int i = 0; i < evidenceList.size(); i++) {
             Evidence evidence = evidenceList.get(i);
             ret.concat(evidence.toString());
         }

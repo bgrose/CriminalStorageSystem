@@ -1,4 +1,3 @@
-
 /**
  * @description Class that creates a database to store Person objects (Criminals, POIs)
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
@@ -29,7 +28,6 @@ public class PersonDatabase {
 
     /**
      * Method that removes user from database and updates JSON
-     * 
      * @param person Suspect to be removed
      */
     public void removePerson(Suspects person) {

@@ -129,7 +129,6 @@ public class DataLoader extends DataConstants {
 
     /**
      * Method that creates an Arraylist of all people for people database
-     * 
      * @return ArrayList for people database populated
      */
     public static ArrayList<Suspects> getPerson() {

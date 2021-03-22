@@ -229,7 +229,6 @@ public class DataWriter extends DataConstants {
 
     /**
      * Method that creates a JSON Object for a suspect
-     * 
      * @param suspects To make object
      * @return Object of the suspect
      */

@@ -1,6 +1,6 @@
 
 /**
- * @description Class that creates a database to store crimes
+ * Class that creates a database to store crimes
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
 import java.util.ArrayList;
