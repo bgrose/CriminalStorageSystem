@@ -294,25 +294,22 @@ public class CrimeUI {
             String handness = getField("Please Enter the " + (i + 1) + " Suspects Handness");
             answer = getField("Has Suspect " + (i + 1) + "Been arrested/charged(y/n)");
             String punishment, crimeType;
-            User arrestingOfficer;
             Boolean inJail;
             if (answer.equals("y")) {
                 punishment = getField("Please Enter the " + (i + 1) + " Criminal Punishment");
                 crimeType = getField("Please Enter the " + (i + 1) + " Criminal Crime Charge");
                 inJail = true;
-                answer = getField("Please Enter the " + (i + 1) + " Arresting Officer Name");
-                arrestingOfficer = crimeFacade.findOfficer(answer);
             } else {
                 punishment = "None.";
                 crimeType = "None.";
                 inJail = false;
-                arrestingOfficer = null;
             }
 
             Suspects suspect = new Suspects(name, livingStatus, alias, accomplice, hairColor, eyeColor, tatoo,
                     skinColor, nationality, weight, height, acquaintance, age, glasses, punishment, disability,
-                    handness, crimeType, arrestingOfficer, inJail);
+                    handness, crimeType, inJail);
             suspectList.add(suspect);
+            crimeFacade.addSuspect(suspect);
         }
         return suspectList;
     }

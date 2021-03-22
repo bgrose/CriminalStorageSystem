@@ -1,77 +1,18 @@
 [
   {
-    "Officers": [],
-    "Crime Description": "Test",
-    "Related People": [],
-    "Solved": false,
-    "Crime Case ID": "ABC",
-    "Evidence List": [],
-    "UUID": "b1b48723-b1e1-460e-b24a-7406b1412107",
-    "Crime Date": "3.22.22",
-    "Witnesses": []
-  },
-  {
-    "Officers": [],
-    "Crime Description": "EFSfdg",
-    "Related People": [],
-    "Solved": false,
-    "Crime Case ID": "fsg",
-    "Evidence List": [
-      "39f899d3-cc8b-4909-849b-21ad5d3c25f8"
-    ],
-    "UUID": "92806438-20f0-4139-a35e-5cca178f79f4",
-    "Crime Date": "aedg",
-    "Witnesses": []
-  },
-  {
-    "Officers": [],
-    "Crime Description": "das",
-    "Related People": [],
-    "Solved": false,
-    "Crime Case ID": "assd",
-    "Evidence List": [
-      "31402c90-fd86-46e7-91d7-89d7cd001626"
-    ],
-    "UUID": "29d161d7-db2a-4b21-9810-584b6fd28395",
-    "Crime Date": "ads",
-    "Witnesses": []
-  },
-  {
-    "Officers": [],
-    "Crime Description": "dfg",
-    "Related People": [],
-    "Solved": false,
-    "Crime Case ID": "fghd",
-    "Evidence List": [],
-    "UUID": "d90bb490-f035-4c5f-9513-2152223da1dc",
-    "Crime Date": "dfg",
-    "Witnesses": []
-  },
-  {
-    "Officers": [],
-    "Crime Description": "gfsdrs",
-    "Related People": [],
-    "Solved": false,
-    "Crime Case ID": "dssdfghdfszh",
-    "Evidence List": [],
-    "UUID": "e41e90a3-6b4b-4b9d-8a82-613c89c9e67c",
-    "Crime Date": "awgderhdr",
-    "Witnesses": [
-      "89404f58-5968-4c9d-b5fd-35d81d9ea653",
-      "a3e0f2a2-c076-44ad-8d1f-c3ce4bffebb1"
-    ]
-  },
-  {
-    "Officers": [],
-    "Crime Description": "sdf",
+    "Crime Description": "sadsfdgf",
     "Related People": [
-      "0301a419-3dc6-439a-af3f-f4c712b39c7e"
+      "9bf7309f-c357-4385-a553-70b0481d793e"
     ],
     "Solved": false,
-    "Crime Case ID": "dsaf",
-    "Evidence List": [],
-    "UUID": "9734cda6-0aa7-48e0-92d6-4fee13da3aeb",
-    "Crime Date": "sdf",
-    "Witnesses": []
+    "Crime Case ID": "asdfgfhg",
+    "Evidence List": [
+      "11946006-245c-4730-966d-e22bbe3f8d2f"
+    ],
+    "UUID": "8e315f0e-fffc-4b6c-9194-536d81347cdd",
+    "Crime Date": "sadfgf",
+    "Witnesses": [
+      "f3183c57-505c-470e-9498-54811ae62cef"
+    ]
   }
 ]

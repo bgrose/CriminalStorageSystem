@@ -220,7 +220,11 @@ public class Crime {
                 + date;
         String suspects = "\nSuspects/Criminals:" + getSuspectString();
         String evidence = "\nEvidence:" + getEvidenceString();
-        String witness = "\nWitnesses:" + getWitnessString();
+        String witness = "\nWitnesses:";
+        for (int i = 0; i < this.witnessList.size(); i++) {
+            Witness witnessOb = this.witnessList.get(i);
+            witness.concat(witnessOb.toString());
+        }
         ret = ret.concat(suspects).concat(evidence).concat(witness);
         return ret;
     }
@@ -231,8 +235,8 @@ public class Crime {
      */
     public String getWitnessString() {
         String ret = " ";
-        for (int i = 0; i < this.witnessList.size(); i++) {
-            Witness witness = this.witnessList.get(i);
+        for (int i = 0; i < this.getWitnessList().size(); i++) {
+            Witness witness = this.getWitnessList().get(i);
             ret.concat(witness.toString());
         }
 

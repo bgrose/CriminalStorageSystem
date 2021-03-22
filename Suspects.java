@@ -23,7 +23,6 @@ public class Suspects extends Person {
     private String disability;
     private String handness;
     private String crimeType;
-    private User arrestingOfficer;
     private boolean inJail;
 
     /**
@@ -53,7 +52,7 @@ public class Suspects extends Person {
     public Suspects(String name, boolean livingStatus, String alias, String accomplice, String hairColor,
             String eyeColor, String tatoo, String skinColor, String nationality, double weight, int height,
             String acquaintance, int age, boolean glasses, String punishment, String disability, String handness,
-            String crimeType, User arrestingOfficer, boolean inJail, UUID UUID) {
+            String crimeType, boolean inJail, UUID UUID) {
         super(name, livingStatus, UUID);
         this.alias = alias;
         this.accomplice = accomplice;
@@ -71,7 +70,6 @@ public class Suspects extends Person {
         this.disability = disability;
         this.handness = handness;
         this.crimeType = crimeType;
-        this.arrestingOfficer = arrestingOfficer;
         this.inJail = inJail;
     }
 
@@ -101,7 +99,7 @@ public class Suspects extends Person {
     public Suspects(String name, boolean livingStatus, String alias, String accomplice, String hairColor,
             String eyeColor, String tatoo, String skinColor, String nationality, double weight, int height,
             String acquaintance, int age, boolean glasses, String punishment, String disability, String handness,
-            String crimeType, User arrestingOfficer, boolean inJail) {
+            String crimeType, boolean inJail) {
         super(name, livingStatus);
         this.alias = alias;
         this.accomplice = accomplice;
@@ -119,7 +117,6 @@ public class Suspects extends Person {
         this.disability = disability;
         this.handness = handness;
         this.crimeType = crimeType;
-        this.arrestingOfficer = arrestingOfficer;
         this.inJail = inJail;
     }
 
@@ -133,8 +130,7 @@ public class Suspects extends Person {
                 + skinColor + "\nNationality: " + this.nationality + "\nWeight: " + this.weight + "\nHeight: "
                 + this.height + "\nAcquaintance: " + this.acquaintance + "\nAge: " + this.age + "\nGlasses: "
                 + this.glasses + "\nPunishment: " + this.punishment + "\nDisability: " + this.disability
-                + "\nHandness: " + this.handness + "\nCrime Type: " + this.crimeType + "\nArresting Officer: "
-                + this.arrestingOfficer + "\nIn Jail: " + this.inJail;
+                + "\nHandness: " + this.handness + "\nCrime Type: " + this.crimeType + "\nIn Jail: " + this.inJail;
     }
 
     /**
@@ -393,21 +389,6 @@ public class Suspects extends Person {
         this.crimeType = crimeType;
     }
 
-    /**
-     * Method that gets the name of Arresting Officer
-     * @return User arrestingOfficer
-     */
-    public User getArrestingOfficer() {
-        return arrestingOfficer;
-    }
-
-    /**
-     * Method that sets the arresting officers
-     * @param officer User the User of an arresting officer
-     */
-    public void setArrestingOfficer(User officer) {
-        this.arrestingOfficer = officer;
-    }
 
     /**
      * Method that gets whether the Criminal is in jail or not

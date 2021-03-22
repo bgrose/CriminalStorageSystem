@@ -163,4 +163,9 @@ public class CrimeFacade {
         }
         return null;
     }
+
+    public void addSuspect(Suspects suspect)
+    {
+        personDatabase.addPerson(suspect);
+    }
 }

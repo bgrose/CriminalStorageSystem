@@ -238,7 +238,6 @@ public class DataWriter extends DataConstants {
         jsonObject.put(CRIMINAL_ACQUANTANCES, suspects.getAccquaintance());
         jsonObject.put(CRIMINAL_AGE, suspects.getAge());
         jsonObject.put(CRIMINAL_ALIAS, suspects.getAlias());
-        jsonObject.put(CRIMINAL_ARRESTING_OFFICER, suspects.getArrestingOfficer());
         jsonObject.put(CRIMINAL_CRIME_TYPE, suspects.getCrimeType());
         jsonObject.put(CRIMINAL_DISABILITY, suspects.getDisability());
         jsonObject.put(CRIMINAL_EYE, suspects.getEyeColor());
