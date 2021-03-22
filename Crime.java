@@ -12,7 +12,6 @@ public class Crime {
     private ArrayList<Evidence> evidenceList;
     private ArrayList<Suspects> personList;
     private ArrayList<Witness> witnessList;
-    private ArrayList<User> officers;
     private String description;
     private String caseID;
     private Boolean solved;
@@ -226,10 +225,10 @@ public class Crime {
 
     public String getWitnessString()
     {
-        String ret = "";
-        for(int i=0; i<witnessList.size(); i++)
+        String ret = " ";
+        for(int i=0; i<this.witnessList.size(); i++)
         {
-            Witness witness = witnessList.get(i);
+            Witness witness = this.witnessList.get(i);
             ret.concat(witness.toString());
         }
 
@@ -258,14 +257,6 @@ public class Crime {
         }
 
         return ret;
-    }
-
-    /**
-     * Method that returns the list of officers
-     * @return ArrayList of officers
-     */
-    public ArrayList<User> getOfficers() {
-        return this.officers;
     }
 
     /**

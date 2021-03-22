@@ -128,7 +128,6 @@ public class DataWriter extends DataConstants {
         jsonObject.put(CRIME_DESCRIPTION, crime.getDescription());
         jsonObject.put(CRIME_EVIDENCE_LIST, saveEvidence(crime, Evidence));
         jsonObject.put(CRIME_NAME, crime.getcaseID());
-        jsonObject.put(CRIME_OFFICERLIST, saveOfficers(crime));
         jsonObject.put(CRIME_PERSONLIST, saveSuspect(crime));
         jsonObject.put(CRIME_WITNESSLIST, saveWitness(crime, Witness));
         jsonObject.put(CRIME_SOLVED, crime.getSolved());
@@ -161,23 +160,6 @@ public class DataWriter extends DataConstants {
         }
 
         return jsonUUIDEvidence;
-    }
-
-    /**
-     * Method that saves the Users to a JSON File for Crime by looping ang getting UUID
-     * @param crime Takes in crime to loop through
-     * @return JSONArray with officer UUID
-     */
-    public static JSONArray saveOfficers(Crime crime) {
-        JSONArray jsonUUIDOfficer = new JSONArray();
-        ArrayList<User> officers = crime.getOfficers();
-        if (officers != null) {
-            for (int i = 0; i < officers.size(); i++) {
-                User officer = officers.get(i);
-                jsonUUIDOfficer.add(officer.getUUID().toString());
-            }
-        }
-        return jsonUUIDOfficer;
     }
 
     /**
