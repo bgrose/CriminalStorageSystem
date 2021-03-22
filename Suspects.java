@@ -5,6 +5,11 @@
  */
 import java.util.UUID;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.IOException;
+
 public class Suspects extends Person {
 
     private String alias;
@@ -405,6 +410,26 @@ public class Suspects extends Person {
      */
     public void setInJail(boolean inJail) {
         this.inJail = inJail;
+    }
+
+    public void suspectToFile()
+    {
+        try {
+            UUID fileUUID = UUID.randomUUID();
+            String fileName = "TextFiles/Suspect"+fileUUID+".txt";
+            File myObj = new File(fileName);
+            if (myObj.createNewFile()) {
+                FileWriter fileWriter = new FileWriter(fileName);
+                PrintWriter printWriter = new PrintWriter(fileWriter);
+                printWriter.println(toString());
+                printWriter.close();
+            } else {
+              System.out.println("File already exists.");
+            }
+          } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+          }
     }
 
 }

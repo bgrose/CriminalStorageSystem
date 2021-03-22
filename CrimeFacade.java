@@ -68,7 +68,7 @@ public class CrimeFacade {
      */
     public boolean searchCrime(String caseID) {
         for (int i = 0; i < crimeDatabase.getDatabase().size(); i++) {
-            if (crimeDatabase.getDatabase().get(i).getcaseID().equals(caseID)) {
+            if (crimeDatabase.getDatabase().get(i).getcaseID().equalsIgnoreCase(caseID)) {
                 return true;
             }
         }
@@ -170,5 +170,25 @@ public class CrimeFacade {
      */
     public void addSuspect(Suspects suspect) {
         personDatabase.addPerson(suspect);
+    }
+
+    public void printCrimeFound(String name)
+    {
+        for (int i = 0; i < crimeDatabase.getDatabase().size(); i++) {
+            if (crimeDatabase.getDatabase().get(i).getcaseID().equalsIgnoreCase(name)) {
+                Crime crime = crimeDatabase.getDatabase().get(i);
+                crime.crimeToFile();
+            }
+        }
+    }
+
+    public void printCrimeTerminal(String name)
+    {
+        for (int i = 0; i < crimeDatabase.getDatabase().size(); i++) {
+            if (crimeDatabase.getDatabase().get(i).getcaseID().equalsIgnoreCase(name)) {
+                Crime crime = crimeDatabase.getDatabase().get(i);
+                System.out.println(crime.toString());
+            }
+        }
     }
 }

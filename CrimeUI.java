@@ -349,8 +349,12 @@ public class CrimeUI {
         if (crimeName == null) {
             return;
         }
-        if (crimeFacade.searchCriminal(crimeName)) {
+        if (crimeFacade.searchCrime(crimeName)) {
             System.out.println("The crime you're looking for is in library\n");
+            String answer = getField("Would you like to print to a file");
+            if(answer.equalsIgnoreCase("yes")) crimeFacade.printCrimeFound(crimeName);
+            answer = getField("Would you like to print to terminal");
+            if(answer.equalsIgnoreCase("yes")) crimeFacade.printCrimeTerminal(crimeName);
             return;
         } else {
             System.out.println("Sorry, the crime you are looking for is not in the library\n");
@@ -459,21 +463,20 @@ public class CrimeUI {
      * @return crimeName of the crime added
      */
     private String getUserCrime() {
-        System.out.print("Enter User Crimes: ");
+        System.out.print("Enter Crime ID: ");
 
         while (true) {
-            String crimeName = scanner.nextLine().trim().toLowerCase();
+            String crimeName = scanner.nextLine();
 
-            if (!crimeName.contentEquals("")) {
-                return crimeName;
-            }
-
-            System.out.println("You need to enter the actual content");
-            System.out.print("Would you like to enter crime again (y) or return to main menu (n): ");
-            String command = scanner.nextLine().trim().toLowerCase();
-            if (command == "n") {
+            if (crimeName.contentEquals("")) {
+                System.out.println("You need to enter the actual content");
+                System.out.print("Would you like to enter crime again (y) or return to main menu (n): ");
+                String command = scanner.nextLine();
+                if (command.equalsIgnoreCase("n")) {
                 return null;
+                }
             }
+            else return crimeName;
         }
     }
 

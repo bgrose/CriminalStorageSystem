@@ -7,6 +7,11 @@
 import java.util.ArrayList;
 import java.util.UUID;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.IOException;
+
 public class Crime {
 
     private ArrayList<Evidence> evidenceList;
@@ -281,5 +286,26 @@ public class Crime {
      */
     public UUID getUUID() {
         return this.uuid;
+    }
+
+    public void crimeToFile()
+    {
+        try {
+            UUID fileUUID = UUID.randomUUID();
+            String fileName = "TextFiles/Crime"+fileUUID+".txt";
+            File myObj = new File(fileName);
+            if (myObj.createNewFile()) {
+                FileWriter fileWriter = new FileWriter(fileName);
+                PrintWriter printWriter = new PrintWriter(fileWriter);
+                printWriter.println(toString());
+                printWriter.close();
+                System.out.println("Crime Printed to "+fileName);
+            } else {
+              System.out.println("File already exists.");
+            }
+          } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+          }
     }
 }

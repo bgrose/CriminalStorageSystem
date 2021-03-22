@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.UUID;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 
@@ -56,8 +55,7 @@ public class CrimeDatabase {
         if(answer.equalsIgnoreCase("yes"))
         {
             try {
-                UUID Filename = UUID.randomUUID();
-                String fileName = "TextFiles/Crime"+Filename.toString()+".txt";
+                String fileName = "TextFiles/CrimeDatabase.txt";
                 File myObj = new File(fileName);
                 if (myObj.createNewFile()) {
                     FileWriter fileWriter = new FileWriter(fileName);
