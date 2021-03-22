@@ -73,8 +73,7 @@ public class Witness extends Person {
      * Gets the Boolean of if they are victim
      * @return true if they are a victim
      */
-    public boolean getisVictem()
-    {
+    public boolean getisVictem() {
         return this.isVictem;
     }
 

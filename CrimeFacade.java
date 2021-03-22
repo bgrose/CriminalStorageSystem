@@ -79,8 +79,8 @@ public class CrimeFacade {
     /**
      * Method that prints the crimes in the crimeDatabase
      */
-    public void printCrimes() {
-        crimeDatabase.printDatabase();
+    public void printCrimes(String answer) {
+        crimeDatabase.printDatabase(answer);
     }
 
     /**
@@ -100,8 +100,8 @@ public class CrimeFacade {
     /**
      * Method that prints the criminals in the personDatabase
      */
-    public void printCriminal() {
-        personDatabase.printDatabase();
+    public void printCriminal(String answer) {
+        personDatabase.printDatabase(answer);
     }
 
     /**

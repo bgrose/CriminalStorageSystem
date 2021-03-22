@@ -361,8 +361,9 @@ public class CrimeUI {
      * Method that prints Crimes
      */
     private void printCrimes() {
+        String answer = getField("Would You Like to Print to Text File");
         System.out.println("\n------------- printing crimes -------------");
-        crimeFacade.printCrimes();
+        crimeFacade.printCrimes(answer);
     }
 
     /**
@@ -387,8 +388,9 @@ public class CrimeUI {
      * Method that prints the criminals
      */
     private void printCriminal() {
+        String answer = getField("Would You Like to Print to Text File");
         System.out.println("\n------------- printing criminal -------------");
-        crimeFacade.printCriminal();
+        crimeFacade.printCriminal(answer);
     }
 
     /**

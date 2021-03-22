@@ -4,6 +4,12 @@
  */
 import java.util.ArrayList;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.UUID;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
 public class CrimeDatabase {
 
     private static CrimeDatabase crimeDatabase;
@@ -43,9 +49,30 @@ public class CrimeDatabase {
     /**
      * Method that prints out the crimeDatabase
      */
-    public void printDatabase() {
+    public void printDatabase(String answer) {
         for (Crime crime : crimeList) {
             System.out.println(crime.toString());
+        }
+        if(answer.equalsIgnoreCase("yes"))
+        {
+            try {
+                UUID Filename = UUID.randomUUID();
+                String fileName = "TextFiles/Crime"+Filename.toString()+".txt";
+                File myObj = new File(fileName);
+                if (myObj.createNewFile()) {
+                    FileWriter fileWriter = new FileWriter(fileName);
+                    PrintWriter printWriter = new PrintWriter(fileWriter);
+                    for (Crime crime : crimeList) {
+                        printWriter.println(crime.toString());
+                    }
+                    printWriter.close();
+                } else {
+                  System.out.println("File already exists.");
+                }
+              } catch (IOException e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();
+              }
         }
     }
 
