@@ -79,7 +79,7 @@ public abstract class Person {
      * @return String of the variables of the class
      */
     public String toString(){
-        return "\nName: " + name + "\nLiving Status: " + livingStatus;
+        return "Name: " + name + "\nLiving Status: " + livingStatus;
     }
 
 }

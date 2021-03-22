@@ -130,7 +130,7 @@ public class Suspects extends Person {
                 + skinColor + "\nNationality: " + this.nationality + "\nWeight: " + this.weight + "\nHeight: "
                 + this.height + "\nAcquaintance: " + this.acquaintance + "\nAge: " + this.age + "\nGlasses: "
                 + this.glasses + "\nPunishment: " + this.punishment + "\nDisability: " + this.disability
-                + "\nHandness: " + this.handness + "\nCrime Type: " + this.crimeType + "\nIn Jail: " + this.inJail;
+                + "\nHandness: " + this.handness + "\nCrime Type: " + this.crimeType + "\nIn Jail: " + this.inJail + "\n";
     }
 
     /**

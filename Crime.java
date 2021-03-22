@@ -17,6 +17,7 @@ public class Crime {
     private Boolean solved;
     private String date;
     private UUID uuid;
+    private static final String LINE_BREAK = "\n--------------------------------------\n";
 
     /**
      * Creates a Crime object with a UUID
@@ -220,11 +221,8 @@ public class Crime {
                 + date;
         String suspects = "\nSuspects/Criminals:" + getSuspectString();
         String evidence = "\nEvidence:" + getEvidenceString();
-        String witness = "\nWitnesses:";
-        for (int i = 0; i < this.witnessList.size(); i++) {
-            Witness witnessOb = this.witnessList.get(i);
-            witness.concat(witnessOb.toString());
-        }
+        String witness = "\nWitnesses:" + getWitnessString();;
+
         ret = ret.concat(suspects).concat(evidence).concat(witness);
         return ret;
     }
@@ -234,13 +232,15 @@ public class Crime {
      * @return
      */
     public String getWitnessString() {
-        String ret = " ";
-        for (int i = 0; i < this.getWitnessList().size(); i++) {
-            Witness witness = this.getWitnessList().get(i);
-            ret.concat(witness.toString());
+        String witness = "";
+          for (int i = 0; i < this.witnessList.size(); i++) {
+            Witness witnessOb = this.witnessList.get(i);
+            String witString = witnessOb.toString();
+            witness = witness + witString;
         }
+        witness = LINE_BREAK + witness + LINE_BREAK;
 
-        return ret;
+        return witness;
     }
 
     /**
@@ -248,13 +248,15 @@ public class Crime {
      * @return
      */
     public String getSuspectString() {
-        String ret = "";
-        for (int i = 0; i < personList.size(); i++) {
-            Suspects suspect = personList.get(i);
-            ret.concat(suspect.toString());
+        String suspect = "";
+          for (int i = 0; i < this.personList.size(); i++) {
+            Suspects suspectOb = this.personList.get(i);
+            String susString = suspectOb.toString();
+            suspect = suspect + susString;
         }
+        suspect = LINE_BREAK + suspect + LINE_BREAK;
 
-        return ret;
+        return suspect;
     }
 
     /**
@@ -262,14 +264,16 @@ public class Crime {
      * @return
      */
     public String getEvidenceString() {
-        String ret = "";
-        for (int i = 0; i < evidenceList.size(); i++) {
-            Evidence evidence = evidenceList.get(i);
-            ret.concat(evidence.toString());
-        }
+        String evidence = "";
+        for (int i = 0; i < this.evidenceList.size(); i++) {
+          Evidence evidenceOb = this.evidenceList.get(i);
+          String evidenceString = evidenceOb.toString();
+          evidence = evidence + evidenceString;
+      }
+      evidence = LINE_BREAK + evidence + LINE_BREAK;
 
-        return ret;
-    }
+      return evidence;
+  }
 
     /**
      * Method that returns the UUID

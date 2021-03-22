@@ -38,7 +38,7 @@ public class Witness extends Person {
      * @return String of class variables
      */
     public String toString() {
-        return super.toString() + "\nStatement: " + this.statement;
+        return super.toString() + "\nStatement: " + this.statement + "\n";
     }
 
     /**

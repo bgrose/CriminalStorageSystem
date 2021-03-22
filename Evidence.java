@@ -71,7 +71,7 @@ public class Evidence {
      * @return String with the details of the Evidence
      */
     public String toString() {
-        return "Name: " + name + "Description: " + description;
+        return "Name: " + name + "\nDescription: " + description;
     }
 
     /**
