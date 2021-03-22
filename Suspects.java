@@ -24,6 +24,7 @@ public class Suspects extends Person {
     private String handness;
     private String crimeType;
     private boolean inJail;
+    private static final String LINE_BREAK = "\n--------------------------------------\n";
 
     /**
      * Method that creates a suspect object
@@ -52,8 +53,8 @@ public class Suspects extends Person {
     public Suspects(String name, boolean livingStatus, String alias, String accomplice, String hairColor,
             String eyeColor, String tatoo, String skinColor, String nationality, double weight, int height,
             String acquaintance, int age, boolean glasses, String punishment, String disability, String handness,
-            String crimeType, boolean inJail, UUID UUID, String Gender) {
-        super(name, livingStatus, UUID, Gender);
+            String crimeType, boolean inJail, UUID UUID, String Gender, String address, String phone) {
+        super(name, livingStatus, UUID, Gender, address, phone);
         this.alias = alias;
         this.accomplice = accomplice;
         this.hairColor = hairColor;
@@ -99,8 +100,8 @@ public class Suspects extends Person {
     public Suspects(String name, boolean livingStatus, String alias, String accomplice, String hairColor,
             String eyeColor, String tatoo, String skinColor, String nationality, double weight, int height,
             String acquaintance, int age, boolean glasses, String punishment, String disability, String handness,
-            String crimeType, boolean inJail, String Gender) {
-        super(name, livingStatus, Gender);
+            String crimeType, boolean inJail, String Gender, String address, String phone) {
+        super(name, livingStatus, Gender, address, phone);
         this.alias = alias;
         this.accomplice = accomplice;
         this.hairColor = hairColor;
@@ -130,7 +131,7 @@ public class Suspects extends Person {
                 + skinColor + "\nNationality: " + this.nationality + "\nWeight: " + this.weight + "\nHeight: "
                 + this.height + "\nAcquaintance: " + this.acquaintance + "\nAge: " + this.age + "\nGlasses: "
                 + this.glasses + "\nPunishment: " + this.punishment + "\nDisability: " + this.disability
-                + "\nHandness: " + this.handness + "\nCrime Type: " + this.crimeType + "\nIn Jail: " + this.inJail + "\n";
+                + "\nHandness: " + this.handness + "\nCrime Type: " + this.crimeType + "\nIn Jail: " + this.inJail + "\n" + LINE_BREAK;
     }
 
     /**

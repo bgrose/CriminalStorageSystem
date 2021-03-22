@@ -247,6 +247,8 @@ public class CrimeUI {
         for (int i = 0; i < num; i++) {
             String name = getField("Please Enter the " + (i + 1) + " Witness Name");
             String gender = getField("Please Enter the " + (i + 1) + " Witness Gender");
+            String address = getField("Please Enter any of the " + (i + 1) + " Witness Address");
+            String phone = getField("Please Enter any of the " + (i + 1) + " Witness Phone Number");
             String answer = getField("Is the " + (i + 1) + " Witness Living(y/n");
             boolean livingStatus = true;
             if (answer.equals("n")) {
@@ -258,7 +260,7 @@ public class CrimeUI {
                 isVictem = false;
             }
             String statement = getField("Please Enter the " + (i + 1) + " Witness Statement");
-            Witness witness = new Witness(name, livingStatus, statement, gender, isVictem);
+            Witness witness = new Witness(name, livingStatus, statement, gender, isVictem, address, phone);
             witnessList.add(witness);
         }
         return witnessList;
@@ -280,6 +282,8 @@ public class CrimeUI {
                 livingStatus = false;
             }
             String alias = getField("Please Enter any of the " + (i + 1) + " Suspect Aliases");
+            String address = getField("Please Enter any of the " + (i + 1) + " Suspect Address");
+            String phone = getField("Please Enter any of the " + (i + 1) + " Suspect Phone Number");
             String accomplice = getField("Please Enter any of the " + (i + 1) + " Suspect Accomplices");
             String acquaintance = getField("Please Enter any of the " + (i + 1) + " Suspect Acquaintance");
             String hairColor = getField("Please Enter the " + (i + 1) + " Suspect Hair Color");
@@ -312,7 +316,7 @@ public class CrimeUI {
 
             Suspects suspect = new Suspects(name, livingStatus, alias, accomplice, hairColor, eyeColor, tatoo,
                     skinColor, nationality, weight, height, acquaintance, age, glasses, punishment, disability,
-                    handness, crimeType, inJail, gender);
+                    handness, crimeType, inJail, gender, address, phone);
             suspectList.add(suspect);
             crimeFacade.addSuspect(suspect);
         }

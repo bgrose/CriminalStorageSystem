@@ -198,6 +198,8 @@ public class DataWriter extends DataConstants {
                 jsonObject.put(WITNESS_STATEMENT, witness.getStatement());
                 jsonObject.put(WITNESS_GENDER, witness.getGender());
                 jsonObject.put(WITNESS_ISVICTEM, witness.getisVictem());
+                jsonObject.put(WITNESS_ADRESS, witness.getAddress());
+                jsonObject.put(WITNESS_PHONE, witness.getPhone());
                 Witness.add(jsonObject);
             }
         }
@@ -257,6 +259,8 @@ public class DataWriter extends DataConstants {
         jsonObject.put(CRIMINAL_UUID, suspects.getUUID().toString());
         jsonObject.put(CRIMINAL_WEIGHT, suspects.getWeight());
         jsonObject.put(CRIMINAL_GENDER, suspects.getGender());
+        jsonObject.put(CRIMINAL_ADRESS, suspects.getAddress());
+        jsonObject.put(CRIMINAL_PHONE, suspects.getPhone());
 
         return jsonObject;
     }

@@ -11,6 +11,8 @@ public abstract class Person {
     private boolean livingStatus;
     private UUID uuid;
     private String gender;
+    private String address;
+    private String phoneNumber;
 
     /**
      * Method that creates a Person as a called super with UUID
@@ -18,11 +20,13 @@ public abstract class Person {
      * @param livingStatus Boolean if living 
      * @param _UUID The unique UUID to be used
      */
-    public Person(String name, boolean livingStatus, UUID _UUID, String Gender) {
+    public Person(String name, boolean livingStatus, UUID _UUID, String Gender, String address, String phoneNumber) {
         this.name = name;
         this.livingStatus = livingStatus;
         this.uuid = _UUID;
         this.gender = Gender;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
     }
 
     /**
@@ -30,11 +34,13 @@ public abstract class Person {
      * @param name Name of the Person
      * @param livingStatus Boolean if living 
      */
-    public Person(String name, boolean livingStatus, String Gender) {
+    public Person(String name, boolean livingStatus, String Gender, String address, String phoneNumber) {
         this.name = name;
         this.livingStatus = livingStatus;
         this.uuid = UUID.randomUUID();
         this.gender = Gender;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
     }
 
     /**
@@ -82,6 +88,16 @@ public abstract class Person {
         return this.gender;
     }
 
+    public String getPhone()
+    {
+        return this.phoneNumber;
+    }
+
+    public String getAddress()
+    {
+        return this.address;
+    }
+
     public void setGender(String Gender)
     {
         this.gender = Gender;
@@ -92,7 +108,8 @@ public abstract class Person {
      * @return String of the variables of the class
      */
     public String toString(){
-        return "Name: " + name + "\nLiving Status: " + livingStatus + "\nGender: "+ gender;
+        return "Name: " + name + "\nLiving Status: " + livingStatus + "\nGender: "+ gender
+        + "\nAddress: "+address+"\nPhone Number"+phoneNumber;
     }
 
 }

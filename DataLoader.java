@@ -12,7 +12,6 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-@SuppressWarnings("unchecked")
 
 public class DataLoader extends DataConstants {
 
@@ -164,13 +163,15 @@ public class DataLoader extends DataConstants {
 
                 boolean inJail = (Boolean) personJSON.get(CRIMINAL_JAIL_STATUS);
                 UUID uuid = UUID.fromString((String) personJSON.get(CRIMINAL_UUID));
+                String address = (String) personJSON.get(CRIMINAL_ADRESS);
+                String phone = (String) personJSON.get(CRIMINAL_PHONE);
 
                 Persons.add(new Suspects(name, livingStatus, alias, accomplice, hairColor, eyeColor, tatoo, skinColor,
                         nationality, weight, height, acquaintance, age, glasses, punishment, disability, handness,
-                        crimeType, inJail, uuid, gender));
+                        crimeType, inJail, uuid, gender, address, phone));
             }
             return Persons;
-
+ 
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -225,8 +226,10 @@ public class DataLoader extends DataConstants {
                 UUID uuid = UUID.fromString((String) witnesssJSONObject.get(WITNESS_UUID));
                 String gender = (String) witnesssJSONObject.get(WITNESS_GENDER);
                 boolean isVictem =((boolean) witnesssJSONObject.get(WITNESS_ISVICTEM));
+                String address = (String) witnesssJSONObject.get(WITNESS_ADRESS);
+                String phone = (String) witnesssJSONObject.get(WITNESS_PHONE);
 
-                witnessList.add(new Witness(name, livingStatus, statement, uuid, gender, isVictem));
+                witnessList.add(new Witness(name, livingStatus, statement, uuid, gender, isVictem, phone, address));
             }
             return witnessList;
         } catch (Exception e) {

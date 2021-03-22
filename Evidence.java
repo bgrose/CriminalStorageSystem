@@ -10,6 +10,7 @@ public class Evidence {
     private String name;
     private String description;
     private UUID uuid;
+    private static final String LINE_BREAK = "\n--------------------------------------\n";
 
     /**
      * Method that creates an Evidence Object with a UUID
@@ -71,7 +72,7 @@ public class Evidence {
      * @return String with the details of the Evidence
      */
     public String toString() {
-        return "Name: " + name + "\nDescription: " + description;
+        return "Name: " + name + "\nDescription: " + description+LINE_BREAK ;
     }
 
     /**

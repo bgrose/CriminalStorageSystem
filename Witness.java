@@ -10,6 +10,7 @@ public class Witness extends Person {
 
     private String statement;
     private boolean isVictem;
+    private static final String LINE_BREAK = "\n--------------------------------------\n";
 
     /**
      * Constructor method that sets up the class
@@ -18,8 +19,8 @@ public class Witness extends Person {
      * @param statement of the witness
      * @param UUID of the witness
      */
-    public Witness(String name, boolean livingStatus, String statement, UUID UUID, String Gender, boolean isVictem) {
-        super(name, livingStatus, UUID, Gender);
+    public Witness(String name, boolean livingStatus, String statement, UUID UUID, String Gender, boolean isVictem, String address, String phone) {
+        super(name, livingStatus, UUID, Gender, address, phone);
         this.statement = statement;
         this.isVictem = isVictem;
     }
@@ -30,8 +31,8 @@ public class Witness extends Person {
      * @param livingStatus of the witness
      * @param statement of the witness
      */
-    public Witness(String name, boolean livingStatus, String statement, String Gender, boolean isVictem) {
-        super(name, livingStatus, Gender);
+    public Witness(String name, boolean livingStatus, String statement, String Gender, boolean isVictem, String address, String phone) {
+        super(name, livingStatus, Gender, address, phone);
         this.statement = statement;
         this.isVictem = isVictem;
     }
@@ -41,7 +42,7 @@ public class Witness extends Person {
      * @return String of class variables
      */
     public String toString() {
-        return super.toString() + "\nStatement: " + this.statement + "\nIs a Victim: "+this.isVictem+"\n";
+        return super.toString() + "\nStatement: " + this.statement + "\nIs a Victim: "+this.isVictem+"\n"+LINE_BREAK;
     }
 
     /**

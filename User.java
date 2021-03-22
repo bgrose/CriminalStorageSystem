@@ -14,6 +14,7 @@ public class User {
     private String position;
     private Boolean admin;
     private UUID uuid;
+    
 
     /**
      * Method that creates a User object with a UUID

@@ -40,6 +40,8 @@ public class DataConstants {
     protected static final String CRIMINAL_WEIGHT = "Weight";
     protected static final String CRIMINAL_GENDER = "Gender";
     protected static final String CRIMINAL_FILE_NAME = "JSON/Criminal.JSON";
+    protected static final String CRIMINAL_ADRESS = "Address";
+    protected static final String CRIMINAL_PHONE = "Phone Number";
 
     // Evidence
     protected static final String EVIDENCE_DESCRIPTION = "Description";
@@ -65,4 +67,6 @@ public class DataConstants {
     protected static final String WITNESS_FILE_NAME = "JSON/Witness.JSON";
     protected static final String WITNESS_GENDER = "Gender";
     protected static final String WITNESS_ISVICTEM = "Is a Victim";
+    protected static final String WITNESS_ADRESS = "Address";
+    protected static final String WITNESS_PHONE = "Phone Number";
 }
