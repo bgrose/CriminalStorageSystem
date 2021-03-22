@@ -224,8 +224,9 @@ public class DataLoader extends DataConstants {
                 String statement = (String) witnesssJSONObject.get(WITNESS_STATEMENT);
                 UUID uuid = UUID.fromString((String) witnesssJSONObject.get(WITNESS_UUID));
                 String gender = (String) witnesssJSONObject.get(WITNESS_GENDER);
+                boolean isVictem =((boolean) witnesssJSONObject.get(WITNESS_ISVICTEM));
 
-                witnessList.add(new Witness(name, livingStatus, statement, uuid, gender));
+                witnessList.add(new Witness(name, livingStatus, statement, uuid, gender, isVictem));
             }
             return witnessList;
         } catch (Exception e) {

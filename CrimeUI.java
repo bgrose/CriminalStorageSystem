@@ -252,8 +252,13 @@ public class CrimeUI {
             if (answer.equals("n")) {
                 livingStatus = false;
             }
+            answer = getField("Is the " + (i + 1) + " Witness a Victim(y/n");
+            boolean isVictem = true;
+            if (answer.equals("n")) {
+                isVictem = false;
+            }
             String statement = getField("Please Enter the " + (i + 1) + " Witness Statement");
-            Witness witness = new Witness(name, livingStatus, statement, gender);
+            Witness witness = new Witness(name, livingStatus, statement, gender, isVictem);
             witnessList.add(witness);
         }
         return witnessList;

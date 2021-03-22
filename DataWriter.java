@@ -197,6 +197,7 @@ public class DataWriter extends DataConstants {
                 jsonObject.put(WITNESS_LIVING, witness.getLivingStatus());
                 jsonObject.put(WITNESS_STATEMENT, witness.getStatement());
                 jsonObject.put(WITNESS_GENDER, witness.getGender());
+                jsonObject.put(WITNESS_ISVICTEM, witness.getisVictem());
                 Witness.add(jsonObject);
             }
         }

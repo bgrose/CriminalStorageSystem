@@ -64,4 +64,5 @@ public class DataConstants {
     protected static final String WITNESS_UUID = "UUID";
     protected static final String WITNESS_FILE_NAME = "JSON/Witness.JSON";
     protected static final String WITNESS_GENDER = "Gender";
+    protected static final String WITNESS_ISVICTEM = "Is a Victim";
 }

@@ -9,6 +9,7 @@
 public class Witness extends Person {
 
     private String statement;
+    private boolean isVictem;
 
     /**
      * Constructor method that sets up the class
@@ -17,9 +18,10 @@ public class Witness extends Person {
      * @param statement of the witness
      * @param UUID of the witness
      */
-    public Witness(String name, boolean livingStatus, String statement, UUID UUID, String Gender) {
+    public Witness(String name, boolean livingStatus, String statement, UUID UUID, String Gender, boolean isVictem) {
         super(name, livingStatus, UUID, Gender);
         this.statement = statement;
+        this.isVictem = isVictem;
     }
 
     /**
@@ -28,9 +30,10 @@ public class Witness extends Person {
      * @param livingStatus of the witness
      * @param statement of the witness
      */
-    public Witness(String name, boolean livingStatus, String statement, String Gender) {
+    public Witness(String name, boolean livingStatus, String statement, String Gender, boolean isVictem) {
         super(name, livingStatus, Gender);
         this.statement = statement;
+        this.isVictem = isVictem;
     }
 
     /**
@@ -38,7 +41,7 @@ public class Witness extends Person {
      * @return String of class variables
      */
     public String toString() {
-        return super.toString() + "\nStatement: " + this.statement + "\n";
+        return super.toString() + "\nStatement: " + this.statement + "\nIs a Victim: "+this.isVictem+"\n";
     }
 
     /**
@@ -55,6 +58,16 @@ public class Witness extends Person {
      */
     public void setStatement(String statement) {
         this.statement = statement;
+    }
+
+    public void setIsVictem(boolean isVictem)
+    {
+        this.isVictem = isVictem;
+    }
+
+    public boolean getisVictem()
+    {
+        return this.isVictem;
     }
 
 }
