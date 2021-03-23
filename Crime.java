@@ -12,6 +12,9 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
 
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;  
+
 public class Crime {
 
     private ArrayList<Evidence> evidenceList;
@@ -298,8 +301,10 @@ public class Crime {
     public void crimeToFile()
     {
         try {
-            UUID fileUUID = UUID.randomUUID();
-            String fileName = "TextFiles/Crime"+fileUUID+".txt";
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy.MM.dd_HH.mm.ss");
+            LocalDateTime now = LocalDateTime.now();
+            String timeString = dtf.format(now);
+            String fileName = "TextFiles/Crime"+timeString+".txt";
             File myObj = new File(fileName);
             if (myObj.createNewFile()) {
                 FileWriter fileWriter = new FileWriter(fileName);

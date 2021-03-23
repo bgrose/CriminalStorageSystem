@@ -9,6 +9,9 @@ import java.io.IOException;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;  
+
 public class PersonDatabase {
 
     private static PersonDatabase personDatabase;
@@ -50,7 +53,10 @@ public class PersonDatabase {
         }
         if(answer.equalsIgnoreCase("yes")) {
             try {
-                String fileName = "TextFiles/SuspectDatabase.txt";
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy.MM.dd_HH.mm.ss");
+            LocalDateTime now = LocalDateTime.now();
+            String timeString = dtf.format(now);
+                String fileName = "TextFiles/SuspectDatabase"+timeString+".txt";
                 File myObj = new File(fileName);
                 if (myObj.createNewFile()) {
                     FileWriter fileWriter = new FileWriter(fileName);
