@@ -97,56 +97,74 @@ public class CrimeFacade {
         */
         
         switch (command) {
-            case (0):
-                //search by alias
-                break;
             case (1):
-                // search by accomplice
+                //search by name
                 break;
             case (2):
-                // search by hair color
+                // search by living status
                 break;
             case (3):
-                // search by eye color
+                //search by uuid
                 break;
             case (4):
-                // search by tattoo
+                // search by gender
                 break;
             case (5):
-                // search by skin color
+                //search by address
                 break;
             case (6):
-                // search by nationality
+                // search by phone number
                 break;
             case (7):
-                // search by weight
+                // search by alias
                 break;
             case (8):
-                // search by height
+                // search by accomplice
                 break;
             case (9):
-                // search by acquaintance
+                // search by hair color
                 break;
             case (10):
-                // search by age
+                // search by eye color
                 break;
             case (11):
-                // search by glasses
+                // search by tatoo
                 break;
             case (12):
-                // search by punishment
+                // search by skin color
                 break;
             case (13):
-                // search by disability
+                // search by nationality
                 break;
             case (14):
-                // search by handness
+                // search by weight
                 break;
             case (15):
-                // search by crime type
+                // search by height
                 break;
             case (16):
+                // search by acquaintance
+                break;
+            case (17):
+                // search by age
+                break;
+            case (18):
+                // search by glasses
+                break;
+            case (19):
+                // search by punishment
+                break;
+            case (20):
+                // search by disability
+                break;
+            case (21):
                 // search by inJail
+                break;
+            case (22):
+                //search by address
+                break;
+            case (23):
+                // search by multiple criteria
                 break;
             }
             

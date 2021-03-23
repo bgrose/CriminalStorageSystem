@@ -1,21 +1,21 @@
 [
   {
-    "Address": "231 Columbiana Ave",
+    "Address": "325-324-2345",
     "Living": true,
     "Statement": "Saw a man with a gun walk in front and hold cashier at gun point",
     "Gender": "Male",
     "UUID": "85387c63-ec07-41bd-b0c4-85a42b28bca5",
-    "Phone Number": "325-324-2345",
+    "Phone Number": "231 Columbiana Ave",
     "Is a Victim": false,
     "Name": "John Brown"
   },
   {
-    "Address": "21324 Bull St",
+    "Address": "342-325-3245",
     "Living": true,
     "Statement": "Was Cashier Held at Gunpoint in gas station",
     "Gender": "Male",
     "UUID": "1fd127fb-f903-49f7-85e5-3f1317df75bd",
-    "Phone Number": "342-325-3245",
+    "Phone Number": "21324 Bull St",
     "Is a Victim": true,
     "Name": "Luke Walker"
   }

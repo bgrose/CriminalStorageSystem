@@ -12,7 +12,7 @@ public class CrimeUI {
             "Logout" };
     private String[] AdminMenuOptions = { "Add Crime", "Search Crime", "Print Crimes", "Search Criminal",
             "Print Criminals", "Remove Crime", "Add User", "Remove User", "Logout" };
-    private String[] criminalSearchOptions = { "Name", "Living Status", "UUID", "Gender", "Address", "Phone Number", "Alias", "Accomplice", "Hair Color", "Eye Color", "Tatoo", "Skin Color", "Nationality", "Weight", "Height", "Aquaintance", "Age", "Glasses", "Punishment", "Disability",  "Address", "Mulitple Criteria"};
+    private String[] criminalSearchOptions = { "Name", "Living Status", "UUID", "Gender", "Address", "Phone Number", "Alias", "Accomplice", "Hair Color", "Eye Color", "Tatoo", "Skin Color", "Nationality", "Weight", "Height", "Aquaintance", "Age", "Glasses", "Punishment", "Disability", "InJail",  "Address", "Mulitple Criteria"};
     private Scanner scanner;
     private CrimeFacade crimeFacade;
 
@@ -384,14 +384,14 @@ public class CrimeUI {
         System.out.println("\n");
 
         String input = scanner.nextLine();
-        int command = Integer.parseInt(input) - 1;
+        int command = Integer.parseInt(input);
 
-        if (command < 0 || command > criminalSearchOptions.length - 1) {
+        if (command <= 0 || command > criminalSearchOptions.length) {
             System.out.println("Not a valid search option");    
         }
 
         if (crimeFacade.searchCriminal(command)) {
-            System.out.println("There are criminals in the system that match your search criteria:\n ");
+            System.out.println("Here are the criminals in the system that match your search criteria:\n ");
             return;
         } else {
             System.out.println("Sorry, there are no criminals in the system that match your search criteria\n");
