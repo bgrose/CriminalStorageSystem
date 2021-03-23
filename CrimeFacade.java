@@ -95,7 +95,61 @@ public class CrimeFacade {
             }
         } 
         */
-
+        
+        switch (command) {
+            case (0):
+                //search by alias
+                break;
+            case (1):
+                // search by accomplice
+                break;
+            case (2):
+                // search by hair color
+                break;
+            case (3):
+                // search by eye color
+                break;
+            case (4):
+                // search by tattoo
+                break;
+            case (5):
+                // search by skin color
+                break;
+            case (6):
+                // search by nationality
+                break;
+            case (7):
+                // search by weight
+                break;
+            case (8):
+                // search by height
+                break;
+            case (9):
+                // search by acquaintance
+                break;
+            case (10):
+                // search by age
+                break;
+            case (11):
+                // search by glasses
+                break;
+            case (12):
+                // search by punishment
+                break;
+            case (13):
+                // search by disability
+                break;
+            case (14):
+                // search by handness
+                break;
+            case (15):
+                // search by crime type
+                break;
+            case (16):
+                // search by inJail
+                break;
+            }
+            
         return false;
     }
 

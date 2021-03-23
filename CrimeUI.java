@@ -12,7 +12,7 @@ public class CrimeUI {
             "Logout" };
     private String[] AdminMenuOptions = { "Add Crime", "Search Crime", "Print Crimes", "Search Criminal",
             "Print Criminals", "Remove Crime", "Add User", "Remove User", "Logout" };
-    private String[] criminalSearchOptions = { "Name", "Hair Color", "Handness", "Tatoo", "Address",  };
+    private String[] criminalSearchOptions = { "Alias", "Accomplice" "Hair Color", "Handness", "Tatoo", "Address", //add more, CrimeFacade has correct order };
     private Scanner scanner;
     private CrimeFacade crimeFacade;
 
@@ -445,6 +445,8 @@ public class CrimeUI {
         }
     }
 
+
+    //we may not need this metod below
     /**
      * Method that returns the criminal name as a string
      * @return String criminalName
