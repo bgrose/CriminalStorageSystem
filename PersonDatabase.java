@@ -10,7 +10,7 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 
 import java.time.format.DateTimeFormatter;
-import java.time.LocalDateTime;  
+import java.time.LocalDateTime;
 
 public class PersonDatabase {
 
@@ -51,12 +51,12 @@ public class PersonDatabase {
         for (Person person : personList) {
             System.out.println(person.toString());
         }
-        if(answer.equalsIgnoreCase("yes")) {
+        if (answer.equalsIgnoreCase("yes")) {
             try {
                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy.MM.dd_HH.mm.ss");
-            LocalDateTime now = LocalDateTime.now();
-            String timeString = dtf.format(now);
-                String fileName = "TextFiles/SuspectDatabase"+timeString+".txt";
+                LocalDateTime now = LocalDateTime.now();
+                String timeString = dtf.format(now);
+                String fileName = "TextFiles/SuspectDatabase" + timeString + ".txt";
                 File myObj = new File(fileName);
                 if (myObj.createNewFile()) {
                     FileWriter fileWriter = new FileWriter(fileName);
@@ -66,12 +66,12 @@ public class PersonDatabase {
                     }
                     printWriter.close();
                 } else {
-                  System.out.println("File already exists.");
+                    System.out.println("File already exists.");
                 }
-              } catch (IOException e) {
+            } catch (IOException e) {
                 System.out.println("An error occurred.");
                 e.printStackTrace();
-              }
+            }
         }
     }
 

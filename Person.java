@@ -6,7 +6,7 @@
 import java.util.UUID;
 
 public abstract class Person {
-    
+
     private String name;
     private boolean livingStatus;
     private UUID uuid;
@@ -16,9 +16,9 @@ public abstract class Person {
 
     /**
      * Method that creates a Person as a called super with UUID
-     * @param name Name of the Person
-     * @param livingStatus Boolean if living 
-     * @param _UUID The unique UUID to be used
+     * @param name         Name of the Person
+     * @param livingStatus Boolean if living
+     * @param _UUID        The unique UUID to be used
      */
     public Person(String name, boolean livingStatus, UUID _UUID, String Gender, String address, String phoneNumber) {
         this.name = name;
@@ -31,8 +31,8 @@ public abstract class Person {
 
     /**
      * Method that creates a Person as a called super without UUID
-     * @param name Name of the Person
-     * @param livingStatus Boolean if living 
+     * @param name         Name of the Person
+     * @param livingStatus Boolean if living
      */
     public Person(String name, boolean livingStatus, String Gender, String address, String phoneNumber) {
         this.name = name;
@@ -120,8 +120,8 @@ public abstract class Person {
      * @return String of the variables of the class
      */
     public String toString() {
-        return "Name: " + name + "\nLiving Status: " + livingStatus + "\nGender: "+ gender
-        + "\nAddress: "+address+"\nPhone Number: "+phoneNumber;
+        return "Name: " + name + "\nLiving Status: " + livingStatus + "\nGender: " + gender + "\nAddress: " + address
+                + "\nPhone Number: " + phoneNumber;
     }
 
 }

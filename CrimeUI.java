@@ -1,10 +1,11 @@
-import java.util.Scanner;
-import java.util.ArrayList;
-
 /**
  * @description Class that creates the main driver of CrimeUI
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
 public class CrimeUI {
 
     private static final String WELCOME_MSG = "Welcome to the Criminal Storage System!: Please login or create an account.";
@@ -12,7 +13,9 @@ public class CrimeUI {
             "Logout" };
     private String[] AdminMenuOptions = { "Add Crime", "Search Crime", "Print Crimes", "Search Criminal",
             "Print Criminals", "Remove Crime", "Add User", "Remove User", "Logout" };
-    private String[] criminalSearchOptions = { "Name", "Living Status", "UUID", "Gender", "Address", "Phone Number", "Alias", "Accomplice", "Hair Color", "Eye Color", "Tatoo", "Skin Color", "Nationality", "Weight", "Height", "Aquaintance", "Age", "Glasses", "Punishment", "Disability", "InJail",  "Address"};
+    private String[] criminalSearchOptions = { "Name", "Living Status", "UUID", "Gender", "Address", "Phone Number",
+            "Alias", "Accomplice", "Hair Color", "Eye Color", "Tatoo", "Skin Color", "Nationality", "Weight", "Height",
+            "Aquaintance", "Age", "Glasses", "Punishment", "Disability", "InJail", "Address" };
     private Scanner scanner;
     private CrimeFacade crimeFacade;
 
@@ -353,9 +356,11 @@ public class CrimeUI {
         if (crimeFacade.searchCrime(crimeName)) {
             System.out.println("The crime you're looking for is in library\n");
             String answer = getField("Would you like to print to a file");
-            if(answer.equalsIgnoreCase("yes")) crimeFacade.printCrimeFound(crimeName);
+            if (answer.equalsIgnoreCase("yes"))
+                crimeFacade.printCrimeFound(crimeName);
             answer = getField("Would you like to print to terminal");
-            if(answer.equalsIgnoreCase("yes")) crimeFacade.printCrimeTerminal(crimeName);
+            if (answer.equalsIgnoreCase("yes"))
+                crimeFacade.printCrimeTerminal(crimeName);
             return;
         } else {
             System.out.println("Sorry, the crime you are looking for is not in the library\n");
@@ -378,33 +383,35 @@ public class CrimeUI {
         ArrayList<Suspects> results = new ArrayList<Suspects>();
         boolean answer = true;
         System.out.println("\n------------- Searching for a Criminal -------------");
-       
 
-        while(answer)
-        {
-        for (int i = 0; i < criminalSearchOptions.length; i++) {
-            System.out.println((i + 1) + ". " + criminalSearchOptions[i]);
-        }
-        System.out.print("By what criteria would you like to search by?: \n");
+        while (answer) {
+            for (int i = 0; i < criminalSearchOptions.length; i++) {
+                System.out.println((i + 1) + ". " + criminalSearchOptions[i]);
+            }
+            System.out.print("By what criteria would you like to search by?: \n");
 
-        String input = scanner.nextLine();
-        int command = Integer.parseInt(input);
+            String input = scanner.nextLine();
+            int command = Integer.parseInt(input);
 
-        String term = getField("What Value Are You Looking For");
+            String term = getField("What Value Are You Looking For");
 
-        if (command <= 0 || command > criminalSearchOptions.length) {
-            System.out.println("Not a valid search option");    
-        }
-        results = crimeFacade.searchCriminal(command, results, term);
+            if (command <= 0 || command > criminalSearchOptions.length) {
+                System.out.println("Not a valid search option");
+            }
+            results = crimeFacade.searchCriminal(command, results, term);
 
-        System.out.println("There were "+results.size() + " results.");
-        if(results.size() == 0) break;
-        String answerFileString = getField("Would you like to print results to a file (y/n)");
-        if(answerFileString.equals("y")) crimeFacade.printResFile(results);
-        String answerTerminalString = getField("Would you like to print results to terminal(y/n)");
-        if(answerTerminalString.equals("y")) crimeFacade.printResTerminal(results);
-        String answerString = getField("Would you like to search further (y/n)");
-        if(answerString.equals("n")) break;
+            System.out.println("There were " + results.size() + " results.");
+            if (results.size() == 0)
+                break;
+            String answerFileString = getField("Would you like to print results to a file (y/n)");
+            if (answerFileString.equals("y"))
+                crimeFacade.printResFile(results);
+            String answerTerminalString = getField("Would you like to print results to terminal(y/n)");
+            if (answerTerminalString.equals("y"))
+                crimeFacade.printResTerminal(results);
+            String answerString = getField("Would you like to search further (y/n)");
+            if (answerString.equals("n"))
+                break;
         }
     }
 
@@ -470,10 +477,10 @@ public class CrimeUI {
                 System.out.print("Would you like to enter crime again (y) or return to main menu (n): ");
                 String command = scanner.nextLine();
                 if (command.equalsIgnoreCase("n")) {
-                return null;
+                    return null;
                 }
-            }
-            else return crimeName;
+            } else
+                return crimeName;
         }
     }
 

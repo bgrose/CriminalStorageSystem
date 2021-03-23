@@ -1,4 +1,3 @@
-
 /**
  * @description Class that creates the User class
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
@@ -14,7 +13,6 @@ public class User {
     private String position;
     private Boolean admin;
     private UUID uuid;
-    
 
     /**
      * Method that creates a User object with a UUID

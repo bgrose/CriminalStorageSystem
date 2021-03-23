@@ -1,4 +1,3 @@
-
 /**
  * @description Class that creates Criminal
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
@@ -136,7 +135,8 @@ public class Suspects extends Person {
                 + skinColor + "\nNationality: " + this.nationality + "\nWeight: " + this.weight + "\nHeight: "
                 + this.height + "\nAcquaintance: " + this.acquaintance + "\nAge: " + this.age + "\nGlasses: "
                 + this.glasses + "\nPunishment: " + this.punishment + "\nDisability: " + this.disability
-                + "\nHandness: " + this.handness + "\nCrime Type: " + this.crimeType + "\nIn Jail: " + this.inJail + "\n" + LINE_BREAK;
+                + "\nHandness: " + this.handness + "\nCrime Type: " + this.crimeType + "\nIn Jail: " + this.inJail
+                + "\n" + LINE_BREAK;
     }
 
     /**
@@ -395,7 +395,6 @@ public class Suspects extends Person {
         this.crimeType = crimeType;
     }
 
-
     /**
      * Method that gets whether the Criminal is in jail or not
      * @return Boolean inJail
@@ -418,7 +417,7 @@ public class Suspects extends Person {
     public void suspectToFile() {
         try {
             UUID fileUUID = UUID.randomUUID();
-            String fileName = "TextFiles/Suspect"+fileUUID+".txt";
+            String fileName = "TextFiles/Suspect" + fileUUID + ".txt";
             File myObj = new File(fileName);
             if (myObj.createNewFile()) {
                 FileWriter fileWriter = new FileWriter(fileName);
@@ -426,12 +425,12 @@ public class Suspects extends Person {
                 printWriter.println(toString());
                 printWriter.close();
             } else {
-              System.out.println("File already exists.");
+                System.out.println("File already exists.");
             }
-          } catch (IOException e) {
+        } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
-          }
+        }
     }
 
 }

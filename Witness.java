@@ -1,10 +1,9 @@
-
 /**
  * @description Class that creates Witness
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
  */
 
- import java.util.UUID;
+import java.util.UUID;
 
 public class Witness extends Person {
 
@@ -14,12 +13,13 @@ public class Witness extends Person {
 
     /**
      * Constructor method that sets up the class
-     * @param name of the witness
+     * @param name         of the witness
      * @param livingStatus of the witness
-     * @param statement of the witness
-     * @param UUID of the witness
+     * @param statement    of the witness
+     * @param UUID         of the witness
      */
-    public Witness(String name, boolean livingStatus, String statement, UUID UUID, String Gender, boolean isVictem, String address, String phone) {
+    public Witness(String name, boolean livingStatus, String statement, UUID UUID, String Gender, boolean isVictem,
+            String address, String phone) {
         super(name, livingStatus, UUID, Gender, address, phone);
         this.statement = statement;
         this.isVictem = isVictem;
@@ -27,11 +27,12 @@ public class Witness extends Person {
 
     /**
      * Constructor method that sets up the class
-     * @param name of the witness
+     * @param name         of the witness
      * @param livingStatus of the witness
-     * @param statement of the witness
+     * @param statement    of the witness
      */
-    public Witness(String name, boolean livingStatus, String statement, String Gender, boolean isVictem, String address, String phone) {
+    public Witness(String name, boolean livingStatus, String statement, String Gender, boolean isVictem, String address,
+            String phone) {
         super(name, livingStatus, Gender, address, phone);
         this.statement = statement;
         this.isVictem = isVictem;
@@ -42,7 +43,8 @@ public class Witness extends Person {
      * @return String of class variables
      */
     public String toString() {
-        return super.toString() + "\nStatement: " + this.statement + "\nIs a Victim: "+this.isVictem+"\n"+LINE_BREAK;
+        return super.toString() + "\nStatement: " + this.statement + "\nIs a Victim: " + this.isVictem + "\n"
+                + LINE_BREAK;
     }
 
     /**

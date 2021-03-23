@@ -46,7 +46,7 @@ public class DataConstants {
     // Evidence
     protected static final String EVIDENCE_DESCRIPTION = "Description";
     protected static final String EVIDENCE_NAME = "Name";
-    protected static final String EVIDENCE_UUID = "UUID";    
+    protected static final String EVIDENCE_UUID = "UUID";
     protected static final String EVIDENCE_FILE_NAME = "JSON/Evidence.JSON";
 
     // User

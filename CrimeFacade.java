@@ -1,18 +1,19 @@
+/**
+ * @description Class that creates the crimeFacade for the criminal UI to call
+ * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
+ */
+
 import java.util.ArrayList;
 import java.util.UUID;
 
 import java.time.format.DateTimeFormatter;
-import java.time.LocalDateTime;  
+import java.time.LocalDateTime;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
 
-/**
- * @description Class that creates the crimeFacade for the criminal UI to call
- * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
- */
 public class CrimeFacade {
 
     private CrimeDatabase crimeDatabase;
@@ -92,43 +93,49 @@ public class CrimeFacade {
         crimeDatabase.printDatabase(answer);
     }
 
-    public void printResTerminal(ArrayList<Suspects> res)
-    {
-        for(Suspects suspect : res)
-        {
+    /**
+     * 
+     * @param res
+     */
+    public void printResTerminal(ArrayList<Suspects> res) {
+        for (Suspects suspect : res) {
             System.out.println(suspect.toString());
         }
     }
 
-    public void printResFile(ArrayList<Suspects> res)
-    {
+    /**
+     * 
+     * @param res
+     */
+    public void printResFile(ArrayList<Suspects> res) {
         try {
-
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy.MM.dd_HH.mm.ss");
             LocalDateTime now = LocalDateTime.now();
             String timeString = dtf.format(now);
-                String fileName = "TextFiles/Result"+timeString+".txt";
-                File myObj = new File(fileName);
-                if (myObj.createNewFile()) {
-                    FileWriter fileWriter = new FileWriter(fileName);
-                    PrintWriter printWriter = new PrintWriter(fileWriter);
-                    for (Suspects suspect : res) {
-                        printWriter.println(suspect.toString());
-                    }
-                    printWriter.close();
-                } else {
-                    System.out.println("File already exists.");
+            String fileName = "TextFiles/Result" + timeString + ".txt";
+            File myObj = new File(fileName);
+            if (myObj.createNewFile()) {
+                FileWriter fileWriter = new FileWriter(fileName);
+                PrintWriter printWriter = new PrintWriter(fileWriter);
+                for (Suspects suspect : res) {
+                    printWriter.println(suspect.toString());
                 }
-            } catch (IOException e) {
-                System.out.println("An error occurred.");
-                e.printStackTrace();
+                printWriter.close();
+            } else {
+                System.out.println("File already exists.");
             }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
     }
 
     /**
-     * Method that returns if the criminal is in the crimeDatbase
-     * @param name to be searched for
-     * @return boolean that represents if the crime is in the database
+     * 
+     * @param command
+     * @param results
+     * @param term
+     * @return
      */
     public ArrayList<Suspects> searchCriminal(int command, ArrayList<Suspects> results, String term) {
         ArrayList<Suspects> ret = new ArrayList<Suspects>();
@@ -330,6 +337,7 @@ public class CrimeFacade {
 
     /**
      * Method that finds an officer in the userDatabase
+     * 
      * @param name of the user being searched for
      * @return User that was being searched for
      */

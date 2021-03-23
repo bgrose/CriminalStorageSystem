@@ -1,4 +1,3 @@
-
 /**
  * Class that creates a database to store crimes
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
@@ -11,7 +10,7 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 
 import java.time.format.DateTimeFormatter;
-import java.time.LocalDateTime;  
+import java.time.LocalDateTime;
 
 public class CrimeDatabase {
 
@@ -60,9 +59,9 @@ public class CrimeDatabase {
         if (answer.equalsIgnoreCase("yes")) {
             try {
                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy.MM.dd_HH.mm.ss");
-            LocalDateTime now = LocalDateTime.now();
-            String timeString = dtf.format(now);
-                String fileName = "TextFiles/CrimeDatabase"+timeString+".txt";
+                LocalDateTime now = LocalDateTime.now();
+                String timeString = dtf.format(now);
+                String fileName = "TextFiles/CrimeDatabase" + timeString + ".txt";
                 File myObj = new File(fileName);
                 if (myObj.createNewFile()) {
                     FileWriter fileWriter = new FileWriter(fileName);
@@ -83,7 +82,6 @@ public class CrimeDatabase {
 
     /**
      * Method that gets the crimeDatabase
-     * 
      * @return CrimeDatabase
      */
     public static CrimeDatabase getInstance() {

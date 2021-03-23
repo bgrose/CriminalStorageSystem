@@ -1,4 +1,3 @@
-
 /**
  * @description Class that writes to JSON FIle for Object Storage
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
@@ -67,8 +66,8 @@ public class DataWriter extends DataConstants {
     }
 
     /**
-     * Method that writes to the file for the crimes and calls the different sub class to make
-     * objects
+     * Method that writes to the file for the crimes and calls the different sub
+     * class to make objects
      */
     public static void saveCrimes() {
         CrimeDatabase crimes = CrimeDatabase.getInstance();
@@ -137,8 +136,8 @@ public class DataWriter extends DataConstants {
     }
 
     /**
-     * Method that saves all evidence items for the crime as well as write to JSON file for
-     * evidence
+     * Method that saves all evidence items for the crime as well as write to JSON
+     * file for evidence
      * @param crime Crime evidence is being pulled from
      * @return JSONArray with the evidence in it for the crime with UUID
      */
@@ -163,7 +162,8 @@ public class DataWriter extends DataConstants {
     }
 
     /**
-     * Method that saves the Suspect to a JSON File for Crime by looping ang getting UUID
+     * Method that saves the Suspect to a JSON File for Crime by looping ang getting
+     * UUID
      * @param crime Takes in crime to loop through
      * @return JSONArray with Suspect UUID
      */
@@ -180,7 +180,8 @@ public class DataWriter extends DataConstants {
     }
 
     /**
-     * Method that saves the Suspect to a JSON File for Crime by looping ang getting UUID
+     * Method that saves the Suspect to a JSON File for Crime by looping ang getting
+     * UUID
      * @param crime Takes in crime to loop through
      * @return JSONArray with Suspect UUID
      */

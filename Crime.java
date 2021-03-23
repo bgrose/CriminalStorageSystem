@@ -1,4 +1,3 @@
-
 /**
  * @description Class that creates a Crime
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
@@ -13,7 +12,7 @@ import java.io.PrintWriter;
 import java.io.IOException;
 
 import java.time.format.DateTimeFormatter;
-import java.time.LocalDateTime;  
+import java.time.LocalDateTime;
 
 public class Crime {
 
@@ -169,7 +168,7 @@ public class Crime {
     }
 
     /**
-     * Method that gets whether the Crime is solved or not
+     * Method that gets whether the Crime is solved or not 
      * @return Boolean solved
      */
     public Boolean getSolved() {
@@ -233,7 +232,8 @@ public class Crime {
                 + date;
         String suspects = "\nSuspects/Criminals:" + getSuspectString();
         String evidence = "\nEvidence:" + getEvidenceString();
-        String witness = "\nWitnesses:" + getWitnessString();;
+        String witness = "\nWitnesses:" + getWitnessString();
+        ;
 
         ret = ret.concat(suspects).concat(evidence).concat(witness);
         return ret;
@@ -245,7 +245,7 @@ public class Crime {
      */
     public String getWitnessString() {
         String witness = "";
-          for (int i = 0; i < this.witnessList.size(); i++) {
+        for (int i = 0; i < this.witnessList.size(); i++) {
             Witness witnessOb = this.witnessList.get(i);
             String witString = witnessOb.toString();
             witness = witness + witString;
@@ -261,7 +261,7 @@ public class Crime {
      */
     public String getSuspectString() {
         String suspect = "";
-          for (int i = 0; i < this.personList.size(); i++) {
+        for (int i = 0; i < this.personList.size(); i++) {
             Suspects suspectOb = this.personList.get(i);
             String susString = suspectOb.toString();
             suspect = suspect + susString;
@@ -278,14 +278,14 @@ public class Crime {
     public String getEvidenceString() {
         String evidence = "";
         for (int i = 0; i < this.evidenceList.size(); i++) {
-          Evidence evidenceOb = this.evidenceList.get(i);
-          String evidenceString = evidenceOb.toString();
-          evidence = evidence + evidenceString;
-      }
-      evidence = LINE_BREAK + evidence + LINE_BREAK;
+            Evidence evidenceOb = this.evidenceList.get(i);
+            String evidenceString = evidenceOb.toString();
+            evidence = evidence + evidenceString;
+        }
+        evidence = LINE_BREAK + evidence + LINE_BREAK;
 
-      return evidence;
-  }
+        return evidence;
+    }
 
     /**
      * Method that returns the UUID
@@ -298,26 +298,25 @@ public class Crime {
     /**
      * Wties a Crime to File
      */
-    public void crimeToFile()
-    {
+    public void crimeToFile() {
         try {
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy.MM.dd_HH.mm.ss");
             LocalDateTime now = LocalDateTime.now();
             String timeString = dtf.format(now);
-            String fileName = "TextFiles/Crime"+timeString+".txt";
+            String fileName = "TextFiles/Crime" + timeString + ".txt";
             File myObj = new File(fileName);
             if (myObj.createNewFile()) {
                 FileWriter fileWriter = new FileWriter(fileName);
                 PrintWriter printWriter = new PrintWriter(fileWriter);
                 printWriter.println(toString());
                 printWriter.close();
-                System.out.println("Crime Printed to "+fileName);
+                System.out.println("Crime Printed to " + fileName);
             } else {
-              System.out.println("File already exists.");
+                System.out.println("File already exists.");
             }
-          } catch (IOException e) {
+        } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
-          }
+        }
     }
 }

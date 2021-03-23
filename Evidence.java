@@ -13,9 +13,9 @@ public class Evidence {
 
     /**
      * Method that creates an Evidence Object with a UUID
-     * @param name of the evidence
-     * @param description  of the evidence
-     * @param UUID The unique identfier
+     * @param name        of the evidence
+     * @param description of the evidence
+     * @param UUID        The unique identfier
      */
     public Evidence(String name, String description, UUID UUID) {
         this.name = name;
@@ -25,7 +25,7 @@ public class Evidence {
 
     /**
      * Method that creates an Evidence Object without a UUID
-     * @param name of the evidence
+     * @param name        of the evidence
      * @param description of the evidence
      */
     public Evidence(String name, String description) {
@@ -71,7 +71,7 @@ public class Evidence {
      * @return String with the details of the Evidence
      */
     public String toString() {
-        return "Name: " + name + "\nDescription: " + description+LINE_BREAK ;
+        return "Name: " + name + "\nDescription: " + description + LINE_BREAK;
     }
 
     /**
