@@ -12,7 +12,7 @@ public class CrimeUI {
             "Logout" };
     private String[] AdminMenuOptions = { "Add Crime", "Search Crime", "Print Crimes", "Search Criminal",
             "Print Criminals", "Remove Crime", "Add User", "Remove User", "Logout" };
-    private String[] criminalSearchOptions = { "Alias", "Accomplice" "Hair Color", "Handness", "Tatoo", "Address", //add more, CrimeFacade has correct order };
+    private String[] criminalSearchOptions = { "Name", "Living Status", "UUID", "Gender", "Address", "Phone Number", "Alias", "Accomplice", "Hair Color", "Eye Color", "Tatoo", "Skin Color", "Nationality", "Weight", "Height", "Aquaintance", "Age", "Glasses", "Punishment", "Disability",  "Address", "Mulitple Criteria"};
     private Scanner scanner;
     private CrimeFacade crimeFacade;
 
