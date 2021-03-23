@@ -88,12 +88,14 @@ public class CrimeFacade {
      * @param name to be searched for
      * @return boolean that represents if the crime is in the database
      */
-    public boolean searchCriminal(String name) {
-        for (int i = 0; i < personDatabase.getDatabase().size(); i++) {
+    public boolean searchCriminal(int command) {
+       /* for (int i = 0; i < personDatabase.getDatabase().size(); i++) {
             if (personDatabase.getDatabase().get(i).getName().equals(name)) {
                 return true;
             }
-        }
+        } 
+        */
+
         return false;
     }
 

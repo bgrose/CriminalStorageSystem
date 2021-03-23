@@ -12,6 +12,7 @@ public class CrimeUI {
             "Logout" };
     private String[] AdminMenuOptions = { "Add Crime", "Search Crime", "Print Crimes", "Search Criminal",
             "Print Criminals", "Remove Crime", "Add User", "Remove User", "Logout" };
+    private String[] criminalSearchOptions = { "Name", "Hair Color", "Handness", "Tatoo", "Address",  };
     private Scanner scanner;
     private CrimeFacade crimeFacade;
 
@@ -374,17 +375,26 @@ public class CrimeUI {
      * Method that searches for a criminal
      */
     private void searchCriminal() {
-        System.out.println("\n------------- searching criminal -------------");
-        String criminalName = getUserCriminal();
+        System.out.println("\n------------- Searching for a Criminal -------------");
+        System.out.print("By what criteria would you like to search by?: \n");
 
-        if (criminalName == null) {
-            return;
+        for (int i = 0; i < criminalSearchOptions.length; i++) {
+            System.out.println((i + 1) + ". " + criminalSearchOptions[i]);
         }
-        if (crimeFacade.searchCriminal(criminalName)) {
-            System.out.println("The criminal you're looking for is in library\n");
+        System.out.println("\n");
+
+        String input = scanner.nextLine();
+        int command = Integer.parseInt(input) - 1;
+
+        if (command < 0 || command > criminalSearchOptions.length - 1) {
+            System.out.println("Not a valid search option");    
+        }
+
+        if (crimeFacade.searchCriminal(command)) {
+            System.out.println("There are criminals in the system that match your search criteria:\n ");
             return;
         } else {
-            System.out.println("Sorry, the criminal you are looking for is not in the library\n");
+            System.out.println("Sorry, there are no criminals in the system that match your search criteria\n");
         }
     }
 
@@ -440,7 +450,7 @@ public class CrimeUI {
      * @return String criminalName
      */
     private String getUserCriminal() {
-        System.out.print("Enter User Criminals: ");
+        System.out.print("Enter Criminal Name: ");
 
         while (true) {
             String criminalName = scanner.nextLine().trim().toLowerCase();
