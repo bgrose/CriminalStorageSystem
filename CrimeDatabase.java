@@ -47,6 +47,7 @@ public class CrimeDatabase {
 
     /**
      * Method that prints out the crimeDatabase
+     * @param answer String with whether the database sohould be printed
      */
     public void printDatabase(String answer) {
         for (Crime crime : crimeList) {
@@ -85,7 +86,7 @@ public class CrimeDatabase {
     }
 
     /**
-     * Constructor method that sets up the CrimeDatabase
+     * Constructor method that sets up the CrimeDatabase, only if there hasn't been one created already
      */
     private CrimeDatabase() {
         crimeList = DataLoader.getCrimes();
