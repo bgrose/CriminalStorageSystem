@@ -295,7 +295,7 @@ public class CrimeUI {
                     .valueOf(getField("Please Enter the " + (i + 1) + " Suspect weight or an estimate in pounds"));
             int height = Integer
                     .valueOf(getField("Please Enter the " + (i + 1) + " Suspect height or an estimate in inches"));
-            int age = Integer.valueOf(getField("Please Enter the " + (i + 1) + " Suspect age or an estimate"));
+            int age = Integer.valueOf(getField("Please Enter the " + (i + 1) + " Suspect age or an estimate in years"));
             answer = getField("Does the " + (i + 1) + " Suspect wear glasses (y/n)");
             boolean glasses = true;
             if (answer.equals("n")) {
@@ -303,7 +303,7 @@ public class CrimeUI {
             }
             String disability = getField("Please Enter the " + (i + 1) + " Suspects Disability if any");
             String handness = getField("Please Enter the " + (i + 1) + " Suspects Handness");
-            answer = getField("Has Suspect " + (i + 1) + "Been arrested/charged(y/n)");
+            answer = getField("Has Suspect " + (i + 1) + " Been arrested/charged(y/n)");
             String punishment, crimeType;
             Boolean inJail = Boolean.valueOf(getField("Is " + (i + 1) + " Suspects In Jail?"));
             if (answer.equals("y")) {
