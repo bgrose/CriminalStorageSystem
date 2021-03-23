@@ -181,6 +181,10 @@ public class Crime {
         return this.date;
     }
 
+    /**
+     * Returns the Witness List for a Crime
+     * @return ArrayList of type Witness with Witnesses/Suspects
+     */
     public ArrayList<Witness> getWitnessList() {
         return this.witnessList;
     }
@@ -288,6 +292,9 @@ public class Crime {
         return this.uuid;
     }
 
+    /**
+     * Wties a Crime to File
+     */
     public void crimeToFile()
     {
         try {

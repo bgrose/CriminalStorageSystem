@@ -246,8 +246,11 @@ public class CrimeFacade {
         personDatabase.addPerson(suspect);
     }
 
-    public void printCrimeFound(String name)
-    {
+    /**
+     * Prints the Crime to a File
+     * @param name String of Crime Case ID
+     */
+    public void printCrimeFound(String name) {
         for (int i = 0; i < crimeDatabase.getDatabase().size(); i++) {
             if (crimeDatabase.getDatabase().get(i).getcaseID().equalsIgnoreCase(name)) {
                 Crime crime = crimeDatabase.getDatabase().get(i);
@@ -256,8 +259,11 @@ public class CrimeFacade {
         }
     }
 
-    public void printCrimeTerminal(String name)
-    {
+    /**
+     * Prints out the Crime to Terminal
+     * @param name Name of the Crime String
+     */
+    public void printCrimeTerminal(String name) {
         for (int i = 0; i < crimeDatabase.getDatabase().size(); i++) {
             if (crimeDatabase.getDatabase().get(i).getcaseID().equalsIgnoreCase(name)) {
                 Crime crime = crimeDatabase.getDatabase().get(i);

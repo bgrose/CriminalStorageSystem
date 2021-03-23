@@ -42,13 +42,13 @@ public class PersonDatabase {
 
     /**
      * Method that prints the personDatabase
+     * @param answer If prints tro file if yes
      */
     public void printDatabase(String answer) {
         for (Person person : personList) {
             System.out.println(person.toString());
         }
-        if(answer.equalsIgnoreCase("yes"))
-        {
+        if(answer.equalsIgnoreCase("yes")) {
             try {
                 String fileName = "TextFiles/SuspectDatabase.txt";
                 File myObj = new File(fileName);

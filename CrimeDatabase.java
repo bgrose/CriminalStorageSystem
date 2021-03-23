@@ -1,3 +1,4 @@
+
 /**
  * Class that creates a database to store crimes
  * @author Bradley Grose, Eleanor Barry, David Keen, David Morrison
@@ -53,8 +54,7 @@ public class CrimeDatabase {
         for (Crime crime : crimeList) {
             System.out.println(crime.toString());
         }
-        if(answer.equalsIgnoreCase("yes"))
-        {
+        if (answer.equalsIgnoreCase("yes")) {
             try {
                 String fileName = "TextFiles/CrimeDatabase.txt";
                 File myObj = new File(fileName);
@@ -66,17 +66,18 @@ public class CrimeDatabase {
                     }
                     printWriter.close();
                 } else {
-                  System.out.println("File already exists.");
+                    System.out.println("File already exists.");
                 }
-              } catch (IOException e) {
+            } catch (IOException e) {
                 System.out.println("An error occurred.");
                 e.printStackTrace();
-              }
+            }
         }
     }
 
     /**
      * Method that gets the crimeDatabase
+     * 
      * @return CrimeDatabase
      */
     public static CrimeDatabase getInstance() {
@@ -86,7 +87,8 @@ public class CrimeDatabase {
     }
 
     /**
-     * Constructor method that sets up the CrimeDatabase, only if there hasn't been one created already
+     * Constructor method that sets up the CrimeDatabase, only if there hasn't been
+     * one created already
      */
     private CrimeDatabase() {
         crimeList = DataLoader.getCrimes();

@@ -412,8 +412,10 @@ public class Suspects extends Person {
         this.inJail = inJail;
     }
 
-    public void suspectToFile()
-    {
+    /**
+     * Prints to Suspect to a file
+     */
+    public void suspectToFile() {
         try {
             UUID fileUUID = UUID.randomUUID();
             String fileName = "TextFiles/Suspect"+fileUUID+".txt";
