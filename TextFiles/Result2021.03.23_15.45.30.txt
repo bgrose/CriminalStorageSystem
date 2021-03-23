@@ -1,0 +1,75 @@
+Name: Alex Newcomb
+Living Status: true
+Gender: Male
+Address: 708 Pulaski St. Columbia SC
+Phone Number: 323-222-3214
+Alias: None
+Accomplice: None
+Hair Color: Brown
+Eye Color: Brown
+Tatoo: dove
+Skin Color: white
+Nationality: American
+Weight: 200.0
+Height: 71
+Acquaintance: None
+Age: 21
+Glasses: false
+Punishment: Robbery and Theft
+Disability: None
+Handness: Right
+Crime Type: Robbery and Theft
+In Jail: false
+
+--------------------------------------
+
+Name: Unknown
+Living Status: true
+Gender: Male
+Address: Unknown
+Phone Number: Unknown
+Alias: unkown
+Accomplice: Unknown
+Hair Color: Black
+Eye Color: Brown
+Tatoo: None
+Skin Color: White
+Nationality: American
+Weight: 160.0
+Height: 71
+Acquaintance: Unknown
+Age: 32
+Glasses: true
+Punishment: None.
+Disability: None
+Handness: Right
+Crime Type: None.
+In Jail: false
+
+--------------------------------------
+
+Name: Mike
+Living Status: true
+Gender: Male
+Address: 9117 empire lane
+Phone Number: 6969692
+Alias: Myers
+Accomplice: none
+Hair Color: brown
+Eye Color: blue
+Tatoo: none
+Skin Color: white
+Nationality: American
+Weight: 200.0
+Height: 75
+Acquaintance: jenny
+Age: 50
+Glasses: false
+Punishment: None.
+Disability: none
+Handness: right
+Crime Type: None.
+In Jail: false
+
+--------------------------------------
+

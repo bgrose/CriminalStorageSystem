@@ -12,7 +12,7 @@ public class CrimeUI {
             "Logout" };
     private String[] AdminMenuOptions = { "Add Crime", "Search Crime", "Print Crimes", "Search Criminal",
             "Print Criminals", "Remove Crime", "Add User", "Remove User", "Logout" };
-    private String[] criminalSearchOptions = { "Name", "Living Status", "UUID", "Gender", "Address", "Phone Number", "Alias", "Accomplice", "Hair Color", "Eye Color", "Tatoo", "Skin Color", "Nationality", "Weight", "Height", "Aquaintance", "Age", "Glasses", "Punishment", "Disability", "InJail",  "Address", "Mulitple Criteria"};
+    private String[] criminalSearchOptions = { "Name", "Living Status", "UUID", "Gender", "Address", "Phone Number", "Alias", "Accomplice", "Hair Color", "Eye Color", "Tatoo", "Skin Color", "Nationality", "Weight", "Height", "Aquaintance", "Age", "Glasses", "Punishment", "Disability", "InJail",  "Address"};
     private Scanner scanner;
     private CrimeFacade crimeFacade;
 
@@ -375,26 +375,36 @@ public class CrimeUI {
      * Method that searches for a criminal
      */
     private void searchCriminal() {
+        ArrayList<Suspects> results = new ArrayList<Suspects>();
+        boolean answer = true;
         System.out.println("\n------------- Searching for a Criminal -------------");
-        System.out.print("By what criteria would you like to search by?: \n");
+       
 
+        while(answer)
+        {
         for (int i = 0; i < criminalSearchOptions.length; i++) {
             System.out.println((i + 1) + ". " + criminalSearchOptions[i]);
         }
-        System.out.println("\n");
+        System.out.print("By what criteria would you like to search by?: \n");
 
         String input = scanner.nextLine();
         int command = Integer.parseInt(input);
 
+        String term = getField("What Value Are You Looking For");
+
         if (command <= 0 || command > criminalSearchOptions.length) {
             System.out.println("Not a valid search option");    
         }
+        results = crimeFacade.searchCriminal(command, results, term);
 
-        if (crimeFacade.searchCriminal(command)) {
-            System.out.println("Here are the criminals in the system that match your search criteria:\n ");
-            return;
-        } else {
-            System.out.println("Sorry, there are no criminals in the system that match your search criteria\n");
+        System.out.println("There were "+results.size() + " results.");
+        if(results.size() == 0) break;
+        String answerFileString = getField("Would you like to print results to a file (y/n)");
+        if(answerFileString.equals("y")) crimeFacade.printResFile(results);
+        String answerTerminalString = getField("Would you like to print results to terminal(y/n)");
+        if(answerTerminalString.equals("y")) crimeFacade.printResTerminal(results);
+        String answerString = getField("Would you like to search further (y/n)");
+        if(answerString.equals("n")) break;
         }
     }
 
@@ -442,31 +452,6 @@ public class CrimeUI {
             System.out.println("User Removed Successfully");
         } else {
             System.out.println("No User Found.");
-        }
-    }
-
-
-    //we may not need this metod below
-    /**
-     * Method that returns the criminal name as a string
-     * @return String criminalName
-     */
-    private String getUserCriminal() {
-        System.out.print("Enter Criminal Name: ");
-
-        while (true) {
-            String criminalName = scanner.nextLine().trim().toLowerCase();
-
-            if (!criminalName.contentEquals("")) {
-                return criminalName;
-            }
-
-            System.out.println("You need to enter the actual content");
-            System.out.print("Would you like to enter criminal again (y) or return to main menu (n): ");
-            String command = scanner.nextLine().trim().toLowerCase();
-            if (command == "n") {
-                return null;
-            }
         }
     }
 

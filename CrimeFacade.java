@@ -1,4 +1,13 @@
 import java.util.ArrayList;
+import java.util.UUID;
+
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;  
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.IOException;
 
 /**
  * @description Class that creates the crimeFacade for the criminal UI to call
@@ -24,9 +33,9 @@ public class CrimeFacade {
      * Method that creates a new account
      * @param username Username of User
      * @param password Password for User
-     * @param name Name of the Officer/User
+     * @param name     Name of the Officer/User
      * @param position String of the officer position
-     * @param isAdmin Boolean if they are an admin
+     * @param isAdmin  Boolean if they are an admin
      */
     public void createAccount(String username, String password, String name, String position, boolean isAdmin) {
         userDatabase.addUser(new User(username, password, name, position, isAdmin));
@@ -83,92 +92,186 @@ public class CrimeFacade {
         crimeDatabase.printDatabase(answer);
     }
 
+    public void printResTerminal(ArrayList<Suspects> res)
+    {
+        for(Suspects suspect : res)
+        {
+            System.out.println(suspect.toString());
+        }
+    }
+
+    public void printResFile(ArrayList<Suspects> res)
+    {
+        try {
+
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy.MM.dd_HH.mm.ss");
+            LocalDateTime now = LocalDateTime.now();
+            String timeString = dtf.format(now);
+                String fileName = "TextFiles/Result"+timeString+".txt";
+                File myObj = new File(fileName);
+                if (myObj.createNewFile()) {
+                    FileWriter fileWriter = new FileWriter(fileName);
+                    PrintWriter printWriter = new PrintWriter(fileWriter);
+                    for (Suspects suspect : res) {
+                        printWriter.println(suspect.toString());
+                    }
+                    printWriter.close();
+                } else {
+                    System.out.println("File already exists.");
+                }
+            } catch (IOException e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();
+            }
+    }
+
     /**
      * Method that returns if the criminal is in the crimeDatbase
      * @param name to be searched for
      * @return boolean that represents if the crime is in the database
      */
-    public boolean searchCriminal(int command) {
-       /* for (int i = 0; i < personDatabase.getDatabase().size(); i++) {
-            if (personDatabase.getDatabase().get(i).getName().equals(name)) {
-                return true;
-            }
-        } 
-        */
-        
+    public ArrayList<Suspects> searchCriminal(int command, ArrayList<Suspects> results, String term) {
+        ArrayList<Suspects> ret = new ArrayList<Suspects>();
         switch (command) {
-            case (1):
-                //search by name
-                break;
-            case (2):
-                // search by living status
-                break;
-            case (3):
-                //search by uuid
-                break;
-            case (4):
-                // search by gender
-                break;
-            case (5):
-                //search by address
-                break;
-            case (6):
-                // search by phone number
-                break;
-            case (7):
-                // search by alias
-                break;
-            case (8):
-                // search by accomplice
-                break;
-            case (9):
-                // search by hair color
-                break;
-            case (10):
-                // search by eye color
-                break;
-            case (11):
-                // search by tatoo
-                break;
-            case (12):
-                // search by skin color
-                break;
-            case (13):
-                // search by nationality
-                break;
-            case (14):
-                // search by weight
-                break;
-            case (15):
-                // search by height
-                break;
-            case (16):
-                // search by acquaintance
-                break;
-            case (17):
-                // search by age
-                break;
-            case (18):
-                // search by glasses
-                break;
-            case (19):
-                // search by punishment
-                break;
-            case (20):
-                // search by disability
-                break;
-            case (21):
-                // search by inJail
-                break;
-            case (22):
-                //search by address
-                break;
-            case (23):
-                // search by multiple criteria
-                break;
+        case (1):
+            for (Suspects suspect : personDatabase.personList) {
+                if (suspect.getName().equals(term))
+                    ret.add(suspect);
             }
-            
-        return false;
+            break;
+        case (2):
+            for (Suspects suspect : personDatabase.personList) {
+                boolean termB = Boolean.parseBoolean(term);
+                if (suspect.getLivingStatus() == termB)
+                    ret.add(suspect);
+            }
+            break;
+        case (3):
+            for (Suspects suspect : personDatabase.personList) {
+                UUID termU = UUID.fromString(term);
+                if (suspect.getUUID() == termU)
+                    ret.add(suspect);
+            }
+            break;
+        case (4):
+            for (Suspects suspect : personDatabase.personList) {
+                if (suspect.getGender().equals(term))
+                    ret.add(suspect);
+            }
+            break;
+        case (5):
+            for (Suspects suspect : personDatabase.personList) {
+                if (suspect.getAddress().equals(term))
+                    ret.add(suspect);
+            }
+            break;
+        case (6):
+            for (Suspects suspect : personDatabase.personList) {
+                if (suspect.getPhone().equals(term))
+                    ret.add(suspect);
+            }
+            break;
+        case (7):
+            for (Suspects suspect : personDatabase.personList) {
+                if (suspect.getAlias().contains(term))
+                    ret.add(suspect);
+            }
+            break;
+        case (8):
+            for (Suspects suspect : personDatabase.personList) {
+                if (suspect.getAccomplice().contains(term))
+                    ret.add(suspect);
+            }
+            break;
+        case (9):
+            for (Suspects suspect : personDatabase.personList) {
+                if (suspect.getHairColor().contains(term))
+                    ret.add(suspect);
+            }
+            break;
+        case (10):
+            for (Suspects suspect : personDatabase.personList) {
+                if (suspect.getEyeColor().contains(term))
+                    ret.add(suspect);
+            }
+            break;
+        case (11):
+            for (Suspects suspect : personDatabase.personList) {
+                if (suspect.getTattoo().contains(term))
+                    ret.add(suspect);
+            }
+            break;
+        case (12):
+            for (Suspects suspect : personDatabase.personList) {
+                if (suspect.getSkinColor().contains(term))
+                    ret.add(suspect);
+            }
+            break;
+        case (13):
+            for (Suspects suspect : personDatabase.personList) {
+                if (suspect.getNationality().contains(term))
+                    ret.add(suspect);
+            }
+            break;
+        case (14):
+            for (Suspects suspect : personDatabase.personList) {
+                if (suspect.getWeight() == (Double.parseDouble(term)))
+                    ret.add(suspect);
+            }
+            break;
+        case (15):
+            for (Suspects suspect : personDatabase.personList) {
+                if (suspect.getHeight() == (Integer.parseInt(term)))
+                    ret.add(suspect);
+            }
+            break;
+        case (16):
+            for (Suspects suspect : personDatabase.personList) {
+                if (suspect.getAccomplice().contains(term))
+                    ret.add(suspect);
+            }
+            break;
+        case (17):
+            for (Suspects suspect : personDatabase.personList) {
+                if (suspect.getAge() == (Integer.parseInt(term)))
+                    ret.add(suspect);
+            }
+            break;
+        case (18):
+            for (Suspects suspect : personDatabase.personList) {
+                boolean termB = Boolean.parseBoolean(term);
+                if (suspect.getGlasses() == termB)
+                    ret.add(suspect);
+            }
+            break;
+        case (19):
+            for (Suspects suspect : personDatabase.personList) {
+                if (suspect.getPunishment().contains(term))
+                    ret.add(suspect);
+            }
+            break;
+        case (20):
+            for (Suspects suspect : personDatabase.personList) {
+                if (suspect.getDisability().contains(term))
+                    ret.add(suspect);
+            }
+            break;
+        case (21):
+            for (Suspects suspect : personDatabase.personList) {
+                boolean termB = Boolean.parseBoolean(term);
+                if (suspect.getInJail() == termB)
+                    ret.add(suspect);
+            }
+            break;
+        case (22):
+            for (Suspects suspect : personDatabase.personList) {
+                if (suspect.getAddress().contains(term))
+                    ret.add(suspect);
+            }
+            break;
+        }
+        return ret;
+
     }
 
     /**
