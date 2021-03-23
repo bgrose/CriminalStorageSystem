@@ -38,5 +38,13 @@
     "Admin": false,
     "Password": "youpick",
     "Name": "You Pick"
+  },
+  {
+    "Username": "David",
+    "Position": "starting qb for the Columbia Cougar",
+    "UUID": "400af301-a809-4016-8f3c-3686833fbed8",
+    "Admin": false,
+    "Password": "Keen",
+    "Name": "David K"
   }
 ]

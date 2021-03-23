@@ -94,6 +94,12 @@ public class CrimeFacade {
                 return true;
             }
         }
+
+
+
+        //TODO SEARCH BY TRAIT
+
+        
         return false;
     }
 

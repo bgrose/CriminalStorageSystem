@@ -1,0 +1,186 @@
+
+Case ID: 23424
+Description: Bar Robbery
+Solved: true
+Date: 3/22
+Suspects/Criminals:
+--------------------------------------
+Name: Alex Newcomb
+Living Status: true
+Gender: Male
+Address: 708 Pulaski St. Columbia SC
+Phone Number: 323-222-3214
+Alias: None
+Accomplice: None
+Hair Color: Brown
+Eye Color: Brown
+Tatoo: dove
+Skin Color: white
+Nationality: American
+Weight: 200.0
+Height: 71
+Acquaintance: None
+Age: 21
+Glasses: false
+Punishment: Robbery and Theft
+Disability: None
+Handness: Right
+Crime Type: Robbery and Theft
+In Jail: false
+
+--------------------------------------
+
+--------------------------------------
+
+Evidence:
+--------------------------------------
+
+--------------------------------------
+
+Witnesses:
+--------------------------------------
+
+--------------------------------------
+
+
+Case ID: XXX
+Description: Armed Robbery
+Solved: false
+Date: 3/22/2021
+Suspects/Criminals:
+--------------------------------------
+Name: Unknown
+Living Status: true
+Gender: Male
+Address: Unknown
+Phone Number: Unknown
+Alias: unkown
+Accomplice: Unknown
+Hair Color: Black
+Eye Color: Brown
+Tatoo: None
+Skin Color: White
+Nationality: American
+Weight: 160.0
+Height: 71
+Acquaintance: Unknown
+Age: 32
+Glasses: true
+Punishment: None.
+Disability: None
+Handness: Right
+Crime Type: None.
+In Jail: false
+
+--------------------------------------
+
+--------------------------------------
+
+Evidence:
+--------------------------------------
+Name: Finger Prints from counter
+Description: Finger prints collected by the cash register when money was demanded
+--------------------------------------
+Name: Security Footage
+Description: Security Footage showing at 7:54 an armed man coming into the store
+--------------------------------------
+Name: Bullet Shet
+Description: A Bullet Shell from a handgun
+--------------------------------------
+
+--------------------------------------
+
+Witnesses:
+--------------------------------------
+Name: John Brown
+Living Status: true
+Gender: Male
+Address: 231 Columbiana Ave
+Phone Number: 325-324-2345
+Statement: Saw a man with a gun walk in front and hold cashier at gun point
+Is a Victim: false
+
+--------------------------------------
+Name: Luke Walker
+Living Status: true
+Gender: Male
+Address: 21324 Bull St
+Phone Number: 342-325-3245
+Statement: Was Cashier Held at Gunpoint in gas station
+Is a Victim: true
+
+--------------------------------------
+
+--------------------------------------
+
+
+Case ID: 007
+Description: Homicide
+Solved: false
+Date: 3/23/2021
+Suspects/Criminals:
+--------------------------------------
+Name: Mike
+Living Status: true
+Gender: Male
+Address: 9117 empire lane
+Phone Number: 6969692
+Alias: Myers
+Accomplice: none
+Hair Color: brown
+Eye Color: blue
+Tatoo: none
+Skin Color: white
+Nationality: American
+Weight: 200.0
+Height: 75
+Acquaintance: jenny
+Age: 50
+Glasses: false
+Punishment: None.
+Disability: none
+Handness: right
+Crime Type: None.
+In Jail: false
+
+--------------------------------------
+Name: bob
+Living Status: false
+Gender: male
+Address: 777 cocky
+Phone Number: 2222221
+Alias: snake
+Accomplice: malfoy
+Hair Color: blonde
+Eye Color: grenn
+Tatoo: tiger
+Skin Color: black
+Nationality: nigerian
+Weight: 130.0
+Height: 61
+Acquaintance: crab
+Age: 25
+Glasses: true
+Punishment: None.
+Disability: Missing a finger
+Handness: left
+Crime Type: None.
+In Jail: false
+
+--------------------------------------
+
+--------------------------------------
+
+Evidence:
+--------------------------------------
+Name: Knife
+Description: Knife was lodged in the dead man's throat
+--------------------------------------
+
+--------------------------------------
+
+Witnesses:
+--------------------------------------
+
+--------------------------------------
+
