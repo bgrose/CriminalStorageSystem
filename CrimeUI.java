@@ -354,7 +354,7 @@ public class CrimeUI {
             return;
         }
         if (crimeFacade.searchCrime(crimeName)) {
-            System.out.println("The crime you're looking for is in library\n");
+            System.out.println("The crime you're looking for is in the library\n");
             String answer = getField("Would you like to print to a file");
             if (answer.equalsIgnoreCase("yes"))
                 crimeFacade.printCrimeFound(crimeName);
