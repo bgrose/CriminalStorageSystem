@@ -71,5 +71,19 @@
     "UUID": "ed37623c-c658-4737-b37f-57bd66895c7b",
     "Crime Date": "asdfg",
     "Witnesses": []
+  },
+  {
+    "Crime Description": "was at the front of the store when the suspect conducted his crime.  He said that the man came in with the gun, and Henry hid behind the cash register.  He saw him leaving in a blue mini-van.He was wearing a Gray hoodie, had shoulder length brown hair, and blue eyes",
+    "Related People": [
+      "f3e0ed5c-e2bc-4f93-b6aa-4bb3b4ed4e05"
+    ],
+    "Solved": false,
+    "Crime Case ID": "12345",
+    "Evidence List": [],
+    "UUID": "1d8cc067-c2b7-4b16-8a3d-8e4ab2d7a1d5",
+    "Crime Date": "3/3/20201",
+    "Witnesses": [
+      "a3ab5dde-1c60-4b2d-8e71-964d33f21901"
+    ]
   }
 ]

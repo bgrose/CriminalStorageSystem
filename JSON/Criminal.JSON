@@ -223,5 +223,30 @@
     "UUID": "916a884e-cc6c-44f1-b570-a30866e1336b",
     "Phone Number": "345-324-2354",
     "Age": 44
+  },
+  {
+    "Eye Color": "blue",
+    "Punishment": "None.",
+    "Jail Status": false,
+    "Address": "N",
+    "Living": false,
+    "Crimes Type": "None.",
+    "Tattoo": "no",
+    "Gender": "Male",
+    "Nationality": "american",
+    "Weight": 160.0,
+    "Name": "None",
+    "Disability": "no",
+    "Skin Color": "white",
+    "Hair Color": "brown hair",
+    "Alias": "None",
+    "Glasses": false,
+    "Acquantances": "n",
+    "Height": 69,
+    "Accomplaces": "n",
+    "Handness": "no",
+    "UUID": "f3e0ed5c-e2bc-4f93-b6aa-4bb3b4ed4e05",
+    "Phone Number": "n",
+    "Age": 18
   }
 ]
