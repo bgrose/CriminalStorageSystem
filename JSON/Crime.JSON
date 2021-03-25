@@ -29,5 +29,19 @@
       "85387c63-ec07-41bd-b0c4-85a42b28bca5",
       "1fd127fb-f903-49f7-85e5-3f1317df75bd"
     ]
+  },
+  {
+    "Crime Description": "Murder: burned family in a car",
+    "Related People": [
+      "dbaa5a5b-fcc9-4899-a4fb-0cb0d669d14c",
+      "495a547f-697d-4497-be45-92ced297923b",
+      "c43cb217-6697-4aaa-be1d-50f1f651c371"
+    ],
+    "Solved": false,
+    "Crime Case ID": "003",
+    "Evidence List": [],
+    "UUID": "2028dd4d-9acc-462f-a588-9f17ed58c768",
+    "Crime Date": "2/29/20",
+    "Witnesses": []
   }
 ]
