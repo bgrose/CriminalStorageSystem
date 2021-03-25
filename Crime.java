@@ -232,7 +232,7 @@ public class Crime {
                 + date;
         String suspects = "\nSuspects/Criminals:" + getSuspectString();
         String evidence = "\nEvidence:" + getEvidenceString();
-        String witness = "\nWitnesses:" + getWitnessString();
+        String witness = "\nWitnesses/Victims:" + getWitnessString();
         ;
 
         ret = ret.concat(suspects).concat(evidence).concat(witness);
