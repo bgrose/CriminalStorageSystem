@@ -1,0 +1,75 @@
+Name: bradley 
+Living Status: true
+Gender: Male
+Address: 315 Arden Ave
+Phone Number: 5556275
+Alias: none
+Accomplice: none
+Hair Color: black
+Eye Color: blue
+Tatoo: orange
+Skin Color: white
+Nationality: American
+Weight: 180.0
+Height: 74
+Acquaintance: none
+Age: 30
+Glasses: true
+Punishment: None.
+Disability: none
+Handness: right
+Crime Type: None.
+In Jail: false
+
+--------------------------------------
+
+Name: alston
+Living Status: true
+Gender: Male
+Address: 2121 savage road
+Phone Number: 7088290990
+Alias: sniper
+Accomplice: black widow
+Hair Color: black
+Eye Color: red
+Tatoo: none
+Skin Color: black
+Nationality: American
+Weight: 160.0
+Height: 74
+Acquaintance: none
+Age: 30
+Glasses: false
+Punishment: None.
+Disability: broken arm
+Handness: left
+Crime Type: None.
+In Jail: false
+
+--------------------------------------
+
+Name: JJ Shepard
+Living Status: true
+Gender: Male
+Address: 1012 Blossom Streeet
+Phone Number: 911
+Alias: THE PROFESSOR
+Accomplice: portiaportia
+Hair Color: black
+Eye Color: green
+Tatoo: dragon
+Skin Color: white
+Nationality: italian
+Weight: 120.0
+Height: 74
+Acquaintance: none
+Age: 30
+Glasses: true
+Punishment: None.
+Disability: none
+Handness: right
+Crime Type: None.
+In Jail: false
+
+--------------------------------------
+

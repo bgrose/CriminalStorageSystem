@@ -94,8 +94,8 @@ public class CrimeFacade {
     }
 
     /**
-     * 
-     * @param res
+     * Prints the Results to a the terminal
+     * @param res list of suspects
      */
     public void printResTerminal(ArrayList<Suspects> res) {
         for (Suspects suspect : res) {
@@ -104,8 +104,8 @@ public class CrimeFacade {
     }
 
     /**
-     * 
-     * @param res
+     * Prints the Results to a file
+     * @param res list of suspects
      */
     public void printResFile(ArrayList<Suspects> res) {
         try {
