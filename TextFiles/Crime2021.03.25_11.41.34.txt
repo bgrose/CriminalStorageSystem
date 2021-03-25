@@ -1,0 +1,71 @@
+
+Case ID: XXX
+Description: Armed Robbery
+Solved: false
+Date: 3/22/2021
+Suspects/Criminals:
+--------------------------------------
+Name: Unknown
+Living Status: true
+Gender: Male
+Address: Unknown
+Phone Number: Unknown
+Alias: unkown
+Accomplice: Unknown
+Hair Color: Black
+Eye Color: Brown
+Tatoo: None
+Skin Color: White
+Nationality: American
+Weight: 160.0
+Height: 71
+Acquaintance: Unknown
+Age: 32
+Glasses: true
+Punishment: None.
+Disability: None
+Handness: Right
+Crime Type: None.
+In Jail: false
+
+--------------------------------------
+
+--------------------------------------
+
+Evidence:
+--------------------------------------
+Name: Finger Prints from counter
+Description: Finger prints collected by the cash register when money was demanded
+--------------------------------------
+Name: Security Footage
+Description: Security Footage showing at 7:54 an armed man coming into the store
+--------------------------------------
+Name: Bullet Shet
+Description: A Bullet Shell from a handgun
+--------------------------------------
+
+--------------------------------------
+
+Witnesses:
+--------------------------------------
+Name: John Brown
+Living Status: true
+Gender: Male
+Address: 231 Columbiana Ave
+Phone Number: 325-324-2345
+Statement: Saw a man with a gun walk in front and hold cashier at gun point
+Is a Victim: false
+
+--------------------------------------
+Name: Luke Walker
+Living Status: true
+Gender: Male
+Address: 21324 Bull St
+Phone Number: 342-325-3245
+Statement: Was Cashier Held at Gunpoint in gas station
+Is a Victim: true
+
+--------------------------------------
+
+--------------------------------------
+
