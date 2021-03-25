@@ -412,7 +412,7 @@ public class Suspects extends Person {
     }
 
     /**
-     * Prints to Suspect to a file
+     * Method that prints to Suspect to a file
      */
     public void suspectToFile() {
         try {

@@ -131,13 +131,12 @@ public class CrimeFacade {
     }
 
     /**
-     * 
-     * @param command
-     * @param results
-     * @param term
-     * @return
+     * Method that allows you to searh for a criminal by trait
+     * @param command Int of the trait they want to search for
+     * @param term String of the trait they want to search for
+     * @return ArrayList<Sispects> of the criminals with the trait searched
      */
-    public ArrayList<Suspects> searchCriminal(int command, ArrayList<Suspects> results, String term) {
+    public ArrayList<Suspects> searchCriminal(int command,  String term) {
         ArrayList<Suspects> ret = new ArrayList<Suspects>();
         switch (command) {
         case (1):
@@ -350,7 +349,7 @@ public class CrimeFacade {
     }
 
     /**
-     * Adds a suspect to the database
+     * Method that adds a suspect to the database
      * @param suspect Suspect to add
      */
     public void addSuspect(Suspects suspect) {
@@ -358,7 +357,7 @@ public class CrimeFacade {
     }
 
     /**
-     * Prints the Crime to a File
+     * Method that prints the Crime to a File
      * @param name String of Crime Case ID
      */
     public void printCrimeFound(String name) {
@@ -371,7 +370,7 @@ public class CrimeFacade {
     }
 
     /**
-     * Prints out the Crime to Terminal
+     * Method that prints out the Crime to Terminal
      * @param name Name of the Crime String
      */
     public void printCrimeTerminal(String name) {

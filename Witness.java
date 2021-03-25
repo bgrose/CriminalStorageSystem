@@ -64,7 +64,7 @@ public class Witness extends Person {
     }
 
     /**
-     * Sets the Boolean if a Victim
+     * Method that sets the Boolean if a Victim
      * @param isVictem Boolean of true if victim
      */
     public void setIsVictem(boolean isVictem) {
@@ -72,7 +72,7 @@ public class Witness extends Person {
     }
 
     /**
-     * Gets the Boolean of if they are victim
+     * Method that gets the Boolean of if they are victim
      * @return true if they are a victim
      */
     public boolean getisVictem() {

@@ -8,14 +8,14 @@ import java.util.ArrayList;
 
 public class CrimeUI {
 
-    private static final String WELCOME_MSG = "Welcome to the Criminal Storage System!: Please login or create an account.";
-    private String[] menuOptions = { "Add Crime", "Search Crime", "Print Crimes", "Search Criminal", "Print Criminals",
+    private static final String WELCOME_MSG = "Welcome to the Criminal Storage System! Please login or create an account.";
+    private String[] menuOptions = { "Add Crime", "Search Crime", "Print Crimes", "Search Criminals", "Print Criminals",
             "Logout" };
-    private String[] AdminMenuOptions = { "Add Crime", "Search Crime", "Print Crimes", "Search Criminal",
+    private String[] AdminMenuOptions = { "Add Crime", "Search Crime", "Print Crimes", "Search Criminals",
             "Print Criminals", "Remove Crime", "Add User", "Remove User", "Logout" };
     private String[] criminalSearchOptions = { "Name", "Living Status", "UUID", "Gender", "Address", "Phone Number",
             "Alias", "Accomplice", "Hair Color", "Eye Color", "Tatoo", "Skin Color", "Nationality", "Weight", "Height",
-            "Aquaintance", "Age", "Glasses", "Punishment", "Disability", "InJail", "Address" };
+            "Aquaintance", "Age", "Glasses", "Punishment", "Disability", "In Jail", "Address" };
     private Scanner scanner;
     private CrimeFacade crimeFacade;
 
@@ -42,7 +42,7 @@ public class CrimeUI {
                 int command = getCommand(AdminMenuOptions.length);
 
                 if (command == -1) {
-                    System.out.println("Not a valid option");
+                    System.out.println("Not a valid option.");
                     continue;
                 }
 
@@ -86,7 +86,7 @@ public class CrimeUI {
                 int command = getCommand(menuOptions.length);
 
                 if (command == -1) {
-                    System.out.println("Not a valid option");
+                    System.out.println("Not a valid option.");
                     continue;
                 }
 
@@ -163,7 +163,7 @@ public class CrimeUI {
      */
     private void createAccount() {
         String userName = getField("Username");
-        String password = getField("Passord");
+        String password = getField("Password");
         String name = getField("Name");
         String position = getField("Position");
         UserDatabase uDatabase = UserDatabase.getInstance();
@@ -178,10 +178,10 @@ public class CrimeUI {
             }
         }
         if (userNameUsed) {
-            System.out.println("Sorry, an account with that username already exits");
+            System.out.println("Sorry, an account with that username already exits.");
         } else {
             crimeFacade.createAccount(userName, password, name, position, isAdmin);
-            System.out.println("You have successfully created an account");
+            System.out.println("You have successfully created an account!");
         }
     }
 
@@ -201,7 +201,7 @@ public class CrimeUI {
                 System.out.println("Welcome " + currentUser.getName() + "!");
                 return UserDatabase.getInstance().getUser(username, password);
             } else {
-                System.out.println("Sorry, invalid username or password");
+                System.out.println("Sorry, invalid username or password.");
             }
 
         }
@@ -223,19 +223,19 @@ public class CrimeUI {
      */
     private void addCrime() {
         System.out.println("\n------------- Adding a Crime -------------");
-        String caseID = getField("Please Enter the Case ID");
-        String date = getField("Please Enter the Date of the Crime");
-        String description = getField("Please Enter a Description");
-        String solvedString = getField("Has This Case been Solved(y/n)");
+        String caseID = getField("Please enter the case ID");
+        String date = getField("Please enter the date of the crime");
+        String description = getField("Please enter a description");
+        String solvedString = getField("Has this case been solved? (y/n)");
         boolean solved = false;
         if (solvedString.equals("y")) {
             solved = true;
         }
-        int num = Integer.valueOf(getField("How many Witnesses are there"));
+        int num = Integer.valueOf(getField("How many witnesses are there?"));
         ArrayList<Witness> witness = createWitnessList(num);
-        num = Integer.valueOf(getField("How many Evidence items are there"));
+        num = Integer.valueOf(getField("How many evidence items are there?"));
         ArrayList<Evidence> evidenceList = createEvidenceList(num);
-        num = Integer.valueOf(getField("How many Suspects are there"));
+        num = Integer.valueOf(getField("How many suspects are there?"));
         ArrayList<Suspects> suspect = createSuspectList(num);
         Crime crime = new Crime(evidenceList, suspect, witness, description, caseID, solved, date);
         crimeFacade.addCrime(crime);
@@ -249,21 +249,21 @@ public class CrimeUI {
     private ArrayList<Witness> createWitnessList(int num) {
         ArrayList<Witness> witnessList = new ArrayList<Witness>();
         for (int i = 0; i < num; i++) {
-            String name = getField("Please Enter the " + (i + 1) + " Witness Name");
-            String gender = getField("Please Enter the " + (i + 1) + " Witness Gender");
-            String address = getField("Please Enter any of the " + (i + 1) + " Witness Address");
-            String phone = getField("Please Enter any of the " + (i + 1) + " Witness Phone Number");
+            String name = getField("Please enter the " + (i + 1) + " Witness Name");
+            String gender = getField("Please enter the " + (i + 1) + " Witness Gender");
+            String address = getField("Please enter any of the " + (i + 1) + " Witness Address");
+            String phone = getField("Please enter any of the " + (i + 1) + " Witness Phone Number");
             String answer = getField("Is the " + (i + 1) + " Witness Living(y/n");
             boolean livingStatus = true;
             if (answer.equals("n")) {
                 livingStatus = false;
             }
-            answer = getField("Is the " + (i + 1) + " Witness a Victim(y/n");
+            answer = getField("Is the " + (i + 1) + " witness a victim? (y/n");
             boolean isVictem = true;
             if (answer.equals("n")) {
                 isVictem = false;
             }
-            String statement = getField("Please Enter the " + (i + 1) + " Witness Statement");
+            String statement = getField("Please enter the " + (i + 1) + " Witness Statement");
             Witness witness = new Witness(name, livingStatus, statement, gender, isVictem, address, phone);
             witnessList.add(witness);
         }
@@ -279,7 +279,7 @@ public class CrimeUI {
         ArrayList<Suspects> suspectList = new ArrayList<Suspects>();
         for (int i = 0; i < num; i++) {
             String name = getField("Please Enter the " + (i + 1) + " Suspect Name");
-            String answer = getField("Is the " + (i + 1) + " Suspect Living(y/n");
+            String answer = getField("Is the " + (i + 1) + " Suspect Living? (y/n");
             String gender = getField("Please Enter the " + (i + 1) + " Suspect Gender");
             boolean livingStatus = true;
             if (answer.equals("n")) {
@@ -300,16 +300,16 @@ public class CrimeUI {
             int height = Integer
                     .valueOf(getField("Please Enter the " + (i + 1) + " Suspect height or an estimate in inches"));
             int age = Integer.valueOf(getField("Please Enter the " + (i + 1) + " Suspect age or an estimate in years"));
-            answer = getField("Does the " + (i + 1) + " Suspect wear glasses (y/n)");
+            answer = getField("Does the " + (i + 1) + " Suspect wear glasses? (y/n)");
             boolean glasses = true;
             if (answer.equals("n")) {
                 glasses = false;
             }
             String disability = getField("Please Enter the " + (i + 1) + " Suspects Disability if any");
             String handness = getField("Please Enter the " + (i + 1) + " Suspects Handness");
-            answer = getField("Has Suspect " + (i + 1) + " Been arrested/charged(y/n)");
+            answer = getField("Has Suspect " + (i + 1) + " been arrested/charged? (y/n)");
             String punishment, crimeType;
-            Boolean inJail = Boolean.valueOf(getField("Is " + (i + 1) + " Suspects In Jail?"));
+            Boolean inJail = Boolean.valueOf(getField("Is " + (i + 1) + " Suspect In Jail?"));
             if (answer.equals("y")) {
                 punishment = getField("Please Enter the " + (i + 1) + " Criminal Punishment");
                 crimeType = getField("Please Enter the " + (i + 1) + " Criminal Crime Charge");
@@ -358,12 +358,12 @@ public class CrimeUI {
             String answer = getField("Would you like to print to a file");
             if (answer.equalsIgnoreCase("yes"))
                 crimeFacade.printCrimeFound(crimeName);
-            answer = getField("Would you like to print to terminal");
+            answer = getField("Would you like to print to terminal?");
             if (answer.equalsIgnoreCase("yes"))
                 crimeFacade.printCrimeTerminal(crimeName);
             return;
         } else {
-            System.out.println("Sorry, the crime you are looking for is not in the library\n");
+            System.out.println("Sorry, the crime you are looking for is not in the library.\n");
         }
     }
 
@@ -388,7 +388,7 @@ public class CrimeUI {
             for (int i = 0; i < criminalSearchOptions.length; i++) {
                 System.out.println((i + 1) + ". " + criminalSearchOptions[i]);
             }
-            System.out.print("By what criteria would you like to search by?: \n");
+            System.out.print("What criteria would you like to search by?: \n");
 
             String input = scanner.nextLine();
             int command = Integer.parseInt(input);
@@ -398,18 +398,18 @@ public class CrimeUI {
             if (command <= 0 || command > criminalSearchOptions.length) {
                 System.out.println("Not a valid search option");
             }
-            results = crimeFacade.searchCriminal(command, results, term);
+            results = crimeFacade.searchCriminal(command, term);
 
             System.out.println("There were " + results.size() + " results.");
             if (results.size() == 0)
                 break;
-            String answerFileString = getField("Would you like to print results to a file (y/n)");
+            String answerFileString = getField("Would you like to print results to a file? (y/n)");
             if (answerFileString.equals("y"))
                 crimeFacade.printResFile(results);
-            String answerTerminalString = getField("Would you like to print results to terminal(y/n)");
+            String answerTerminalString = getField("Would you like to print results to terminal? (y/n)");
             if (answerTerminalString.equals("y"))
                 crimeFacade.printResTerminal(results);
-            String answerString = getField("Would you like to search further (y/n)");
+            String answerString = getField("Would you like to search further? (y/n)");
             if (answerString.equals("n"))
                 break;
         }

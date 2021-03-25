@@ -162,7 +162,7 @@ public class User {
     }
 
     /**
-     * Sets the UUID Value for User
+     * Method that sets the UUID Value for User
      * @param UUID unique UUID
      */
     public void setUUID(UUID UUID) {
@@ -170,7 +170,7 @@ public class User {
     }
 
     /**
-     * Returns the Unique ID
+     * Method that returns the Unique ID
      * @return the UUID Value
      */
     public UUID getUUID() {
