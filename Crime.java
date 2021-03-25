@@ -136,7 +136,7 @@ public class Crime {
     }
 
     /**
-     * Method that gets the people involved list
+     * Method that gets the people involved list.
      * @return ArrayList of people involved in the crime
      */
     public ArrayList<Suspects> getPersonList() {
