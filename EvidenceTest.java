@@ -1,7 +1,7 @@
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.ArrayList;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,18 +19,23 @@ public class EvidenceTest {
     }
 
     /**
-     * Tested by: Passed:
+     * Tested by: Bradley Grose
+     * Passed: True
      */
     @Test
     void testEvidence() {
-
+        Evidence test = new Evidence("Test", "Test");
+        assertEquals(test.getName(), "Test");
     }
 
     /**
-     * Tested by: Passed:
+     * Tested by: Bradley Grose
+     * Passed: True
      */
     @Test
     void testToString() {
-
+        Evidence test = new Evidence("Test", "Test");
+        String ret = test.toString();
+        assertTrue(ret.contains("Name:"));
     }
 }
