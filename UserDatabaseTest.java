@@ -1,4 +1,3 @@
-package Tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,7 +7,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class SuspectTest {
+public class UserDatabaseTest {
 	@BeforeEach
 	public void setup() {
 
@@ -23,7 +22,7 @@ public class SuspectTest {
 	 * Tested by: Passed:
 	 */
 	@Test
-	void testSuspect() {
+	void testGetUser() {
 
 	}
 
@@ -31,7 +30,31 @@ public class SuspectTest {
 	 * Tested by: Passed:
 	 */
 	@Test
-	void testToString() {
+	void testAddUser() {
+
+	}
+
+	/**
+	 * Tested by: Passed:
+	 */
+	@Test
+	void testRemoveUser() {
+
+	}
+
+	/**
+	 * Tested by: Passed:
+	 */
+	@Test
+	void testGetInstance() {
+
+	}
+
+	/**
+	 * Tested by: Passed:
+	 */
+	@Test
+	void testUserDatabase() {
 
 	}
 }

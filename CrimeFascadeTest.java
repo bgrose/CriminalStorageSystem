@@ -1,4 +1,3 @@
-package Tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,7 +7,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class DataWriterTest {
+public class CrimeFascadeTest {
     @BeforeEach
     public void setup() {
 
@@ -23,7 +22,7 @@ public class DataWriterTest {
      * Tested by: Passed:
      */
     @Test
-    void testDataUpdate() {
+    void testCrimeFascade() {
 
     }
 
@@ -31,7 +30,7 @@ public class DataWriterTest {
      * Tested by: Passed:
      */
     @Test
-    void testSaveUsers() {
+    void testLogin() {
 
     }
 
@@ -39,7 +38,7 @@ public class DataWriterTest {
      * Tested by: Passed:
      */
     @Test
-    void testGetUserJSON() {
+    void TestAddCrime() {
 
     }
 
@@ -47,7 +46,7 @@ public class DataWriterTest {
      * Tested by: Passed:
      */
     @Test
-    void testSaveCrimes() {
+    void testSearchCrime() {
 
     }
 
@@ -55,7 +54,7 @@ public class DataWriterTest {
      * Tested by: Passed:
      */
     @Test
-    void testGetCrimeJson() {
+    void testPrintCrimes() {
 
     }
 
@@ -63,7 +62,7 @@ public class DataWriterTest {
      * Tested by: Passed:
      */
     @Test
-    void testSaveEvidence() {
+    void testPrintResTerminal() {
 
     }
 
@@ -71,7 +70,7 @@ public class DataWriterTest {
      * Tested by: Passed:
      */
     @Test
-    void testSaveSuspect() {
+    void testSearchCriminal() {
 
     }
 
@@ -79,7 +78,7 @@ public class DataWriterTest {
      * Tested by: Passed:
      */
     @Test
-    void testSaveWitness() {
+    void testPrintCriminal() {
 
     }
 
@@ -87,7 +86,7 @@ public class DataWriterTest {
      * Tested by: Passed:
      */
     @Test
-    void testSavePersons() {
+    void testAddUser() {
 
     }
 
@@ -95,8 +94,31 @@ public class DataWriterTest {
      * Tested by: Passed:
      */
     @Test
-    void testGetSuspectJSON() {
+    void testRemoveUser() {
 
     }
 
+    /**
+     * Tested by: Passed:
+     */
+    @Test
+    void testLogout() {
+
+    }
+
+    /**
+     * Tested by: Passed:
+     */
+    @Test
+    void testFindOfficer() {
+
+    }
+
+    /**
+     * Tested by: Passed:
+     */
+    @Test
+    void testPrintCrimeTerminal() {
+
+    }
 }

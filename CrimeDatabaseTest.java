@@ -1,4 +1,3 @@
-package Tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,7 +7,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class PersonDatabaseTest {
+public class CrimeDatabaseTest {
+
     @BeforeEach
     public void setup() {
 
@@ -23,7 +23,7 @@ public class PersonDatabaseTest {
      * Tested by: Passed:
      */
     @Test
-    void testPerson() {
+    void testAddCrime() {
 
     }
 
@@ -31,7 +31,32 @@ public class PersonDatabaseTest {
      * Tested by: Passed:
      */
     @Test
-    void testToString() {
+    void testRemoveCrime() {
 
     }
+
+    /**
+     * Tested by: Passed:
+     */
+    @Test
+    void testPrintDatabase() {
+
+    }
+
+    /**
+     * Tested by: Passed:
+     */
+    @Test
+    void testgetInstance() {
+
+    }
+
+    /**
+     * Tested by: Passed:
+     */
+    @Test
+    void testCrimeDatabase() {
+
+    }
+
 }
