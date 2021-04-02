@@ -22,7 +22,7 @@ public class PersonDatabaseTest {
      * Tested by: Passed:
      */
     @Test
-    void testPerson() {
+    void testAddPerson() {
 
     }
 
@@ -30,7 +30,32 @@ public class PersonDatabaseTest {
      * Tested by: Passed:
      */
     @Test
-    void testToString() {
+    void testRemovePerson() {
 
     }
+
+    /**
+     * Tested by: Passed:
+     */
+    @Test
+    void testPrintDatabase() {
+
+    }
+
+    /**
+     * Tested by: Passed:
+     */
+    @Test
+    void testGetInstance() {
+
+    }
+
+    /**
+     * Tested by: Passed:
+     */
+    @Test
+    void testPersonDatabase() {
+
+    }
+
 }

@@ -1,13 +1,12 @@
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.ArrayList;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class PersonTest {
+
     @BeforeEach
     public void setup() {
 
@@ -18,44 +17,27 @@ public class PersonTest {
 
     }
 
-    /**
-     * Tested by: Passed:
-     */
-    @Test
-    void testAddPerson() {
+    	/**
+	 * Tested by: Bradley Grose
+	 * Passed: True
+	 */
+	@Test
+	void testPerson() {
+        //Using Witness as it will call super
+		Witness test = new Witness("name", true, "test", "test", false, "address", "phone");
+		assertEquals(test.getName(), "name");
+	}
 
-    }
-
-    /**
-     * Tested by: Passed:
-     */
-    @Test
-    void testRemovePerson() {
-
-    }
-
-    /**
-     * Tested by: Passed:
-     */
-    @Test
-    void testPrintDatabase() {
-
-    }
-
-    /**
-     * Tested by: Passed:
-     */
-    @Test
-    void testGetInstance() {
-
-    }
-
-    /**
-     * Tested by: Passed:
-     */
-    @Test
-    void testPersonDatabase() {
-
-    }
+	/**
+	 * Tested by: Bradley Grose
+	 * Passed: True
+	 */
+	@Test
+	void testToString() {
+        //Using Witness as it will call super
+		Witness test = new Witness("name", true, "test", "test", false, "address", "phone");
+		String ret = test.toString();
+        assertTrue(ret.contains("Name:"));
+	}
 
 }

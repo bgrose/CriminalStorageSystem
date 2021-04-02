@@ -10,7 +10,7 @@ public class CrimeDatabaseTest {
 
     @BeforeEach
     public void setup() {
-
+        
     }
 
     @AfterEach

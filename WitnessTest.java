@@ -34,6 +34,6 @@ public class WitnessTest {
 	void testToString() {
 		Witness test = new Witness("name", true, "test", "test", false, "address", "phone");
 		String ret = test.toString();
-        assertTrue(ret.contains("Name:"));
+        assertTrue(ret.contains("Statement:"));
 	}
 }
