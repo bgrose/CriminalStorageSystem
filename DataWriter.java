@@ -32,6 +32,7 @@ public class DataWriter extends DataConstants {
     public static void saveUsers() {
         ArrayList<User> userList = UserDatabase.getInstance().getDatabase();
         JSONArray jsonUsers = new JSONArray();
+        if(userList != null) {
         for (int i = 0; i < userList.size(); i++) {
             jsonUsers.add(getUserJSON(userList.get(i)));
         }
@@ -46,6 +47,7 @@ public class DataWriter extends DataConstants {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
     }
 
     /**
@@ -77,7 +79,7 @@ public class DataWriter extends DataConstants {
         // Create Sub JSON
         JSONArray jsonWitness = new JSONArray();
         JSONArray jsonEvidence = new JSONArray();
-
+        if(crimeList != null) {
         for (int i = 0; i < crimeList.size(); i++) {
             jsonCrimes.add(getCrimeJSON(crimeList.get(i), jsonEvidence, jsonWitness));
         }
@@ -113,6 +115,7 @@ public class DataWriter extends DataConstants {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
     }
 
     /**

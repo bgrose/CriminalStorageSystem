@@ -86,7 +86,7 @@ public class DataLoader extends DataConstants {
             e.printStackTrace();
         }
 
-        return null;
+        return crimes;
 
     }
 
@@ -120,7 +120,7 @@ public class DataLoader extends DataConstants {
             e.printStackTrace();
         }
 
-        return null;
+        return users;
     }
 
     /**
@@ -172,7 +172,7 @@ public class DataLoader extends DataConstants {
             e.printStackTrace();
         }
 
-        return null;
+        return Persons;
     }
 
     /**
@@ -200,7 +200,7 @@ public class DataLoader extends DataConstants {
             e.printStackTrace();
         }
 
-        return null;
+        return evidence;
     }
 
     /**
@@ -233,7 +233,7 @@ public class DataLoader extends DataConstants {
             e.printStackTrace();
         }
 
-        return null;
+        return witnessList;
     }
 
 }

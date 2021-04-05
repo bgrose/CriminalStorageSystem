@@ -23,7 +23,8 @@ public class DataWriterTest {
      */
     @Test
     void testDataUpdate() {
-
+            DataWriter.DataUpdate();
+            assertEquals(true, true);
     }
 
     /**
