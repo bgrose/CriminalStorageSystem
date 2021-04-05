@@ -1,41 +1,41 @@
 [
   {
-    "Address": "325-324-2345",
+    "Address": "231 Columbiana Ave",
     "Living": true,
     "Statement": "Saw a man with a gun walk in front and hold cashier at gun point",
     "Gender": "Male",
     "UUID": "85387c63-ec07-41bd-b0c4-85a42b28bca5",
-    "Phone Number": "231 Columbiana Ave",
+    "Phone Number": "325-324-2345",
     "Is a Victim": false,
     "Name": "John Brown"
   },
   {
-    "Address": "342-325-3245",
+    "Address": "21324 Bull St",
     "Living": true,
     "Statement": "Was Cashier Held at Gunpoint in gas station",
     "Gender": "Male",
     "UUID": "1fd127fb-f903-49f7-85e5-3f1317df75bd",
-    "Phone Number": "21324 Bull St",
+    "Phone Number": "342-325-3245",
     "Is a Victim": true,
     "Name": "Luke Walker"
   },
   {
-    "Address": "123 Gervais St Columbia SC 29210",
+    "Address": "803-898-7766",
     "Living": false,
     "Statement": "was at the front of the store when the suspect conducted his crime.  He said that the man came in with the gun, and Henry hid behind the cash register.  He saw him leaving in a blue mini-van. He was wearing a gray houodie, brown hair, and blue eyes",
     "Gender": "Male",
     "UUID": "6f63aabb-2c9b-4734-9cf4-7b300f748d14",
-    "Phone Number": "803-898-7766",
+    "Phone Number": "123 Gervais St Columbia SC 29210",
     "Is a Victim": true,
     "Name": "Henry Clemont"
   },
   {
-    "Address": "123 Gervais St., Columbia SC, 29210\\",
+    "Address": "803-898-7766",
     "Living": true,
     "Statement": "was at the front of the store when the suspect conducted his crime.  He said that the man came in with the gun, and Henry hid behind the cash register.  He saw him leaving in a blue mini-van.",
     "Gender": "Male",
     "UUID": "a3ab5dde-1c60-4b2d-8e71-964d33f21901",
-    "Phone Number": "803-898-7766",
+    "Phone Number": "123 Gervais St., Columbia SC, 29210\\",
     "Is a Victim": true,
     "Name": "Henry Clemont"
   }
