@@ -13,7 +13,7 @@ public class DataConstants {
     protected static final String CRIME_WITNESSLIST = "Witnesses";
     protected static final String CRIME_SOLVED = "Solved";
     protected static final String CRIME_UUID = "UUID";
-    protected static final String CRIME_FILE_NAME = "JSON/Crime.JSON";
+    protected static final String CRIME_FILE_NAME = "Crime.JSON";
 
     // Criminal
     protected static final String CRIMINAL_ACCOMPLACE = "Accomplaces";
@@ -39,7 +39,7 @@ public class DataConstants {
     protected static final String CRIMINAL_UUID = "UUID";
     protected static final String CRIMINAL_WEIGHT = "Weight";
     protected static final String CRIMINAL_GENDER = "Gender";
-    protected static final String CRIMINAL_FILE_NAME = "JSON/Criminal.JSON";
+    protected static final String CRIMINAL_FILE_NAME = "Criminal.JSON";
     protected static final String CRIMINAL_ADRESS = "Address";
     protected static final String CRIMINAL_PHONE = "Phone Number";
 
@@ -47,7 +47,7 @@ public class DataConstants {
     protected static final String EVIDENCE_DESCRIPTION = "Description";
     protected static final String EVIDENCE_NAME = "Name";
     protected static final String EVIDENCE_UUID = "UUID";
-    protected static final String EVIDENCE_FILE_NAME = "JSON/Evidence.JSON";
+    protected static final String EVIDENCE_FILE_NAME = "Evidence.JSON";
 
     // User
     protected static final String USER_ADMIN = "Admin";
@@ -56,7 +56,7 @@ public class DataConstants {
     protected static final String USER_POSITION = "Position";
     protected static final String USER_USERNAME = "Username";
     protected static final String USER_UUID = "UUID";
-    protected static final String USER_FILE_NAME = "JSON/User.JSON";
+    protected static final String USER_FILE_NAME = "User.JSON";
 
     // Witness
     protected static final String WITNESS_CRIME_LIST = "Crime List";
@@ -64,7 +64,7 @@ public class DataConstants {
     protected static final String WITNESS_NAME = "Name";
     protected static final String WITNESS_STATEMENT = "Statement";
     protected static final String WITNESS_UUID = "UUID";
-    protected static final String WITNESS_FILE_NAME = "JSON/Witness.JSON";
+    protected static final String WITNESS_FILE_NAME = "Witness.JSON";
     protected static final String WITNESS_GENDER = "Gender";
     protected static final String WITNESS_ISVICTEM = "Is a Victim";
     protected static final String WITNESS_ADRESS = "Address";
