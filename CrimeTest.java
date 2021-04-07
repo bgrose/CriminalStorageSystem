@@ -8,6 +8,18 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class CrimeTest {
+
+
+    Crime crime = new Crime();
+    private ArrayList<Evidence> evidenceList =
+    private ArrayList<Suspects> personList = 
+    private ArrayList<Witness> witnessList = 
+    private String description;
+    private String caseID;
+    private Boolean solved;
+    private String date;
+    private UUID uuid;
+
     @BeforeEach
     public void setup() {
 

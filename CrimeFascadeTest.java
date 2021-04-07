@@ -8,14 +8,30 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class CrimeFascadeTest {
+
+    private CrimeDatabase crimeDatabase = CrimeDatabase.getInstance();
+    private UserDatabase userDatabase = UserDatabase.getInstance();
+    private PersonDatabase personDatabase = PersonDatabase.getInstance();
+    private CrimeFacade facade = new CrimeFacade();
+
     @BeforeEach
     public void setup() {
-
+        userDatabase.getInstance().getDatabase().clear();
+        crimeDatabase.getInstance().getDatabase().clear();
+        personDatabase.getInstance().getDatabase().clear();
+        DataWriter.saveCrimes();
+        DataWriter.saveUsers();
+        DataWriter.savePersons();
     }
 
     @AfterEach
     public void tearDown() {
-
+        userDatabase.getInstance().getDatabase().clear();
+        crimeDatabase.getInstance().getDatabase().clear();
+        personDatabase.getInstance().getDatabase().clear();
+        DataWriter.saveCrimes();
+        DataWriter.saveUsers();
+        DataWriter.savePersons();
     }
 
     /**
@@ -23,16 +39,29 @@ public class CrimeFascadeTest {
      */
     @Test
     void testCrimeFascade() {
-
+        
     }
 
     /**
      * Tested by: Passed:
      */
     @Test
-    void testLogin() {
-
+    void testValidLogin() {
+        facade.createAccount("Test", "Password", "Test User", "Officer", true);
+        facade.login("Test", "Password");
+        User me = facade.getCurrentUser();
+        assertEquals("Test User", me.getName();
     }
+     /**
+     * Tested by: Passed:
+     */
+    @Test
+    void testInValidLogin() {
+        facade.createAccount("Test", "Password", "Test User", "Officer", true);
+        boolean login = facade.login("Password", "Test");
+        assertFalse(login);
+    }
+    
 
     /**
      * Tested by: Passed:
