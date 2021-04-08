@@ -111,8 +111,8 @@ public class DataWriterTest {
                 "nationality", 100, 100, "acquaintance", 1, true, "punishment", "disability", "handness", "crimeType",
                 true, "Gender", "address", "phone"));
         crimeList.add(new Crime(null, suspects, null, "description", "caseID", false, "date"));
-        DataWriter.saveCrimes(); // Calls Evidence
-        assertEquals("name", DataLoader.getCrimes().get(0).getPersonList().get(0).getName());
+        DataWriter.savePersons(); // Calls Evidence
+        assertEquals("name", DataLoader.getPerson().get(0).getName());
     }
 
     /**

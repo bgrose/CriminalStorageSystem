@@ -8,12 +8,12 @@ import org.junit.jupiter.api.Test;
 public class WitnessTest {
 	@BeforeEach
 	public void setup() {
-
+		//Intentionally Empty
 	}
 
 	@AfterEach
 	public void tearDown() {
-
+		//Intentionally Empty
 	}
 
 	/**
