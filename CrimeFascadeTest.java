@@ -43,17 +43,19 @@ public class CrimeFascadeTest {
     }
 
     /**
-     * Tested by: Passed:
+     * Tested by: David Keen
+     * Passed: Passed
      */
     @Test
     void testValidLogin() {
         facade.createAccount("Test", "Password", "Test User", "Officer", true);
         facade.login("Test", "Password");
         User me = facade.getCurrentUser();
-        assertEquals("Test User", me.getName();
+        assertEquals("Test User", me.getName());
     }
      /**
-     * Tested by: Passed:
+     * Tested by: David Keen
+     * Passed: True
      */
     @Test
     void testInValidLogin() {
