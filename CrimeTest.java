@@ -10,15 +10,7 @@ import org.junit.jupiter.api.Test;
 public class CrimeTest {
 
 
-    Crime crime = new Crime();
-    private ArrayList<Evidence> evidenceList =
-    private ArrayList<Suspects> personList = 
-    private ArrayList<Witness> witnessList = 
-    private String description;
-    private String caseID;
-    private Boolean solved;
-    private String date;
-    private UUID uuid;
+    Crime crime = new Crime(null, null, null, "description", "caseID", false, "date");
 
     @BeforeEach
     public void setup() {
@@ -31,11 +23,13 @@ public class CrimeTest {
     }
 
     /**
-     * Tested by: Passed:
+     * Tested by: David Keen
+     * Passed: True
      */
     @Test
     void TestCrime() {
-
+        Crime testCrime = new Crime(null, null, null, "description", "caseID", false, "date");
+        assertEquals("date", testCrime.getDate());
     }
 
     /**
