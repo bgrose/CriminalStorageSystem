@@ -7,15 +7,23 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class CrimeDatabaseTest {
+    
+    private static CrimeDatabase crimeDatabase;
+    private CrimeDatabase crimes = CrimeDatabase.getInstance();
+    private ArrayList<Crime> crimeList = crimes.getDatabase();
 
     @BeforeEach
     public void setup() {
-        
+        crimeList.clear();
+        DataWriter.saveUsers();
+        DataWriter.saveCrimes();
     }
 
     @AfterEach
     public void tearDown() {
-
+        crimeDatabase.getInstance().getDatabase().clear();
+        DataWriter.saveUsers();
+        DataWriter.saveCrimes();
     }
 
     /**
@@ -23,7 +31,9 @@ public class CrimeDatabaseTest {
      */
     @Test
     void testAddCrime() {
-
+        crimeList.add(new Crime(null, null, null, "description", "caseID", false, "date"));
+        DataWriter.saveCrimes();
+        ArrayList<Crime> crimesRet = DataLoader.getCrimes();
     }
 
     /**
@@ -31,6 +41,9 @@ public class CrimeDatabaseTest {
      */
     @Test
     void testRemoveCrime() {
+        crimeList.remove(new Crime(null, null, null, "description", "caseID", false, "date"));
+        DataWriter.saveCrimes();
+        ArrayList<Crime> crimesRet = DataLoader.getCrimes();
 
     }
 
