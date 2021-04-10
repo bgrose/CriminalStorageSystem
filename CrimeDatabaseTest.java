@@ -27,7 +27,8 @@ public class CrimeDatabaseTest {
     }
 
     /**
-     * Tested by: Passed:
+     * Tested by: David Morrison
+     * Passed:
      */
     @Test
     void testAddCrime() {
@@ -37,7 +38,8 @@ public class CrimeDatabaseTest {
     }
 
     /**
-     * Tested by: Passed:
+     * Tested by: David Morrison
+     * Passed: 
      */
     @Test
     void testRemoveCrime() {
