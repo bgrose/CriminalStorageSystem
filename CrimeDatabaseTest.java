@@ -33,6 +33,7 @@ public class CrimeDatabaseTest {
         crimeList.add(new Crime(null, null, null, "description", "caseID", false, "date"));
         DataWriter.saveCrimes();
         ArrayList<Crime> crimesRet = DataLoader.getCrimes();
+        assertEquals("description", crimeList.get(0));
     }
 
     /**
@@ -41,9 +42,11 @@ public class CrimeDatabaseTest {
      */
     @Test
     void testRemoveCrime() {
+        crimeList.add(new Crime(null, null, null, "description", "caseID", false, "date"));
         crimeList.remove(new Crime(null, null, null, "description", "caseID", false, "date"));
         DataWriter.saveCrimes();
         ArrayList<Crime> crimesRet = DataLoader.getCrimes();
+        assertNull(crimeList);
 
     }
 
