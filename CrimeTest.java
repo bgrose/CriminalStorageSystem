@@ -66,7 +66,7 @@ public class CrimeTest {
      */
     @Test
     void testAddPerson() {
-        Suspects suspect = new Suspects("bob", true, "goat", "Maddie Smith", "blue", "brown", "dove", "white", "American", 150, 72, "Katie Lynch", 33, false, "none", "none", "right", "robbery", false, 123e4567-e89b-12d3-a456-556642440000, "male", "302 Capstone Road", "5552222222");
+        Suspects suspect = new Suspects("bob", true, "goat", "Maddie Smith", "blue", "brown", "dove", "white", "American", 150, 72, "Katie Lynch", 33, false, "none", "none", "right", "robbery", false, UUID.randomUUID(), "male", "302 Capstone Road", "5552222222");
         crime.addPerson(suspect);
         assertEquals(personList.get(0), suspect);
     }
@@ -76,7 +76,7 @@ public class CrimeTest {
      */
     @Test
     void testRemovePerson() {
-        Suspects suspect = new Suspects("bob", true, "goat", "Maddie Smith", "blue", "brown", "dove", "white", "American", 150, 72, "Katie Lynch", 33, false, "none", "none", "right", "robbery", false, 123e4567-e89b-12d3-a456-556642440000, "male", "302 Capstone Road", "5552222222");
+        Suspects suspect = new Suspects("bob", true, "goat", "Maddie Smith", "blue", "brown", "dove", "white", "American", 150, 72, "Katie Lynch", 33, false, "none", "none", "right", "robbery", false, UUID.randomUUID(), "male", "302 Capstone Road", "5552222222");
         crime.addPerson(suspect);
         crime.removePerson(suspect);
         assertNull(personList);
@@ -111,7 +111,7 @@ public class CrimeTest {
      */
     @Test
     void testGetSuspectString() {
-        Suspects suspect = new Suspects("bob", true, "goat", "Maddie Smith", "blue", "brown", "dove", "white", "American", 150, 72, "Katie Lynch", 33, false, "none", "none", "right", "robbery", false, 123e4567-e89b-12d3-a456-556642440000, "male", "302 Capstone Road", "5552222222");
+        Suspects suspect = new Suspects("bob", true, "goat", "Maddie Smith", "blue", "brown", "dove", "white", "American", 150, 72, "Katie Lynch", 33, false, "none", "none", "right", "robbery", false, UUID.randomUUID(), "male", "302 Capstone Road", "5552222222");
         crime.addPerson(suspect);
         String expected = "";
         String actual = crime.getSuspectString();

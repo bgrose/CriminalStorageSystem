@@ -21,6 +21,8 @@ public class CrimeFacade {
     private PersonDatabase personDatabase;
     private User currentUser;
 
+    
+
     /**
      * Constructor method that sets up the CrimeFacade
      */

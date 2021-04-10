@@ -14,6 +14,10 @@ public class CrimeFascadeTest {
     private PersonDatabase personDatabase = PersonDatabase.getInstance();
     private CrimeFacade facade = new CrimeFacade();
 
+    private ArrayList<Evidence> evidenceList;
+    private ArrayList<Suspects> personList;
+    private ArrayList<Witness> witnessList;
+
     @BeforeEach
     public void setup() {
         userDatabase.getInstance().getDatabase().clear();
@@ -22,6 +26,8 @@ public class CrimeFascadeTest {
         DataWriter.saveCrimes();
         DataWriter.saveUsers();
         DataWriter.savePersons();
+
+        //login
     }
 
     @AfterEach
@@ -32,6 +38,8 @@ public class CrimeFascadeTest {
         DataWriter.saveCrimes();
         DataWriter.saveUsers();
         DataWriter.savePersons();
+
+        //logout
     }
 
     /**
@@ -70,15 +78,21 @@ public class CrimeFascadeTest {
      */
     @Test
     void TestAddCrime() {
-
+        Crime crime = new Crime(evidenceList, personList, witnessList, "description", "caseID", false, "date");
+        facade.addCrime(crime);
+        Crime expected = crimeDatabase.getCrime("caseID");
+        assertEquals(expected, crime);
     }
 
     /**
      * Tested by: Passed:
      */
     @Test
-    void testSearchCrime() {
-
+    void testSearchCrimeTrue() {
+        Crime crime = new Crime(evidenceList, personList, witnessList, "description", "caseID", false, "date");
+        facade.addCrime(crime);
+        boolean actual = facade.searchCrime("caseID");
+        assertTrue(actual);
     }
 
     /**
@@ -86,7 +100,8 @@ public class CrimeFascadeTest {
      */
     @Test
     void testPrintCrimes() {
-
+        //need to finish
+        facade.printCrimes("yes");
     }
 
     /**
@@ -101,8 +116,13 @@ public class CrimeFascadeTest {
      * Tested by: Passed:
      */
     @Test
-    void testSearchCriminal() {
-
+    void testSearchCriminalByName() {
+        int command = 0;
+        Suspects suspect = new Suspects("bob", true, "goat", "Maddie Smith", "blue", "brown", "dove", "white", "American", 150, 72, "Katie Lynch", 33, false, "none", "none", "right", "robbery", false, 123e4567-e89b-12d3-a456-556642440000, "male", "302 Capstone Road", "5552222222");
+        facade.addSuspect(suspect);
+        personList.add(suspect);
+        ArrayList<Suspects> actual = facade.searchCriminal(command, "bob");
+        assertEquals(personList, actual);
     }
 
     /**
@@ -142,6 +162,10 @@ public class CrimeFascadeTest {
      */
     @Test
     void testFindOfficer() {
+        User user = new User("Test", "Password", "TestUser", "Police Officer", false, 6ef03f85-a967-4ca5-8906-a0abcfd9fce3);
+        facade.addUser(user);
+        User actual = facade.findOfficer("TestUser");
+        assertEquals(user, actual);
 
     }
 
