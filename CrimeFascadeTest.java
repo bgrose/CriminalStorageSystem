@@ -2,6 +2,7 @@
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -118,7 +119,7 @@ public class CrimeFascadeTest {
     @Test
     void testSearchCriminalByName() {
         int command = 0;
-        Suspects suspect = new Suspects("bob", true, "goat", "Maddie Smith", "blue", "brown", "dove", "white", "American", 150, 72, "Katie Lynch", 33, false, "none", "none", "right", "robbery", false, 123e4567-e89b-12d3-a456-556642440000, "male", "302 Capstone Road", "5552222222");
+        Suspects suspect = new Suspects("bob", true, "goat", "Maddie Smith", "blue", "brown", "dove", "white", "American", 150, 72, "Katie Lynch", 33, false, "none", "none", "right", "robbery", false, UUID.randomUUID(), "male", "302 Capstone Road", "5552222222");
         facade.addSuspect(suspect);
         personList.add(suspect);
         ArrayList<Suspects> actual = facade.searchCriminal(command, "bob");
@@ -162,7 +163,7 @@ public class CrimeFascadeTest {
      */
     @Test
     void testFindOfficer() {
-        User user = new User("Test", "Password", "TestUser", "Police Officer", false, 6ef03f85-a967-4ca5-8906-a0abcfd9fce3);
+        User user = new User("Test", "Password", "TestUser", "Police Officer", false, UUID.randomUUID());
         facade.addUser(user);
         User actual = facade.findOfficer("TestUser");
         assertEquals(user, actual);
