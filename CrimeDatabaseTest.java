@@ -15,14 +15,12 @@ public class CrimeDatabaseTest {
     @BeforeEach
     public void setup() {
         crimeList.clear();
-        DataWriter.saveUsers();
         DataWriter.saveCrimes();
     }
 
     @AfterEach
     public void tearDown() {
         crimeDatabase.getInstance().getDatabase().clear();
-        DataWriter.saveUsers();
         DataWriter.saveCrimes();
     }
 
