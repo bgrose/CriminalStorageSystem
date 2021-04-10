@@ -119,7 +119,7 @@ public class CrimeFascadeTest {
     @Test
     void testSearchCriminalByName() {
         int command = 0;
-        Suspects suspect = new Suspects("bob", true, "goat", "Maddie Smith", "blue", "brown", "dove", "white", "American", 150, 72, "Katie Lynch", 33, false, "none", "none", "right", "robbery", false, UUID.randomUUID(), "male", "302 Capstone Road", "5552222222");
+        Suspects suspect = new Suspects("bob", true, "goat", "Maddie Smith", "blue", "brown", "dove", "white", "American", 150, 72, "Katie Lynch", 33, false, "none", "none", "right", "robbery", false, "male", "302 Capstone Road", "5552222222");
         facade.addSuspect(suspect);
         personList.add(suspect);
         ArrayList<Suspects> actual = facade.searchCriminal(command, "bob");

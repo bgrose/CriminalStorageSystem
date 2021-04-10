@@ -66,7 +66,7 @@ public class CrimeTest {
      */
     @Test
     void testAddPerson() {
-        Suspects suspect = new Suspects("bob", true, "goat", "Maddie Smith", "blue", "brown", "dove", "white", "American", 150, 72, "Katie Lynch", 33, false, "none", "none", "right", "robbery", false, UUID.randomUUID(), "male", "302 Capstone Road", "5552222222");
+        Suspects suspect = new Suspects("bob", true, "goat", "Maddie Smith", "blue", "brown", "dove", "white", "American", 150, 72, "Katie Lynch", 33, false, "none", "none", "right", "robbery", false, "male", "302 Capstone Road", "5552222222");
         crime.addPerson(suspect);
         assertEquals(personList.get(0), suspect);
     }
@@ -76,7 +76,7 @@ public class CrimeTest {
      */
     @Test
     void testRemovePerson() {
-        Suspects suspect = new Suspects("bob", true, "goat", "Maddie Smith", "blue", "brown", "dove", "white", "American", 150, 72, "Katie Lynch", 33, false, "none", "none", "right", "robbery", false, UUID.randomUUID(), "male", "302 Capstone Road", "5552222222");
+        Suspects suspect = new Suspects("bob", true, "goat", "Maddie Smith", "blue", "brown", "dove", "white", "American", 150, 72, "Katie Lynch", 33, false, "none", "none", "right", "robbery", false, "male", "302 Capstone Road", "5552222222");
         crime.addPerson(suspect);
         crime.removePerson(suspect);
         assertNull(personList);
@@ -100,7 +100,7 @@ public class CrimeTest {
     void testGetWitnessString() {
         Witness witness = new Witness("Conor Raymond", true, "I saw a white man stab and Asian man", "Male", false, "222 Cleveland Avenue", "7084848400");
         //we have to addWitness method for the witnessList;
-        crime.addPerson(witness);
+        //crime.addPerson(witness);
         String expected = "Name: Conor Raymond\nLiving Status: true\nGender: Male\nAddress: 222Cleveland Avenue\nPhone Number: 7084848400\nStatement: I saw a white man stab and Asian man\nIs a Victim: false\n" + LINE_BREAK;
         String actual = crime.getWitnessString();
         assertEquals(expected, actual);
@@ -111,7 +111,7 @@ public class CrimeTest {
      */
     @Test
     void testGetSuspectString() {
-        Suspects suspect = new Suspects("bob", true, "goat", "Maddie Smith", "blue", "brown", "dove", "white", "American", 150, 72, "Katie Lynch", 33, false, "none", "none", "right", "robbery", false, UUID.randomUUID(), "male", "302 Capstone Road", "5552222222");
+        Suspects suspect = new Suspects("bob", true, "goat", "Maddie Smith", "blue", "brown", "dove", "white", "American", 150, 72, "Katie Lynch", 33, false, "none", "none", "right", "robbery", false, "male", "302 Capstone Road", "5552222222");
         crime.addPerson(suspect);
         String expected = "";
         String actual = crime.getSuspectString();
