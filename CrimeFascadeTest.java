@@ -38,8 +38,8 @@ public class CrimeFascadeTest {
      * Tested by: Passed:
      */
     @Test
-    void testCrimeFascade() {
-        
+    void testCrimeFascadeExists() {
+        assertNotNull(facade);
     }
 
     /**
