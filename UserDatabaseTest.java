@@ -10,7 +10,9 @@ import org.junit.jupiter.api.Test;
 public class UserDatabaseTest {
 	@BeforeEach
 	public void setup() {
-
+		private static PersonDatabase personDatabase;
+    	private PersonDatabase people = PersonDatabase.getInstance();
+    	private ArrayList<Suspects> personList = personDatabase.getDatabase();
 	}
 
 	@AfterEach
@@ -53,12 +55,4 @@ public class UserDatabaseTest {
 
 	}
 
-	/**
-	 * Tested by:
-	 * Passed:
-	 */
-	@Test
-	void testUserDatabase() {
-
-	}
 }
