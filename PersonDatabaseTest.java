@@ -63,7 +63,11 @@ public class PersonDatabaseTest {
     @Test
     void testGetInstance() {
         // people uses getInstance at the beginning of the class to initialize
-        people.printDatabase("yes");
+        if(people != null) {
+			System.out.println("Passed");
+		} else {
+			System.out.println("Failed");
+		}
     }
 
 
