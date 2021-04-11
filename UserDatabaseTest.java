@@ -8,16 +8,21 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class UserDatabaseTest {
+	
+	private static UserDatabase userDatabase;
+    private UserDatabase users = UserDatabase.getInstance();
+    private ArrayList<User> usersList = userDatabase.getDatabase();
+	
 	@BeforeEach
 	public void setup() {
-		private static PersonDatabase personDatabase;
-    	private PersonDatabase people = PersonDatabase.getInstance();
-    	private ArrayList<Suspects> personList = personDatabase.getDatabase();
+		usersList.clear();
+		DataWriter.saveUsers();
 	}
 
 	@AfterEach
 	public void tearDown() {
-
+		usersList.clear();
+		DataWriter.saveUsers();
 	}
 
 	/**
