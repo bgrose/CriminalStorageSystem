@@ -14,14 +14,12 @@ public class UserDatabaseTest {
 	
 	@BeforeEach
 	public void setup() {
-		usersList.clear();
-		DataWriter.saveUsers();
+		//Intentionally Empty
 	}
 
 	@AfterEach
 	public void tearDown() {
-		usersList.clear();
-		DataWriter.saveUsers();
+		//Intentionally Empty
 	}
 
 	/**
