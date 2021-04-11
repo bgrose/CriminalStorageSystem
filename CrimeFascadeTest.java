@@ -90,8 +90,8 @@ public class CrimeFascadeTest {
     }
 
     /**
-     * Tested by:
-     *  Passed:
+     * Tested by: David K
+     *  Passed: True
      */
     @Test
     void testPrintCrimes() {
@@ -100,8 +100,8 @@ public class CrimeFascadeTest {
     }
 
     /**
-     * Tested by:
-     *  Passed:
+     * Tested by: David K
+     *  Passed: True
      */
     @Test
     void testPrintResTerminal() {
@@ -114,8 +114,8 @@ public class CrimeFascadeTest {
     }
 
     /**
-     * Tested by: David Keen
-     * Passed: True
+     * Tested by: David K
+     *  Passed: True
      */
     @Test
     void testSearchCriminalByName() {
@@ -127,8 +127,8 @@ public class CrimeFascadeTest {
     }
 
     /**
-     * Tested by: 
-     * Passed: True
+     * Tested by: David K
+     *  Passed: True
      */
     @Test
     void testPrintCriminal() {
@@ -136,8 +136,10 @@ public class CrimeFascadeTest {
         assertTrue(true); //Passed Without Errors
     }
 
+
     /**
-     * Tested by: Passed:
+     * Tested by: David K
+     *  Passed: True
      */
     @Test
     void testAddUser() {
@@ -148,8 +150,10 @@ public class CrimeFascadeTest {
 
     }
 
+
     /**
-     * Tested by: Passed:
+     * Tested by: David K
+     *  Passed: True
      */
     @Test
     void testRemoveUser() {
@@ -161,9 +165,10 @@ public class CrimeFascadeTest {
     }
 
 
+
     /**
      * Tested by: David K
-     * Passed: True
+     *  Passed: True
      */
     @Test
     void testFindOfficer() {
@@ -175,7 +180,8 @@ public class CrimeFascadeTest {
     }
 
     /**
-     * Tested by: Passed:
+     * Tested by: David K
+     *  Passed: True
      */
     @Test
     void testPrintCrimeTerminal() {
