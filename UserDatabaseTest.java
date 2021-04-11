@@ -14,12 +14,12 @@ public class UserDatabaseTest {
 	
 	@BeforeEach
 	public void setup() {
-		//Intentionally Empty
+		// Intentionally Empty
 	}
 
 	@AfterEach
 	public void tearDown() {
-		//Intentionally Empty
+		// Intentionally Empty
 	}
 
 	/**

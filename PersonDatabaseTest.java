@@ -15,17 +15,17 @@ public class PersonDatabaseTest {
 
     @BeforeEach
     public void setup() {
-        //Intentionally Empty
+        // Intentionally Empty
     }
 
     @AfterEach
     public void tearDown() {
-        //Intentionally Empty
+        // Intentionally Empty
     }
 
     /**
      * Tested by: Eleanor Barry
-     * Passed:
+     * Passed: True
      */
     @Test
     void testAddPerson() {
@@ -36,7 +36,7 @@ public class PersonDatabaseTest {
 
     /**
      * Tested by: Eleanor Barry
-     * Passed:
+     * Passed: True
      */
     @Test
     void testRemovePerson() {
@@ -49,7 +49,7 @@ public class PersonDatabaseTest {
 
     /**
      * Tested by: Eleanor Barry
-     * Passed:
+     * Passed: True
      */
     @Test
     void testPrintDatabase() {
@@ -58,7 +58,7 @@ public class PersonDatabaseTest {
 
     /**
      * Tested by: Eleanor Barry
-     * Passed:
+     * Passed: True
      */
     @Test
     void testGetInstance() {
@@ -69,6 +69,5 @@ public class PersonDatabaseTest {
 			System.out.println("Failed");
 		}
     }
-
 
 }
