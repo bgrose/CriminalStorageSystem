@@ -23,7 +23,7 @@ public class CrimeDatabaseTest {
 
     /**
      * Tested by: David Morrison
-     * Passed:
+     * Passed: True
      */
     @Test
     void testAddCrime() {
@@ -33,7 +33,7 @@ public class CrimeDatabaseTest {
 
     /**
      * Tested by: David Morrison
-     * Passed: 
+     * Passed: True
      */
     @Test
     void testRemoveCrime() {
@@ -41,7 +41,6 @@ public class CrimeDatabaseTest {
         crimeList.add(testCrime);
         crimeList.remove(testCrime);
         assertFalse(crimeList.contains(testCrime));
-
     }
 
     /**
