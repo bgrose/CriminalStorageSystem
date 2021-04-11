@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 
 public class CrimeDatabaseTest {
     
+    private CrimeDatabase crimeDatabase;
     private CrimeDatabase crimes = CrimeDatabase.getInstance();
     private ArrayList<Crime> crimeList = crimes.getDatabase();
 
@@ -44,23 +45,27 @@ public class CrimeDatabaseTest {
     }
 
     /**
-     * Tested by: Passed:
+     * Tested by: David Morrison
+     * Passed: True
      */
     @Test
     void testPrintDatabase() {
-
+        crimeDatabase.printDatabase("yes");
     }
 
     /**
-     * Tested by: Passed:
+     * Tested by: David Morrison
+     * Passed: True
      */
     @Test
     void testgetInstance() {
+        crimes.printDatabase("yes");
 
     }
 
     /**
-     * Tested by: Passed:
+     * Tested by: David Morrison
+     * Passed:
      */
     @Test
     void testCrimeDatabase() {
