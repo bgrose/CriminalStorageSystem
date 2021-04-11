@@ -245,13 +245,14 @@ public class Crime {
      */
     public String getWitnessString() {
         String witness = "";
+        if(this.witnessList != null) {
         for (int i = 0; i < this.witnessList.size(); i++) {
             Witness witnessOb = this.witnessList.get(i);
             String witString = witnessOb.toString();
             witness = witness + witString;
         }
         witness = LINE_BREAK + witness + LINE_BREAK;
-
+    }
         return witness;
     }
 
@@ -261,13 +262,14 @@ public class Crime {
      */
     public String getSuspectString() {
         String suspect = "";
+        if(this.personList != null) {
         for (int i = 0; i < this.personList.size(); i++) {
             Suspects suspectOb = this.personList.get(i);
             String susString = suspectOb.toString();
             suspect = suspect + susString;
         }
         suspect = LINE_BREAK + suspect + LINE_BREAK;
-
+    }
         return suspect;
     }
 
@@ -277,12 +279,14 @@ public class Crime {
      */
     public String getEvidenceString() {
         String evidence = "";
+        if (this.evidenceList != null) {
         for (int i = 0; i < this.evidenceList.size(); i++) {
             Evidence evidenceOb = this.evidenceList.get(i);
             String evidenceString = evidenceOb.toString();
             evidence = evidence + evidenceString;
         }
         evidence = LINE_BREAK + evidence + LINE_BREAK;
+    }
 
         return evidence;
     }

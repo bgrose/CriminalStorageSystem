@@ -106,11 +106,9 @@ public class DataWriterTest {
      */
     @Test
     void testSaveSuspect() {
-        ArrayList<Suspects> suspects = new ArrayList<Suspects>();
-        suspects.add(new Suspects("name", true, "alias", "accomplice", "hairColor", "eyeColor", "tatoo", "skinColor",
+        PersonDatabase.getInstance().addPerson( new Suspects("name", true, "alias", "accomplice", "hairColor", "eyeColor", "tatoo", "skinColor",
                 "nationality", 100, 100, "acquaintance", 1, true, "punishment", "disability", "handness", "crimeType",
                 true, "Gender", "address", "phone"));
-        crimeList.add(new Crime(null, suspects, null, "description", "caseID", false, "date"));
         DataWriter.savePersons(); // Calls Evidence
         assertEquals("name", DataLoader.getPerson().get(0).getName());
     }

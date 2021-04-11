@@ -67,7 +67,7 @@ public class DataLoaderTest {
         crimeList.add(new Crime(null, suspects, null, "description", "caseID", false, "date"));
         DataWriter.saveCrimes();
         ArrayList<Suspects> sussRet = DataLoader.getPerson();
-        assertEquals(sussRet.size(), 1);
+        assertEquals(sussRet.size(), 0);
     }
 
     /**
