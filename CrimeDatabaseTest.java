@@ -12,11 +12,17 @@ public class CrimeDatabaseTest {
     private ArrayList<Crime> crimeList = crimes.getDatabase();
 
     @BeforeEach
+    /** 
+	 * method creates a setup code
+	 */
     public void setup() {
         crimeList.clear();
     }
 
     @AfterEach
+    /** 
+	 * method creates a teardown code
+	 */
     public void tearDown() {
         //Intentionally Empty
     }
@@ -26,6 +32,9 @@ public class CrimeDatabaseTest {
      * Passed: True
      */
     @Test
+    /** 
+	 * method creates a test for adding crimes
+	 */
     void testAddCrime() {
         crimeList.add(new Crime(null, null, null, "description", "caseID", false, "date"));
         assertEquals("description", crimeList.get(0).getDescription());
@@ -36,6 +45,9 @@ public class CrimeDatabaseTest {
      * Passed: True
      */
     @Test
+    /** 
+	 * method creates a test for removing crimes
+	 */
     void testRemoveCrime() {
         Crime testCrime = (new Crime(null, null, null, "description", "caseID", false, "date"));
         crimeList.add(testCrime);
@@ -49,6 +61,9 @@ public class CrimeDatabaseTest {
      * Passed: True
      */
     @Test
+    /** 
+	 * method creates a test to get instance
+	 */
     void testgetInstance() {
        CrimeDatabase crimedB = CrimeDatabase.getInstance();
        assertNotEquals(crimedB, null);
