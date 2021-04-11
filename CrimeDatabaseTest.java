@@ -8,20 +8,17 @@ import org.junit.jupiter.api.Test;
 
 public class CrimeDatabaseTest {
     
-    private static CrimeDatabase crimeDatabase;
     private CrimeDatabase crimes = CrimeDatabase.getInstance();
     private ArrayList<Crime> crimeList = crimes.getDatabase();
 
     @BeforeEach
     public void setup() {
         crimeList.clear();
-        DataWriter.saveCrimes();
     }
 
     @AfterEach
     public void tearDown() {
-        crimeDatabase.getInstance().getDatabase().clear();
-        DataWriter.saveCrimes();
+        //Intentionally Empty
     }
 
     /**
@@ -31,9 +28,7 @@ public class CrimeDatabaseTest {
     @Test
     void testAddCrime() {
         crimeList.add(new Crime(null, null, null, "description", "caseID", false, "date"));
-        DataWriter.saveCrimes();
-        ArrayList<Crime> crimesRet = DataLoader.getCrimes();
-        assertEquals("description", crimeList.get(0));
+        assertEquals("description", crimeList.get(0).getDescription());
     }
 
     /**
@@ -42,11 +37,10 @@ public class CrimeDatabaseTest {
      */
     @Test
     void testRemoveCrime() {
-        crimeList.add(new Crime(null, null, null, "description", "caseID", false, "date"));
-        crimeList.remove(new Crime(null, null, null, "description", "caseID", false, "date"));
-        DataWriter.saveCrimes();
-        ArrayList<Crime> crimesRet = DataLoader.getCrimes();
-        assertNull(crimeList);
+        Crime testCrime = (new Crime(null, null, null, "description", "caseID", false, "date"));
+        crimeList.add(testCrime);
+        crimeList.remove(testCrime);
+        assertFalse(crimeList.contains(testCrime));
 
     }
 

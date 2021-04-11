@@ -1,4 +1,3 @@
-
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterEach;
@@ -19,7 +18,7 @@ public class SuspectTest {
 
 	/**
 	 * Tested by: David Morrsion
-         * Passed: True
+     * Passed: True
 	 */
 	@Test
 	void testSuspect() {
@@ -31,7 +30,7 @@ public class SuspectTest {
 
 	/**
 	 * Tested by: David Morrsion
-         * Passed: True
+     * Passed: True
 	 */
 	@Test
 	void testToString() {

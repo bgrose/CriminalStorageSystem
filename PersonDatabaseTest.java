@@ -11,18 +11,16 @@ public class PersonDatabaseTest {
 
     private static PersonDatabase personDatabase;
     private PersonDatabase people = PersonDatabase.getInstance();
-    private ArrayList<Suspects> personList = personDatabase.getDatabase();
+    private ArrayList<Suspects> personList = new ArrayList<Suspects>();
 
     @BeforeEach
     public void setup() {
-        personList.clear();
-        DataWriter.savePersons();
+        //Intentionally Empty
     }
 
     @AfterEach
     public void tearDown() {
-        personList.clear();
-        DataWriter.savePersons();
+        //Intentionally Empty
     }
 
     /**
