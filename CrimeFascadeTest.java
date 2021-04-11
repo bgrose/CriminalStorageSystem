@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 public class CrimeFascadeTest {
 
     private CrimeDatabase crimeDatabase = CrimeDatabase.getInstance();
+    private UserDatabase userDatabase = UserDatabase.getInstance();
     private CrimeFacade facade = new CrimeFacade();
 
     private ArrayList<Evidence> evidenceList;
@@ -22,8 +23,6 @@ public class CrimeFascadeTest {
         DataWriter.saveCrimes();
         DataWriter.saveUsers();
         DataWriter.savePersons();
-
-        //login
     }
 
     @AfterEach
@@ -31,8 +30,6 @@ public class CrimeFascadeTest {
         DataWriter.saveCrimes();
         DataWriter.saveUsers();
         DataWriter.savePersons();
-
-        //logout
     }
 
     /**
@@ -46,7 +43,7 @@ public class CrimeFascadeTest {
 
     /**
      * Tested by: David Keen
-     * Passed: Passed
+     * Passed: True
      */
     @Test
     void testValidLogin() {
@@ -97,8 +94,8 @@ public class CrimeFascadeTest {
      */
     @Test
     void testPrintCrimes() {
-        //need to finish
-        facade.printCrimes("no");
+        facade.printCrimes("yes");
+
     }
 
     /**
@@ -107,6 +104,12 @@ public class CrimeFascadeTest {
      */
     @Test
     void testPrintResTerminal() {
+        Suspects suspect = new Suspects("bob", true, "goat", "Maddie Smith", "blue", "brown", "dove", "white",
+                "American", 150, 72, "Katie Lynch", 33, false, "none", "none", "right", "robbery", false, "male",
+                "302 Capstone Road", "5552222222");
+        personList.add(suspect);
+        facade.printResTerminal(personList);
+
 
     }
 
@@ -120,7 +123,7 @@ public class CrimeFascadeTest {
         Suspects suspect = new Suspects("bob", true, "goat", "Maddie Smith", "blue", "brown", "dove", "white", "American", 150, 72, "Katie Lynch", 33, false, "none", "none", "right", "robbery", false, "male", "302 Capstone Road", "5552222222");
         facade.addSuspect(suspect);
         ArrayList<Suspects> actual = facade.searchCriminal(command, "bob");
-        assertEquals(suspect.getAge(), actual.get(0).getAge());
+        assertEquals(suspect.getName(), actual.get(0).getName());
     }
 
     /**
@@ -129,7 +132,7 @@ public class CrimeFascadeTest {
      */
     @Test
     void testPrintCriminal() {
-
+        facade.printCriminal("yes");
     }
 
     /**
@@ -137,6 +140,9 @@ public class CrimeFascadeTest {
      */
     @Test
     void testAddUser() {
+        User me = new User("Test", "Password", "TestUser", "Officer", true);
+        facade.addUser(me);
+        assertEquals(userDatabase.getDatabase().get(0), me);
 
     }
 
@@ -145,6 +151,10 @@ public class CrimeFascadeTest {
      */
     @Test
     void testRemoveUser() {
+        User me = new User("Test", "Password", "TestUser", "Officer", true);
+        facade.addUser(me);
+        facade.removeUser("TestUser");
+        assertNull(facade.findOfficer("TestUser"));
 
     }
 
@@ -153,6 +163,11 @@ public class CrimeFascadeTest {
      */
     @Test
     void testLogout() {
+        facade.logout();
+        //verify methods ran
+        //saveUsers();
+        //savePersons();
+        //saveCrimes();
 
     }
 
@@ -174,6 +189,9 @@ public class CrimeFascadeTest {
      */
     @Test
     void testPrintCrimeTerminal() {
+        Crime crime = new Crime(evidenceList, personList, witnessList, "description", "caseID", false, "date");
+        facade.printCrimeTerminal("caseID");
 
     }
+
 }
