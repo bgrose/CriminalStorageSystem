@@ -94,7 +94,7 @@ public class CrimeFascadeTest {
      */
     @Test
     void testPrintCrimes() {
-        facade.printCrimes("yes");
+        facade.printCrimes("no");
 
     }
 
@@ -132,7 +132,7 @@ public class CrimeFascadeTest {
      */
     @Test
     void testPrintCriminal() {
-        facade.printCriminal("yes");
+        facade.printCriminal("no");
     }
 
     /**
@@ -142,7 +142,7 @@ public class CrimeFascadeTest {
     void testAddUser() {
         User me = new User("Test", "Password", "TestUser", "Officer", true);
         facade.addUser(me);
-        assertEquals(userDatabase.getDatabase().get(0), me);
+        assertEquals(userDatabase.getDatabase().get(0).getName(), me.getName());
 
     }
 
