@@ -109,6 +109,7 @@ public class CrimeFascadeTest {
                 "302 Capstone Road", "5552222222");
         personList.add(suspect);
         facade.printResTerminal(personList);
+        //verify printed correctly
 
 
     }
@@ -191,6 +192,7 @@ public class CrimeFascadeTest {
     void testPrintCrimeTerminal() {
         Crime crime = new Crime(evidenceList, personList, witnessList, "description", "caseID", false, "date");
         facade.printCrimeTerminal("caseID");
+        //verify printed correctly
 
     }
 
