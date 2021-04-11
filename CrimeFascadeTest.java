@@ -95,6 +95,7 @@ public class CrimeFascadeTest {
     @Test
     void testPrintCrimes() {
         facade.printCrimes("yes");
+        //verify printed without errors
 
     }
 
@@ -109,6 +110,7 @@ public class CrimeFascadeTest {
                 "302 Capstone Road", "5552222222");
         personList.add(suspect);
         facade.printResTerminal(personList);
+        //verify printed correctly
 
 
     }
@@ -133,6 +135,7 @@ public class CrimeFascadeTest {
     @Test
     void testPrintCriminal() {
         facade.printCriminal("yes");
+        //verify it ran without throwing exception
     }
 
     /**
@@ -191,6 +194,7 @@ public class CrimeFascadeTest {
     void testPrintCrimeTerminal() {
         Crime crime = new Crime(evidenceList, personList, witnessList, "description", "caseID", false, "date");
         facade.printCrimeTerminal("caseID");
+        //verify printed correctly
 
     }
 
