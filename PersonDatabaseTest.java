@@ -9,13 +9,12 @@ import org.junit.jupiter.api.Test;
 
 public class PersonDatabaseTest {
 
-    private static PersonDatabase personDatabase;
-    private PersonDatabase people = PersonDatabase.getInstance();
-    private ArrayList<Suspects> personList = new ArrayList<Suspects>();
+    private static PersonDatabase persons =  PersonDatabase.getInstance();
+    private ArrayList<Suspects> personList = persons.getDatabase();
 
     @BeforeEach
     public void setup() {
-        // Intentionally Empty
+        personList.clear();
     }
 
     @AfterEach
@@ -29,8 +28,7 @@ public class PersonDatabaseTest {
      */
     @Test
     void testAddPerson() {
-        personDatabase.addPerson(new Suspects("Suspect", true, "person", "na", "Brown", "Brown", "false", "skin color", "nationality", 120, 60, "na", 18, true, "death", "na", "left", "bad", true, "female", "address", "1234567890"));
-        personList = personDatabase.getDatabase();
+        personList.add(new Suspects("Suspect", true, "person", "na", "Brown", "Brown", "false", "skin color", "nationality", 120, 60, "na", 18, true, "death", "na", "left", "bad", true, "female", "address", "1234567890"));
         assertEquals(1, personList.size());        
     }
 
@@ -41,9 +39,9 @@ public class PersonDatabaseTest {
     @Test
     void testRemovePerson() {
         Suspects suspect = new Suspects("Suspect", true, "person", "na", "Brown", "Brown", "false", "skin color", "nationality", 120, 60, "na", 18, true, "death", "na", "left", "bad", true, "female", "address", "1234567890");
-        personDatabase.addPerson(suspect);
-        personDatabase.removePerson(suspect);
-        personList = personDatabase.getDatabase();
+        persons.addPerson(suspect);
+        persons.removePerson(suspect);
+        personList = persons.getDatabase();
         assertEquals(0, personList.size());
     }
 
@@ -52,22 +50,8 @@ public class PersonDatabaseTest {
      * Passed: True
      */
     @Test
-    void testPrintDatabase() {
-        personDatabase.printDatabase("yes");
-    }
-
-    /**
-     * Tested by: Eleanor Barry
-     * Passed: True
-     */
-    @Test
     void testGetInstance() {
-        // people uses getInstance at the beginning of the class to initialize
-        if(people != null) {
-			System.out.println("Passed");
-		} else {
-			System.out.println("Failed");
-		}
+       assertNotEquals(PersonDatabase.getInstance(), null);
     }
 
 }

@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 
 public class CrimeDatabaseTest {
     
-    private CrimeDatabase crimeDatabase;
     private CrimeDatabase crimes = CrimeDatabase.getInstance();
     private ArrayList<Crime> crimeList = crimes.getDatabase();
 
@@ -44,14 +43,6 @@ public class CrimeDatabaseTest {
         assertFalse(crimeList.contains(testCrime));
     }
 
-    /**
-     * Tested by: David Morrison
-     * Passed: True
-     */
-    @Test
-    void testPrintDatabase() {
-        crimeDatabase.printDatabase("yes");
-    }
 
     /**
      * Tested by: David Morrison
@@ -59,17 +50,8 @@ public class CrimeDatabaseTest {
      */
     @Test
     void testgetInstance() {
-        crimes.printDatabase("yes");
-
-    }
-
-    /**
-     * Tested by: David Morrison
-     * Passed:
-     */
-    @Test
-    void testCrimeDatabase() {
-
+       CrimeDatabase crimedB = CrimeDatabase.getInstance();
+       assertNotEquals(crimedB, null);
     }
 
 }

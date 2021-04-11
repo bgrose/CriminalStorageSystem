@@ -8,13 +8,12 @@ import org.junit.jupiter.api.Test;
 
 public class UserDatabaseTest {
 	
-	private static UserDatabase userDatabase;
-    private UserDatabase users = UserDatabase.getInstance();
+	private static UserDatabase userDatabase = UserDatabase.getInstance();
     private ArrayList<User> usersList = userDatabase.getDatabase();
 	
 	@BeforeEach
 	public void setup() {
-		// Intentionally Empty
+		usersList.clear();
 	}
 
 	@AfterEach
@@ -62,12 +61,7 @@ public class UserDatabaseTest {
 	 */
 	@Test
 	void testGetInstance() {
-		// users uses getInstance at the beginning of the class to initialize
-        if(users != null) {
-			System.out.println("Passed");
-		} else {
-			System.out.println("Failed");
-		}
+		assertNotEquals(PersonDatabase.getInstance(), null);
 	}
 
 }
