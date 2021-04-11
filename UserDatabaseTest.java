@@ -19,7 +19,8 @@ public class UserDatabaseTest {
 	}
 
 	/**
-	 * Tested by: Passed:
+	 * Tested by:
+	 * Passed:
 	 */
 	@Test
 	void testGetUser() {
@@ -27,7 +28,8 @@ public class UserDatabaseTest {
 	}
 
 	/**
-	 * Tested by: Passed:
+	 * Tested by:
+	 * Passed:
 	 */
 	@Test
 	void testAddUser() {
@@ -43,7 +45,8 @@ public class UserDatabaseTest {
 	}
 
 	/**
-	 * Tested by: Passed:
+	 * Tested by:
+	 * Passed:
 	 */
 	@Test
 	void testGetInstance() {
@@ -51,7 +54,8 @@ public class UserDatabaseTest {
 	}
 
 	/**
-	 * Tested by: Passed:
+	 * Tested by:
+	 * Passed:
 	 */
 	@Test
 	void testUserDatabase() {
