@@ -32,9 +32,7 @@ public class PersonDatabaseTest {
     @Test
     void testAddPerson() {
         personDatabase.addPerson(new Suspects("Suspect", true, "person", "na", "Brown", "Brown", "false", "skin color", "nationality", 120, 60, "na", 18, true, "death", "na", "left", "bad", true, "female", "address", "1234567890"));
-        // personList = personDatabase.getDatabase();
-        DataWriter.savePersons();
-        personList = DataLoader.getPerson();
+        personList = personDatabase.getDatabase();
         assertEquals(1, personList.size());        
     }
 
@@ -47,9 +45,7 @@ public class PersonDatabaseTest {
         Suspects suspect = new Suspects("Suspect", true, "person", "na", "Brown", "Brown", "false", "skin color", "nationality", 120, 60, "na", 18, true, "death", "na", "left", "bad", true, "female", "address", "1234567890");
         personDatabase.addPerson(suspect);
         personDatabase.removePerson(suspect);
-        // personList = personDatabase.getDatabase();
-        DataWriter.savePersons();
-        personList = DataLoader.getPerson();
+        personList = personDatabase.getDatabase();
         assertEquals(0, personList.size());
     }
 

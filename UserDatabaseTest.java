@@ -26,16 +26,18 @@ public class UserDatabaseTest {
 	}
 
 	/**
-	 * Tested by:
+	 * Tested by: Eleanor Barry
 	 * Passed:
 	 */
 	@Test
 	void testGetUser() {
-
+		User testUsers = new User("username", "password", "name", "position", false);
+		userDatabase.addUser(testUsers);
+		userDatabase.getUser("userame", "password");
 	}
 
 	/**
-	 * Tested by:
+	 * Tested by: Eleanor Barry
 	 * Passed:
 	 */
 	@Test
@@ -44,7 +46,8 @@ public class UserDatabaseTest {
 	}
 
 	/**
-	 * Tested by: Passed:
+	 * Tested by: Eleanor Barry
+	 * Passed:
 	 */
 	@Test
 	void testRemoveUser() {
@@ -52,7 +55,7 @@ public class UserDatabaseTest {
 	}
 
 	/**
-	 * Tested by:
+	 * Tested by: Eleanor Barry
 	 * Passed:
 	 */
 	@Test
