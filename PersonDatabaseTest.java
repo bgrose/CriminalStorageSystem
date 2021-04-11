@@ -29,7 +29,11 @@ public class PersonDatabaseTest {
      */
     @Test
     void testAddPerson() {
-
+        personDatabase.addPerson(new Suspects("Suspect", true, "person", "na", "Brown", "Brown", "false", "skin color", "nationality", 120, 60, "na", 18, true, "death", "na", "left", "bad", true, "female", "address", "1234567890"));
+        // personList = personDatabase.getDatabase();
+        DataWriter.savePersons();
+        personList = DataLoader.getPerson();
+        assertEquals(1, personList.size());        
     }
 
     /**
@@ -38,34 +42,33 @@ public class PersonDatabaseTest {
      */
     @Test
     void testRemovePerson() {
-
+        Suspects suspect = new Suspects("Suspect", true, "person", "na", "Brown", "Brown", "false", "skin color", "nationality", 120, 60, "na", 18, true, "death", "na", "left", "bad", true, "female", "address", "1234567890");
+        personDatabase.addPerson(suspect);
+        personDatabase.removePerson(suspect);
+        // personList = personDatabase.getDatabase();
+        DataWriter.savePersons();
+        personList = DataLoader.getPerson();
+        assertEquals(0, personList.size());
     }
 
     /**
-     * Tested by: 
+     * Tested by: Eleanor Barry
      * Passed:
      */
     @Test
     void testPrintDatabase() {
-
+        personDatabase.printDatabase("yes");
     }
 
     /**
-     * Tested by: 
+     * Tested by: Eleanor Barry
      * Passed:
      */
     @Test
     void testGetInstance() {
-
+        // people uses getInstance at the beginning of the class to initialize
+        people.printDatabase("yes");
     }
 
-    /**
-     * Tested by: 
-     * Passed:
-     */
-    @Test
-    void testPersonDatabase() {
-
-    }
 
 }
