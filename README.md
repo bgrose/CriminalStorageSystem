@@ -13,3 +13,6 @@ https://docs.google.com/document/d/1fgtBcqIow_y2lhUUXtLR36ijhGAJu8pu0byV1agX0wA/
 
 ## Link to SCRUM Board
 https://trello.com/b/xM4fCRt1/quick-cocks-agile-sprint-board
+
+## Link to HiFi Prototype
+https://pr.to/QSW8M7/
