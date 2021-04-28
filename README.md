@@ -1,6 +1,6 @@
 # Criminal Storage System
 
-Version 2.0 </br>
+Version Final </br>
 Last Updated 4/24/2021 </br>
 Written by: Bradley Grose, Eleanor Barry, David Keen, David Morrison </br>
 Professor: Portia Plante
